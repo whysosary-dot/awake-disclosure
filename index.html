@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AWAKE 공시">
+<title>📑 AWAKE 일일 공시 리포트</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Noto Sans KR',-apple-system,sans-serif;
+  background:linear-gradient(180deg,#e8ecf1 0%,#dbe4f0 100%);
+  color:#0c1445;min-height:100vh;display:flex;justify-content:center;
+  padding:40px 20px
+}
+.wrap{
+  max-width:840px;width:100%;background:#fff;border-radius:16px;
+  box-shadow:0 4px 24px rgba(12,20,69,0.10);
+  padding:40px 48px 36px;display:flex;flex-direction:column
+}
+.header{
+  text-align:center;padding-bottom:24px;margin-bottom:28px;
+  border-bottom:3px solid #0c1445
+}
+.header h1{font-size:28px;font-weight:900;color:#0c1445;letter-spacing:-0.5px}
+.header p{font-size:13px;color:#475569;margin-top:8px;line-height:1.6}
+.stats{
+  display:flex;justify-content:center;gap:18px;margin-top:14px;flex-wrap:wrap
+}
+.stat{
+  background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;
+  padding:6px 12px;font-size:11px;color:#1e3a8a;font-weight:600
+}
+.stat b{font-family:Inter;color:#0c1445;font-size:13px}
+#report-list{flex:1}
+.item{
+  display:flex;align-items:center;justify-content:space-between;
+  background:#f6f8fa;border:1px solid #e2e8f0;border-radius:8px;
+  padding:14px 18px;margin-bottom:10px;
+  text-decoration:none;color:inherit;
+  transition:background .2s,border-color .2s,box-shadow .2s
+}
+.item:hover{
+  background:#f8fafc;border-color:#3b82f6;
+  box-shadow:0 2px 8px rgba(59,130,246,0.10)
+}
+.item.new{border-left:3px solid #dc2626}
+.item-date{font-size:15px;font-weight:700;color:#0c1445}
+.item-sub{font-size:11px;color:#64748b;margin-top:3px;line-height:1.5}
+.badge-new{
+  background:#dc2626;color:#fff;font-size:9px;font-weight:800;
+  padding:2px 8px;border-radius:4px;letter-spacing:.5px
+}
+.badge-link{color:#1e3a8a;font-size:12px;font-weight:700}
+.empty{
+  text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px
+}
+.footer{
+  text-align:center;margin-top:24px;font-size:10px;color:#94a3b8;line-height:1.6
+}
+.footer a{color:#3b82f6;text-decoration:none}
+@media(max-width:640px){
+  .wrap{padding:24px 20px}
+  .header h1{font-size:22px}
+  .item{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <h1>📑 AWAKE 일일 공시 리포트</h1>
+  <p>매일 평일 오후 8시 — AWAKE 채널 공시 + DART 재무 + yfinance 종가/등락률을 종합한 종목별 1페이지 매매 리포트</p>
+  <div class="stats">
+    <div class="stat">📅 발행 <b id="stat-count">1</b>회</div>
+    <div class="stat">📊 사업 BM + 매출 구성</div>
+    <div class="stat">🎯 매매 시그널 + 투자 인사이트</div>
+  </div>
+</div>
+
+<div id="report-list"></div>
+
+<div class="footer">
+  ⚠️ 자동 생성 리포트 — 투자 권유 아님. 매매 책임은 본인.<br>
+  Data: <a href="https://dart.fss.or.kr">DART</a> · Yahoo Finance (yfinance) · AWAKE 텔레그램<br>
+  <a href="https://github.com/whysosary-dot/awake-disclosure">GitHub Repository</a>
+</div>
+</div>
+
+<script>
+// 리포트 목록 — 새 리포트 추가 시 맨 앞에 객체 push
+const reports = [
+  {
+    d: "2026-04-28",
+    label: "2026년 4월 28일 (화)",
+    sub: "공시 70건·종목 58개 · KCC건설 5,566억(매출 30%) 강매수 · 두산 국민연금 7.77% 신규 · 송원산업 +30% 상한가 · HK이노엔 1Q 컨센 +14% 상회 · HD현대일렉트릭 1Q 컨센 -7% 미스 -5.21%",
+    n: true
+  }
+];
+
+const list = document.getElementById('report-list');
+const countEl = document.getElementById('stat-count');
+countEl.textContent = reports.length;
+
+if (reports.length === 0) {
+  list.innerHTML = '<div class="empty">발행된 리포트가 없습니다. 평일 오후 8시 이후에 다시 확인하세요.</div>';
+} else {
+  reports.forEach(r => {
+    const a = document.createElement('a');
+    a.className = 'item' + (r.n ? ' new' : '');
+    a.href = `reports/AWAKE_${r.d}.html`;
+    a.innerHTML = `
+      <div>
+        <div class="item-date">${r.label}</div>
+        <div class="item-sub">${r.sub}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+        ${r.n ? '<span class="badge-new">NEW</span>' : ''}
+        <span class="badge-link">리포트 보기 →</span>
+      </div>
+    `;
+    list.appendChild(a);
+  });
+}
+</script>
+</body>
+</html>
