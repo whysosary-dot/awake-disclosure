@@ -1,0 +1,16 @@
+{
+  "name": "AWAKE 일일 공시 리포트",
+  "short_name": "AWAKE 공시",
+  "description": "평일 오후 8시 자동 발행 — 종목별 1페이지 매매 리포트",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c1445",
+  "theme_color": "#0c1445",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
