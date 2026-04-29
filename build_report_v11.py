@@ -16,12 +16,22 @@ with open("/sessions/pensive-awesome-meitner/mnt/outputs/company_info.json", enc
 with open("/sessions/pensive-awesome-meitner/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
-# 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
+# 한글 큐레이션된 overrides (BM·segments·strength·customers 베이스라인 — 영구 누적)
 ENRICHED = {}
 override_path = "/sessions/pensive-awesome-meitner/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
+
+# 매일 새 WebSearch 기반 분석 (custom_signal_reason/insight/watch — 매일 갱신)
+# 사용자 정책 (2026-04-30): "기존이든 신규든 구분없이 매일 새로 분석"
+DAILY_ANALYSES = {}
+import glob as _glob
+_daily_candidates = sorted(_glob.glob("/sessions/pensive-awesome-meitner/mnt/outputs/daily_analyses_*.json"), reverse=True)
+if _daily_candidates:
+    with open(_daily_candidates[0], encoding="utf-8") as f:
+        DAILY_ANALYSES = json.load(f)
+    print(f"✓ Loaded daily analyses from {_daily_candidates[0]}: {len(DAILY_ANALYSES)} companies")
 
 # Aggregates (cumulative)
 AGG_PATH = "/sessions/pensive-awesome-meitner/mnt/outputs/daily_aggregates.json"
@@ -991,10 +1001,20 @@ for d in DISCLOSURES:
     d["segments"] = ov.get("segments") or extract_segments(d)
     d["customers"] = ov.get("customers") or extract_customers(d)
     d["strength"] = ov.get("strength") or extract_strength(d)
-    # Custom override가 있으면 그것 사용, 없으면 강화된 자동 분석
-    d["signal_reason"] = ov.get("custom_signal_reason") or signal_reason(d)
-    d["insight"] = ov.get("custom_insight") or auto_insight(d)
-    d["watch"] = ov.get("custom_watch") or auto_watch(d)
+    # 우선순위: ① 오늘자 daily_analyses (매일 새 WebSearch 기반)
+    #          ② enriched_overrides의 custom_* (정적 백업)
+    #          ③ 강화된 자동 분석 함수
+    daily = DAILY_ANALYSES.get(d["code"], {})
+    d["signal_reason"] = daily.get("custom_signal_reason") or ov.get("custom_signal_reason") or signal_reason(d)
+    d["insight"] = daily.get("custom_insight") or ov.get("custom_insight") or auto_insight(d)
+    d["watch"] = daily.get("custom_watch") or ov.get("custom_watch") or auto_watch(d)
+    # 분석 출처 표기
+    if d["code"] in DAILY_ANALYSES:
+        d["_analysis_source"] = "daily-fresh"
+    elif ov.get("custom_signal_reason"):
+        d["_analysis_source"] = "curated"
+    else:
+        d["_analysis_source"] = "auto"
     d["fin"] = fin_oneline(d)
     p = prices.get(d["code"])
     d["price"] = p
