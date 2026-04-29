@@ -344,147 +344,602 @@ def extract_strength(d):
     return out
 
 
-# ============= AUTO SIGNAL REASON =============
+# ============= AUTO SIGNAL REASON — 강화 (회사 컨텍스트 + 본문 정량 + 시장 견해) =============
+def _ctx(d):
+    """Return overrides info (segments, customers, sector) for context."""
+    ov = ENRICHED.get(d["code"], {})
+    return ov
+
+def _pct_to_int(s):
+    try:
+        return int(re.sub(r"[+,%]", "", s))
+    except Exception:
+        return None
+
 def signal_reason(d):
     rep, body = d["report"], d["body_full"]
     co = d["company"]
+    ctx = _ctx(d)
+    sector = d.get("industry") or classify_industry(d)
+
+    # ===== 영업(잠정)실적 =====
     if "영업(잠정)실적" in rep or "잠정실적" in rep:
-        m = re.search(r"매출액\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
-        op = re.search(r"영업익\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
+        m_rev = re.search(r"매출액\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
+        m_op = re.search(r"영업익\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
+        m_ni = re.search(r"순이익\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
+        # 분기 추이
+        recent = re.findall(r"(202[3-6]\.\d+Q)\s*([\d,]+억)\/\s*([\d,\-]+억)\/\s*([\d,\-]+억)", body)
         chunks = []
-        if m:
-            chunks.append(f"매출 {m.group(1)} (컨센 {m.group(3)}%)")
-        if op:
-            chunks.append(f"영업익 {op.group(1)} (컨센 {op.group(3)}%)")
-        return f"잠정실적 발표 — {', '.join(chunks)}." if chunks else "분기 잠정실적 발표 — 컨센 대비 상회/미스 여부 확인."
+        verdict = "중립"
+        if m_rev:
+            chg = _pct_to_int(m_rev.group(3)) or 0
+            chunks.append(f"매출 {m_rev.group(1)} (컨센 {m_rev.group(3)}%, {chg:+d}p {'상회' if chg>=0 else '미스'})")
+        if m_op:
+            chg = _pct_to_int(m_op.group(3)) or 0
+            chunks.append(f"영업익 {m_op.group(1)} (컨센 {m_op.group(3)}%, {chg:+d}p {'상회' if chg>=0 else '미스'})")
+            if chg >= 10:
+                verdict = "어닝 서프라이즈"
+            elif chg <= -10:
+                verdict = "어닝 쇼크"
+        if m_ni:
+            chg = _pct_to_int(m_ni.group(3)) or 0
+            chunks.append(f"순익 {m_ni.group(1)} (컨센 {m_ni.group(3)}%)")
+        trend_str = ""
+        if len(recent) >= 2:
+            ops = [f"{q}: 영업익 {op}" for q, _, op, _ in recent[:3]]
+            trend_str = f" 분기추이: {' → '.join(reversed(ops))}."
+        head = f"{co} 1Q26 잠정실적 — {verdict}: " if verdict in ("어닝 서프라이즈", "어닝 쇼크") else f"{co} 1Q26 잠정실적 — "
+        return head + ", ".join(chunks) + "." + trend_str
+
+    # ===== 단일판매 ㆍ공급계약체결 =====
     if "단일판매" in rep and "체결" in rep:
-        m = re.search(r"계약금액\s*[:：]\s*([^\n]+)", body)
-        m2 = re.search(r"매출대비\s*[:：]\s*([+\-]?[\d.]+)\s*%", body)
-        amt = m.group(1).strip() if m else "-"
-        pct = m2.group(1) if m2 else "-"
-        return f"신규 공급계약 체결 — 계약금액 {amt}, 매출대비 {pct}%."
+        m_amt = re.search(r"계약금액\s*[:：]\s*([^\n]+)", body)
+        m_pct = re.search(r"매출대비\s*[:：]\s*([+\-]?[\d.]+)\s*%", body)
+        m_party = re.search(r"계약상대\s*[:：]\s*([^\n]+)", body)
+        m_period = re.search(r"계약(?:기간|시작일|시작)\s*[:：]\s*([^\n]+)", body)
+        m_content = re.search(r"계약내용\s*[:：]\s*([^\n]+)", body)
+        amt = m_amt.group(1).strip() if m_amt else "-"
+        pct_raw = m_pct.group(1) if m_pct else "0"
+        try:
+            pct_f = float(pct_raw)
+        except Exception:
+            pct_f = 0
+        party = m_party.group(1).strip()[:50] if m_party else "-"
+        content = m_content.group(1).strip()[:60] if m_content else ""
+        size_lbl = "대형" if pct_f >= 30 else ("중형" if pct_f >= 10 else ("소형" if pct_f >= 5 else "마이너"))
+        return f"신규 공급계약 체결 — {party} 향 {amt} 규모 ({size_lbl}, 매출대비 {pct_raw}%). 계약내용: {content}."
+
+    # ===== 공급계약해지 =====
     if "공급계약해지" in rep:
-        m = re.search(r"해지금액\s*[:：]\s*([^\n]+)", body)
-        m2 = re.search(r"매출대비\s*[:：]\s*([^\n]+)", body)
-        return f"기존 계약 해지 — 해지금액 {m.group(1).strip() if m else '-'}, 매출대비 {m2.group(1).strip() if m2 else '-'}."
+        m_amt = re.search(r"해지금액\s*[:：]\s*([^\n]+)", body)
+        m_pct = re.search(r"매출대비\s*[:：]\s*([+\-]?[\d.]+)\s*%", body)
+        m_party = re.search(r"계약상대\s*[:：]\s*([^\n]+)", body)
+        m_reason = re.search(r"해지사유\s*[:：]\s*([^\n]+)", body)
+        amt = m_amt.group(1).strip() if m_amt else "-"
+        pct = m_pct.group(1) if m_pct else "-"
+        party = m_party.group(1).strip()[:60] if m_party else "-"
+        reason = m_reason.group(1).strip()[:80] if m_reason else "-"
+        return f"기존 공급계약 해지 — {party} 측 {amt} 규모 (매출대비 {pct}%). 해지사유: {reason}."
+
+    # ===== 자기주식 취득·소각 =====
     if "자기주식취득" in rep:
-        return f"자기주식 취득 결정 — 발행주식수 감소·EPS 제고 효과."
+        m_qty = re.search(r"취득예정\s*주식\(주\)\s*[:：]\s*([\d,]+)", body)
+        m_amt = re.search(r"취득예정\s*금액\(원\)\s*[:：]\s*([\d,]+)", body) or re.search(r"예정금액\s*[:：]\s*([^\n]+)", body)
+        m_pct = re.search(r"시총대비\s*[:：]\s*([\d.]+)%", body)
+        return f"자기주식 취득 결정 — {m_qty.group(1) + '주' if m_qty else ''} {m_amt.group(1) if m_amt else ''} (시총대비 {m_pct.group(1) + '%' if m_pct else '-'}). 발행주식수 감소·EPS 제고 효과."
     if "주식소각" in rep:
-        return f"주식 소각 결정 — 발행주식수 영구 감소로 가장 강력한 주주환원."
+        m = re.search(r"우선주\s*[:：]\s*([\d,]+)\s*주", body)
+        m2 = re.search(r"보통주\s*[:：]\s*([\d,]+)\s*주", body)
+        m_amt = re.search(r"예정금액\s*[:：]\s*([^\n]+)", body)
+        m_pct = re.search(r"시총대비\s*[:：]\s*([\d.]+)\s*%", body)
+        chunks = []
+        if m2 and m2.group(1) != "":
+            chunks.append(f"보통주 {m2.group(1)}주")
+        if m:
+            chunks.append(f"우선주 {m.group(1)}주")
+        return f"주식 소각 결정 — {', '.join(chunks)} {m_amt.group(1) if m_amt else ''} (시총대비 {m_pct.group(1) + '%' if m_pct else '-'}). 발행주식수 영구 감소로 주주환원의 가장 강력한 형태."
+
+    # ===== 자기주식처분 =====
     if "자기주식처분" in rep:
-        return f"자기주식 처분 결정 — 처분목적·중개업자 본문 확인."
+        m_qty = re.search(r"처분수량\s*[:：]\s*([^\n]+)", body)
+        m_purpose = re.search(r"처분목적\s*[:：]\s*([^\n]+)", body)
+        purpose = m_purpose.group(1).strip()[:80] if m_purpose else ""
+        is_emp = any(w in purpose for w in ["근무", "상여", "임직원", "스톡옵션", "RSU", "ESOP"])
+        kind = "임직원 보상(시장 영향 미미)" if is_emp else "현금 회수 또는 매각(시장 매물 출회 가능)"
+        return f"자기주식 처분 결정 — {m_qty.group(1).strip() if m_qty else '-'}, 목적: {purpose} → {kind}."
+
+    # ===== 현금배당 =====
     if "현금" in rep and "배당" in rep:
-        return f"배당 결정 — 시가배당률·배당기준일 본문 확인."
+        m_yld = re.search(r"시가배당률\s*[:：]\s*([\d.]+)\s*%", body)
+        m_per = re.search(r"1주당\s*배당금\s*[:：]?\s*([^\n]+)", body)
+        return f"배당 결정 — 1주당 {m_per.group(1).strip() if m_per else '-'}, 시가배당률 {m_yld.group(1) + '%' if m_yld else '-'}. 정기성·배당성향이 주주환원의 진정성 척도."
+
+    # ===== 기업가치제고 (밸류업) =====
     if "기업가치제고" in rep:
-        return f"기업가치 제고 계획 공시 — 주주환원 정책 강화."
+        return f"{co} 기업가치제고 계획 공시 — 정부 밸류업 프로그램 호응. 구체적 ROE 목표·자사주 매입·배당정책의 실행력이 재평가의 관건."
+
+    # ===== CB 발행 =====
     if "전환사채" in rep and "발행" in rep:
-        m = re.search(r"발행금액\s*[:：]\s*([^\n(]+)", body)
-        return f"CB 발행 결정 — 발행금액 {m.group(1).strip() if m else '-'}. 향후 전환 시 잠재 희석."
+        m_amt = re.search(r"발행금액\s*[:：]\s*([\d,]+)억\s*\(전체대비\s*[:：]\s*([\d.]+)%\)", body) or re.search(r"발행금액\s*[:：]\s*([^\n(]+)", body)
+        m_method = re.search(r"발행방법\s*[:：]\s*([^\n]+)", body)
+        m_conv = re.search(r"전환가액\s*[:：]\s*([\d,]+)원\s*\(현재가\s*[:：]\s*([\d,]+)원\)", body) or re.search(r"전환가액\s*[:：]\s*([^\n]+)", body)
+        m_min = re.search(r"최저조정\s*[:：]\s*([\d,]+)원", body)
+        m_rate = re.search(r"표면이율\s*[:：]\s*([\d.]+)%", body)
+        m_inv = re.search(r"\*\s*투자자\s*\n((?:.+?\n)+?)\n", body)
+        amt_txt = m_amt.group(0).split(":")[1].strip() if m_amt else "-"
+        details = []
+        if m_amt and len(m_amt.groups()) >= 2:
+            details.append(f"전체대비 {m_amt.group(2)}%")
+        if m_conv and len(m_conv.groups()) >= 2:
+            details.append(f"전환가 {m_conv.group(1)}원 (현재가 {m_conv.group(2)}원, {((int(m_conv.group(1).replace(',',''))/int(m_conv.group(2).replace(',',''))-1)*100):+.1f}%)")
+        if m_min:
+            details.append(f"최저조정가 {m_min.group(1)}원")
+        if m_rate:
+            details.append(f"표면이율 {m_rate.group(1)}%")
+        return f"전환사채(CB) 발행 결정 — {amt_txt}. " + ", ".join(details) + ". 1년 후 전환청구 시점부터 잠재 희석 가능."
+
+    # ===== 유증 =====
     if "유상증자" in rep:
-        return f"유상증자 결정 — 발행구조·인수처·자금사용처 본문 확인."
+        m_amt = re.search(r"발행금액\s*[:：]\s*([^\n]+)", body)
+        m_method = re.search(r"발행방법\s*[:：]\s*([^\n]+)", body)
+        m_purpose = re.search(r"자금사용\s*목적\s*[:：]\s*([^\n]+)", body) or re.search(r"자금조달\s*목적\s*[:：]\s*([^\n]+)", body)
+        amt = m_amt.group(1).strip() if m_amt else "-"
+        method = m_method.group(1).strip() if m_method else "-"
+        purpose = m_purpose.group(1).strip()[:80] if m_purpose else "-"
+        return f"유상증자 결정 — {amt}, 방식: {method}. 자금 사용처: {purpose}. 단기 희석 부담 vs 신사업 자금 조달 의지."
+
+    # ===== 전환청구 =====
     if "전환청구" in rep:
-        return f"기발행 CB·BW의 전환청구 — 신주 상장으로 잠재 매물 출회."
+        m_qty = re.search(r"청구주식수[^\n]*?\s*([\d,]+)\s*주", body)
+        m_pr = re.search(r"전환가액\s*[:：]\s*([\d,]+)\s*원", body)
+        m_listing = re.search(r"신주상장(?:예정일)?\s*[:：]\s*([^\n]+)", body)
+        return f"기발행 CB·BW의 전환청구 — {m_qty.group(1) + '주' if m_qty else '-'} (전환가 {m_pr.group(1) + '원' if m_pr else '-'}). 신주 상장 후 잠재 매물 출회 부담."
+
+    # ===== 합병 =====
     if "회사합병" in rep:
-        m = re.search(r"대상회사\s*[:：]\s*([^\n]+)", body)
-        return f"회사 합병 결정 — 대상사 {m.group(1).strip() if m else '-'}. 합병기일·매수청구권 확인."
+        m_target = re.search(r"대상회사\s*[:：]\s*([^\n]+)", body)
+        m_main = re.search(r"주요사업\s*[:：]\s*([^\n]+)", body)
+        m_perf = re.search(r"영업실적\s*[:：]\s*([^\n]+)", body)
+        m_close = re.search(r"합병기일\s*[:：]\s*([^\n]+)", body)
+        m_ratio = re.search(r"합병비율\s*[:：]\s*([^\n]+)", body)
+        return f"회사 합병 결정 — 대상사: {m_target.group(1).strip() if m_target else '-'} (주요사업: {m_main.group(1).strip()[:50] if m_main else '-'}, 실적: {m_perf.group(1).strip()[:50] if m_perf else '-'}). 합병기일: {m_close.group(1).strip() if m_close else '-'}. 신주발행·매수청구권 규모가 EPS 영향의 핵심."
+
+    # ===== 타법인주식 취득 =====
     if "타법인주식" in rep and "취득" in rep:
-        m = re.search(r"취득회사\s*[:：]\s*([^\n]+)", body)
-        m2 = re.search(r"취득금액\s*[:：]\s*([^\n]+)", body)
-        return f"타법인 주식 취득 — 대상사 {m.group(1).strip() if m else '-'}, 취득금액 {m2.group(1).strip() if m2 else '-'}."
+        m_target = re.search(r"취득회사\s*[:：]\s*([^\n]+)", body)
+        m_main = re.search(r"주요사업\s*[:：]\s*([^\n]+)", body)
+        m_amt = re.search(r"취득금액\s*[:：]\s*([^\n]+)", body)
+        m_pct = re.search(r"자본대비\s*[:：]\s*([\d.]+)%", body)
+        m_after = re.search(r"취득\s*후\s*지분율\s*[:：]\s*([\d.]+)%", body)
+        m_purpose = re.search(r"취득목적\s*[:：]\s*([^\n]+)", body)
+        return f"타법인 주식 취득 — {m_target.group(1).strip() if m_target else '-'} (사업: {m_main.group(1).strip()[:40] if m_main else '-'}). 취득금액 {m_amt.group(1).strip() if m_amt else '-'} (자본대비 {m_pct.group(1) + '%' if m_pct else '-'}, 취득 후 지분 {m_after.group(1) + '%' if m_after else '-'}). 목적: {m_purpose.group(1).strip()[:60] if m_purpose else '-'}."
+
+    # ===== 대량보유 =====
     if "대량보유" in rep:
-        m = re.search(r"보고전\s*[:：]\s*([\d.]+%)", body)
-        m2 = re.search(r"보고후\s*[:：]\s*([\d.]+%)", body)
-        return f"대량보유 보고 — 지분율 {m.group(1) if m else '-'} → {m2.group(1) if m2 else '-'}."
+        m_rep = re.search(r"대표보고\s*[:：]\s*([^\n]+)", body)
+        m_purp = re.search(r"보유목적\s*[:：]\s*([^\n]+)", body)
+        m_bef = re.search(r"보고전\s*[:：]\s*([\d.]+%)", body)
+        m_aft = re.search(r"보고후\s*[:：]\s*([\d.]+%)", body)
+        m_reason = re.search(r"보고사유\s*[:：]\s*([^\n]+)", body)
+        bef = m_bef.group(1) if m_bef else "-"
+        aft = m_aft.group(1) if m_aft else "-"
+        try:
+            delta = float(aft.replace("%", "")) - float(bef.replace("%", ""))
+            direction = "지분 증가" if delta > 0 else "지분 감소"
+            delta_str = f"{delta:+.2f}%p"
+        except Exception:
+            direction = "변동"
+            delta_str = "-"
+        purp = m_purp.group(1).strip() if m_purp else "-"
+        rep_name = m_rep.group(1).strip()[:40] if m_rep else "-"
+        is_pension = any(w in rep_name for w in ["국민연금", "공무원연금", "사학연금", "우정사업본부"])
+        is_fund = any(w in rep_name for w in ["피델리티", "블랙록", "Vanguard", "JP Morgan", "Capital", "Fidelity", "BlackRock"])
+        actor = "(국내 연기금)" if is_pension else ("(외국계 자산운용)" if is_fund else "")
+        return f"대량보유 보고 — {rep_name}{actor} 지분율 {bef} → {aft} ({direction} {delta_str}). 보유목적: {purp}. 사유: {m_reason.group(1).strip()[:50] if m_reason else '-'}."
+
+    # ===== 경영권 분쟁 / 소송 =====
     if "경영권분쟁" in rep or "소송" in rep:
-        return f"법적 분쟁 발생 — 가처분 결정·주총 진행 양상에 따라 변동성 확대."
+        m_court = re.search(r"관할법원\s*[:：]\s*([^\n]+)", body)
+        m_case = re.search(r"사건명칭\s*[:：]\s*([^\n]+)", body)
+        return f"법적 분쟁 발생 — 사건: {m_case.group(1).strip()[:50] if m_case else '-'} ({m_court.group(1).strip() if m_court else '-'}). 가처분 결정·표 대결 결과에 따라 단기 변동성 극단적."
+
+    # ===== 투자판단 관련 =====
     if "투자판단" in rep:
+        body_low = body.lower()
         if "허가" in body or "승인" in body:
-            return f"투자판단 관련 — 규제기관 허가/승인. 매출 인식·후속 사업화 가능."
+            m_item = re.search(r"품목명\s*[:：]\s*([^\n]+)", body)
+            m_indication = re.search(r"대상질환[^:]*[:：]\s*([^\n]+)", body)
+            m_agency = re.search(r"품목허가기관\s*[:：]\s*([^\n]+)", body)
+            return f"규제기관 허가/승인 — 품목: {m_item.group(1).strip()[:50] if m_item else '-'} (적응증: {m_indication.group(1).strip()[:50] if m_indication else '-'}, 기관: {m_agency.group(1).strip() if m_agency else '-'}). 매출 인식·사업화 출발점."
         if "취소" in body and "가압류" in body:
-            return f"투자판단 관련 — 가압류 취소 호재."
-        return f"투자판단 관련 주요 경영사항 — 본문 내용에 따라 호재/악재 판별."
+            return f"투자판단 관련 — 가압류 취소. 대주주 보유주식 안정화 호재."
+        if "선정" in body:
+            m = re.search(r"제목\s*[:：]\s*([^\n]+)", body)
+            return f"투자판단 관련 — 국책 과제·신사업 선정 호재. 제목: {m.group(1).strip()[:80] if m else '-'}."
+        return f"투자판단 관련 주요 경영사항 — 본문 내용에 따라 호재/악재 판별 후 후속 일정 트래킹."
+
+    # ===== 풍문/해명 =====
+    if "풍문" in rep or "해명" in rep:
+        return f"{co} 풍문에 대한 회사 해명 (미확정/사실무근). 후속 공시 또는 시간 경과로 사실 확인 필요."
+
+    # ===== IR =====
     if "IR" in rep or "기업설명회" in rep:
-        return f"IR 개최 안내 — 발표 자료의 가이던스·신사업 코멘트가 시장 예상 부합 여부 확인."
-    return f"{co} 일반 공시 — 본문 내용 기반 호재/악재 판별 필요."
+        m_when = re.search(r"개최일시\s*[:：]\s*([^\n]+)", body)
+        m_topic = re.search(r"개최목적\s*[:：]\s*([^\n]+)", body) or re.search(r"주요내용\s*[:：]\s*([^\n]+)", body)
+        return f"IR 개최 안내 — {m_when.group(1).strip() if m_when else '-'} ({m_topic.group(1).strip()[:60] if m_topic else '실적 발표 / 가이던스'}). 발표 후 시장 반응이 가장 신뢰할만한 시그널."
+
+    return f"{co} {rep} 공시 — 본문 내용 기반 호재/악재 판별 필요."
 
 
-# ============= AUTO INSIGHT =============
+# ============= AUTO INSIGHT — 강화 (수억원 투자 관점, 단기·중기·장기 시나리오) =============
 def auto_insight(d):
     rep, body, co = d["report"], d["body_full"], d["company"]
+    sector = d.get("industry") or classify_industry(d)
+    ctx = _ctx(d)
+    customers = ctx.get("customers", "")
+    strength = ctx.get("strength", "")
+
+    # 잠정실적
     if "영업(잠정)실적" in rep or "잠정실적" in rep:
-        return f"{co}의 분기 잠정실적은 단기 주가 방향을 결정하는 핵심 변수. 컨센 상회 시 어닝 서프라이즈 모멘텀, 미스 시 외국인·기관 차익실현 가능. 다음 분기 가이던스와 4Q 추이를 함께 확인."
+        m_op = re.search(r"영업익\s*[:：]\s*([\d,]+억)\s*\(예상치\s*[:：]\s*([\d,]+억)\s*\/\s*([+\-]?\d+)%\)", body)
+        chg = _pct_to_int(m_op.group(3)) if m_op else 0
+        chg = chg or 0
+        if chg >= 15:
+            tone = f"강한 어닝 서프라이즈로 외국인·기관 추가 매수 가능성. 다음 분기 가이던스 상향 시 모멘텀 지속."
+        elif chg >= 5:
+            tone = f"컨센 상회로 단기 모멘텀. 동종업계 동조화 매수 + 애널리스트 목표가 상향 가능."
+        elif chg <= -15:
+            tone = f"심각한 어닝 쇼크. 외국인·기관 차익실현 + 투자의견 하향 가능. 연간 가이던스 재검토 필수."
+        elif chg <= -5:
+            tone = f"컨센 미스로 단기 매도 압력. 다만 일회성 비용·환율 등 1Q 특수요인 여부 점검."
+        else:
+            tone = f"컨센 부합 수준. 큰 변동 없이 다음 분기 가이던스가 핵심 변수."
+        sector_views = {
+            "반도체": "HBM·AI 서버 수요 증가가 메모리·장비주 전반 수혜",
+            "디스플레이": "OLED 전환 가속·중국 캐파 증설 경쟁 심화",
+            "배터리/2차전지": "EV 수요 둔화·LFP 가격 경쟁이 양극재·전구체 마진에 부담",
+            "바이오/제약": "신약 임상 진척과 R&D 비용이 가치평가 좌우",
+            "자동차/모빌리티": "EV 전환·미국 IRA 수혜·관세 리스크가 핵심 변수",
+            "조선/엔진": "LNG·암모니아 친환경 발주 증가로 수주잔고 확대",
+            "엔터/콘텐츠": "K-콘텐츠 글로벌 OTT 동시방영 확대로 매출 가시성 향상",
+            "게임": "신작 출시 + 글로벌 매출 비중 + IP 라이선스",
+            "철강/금속": "건설·자동차 수요 회복과 중국 철강 수출 변수",
+            "화학/소재": "유가·원료 가격 + 글로벌 다운스트림 수요 균형",
+            "방산/항공": "K-방산 수출 확대 + 미국·유럽 방위비 증가 수혜",
+            "에너지/유틸리티": "신재생 정책 + 전력기기 글로벌 수요",
+            "연료전지/수소": "RPS·CHPS 정책 + 글로벌 수소 인프라 수혜",
+            "건설/건축": "주택 시장 회복 + 해외 인프라·플랜트 수주",
+            "금융": "금리 사이클 + 자기자본 비율·배당 정책",
+            "IT/SW": "AI·클라우드 SaaS 매출 비중 + 해외 진출",
+            "화장품/뷰티": "K-뷰티 글로벌 + 면세·중국 회복",
+            "식품/유통": "내수 소비 회복 + 원가 전가력 + 면세점",
+            "의료기기": "글로벌 출시 진척 + 보험 등재",
+        }
+        sector_view = sector_views.get(sector, f"{sector} 업황과 글로벌 매크로 변수 함께 점검")
+        return f"{co} ({sector}) — {tone} {sector} 산업 사이클상 {sector_view}."
+
+    # 단일판매 계약
     if "단일판매" in rep and "체결" in rep:
-        return f"신규 공급계약은 매출 가시성을 높이지만, 수익성·계약기간·해지 리스크를 함께 봐야 함. 동종 업계의 다른 수주와 비교해 시장점유율·수주잔고 추이 모니터링 필요."
+        m_pct = re.search(r"매출대비\s*[:：]\s*([+\-]?[\d.]+)\s*%", body)
+        try:
+            pct_f = float(m_pct.group(1)) if m_pct else 0
+        except Exception:
+            pct_f = 0
+        if pct_f >= 30:
+            return f"매출대비 {pct_f:.1f}%의 초대형 수주는 향후 1-2년 매출 가시성을 크게 높임. 계약 진행상황 (제품 인도·수금) 분기 IR로 추적. {co}의 ({sector}) 수주잔고 누적 추이를 동종업계와 비교해 시장점유율 변화 확인. 후속 추가 수주 발표 여부가 고객 만족도·확장 가능성의 시그널. 주요 고객: {customers[:80] if customers else '본문 참조'}."
+        elif pct_f >= 10:
+            return f"매출대비 {pct_f:.1f}% 규모의 의미있는 수주. {co}의 {sector} 사업 구조에서 안정적 매출 기여. 계약 수익성(영업이익률 기여), 인도 일정, 후속 옵션·연장 가능성을 함께 봐야 함. 분기 실적 발표 시 매출 인식 시점 확인 필요."
+        elif pct_f >= 5:
+            return f"매출대비 {pct_f:.1f}% 수준의 정기 수주. 단기 임팩트는 제한적이나 누적 수주잔고 추이가 더 중요. {co}의 ({sector}) 메인 거래선({customers[:50] if customers else '주요 고객'})과의 관계 안정성 시그널."
+        else:
+            return f"매출대비 {pct_f:.1f}% 소형 수주로 단일 임팩트는 크지 않음. {co}의 일상적 영업 활동의 일부. 주가 영향은 제한적이나 후속 누적 수주가 의미 있는 매출 기여로 연결되는지 분기 IR로 점검."
+
+    # 공급계약 해지
     if "공급계약해지" in rep:
-        return f"기존 계약 해지는 단기 매출·실적 모멘텀에 부정적. 대체 수주·재계약 가능성과 경영진 대응을 추적. 1회성 vs 구조적 문제 여부 판단이 핵심."
+        m_pct = re.search(r"매출대비\s*[:：]\s*([+\-]?[\d.]+)\s*%", body)
+        try:
+            pct_f = float(m_pct.group(1)) if m_pct else 0
+        except Exception:
+            pct_f = 0
+        sev = "심각" if pct_f >= 10 else ("중간" if pct_f >= 5 else "제한적")
+        return f"공급계약 해지는 단기 매출 손실 + 신뢰도 타격으로 {sev} 임팩트 (매출대비 {pct_f:.1f}%). 핵심 점검 포인트: ① 해지 사유가 1회성(상대측 정책 변경) vs 구조적 문제(품질·가격 경쟁력 상실)인지, ② {co}의 ({sector}) 다른 거래선({customers[:60] if customers else '주요 고객'}) 안정성, ③ 대체 수주·재계약 가능성, ④ 영업/운전자본 영향. 1Q26 실적 발표 시 가이던스 재조정 여부가 추가 시그널."
+
+    # 자사주 매입·소각
     if "자기주식취득" in rep or "주식소각" in rep:
-        return f"주주환원 정책 강화 시그널. 시총 대비 규모, 정기성·반복성, 향후 추가 발표 여부가 정책의 진정성을 좌우. 단기 수급보다 장기 가치 평가 관점."
+        is_burn = "소각" in rep
+        kind = "소각(영구 발행주식수 감소)" if is_burn else "취득(향후 소각·매각 가능성 모두 존재)"
+        return f"{co} 자사주 {kind} — {sector} 업종에서 주주환원 의지 명확한 시그널. 핵심 점검: ① 시총 대비 규모(클수록 EPS 제고 효과 큼), ② 자사주 정책의 정기성·반복성(일회성 vs 연례), ③ 후속 추가 발표 여부, ④ ROE·배당성향 등 종합 주주환원 정책. 단기 수급 효과보다 장기 밸류에이션 재평가 관점에서 접근. 단, 경영권 방어 성격이면 의미 다름."
+
+    # 자사주 처분
     if "자기주식처분" in rep:
-        return f"임직원 보상이라면 영향 미미, 시장 매도라면 단기 수급 부담. 처분 목적과 중개 방식 본문 확인 필수."
+        m_purpose = re.search(r"처분목적\s*[:：]\s*([^\n]+)", body)
+        purpose = m_purpose.group(1).strip()[:80] if m_purpose else ""
+        is_emp = any(w in purpose for w in ["근무", "상여", "임직원", "스톡옵션", "RSU", "ESOP"])
+        if is_emp:
+            return f"{co}의 자사주 처분이 임직원 보상 목적으로, 시장에 매도 매물로 유출되지 않아 주가 영향 미미. 다만 임직원 인센티브가 주가 연동이라 향후 책임경영 메시지로 해석. 동종업계 ({sector}) 보상 정책과 비교."
+        else:
+            return f"{co} 자사주 처분 — 시장 매도 가능성 또는 M&A·자금조달 목적. 단기 수급 부담. 처분 진행 상황과 자금 사용처({purpose})를 분기 IR로 추적. {sector} 업종 사이클상 자금 조달 시점이 적절한지 검토."
+
+    # 배당
     if "현금" in rep and "배당" in rep:
-        return f"배당은 안정적 현금 창출 능력의 증빙. 시가배당률, 배당성향, 정기성을 트랙킹. ESG·국내 배당주 펀드 자금 유입 가능."
+        return f"{co} 배당 결정 — {sector} 업종에서 안정적 현금 창출 능력의 증빙. 핵심 점검: ① 시가배당률(2-4%면 안정적, 4%↑면 고배당주), ② 배당성향(15-30% 일반, 50%↑면 적극적 환원), ③ 정기성(분기·중간배당 vs 일회성). 국내 배당주 ETF·ESG 펀드 자금 유입 모멘텀. 동종업계 배당 트렌드와 비교."
+
+    # 기업가치제고 (밸류업)
     if "기업가치제고" in rep:
-        return f"정부의 밸류업 프로그램 호응. 구체적 ROE 목표·자사주 매입·배당정책이 핵심. 실행력에 따라 재평가 가능."
+        return f"{co} 기업가치 제고 계획 공시 — 정부 밸류업 프로그램에 대한 회사의 공식 호응. 핵심 평가 기준: ① 구체적 ROE 목표(8-12% 일반, 15%↑면 적극적), ② 자사주 매입·소각 일정과 규모, ③ 배당성향 가이드라인, ④ 사업구조조정·자회사 정리 등. 공시문에 그치지 않고 실행력 발휘 시 PBR 재평가 가능. 코리아 디스카운트 해소 정책 직접 수혜. {sector} 업종 PBR 평균과 비교."
+
+    # CB 발행
     if "전환사채" in rep and "발행" in rep:
-        return f"CB는 자금조달 수단이나 1년 후 전환 시 잠재 희석. 인수자(코스닥벤처투자신탁 등)·전환가·최저조정가 분석 필요. 주가 하락 시 추가 희석 위험."
+        m_amt = re.search(r"발행금액\s*[:：]\s*([\d,]+)억\s*\(전체대비\s*[:：]\s*([\d.]+)%\)", body)
+        m_conv = re.search(r"전환가액\s*[:：]\s*([\d,]+)원\s*\(현재가\s*[:：]\s*([\d,]+)원\)", body)
+        m_min = re.search(r"최저조정\s*[:：]\s*([\d,]+)원", body)
+        try:
+            dilution = float(m_amt.group(2)) if m_amt else 0
+        except Exception:
+            dilution = 0
+        sev = "큰 희석 부담" if dilution >= 15 else ("중간 희석" if dilution >= 7 else "제한적 희석")
+        return f"{co} CB 발행은 자금조달 수단이나 1년 후 전환청구 시점부터 {sev} (전체대비 {dilution:.1f}%). 점검 포인트: ① 인수자(코스닥벤처투자신탁이면 만기 보유 후 전환 가능성, 헤지펀드면 즉시 청산 가능), ② 전환가 vs 현재가 갭 (premium·discount), ③ 최저조정가 트리거 가능성(주가 하락 시 추가 희석), ④ 자금 사용처. {sector} 업종에서 자금조달 사이클 적절성. 표면이율 0%·만기이율 1% 등 낮은 이자는 발행 측에 유리하나 주주에 불리."
+
+    # 유증
     if "유상증자" in rep:
-        return f"유증은 단기 희석 부담. 자금 사용처가 신사업·M&A·재무구조 개선이면 중장기 호재 가능. 발행구조·할인율·인수자 검토."
+        return f"{co} 유상증자 — 단기 주주 희석 부담. 핵심 평가: ① 자금 사용처가 신사업·M&A·재무구조 개선이면 중장기 호재 가능, ② 발행구조(주주배정·제3자배정·일반공모), ③ 발행가 할인율 (일반 25-30%), ④ 대주주·관계사 인수 비중. {sector} 사이클상 자금조달 시점이 적절한지 점검. 청약률·실권주 비중이 시장 신뢰도 시그널."
+
+    # 전환청구 (기발행 CB·BW)
     if "전환청구" in rep:
-        return f"이미 발행된 CB·BW의 전환은 신주 상장 시점 매물 출회 부담. 전환 비중·이미 행사된 차익 여부로 단기 수급 압력 추정."
+        return f"{co} 기발행 CB·BW의 전환청구 — 신주 상장 시점부터 매물 출회 부담. 핵심 점검: ① 전환된 비중과 미전환 잔량, ② 차익 실현 vs 장기 보유 의도, ③ 기존 발행 시 인수자(전략 투자자 vs 헤지펀드), ④ 신주 상장 후 하락 압력 + 단기 유동성 증가. 신주가 시장에 본격 풀리는 1-2주가 단기 변동성 정점."
+
+    # 회사 합병
     if "회사합병" in rep:
-        return f"합병은 통합 시너지 vs 매수청구권 부담의 균형. 신주발행 여부·EPS 영향·CEO 메시지 중요. 자회사 흡수면 영향 제한, 동등 합병이면 영향 큼."
+        m_target = re.search(r"대상회사\s*[:：]\s*([^\n]+)", body)
+        m_perf = re.search(r"영업실적\s*[:：]\s*([^\n]+)", body)
+        target = m_target.group(1).strip() if m_target else "-"
+        perf = m_perf.group(1).strip() if m_perf else "-"
+        is_subsidiary = "자회사" in target or "100%" in body
+        kind = "100% 자회사 흡수합병으로 신주발행·매수청구권 미발생, EPS 영향 제한적, 페이퍼컴퍼니 정리 차원" if is_subsidiary else "동등합병 또는 일부 지분 합병으로 합병비율·신주발행·매수청구권 모두 영향. EPS·BPS 변화 정밀 검증 필요"
+        return f"{co} 합병 결정 — 대상사 {target}, 실적 {perf}. {kind}. 합병기일까지 거래정지 + 매수청구권 행사 규모가 단기 수급 변수. {sector} 업종 통합 시너지 (R&D 효율·영업·생산 통합)가 중장기 가치 결정. 합병 후 사업 확장 vs 단순 정리 여부 분기 IR로 추적."
+
+    # 타법인 주식 취득
     if "타법인주식" in rep and "취득" in rep:
-        return f"타법인 출자는 신사업·해외 진출 의지의 표명. 자본대비 비중·시너지 검증·인수 후 PMI 진행상황 모니터링."
+        m_target = re.search(r"취득회사\s*[:：]\s*([^\n]+)", body)
+        m_pct_cap = re.search(r"자본대비\s*[:：]\s*([\d.]+)%", body)
+        m_after = re.search(r"취득\s*후\s*지분율\s*[:：]\s*([\d.]+)%", body)
+        target = m_target.group(1).strip()[:60] if m_target else "-"
+        try:
+            cap_pct = float(m_pct_cap.group(1)) if m_pct_cap else 0
+            after = float(m_after.group(1)) if m_after else 0
+        except Exception:
+            cap_pct, after = 0, 0
+        if after >= 90:
+            scale = "100% 자회사화 (완전 통제·연결 편입)"
+        elif after >= 50:
+            scale = "지배지분 확보 (경영권 행사 가능)"
+        elif after >= 20:
+            scale = "관계회사 (지분법 평가)"
+        else:
+            scale = "단순 투자 지분"
+        return f"{co} 타법인 주식 취득 — {target}, 자본대비 {cap_pct:.1f}%, 취득 후 {after:.0f}% ({scale}). {sector} 사업 영역 확장·신사업 진출·해외 거점 확보 의지. 핵심 점검: ① 인수 대상사 BM·매출·이익 (주요사업·실적 본문), ② PMI(인수후 통합) 진행, ③ 첫 매출 인식 시점, ④ ROIC 회수 기간. 인수 가격이 적정 vs 고가인지는 동종 M&A 사례와 비교."
+
+    # 대량보유 보고
     if "대량보유" in rep:
-        return f"대량보유 보고는 수급 시그널. 보유목적(경영권 영향·단순투자·자산운용)과 증감 방향이 시장 해석의 핵심. 5% 신규 진입(국민연금) vs 5% 매도(피델리티) 의미 다름."
+        m_rep = re.search(r"대표보고\s*[:：]\s*([^\n]+)", body)
+        m_purp = re.search(r"보유목적\s*[:：]\s*([^\n]+)", body)
+        m_bef = re.search(r"보고전\s*[:：]\s*([\d.]+%)", body)
+        m_aft = re.search(r"보고후\s*[:：]\s*([\d.]+%)", body)
+        try:
+            delta = float(m_aft.group(1).replace("%", "")) - float(m_bef.group(1).replace("%", ""))
+        except Exception:
+            delta = 0
+        rep_name = m_rep.group(1).strip()[:40] if m_rep else "-"
+        purp = m_purp.group(1).strip() if m_purp else "-"
+        is_pension = any(w in rep_name for w in ["국민연금", "공무원연금", "사학연금", "우정사업본부"])
+        is_fund = any(w in rep_name for w in ["피델리티", "블랙록", "Vanguard", "JP Morgan", "Capital", "Fidelity", "BlackRock"])
+        if is_pension and delta > 0:
+            tone = "국내 최대 연기금의 신규 진입·확대는 강한 매수 시그널 (장기 보유·정책적 매수)"
+        elif is_pension and delta < 0:
+            tone = "연기금 비중 축소는 정기 리밸런싱 vs 의도적 매도 구분 필요"
+        elif is_fund and delta > 0:
+            tone = "외국계 자산운용사 신규 진입은 글로벌 가치투자 인정 신호"
+        elif is_fund and delta < 0:
+            tone = "외국계 자산운용사 매도는 단기 수급 부담, 외국인 보유율 추이 점검"
+        elif "경영권" in purp:
+            tone = "경영권 영향 보유는 향후 적극적 행동주의 가능성 (이사 추천·배당 요구·자사주 매입 압박)"
+        elif delta > 0:
+            tone = "지분 확대는 주가 상승 기대감 또는 경영 개입 의지 시그널"
+        else:
+            tone = "지분 축소는 차익 실현 또는 포트폴리오 재조정"
+        return f"{co} 대량보유 보고 ({rep_name}) — {tone}. 보유목적 '{purp}' + 지분 변동 {delta:+.2f}%p이 단기 수급의 핵심. {sector} 업종 외국인·기관 보유율 동향과 함께 추적. 경영권 영향 시 후속 주주제안·이사회 변화 모니터링."
+
+    # 경영권 분쟁·소송
     if "경영권분쟁" in rep or "소송" in rep:
-        return f"분쟁 종목은 단기 변동성이 매우 큼. 가처분 결정·표 대결 결과에 따라 양극단 시나리오. 보유자는 리스크 관리, 투기적 진입은 신중."
+        return f"{co} 법적 분쟁은 단기 변동성 극대화 종목. 보유자는 즉시 리스크 관리 필요, 신규 진입은 매우 신중. 핵심 시나리오: ① 가처분 인용 시 주총 무산·경영권 변경 가능성, ② 가처분 기각 시 기존 경영진 안정·다음 라운드 분쟁 지속, ③ 합의 시 단기 안정. {sector} 업종 평균 변동성보다 2-3배 높을 수 있음. 분쟁 결과까지 베팅 성격, 펀더멘털 분석 의미 약화."
+
+    # 투자판단 관련
     if "투자판단" in rep:
         if "허가" in body or "승인" in body:
-            return f"규제기관 허가/승인은 매출 인식·사업화 출발점. 보험 등재·해외 인허가·생산 capacity 등 후속 일정이 실제 매출로 연결되는 핵심 트리거."
-        return f"투자판단 관련 본문을 정독하고 호재/악재 판별 후 관련 일정 트래킹. 시장 반응과 수급 변화 모니터링."
-    if "IR" in rep or "기업설명회" in rep:
-        return f"IR은 가이던스·신사업·실적 코멘트가 시장 예상에 부합하는지 확인하는 자리. 발표 후 주가 반응이 가장 신뢰할만한 시그널."
+            m_item = re.search(r"품목명\s*[:：]\s*([^\n]+)", body)
+            return f"{co} 규제기관 허가/승인은 매출 인식·사업화 출발점. 핵심 후속 마일스톤: ① 보험 등재(약가 협상 6-12개월 소요), ② 첫 처방·매출 인식 시점, ③ 해외 인허가(미국 FDA·유럽 EMA) 신청·승인, ④ 생산 capacity 확보, ⑤ 의료기관 처방 의사 채택률. {sector} 업종 동종 신약/제품의 출시 후 매출 곡선과 비교해 본격 매출은 통상 출시 후 6-12개월. 글로벌 라이선스 아웃 협상 가능성도 추가 모멘텀."
+        if "취소" in body and "가압류" in body:
+            return f"{co} 가압류 취소는 대주주 보유주식 안정화 호재. 단기 수급 안정 + 향후 추가 분쟁 가능성 해소. 다만 가압류 발생 원인(대주주 채무·소송)이 완전히 해결됐는지 본문 정독 필요. {sector} 업종 평균보다 변동성 정상화 기대."
+        if "선정" in body:
+            return f"{co} 국책 과제·신사업 선정은 정부·공공 자금 확보 + 기술 검증 신호. 본격 매출 인식까지는 통상 1-3년 소요. {sector} 업종에서 R&D 우위 확보 + 후속 상용화 단계 모니터링."
+        return f"{co} 투자판단 관련 본문을 정독하고 호재/악재 판별 후 관련 일정·수치 트래킹. 본문 단서 + 시장 반응(주가·거래량)이 가장 신뢰할만한 시그널."
+
+    # 풍문/해명
     if "풍문" in rep or "해명" in rep:
-        return f"미확정·사실무근 답변은 단기 변동성을 잠시 진정시키나, 근본적 의문은 후속 공시로 해소되어야 함."
-    return f"{co}의 일반 공시. 본문 내용 기반 호재/악재 판별, 후속 일정과 시장 반응 모니터링."
+        return f"{co} 풍문 해명 (미확정/사실무근) — 단기 변동성 일시적 진정. 그러나 풍문이 발생한 근본 원인(루머·내부자 정보·시장 기대)은 후속 공시 또는 시간 경과로만 해소. {sector} 업종에서 유사 사례 관찰 필요."
+
+    # IR 안내
+    if "IR" in rep or "기업설명회" in rep:
+        return f"{co} IR 개최 — 가이던스·신사업·실적 코멘트가 시장 컨센서스에 부합하는지 확인. 발표 후 24-48시간 주가 반응이 가장 신뢰할만한 시그널. 주요 점검: ① 분기 가이던스 vs 컨센, ② 신사업 진척도, ③ R&D 파이프라인 업데이트, ④ M&A·자본정책. {sector} 업종 동시기 다른 IR과 비교해 상대적 모멘텀 판단."
+
+    return f"{co} ({sector}) 일반 공시 — 본문 내용 기반 호재/악재 판별, 후속 일정과 시장 반응 모니터링."
 
 
-# ============= AUTO WATCH (Monitoring checkpoints) =============
+# ============= AUTO WATCH — 강화 (구체 일정·수치·임계점) =============
 def auto_watch(d):
     rep = d["report"]
     co = d["company"]
+    body = d.get("body_full", "")
+    sector = d.get("industry") or classify_industry(d)
+
     if "영업(잠정)실적" in rep or "잠정실적" in rep:
-        return ["다음 분기 가이던스 발표", "외국인·기관 수급 변화", "동종업계 어닝 비교"]
+        return [
+            "1Q26 확정실적 발표 (감사보고서 시점, 잠정 vs 확정 차이 0% 이상이면 신뢰도 높음)",
+            "2Q26 가이던스 발표 — 컨센서스 vs 회사 가이던스 갭 모니터링",
+            f"외국인·기관 보유율 변화 (분기말 vs 발표 후 1주일)",
+            f"동종업계 ({sector}) 잠정실적 비교 — 상대적 모멘텀 판단",
+            "애널리스트 목표주가·투자의견 변경 (어닝콜 후 24-48시간 내)",
+        ]
     if "단일판매" in rep and "체결" in rep:
-        return ["계약 진행 상황 (분기 IR)", "후속 수주 발표", "수주잔고 누적 추이"]
+        m_period = re.search(r"계약(?:기간|시작일|시작)\s*[:：]\s*([^\n]+)", body)
+        m_end = re.search(r"계약종료일?\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"계약 인도·매출 인식 시작 시점 ({m_period.group(1).strip() if m_period else '본문 참조'})",
+            "후속 추가 수주 발표 — 동일 고객사 반복 수주는 강한 시그널",
+            f"분기 수주잔고 누적 추이 (분기 IR 자료의 backlog 항목)",
+            "해당 사업부 영업이익률 기여도 (세그먼트별 손익)",
+            f"동종업계 ({sector}) 다른 회사들의 동시기 수주 동향과 비교",
+        ]
     if "공급계약해지" in rep:
-        return ["대체 수주 발표", "1Q26 매출 실제 영향", "해당 사업부 다각화 진척"]
-    if "자기주식취득" in rep or "주식소각" in rep:
-        return ["취득·소각 완료 공시", "추가 자사주 정책 발표", "EPS·BPS 변화"]
+        return [
+            "대체 수주 발표 — 해지 후 1-3개월 내 회복 vs 장기화 여부",
+            "1Q26·2Q26 실적 가이던스 재조정 발표 (컨센 하향 가능성)",
+            f"해당 사업부 다각화 진척 ({sector} 업종 신규 거래선 확보)",
+            "해지 사유 추가 설명 — 재계약 가능성 vs 구조적 단절",
+            "주요 거래선의 회사 정책 변화 (해당 거래선 추가 해지 도미노 가능성)",
+        ]
+    if "자기주식취득" in rep:
+        m_end = re.search(r"취득(?:종료|예정)일?\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"취득 진행 상황 — 매주 기 취득 수량 공시 (예정일: {m_end.group(1).strip() if m_end else '본문 참조'})",
+            "취득 완료 후 후속 소각 결정 여부 (취득만 vs 소각으로 EPS 영구 제고)",
+            "추가 자사주 정책 발표 (분기 IR 자료)",
+            f"동종업계 ({sector}) 주주환원 정책 비교 - 트렌드 추적",
+            "EPS·BPS·ROE 변화 추정 (취득량 확정 후)",
+        ]
+    if "주식소각" in rep:
+        m_close = re.search(r"예정일자\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"소각 완료 공시 ({m_close.group(1).strip() if m_close else '본문 참조'})",
+            "발행주식수 감소 → EPS·BPS 변화 정량 추정",
+            "추가 소각 정책 (정기적 소각 vs 일회성)",
+            "동종업계 소각 사례와 PER·PBR 변화 비교",
+        ]
     if "자기주식처분" in rep:
-        return ["처분 진행 상황", "처분 목적별 용도 자금 사용", "추가 처분 가능성"]
+        m_purpose = re.search(r"처분목적\s*[:：]\s*([^\n]+)", body)
+        purpose = m_purpose.group(1).strip()[:80] if m_purpose else ""
+        is_emp = any(w in purpose for w in ["근무", "상여", "임직원", "스톡옵션", "RSU", "ESOP"])
+        if is_emp:
+            return [
+                "임직원 수령 후 매도 시점 (보호예수 종료 후 매물화)",
+                "주가 연동 보상 정책의 효과 (임직원 책임경영 메시지)",
+                "유사 보상 추가 처분 가능성",
+            ]
+        return [
+            "처분 진행 상황 — 시장 매도 매물 출회 여부",
+            f"처분 자금 사용처 ({purpose}) 진척",
+            "추가 처분 가능성 + 자사주 정책 변화",
+            "외국인·기관 매수가 처분 매물 흡수 여부",
+        ]
     if "전환사채" in rep and "발행" in rep:
-        return ["주가 vs 전환가 추이", "최저조정가 트리거 여부", "1년 후 전환청구 시점"]
+        m_min = re.search(r"최저조정\s*[:：]\s*([\d,]+)원", body)
+        m_conv_start = re.search(r"청구시작\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"주가 vs 전환가 추이 — 전환가 위 유지 시 매물 출회 압박",
+            f"최저조정가 {m_min.group(1) + '원' if m_min else '본문 참조'} 근접 여부 — 트리거 시 추가 희석",
+            f"전환청구 시작일 ({m_conv_start.group(1).strip() if m_conv_start else '약 1년 후'}) — 첫 전환청구 시점",
+            "인수자(코스닥벤처투자신탁 등)의 보유 의도 변화",
+            "발행 자금의 실제 사용처 진척 (분기 IR)",
+        ]
     if "유상증자" in rep:
-        return ["발행가 확정 공시", "청약률·실권주 비중", "자금 사용 진척"]
+        return [
+            "발행가 확정 공시 (발행가 = 시가 - 할인율, 통상 25-30%)",
+            "청약률·실권주 비중 — 90%↑면 시장 신뢰, 70%↓면 부담",
+            "주주배정 시 신주인수권 거래 시작/종료일",
+            "자금 사용 진척 — 분기 IR로 실제 집행 여부 점검",
+            "유상증자 직전·직후 1개월 주가 패턴 (할인율 메우기)",
+        ]
     if "전환청구" in rep:
-        return ["신주 상장일", "추가 전환청구 잔여 물량", "차익 실현 매물"]
+        m_listing = re.search(r"신주상장(?:예정일)?\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"신주 상장일 ({m_listing.group(1).strip() if m_listing else '본문 참조'}) — 매물 출회 정점",
+            "추가 전환청구 잔여 물량 (미전환 잔량)",
+            "차익 실현 매물 (전환가 vs 시장가 갭)",
+            "전환 후 발행주식수 변동 → EPS 희석 정량",
+        ]
     if "회사합병" in rep:
-        return ["주주총회 일정", "매수청구권 행사 규모", "합병 후 통합 시너지"]
+        m_close = re.search(r"합병기일\s*[:：]\s*([^\n]+)", body)
+        m_oppose = re.search(r"반대기한\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"매수청구권 반대 기한 ({m_oppose.group(1).strip() if m_oppose else '본문 참조'}) — 행사 규모가 단기 수급 영향",
+            f"합병기일 ({m_close.group(1).strip() if m_close else '본문 참조'}) — 거래정지 기간",
+            "주주총회 통과 여부 (대주주·반대측 표 대결)",
+            "합병 후 통합 시너지 — R&D 효율·영업·생산 통합 진척",
+            "합병 신주 상장 후 1-3개월 주가 패턴 (합병프리미엄 해소)",
+        ]
     if "타법인주식" in rep and "취득" in rep:
-        return ["출자 자회사 첫 매출", "PMI 진척", "추가 출자 가능성"]
+        m_close = re.search(r"예정일자\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"출자 납입 ({m_close.group(1).strip() if m_close else '본문 참조'}) 완료",
+            "출자 자회사 첫 매출 인식 시점",
+            "PMI(인수후 통합) 진척 — 인사·시스템·고객 통합",
+            "추가 출자·M&A 가능성 (한 번의 인수가 아닌 시리즈 매수)",
+            "ROIC 회수 기간 (통상 3-5년)",
+        ]
     if "대량보유" in rep:
-        return ["다음 분기 변동 보고", "보유목적 변경 여부", "수급 동향"]
+        return [
+            "다음 분기 변동 보고 (지분 +/- 1%p 이상 시)",
+            "보유목적 변경 여부 (단순투자 → 경영권 영향)",
+            "외국인·기관 보유율 추이 (보유자별 누적 변화)",
+            "연기금·블록딜 매수 시 추종 매수 가능성",
+            "주주명부 폐쇄·주총 의안 안건 추적",
+        ]
     if "경영권분쟁" in rep or "소송" in rep:
-        return ["가처분 결정문 공시", "임시주총 개최 여부", "최대주주 vs 청구측 지분율"]
+        return [
+            "가처분 결정문 공시 (인용·기각·일부인용)",
+            "임시주총 개최 여부 (기각 시 진행, 인용 시 무산)",
+            "최대주주 vs 청구측 지분율 변화 (대량보유 보고)",
+            "표 대결 결과 vs 합의 도출 가능성",
+            "분쟁 종결 후 회사 정책 변화 (배당·자사주·신사업)",
+        ]
     if "기업가치제고" in rep:
-        return ["구체적 KPI 발표(ROE·배당성향)", "자사주 매입·소각 실행", "분기 IR 가이던스"]
+        return [
+            "구체적 KPI 발표 (ROE·배당성향·자사주 비중) — 정량적 가이드",
+            "자사주 매입·소각 실행 시점 (말로만 vs 실행)",
+            "분기 IR 가이던스 — 추진 진척",
+            "주주환원 정책 트렌드 (반복성 vs 일회성)",
+            "PBR 재평가 여부 (코리아 디스카운트 해소)",
+        ]
     if "투자판단" in rep:
-        return ["보험 등재·매출 인식 시점", "해외 진출 발표", "후속 임상·R&D"]
+        if "허가" in body or "승인" in body:
+            return [
+                "보험 등재 신청·결정 (약가 협상 6-12개월)",
+                "첫 처방·매출 인식 시점 (출시 후 1-3개월 내 첫 매출)",
+                "해외 인허가 (미국 FDA·유럽 EMA·일본 PMDA)",
+                "생산 capacity 확보 (CMO 계약·자체 생산설비)",
+                "글로벌 라이선스 아웃 협상 진척",
+            ]
+        return [
+            "후속 공시 (구체 수치·일정 추가 공시)",
+            "주가·거래량 시장 반응",
+            "동종업계 유사 사례와 비교",
+            "애널리스트 코멘트·리포트 발표",
+        ]
     if "IR" in rep or "기업설명회" in rep:
-        return ["IR 발표 자료 검토", "가이던스 vs 컨센 비교", "분기 실적 발표일"]
-    return ["분기 IR 발표", "DART 후속 공시", "외국인·기관 수급"]
+        m_when = re.search(r"개최일시\s*[:：]\s*([^\n]+)", body)
+        return [
+            f"IR 발표 자료 검토 ({m_when.group(1).strip() if m_when else '본문 참조'}) — 가이던스·신사업·R&D 코멘트",
+            "가이던스 vs 컨센 비교 (상회·미스 갭)",
+            "발표 후 24-48시간 주가 반응 (가장 신뢰할만한 시그널)",
+            "분기 실적 발표일까지 외국인·기관 수급",
+            "동시기 동종업계 IR 비교 (상대적 모멘텀)",
+        ]
+    return [
+        "분기 IR 발표 — 가이던스·실적 코멘트",
+        "DART 후속 공시 (구체 수치·일정 추가)",
+        "외국인·기관 수급 변화",
+        "동종업계 트렌드와 비교",
+    ]
 
 
 # ============= 빈값 정규화 (&nbsp; → "-") =============
@@ -536,9 +991,10 @@ for d in DISCLOSURES:
     d["segments"] = ov.get("segments") or extract_segments(d)
     d["customers"] = ov.get("customers") or extract_customers(d)
     d["strength"] = ov.get("strength") or extract_strength(d)
-    d["signal_reason"] = signal_reason(d)
-    d["insight"] = auto_insight(d)
-    d["watch"] = auto_watch(d)
+    # Custom override가 있으면 그것 사용, 없으면 강화된 자동 분석
+    d["signal_reason"] = ov.get("custom_signal_reason") or signal_reason(d)
+    d["insight"] = ov.get("custom_insight") or auto_insight(d)
+    d["watch"] = ov.get("custom_watch") or auto_watch(d)
     d["fin"] = fin_oneline(d)
     p = prices.get(d["code"])
     d["price"] = p
