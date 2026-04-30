@@ -143,31 +143,31 @@
       "철강 원가(후판 가격) 분기별 추이",
       "경쟁사 한화오션과 수주잔고 격차 변화"
     ],
-    "bm_kr": "삼성중공업: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "삼성중공업은 삼성그룹 계열 종합 조선사로, 초대형 컨테이너선·LNG운반선·드릴십 등 고부가가치 선박을 주력으로 한다. 2025~2026년 LNG선 초호황 사이클 수혜로 수주잔고 사상 최대를 기록 중이며, 해양플랜트(FLNG·드릴십) 수주 재개로 외형 성장이 가속화되고 있다.",
     "segments_kr": [
       {
-        "name": "shipbuilding",
-        "pct": "-",
-        "note": ""
+        "name": "LNG운반선/가스선",
+        "pct": "~50",
+        "note": "글로벌 LNG 물동량 증가 수혜, 척당 2,500~3,000억원 고단가"
       },
       {
-        "name": "including LNG carriers",
-        "pct": "-",
-        "note": ""
+        "name": "컨테이너선·탱커",
+        "pct": "~30",
+        "note": "VLCC·초대형 컨테이너선 건조, 안정적 수주"
       },
       {
-        "name": "LNG-FSRU",
-        "pct": "-",
-        "note": ""
+        "name": "해양플랜트",
+        "pct": "~15",
+        "note": "FLNG·드릴십 수주 재개, 고마진 사업"
       },
       {
-        "name": "small LNG carriers/LNG bunkering vessels",
-        "pct": "-",
-        "note": ""
+        "name": "기타(특수선·수리)",
+        "pct": "~5",
+        "note": "해군 함정·유지보수"
       }
     ],
-    "strength_kr": "engages in shipbuilding, offshore, and energy and infra businesses 글로벌",
-    "customers_kr": ""
+    "strength_kr": "LNG선 건조 기술력 세계 최상위권, 삼성그룹 브랜드·자금력 기반 대형 프로젝트 수주, 스마트십·친환경 LNG 이중연료 추진 선박 기술 보유.",
+    "customers_kr": "카타르에너지, Shell, TotalEnergies, Euronav 등 글로벌 에너지 메이저 및 대형 해운사"
   },
   "012450": {
     "custom_signal_reason": "한화에어로스페이스 2026 1Q 매출 5.75조(컨센-8%), 영업익 6,389억(컨센-18%), 순이익 2,604억(컨센-45%). 폴란드 K9·천무 수출 인식 일정 이월로 예상 하회. 그러나 수주잔고 40조 최대(노르웨이 천무 1.3조 추가), 2030년 CAGR 15-20% 유지. 주가 -0.2% — 컨센 하회 충격 이미 사전에 반영, 잔고 40조 확인으로 하방 지지.",
@@ -181,21 +181,26 @@
       "우주항공사업부 분사 또는 상장 검토 여부",
       "연간 수주 목표 30조 달성 여부 (2026년 연간)"
     ],
-    "bm_kr": "한화에어로스페이스: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "한화에어로스페이스는 항공기 엔진·부품, 지상 방산장비(자주포·장갑차), 우주발사체 사업을 영위하는 한화그룹 핵심 방산 계열사다. K9 자주포의 글로벌 수출 급증과 함께 폴란드·루마니아·호주 등 대형 수출 계약이 이어지며 방산 부문이 폭발적으로 성장 중이다.",
     "segments_kr": [
       {
-        "name": "marine gas turbine engines",
-        "pct": "-",
-        "note": ""
+        "name": "지상방산(K9·레드백·천무)",
+        "pct": "~55",
+        "note": "K9 자주포 세계 1위, 수출 단가 상승 + 유럽 수요 급증"
       },
       {
-        "name": "gensets",
-        "pct": "-",
-        "note": ""
+        "name": "항공엔진·부품",
+        "pct": "~30",
+        "note": "GE·P&W 엔진 부품 협력, MRO 성장"
+      },
+      {
+        "name": "우주·한화시스템 연계",
+        "pct": "~15",
+        "note": "누리호 엔진·위성 발사체, 미래 성장 축"
       }
     ],
-    "strength_kr": "동사 offers Korea space launch vehicle; satellite services, such as earth observation and satellite communication; fixed and rotary wing engines, guided missile engines, electric propulsion systems, aircraft and missile components, and aircraft engine ",
-    "customers_kr": ""
+    "strength_kr": "K9 자주포 글로벌 시장점유율 1위, 수십 년 방산 수출 네트워크, 한화그룹의 대규모 R&D·인수합병 지원, 나토 표준 장비로 유럽 수요 직결.",
+    "customers_kr": "대한민국 국군, 폴란드·노르웨이·호주·루마니아 등 나토 국가 국방부"
   },
   "035420": {
     "custom_signal_reason": "NAVER 2026 1Q 매출 3.24조(컨센+3%), 영업익 5,418억(컨센-3%), 순이익 2,853억(컨센-43% 대폭 하회). 순이익 하회는 AI 인프라 GPU 투자 및 LG CNS 지분 평가손 등 일회성 요인. 광고·커머스·클라우드 매출은 안정적 성장. 엔터프라이즈(라인웍스) +18.8%. 주가 -4.1% — 순이익 쇼크.",
@@ -242,21 +247,26 @@
       "연간 순이익 목표 1.5조 달성 가능성",
       "주주환원 확대(배당·자사주) 발표 여부"
     ],
-    "bm_kr": "키움증권: 증권·자본시장. 주요 사업 — online brokerage services",
+    "bm_kr": "키움증권은 국내 최대 개인투자자용 온라인 주식거래 플랫폼 영웅문을 운영하는 리테일 특화 증권사다. MTS·HTS 기반 수수료 수익과 금융상품 판매가 핵심이며, 개인투자자 주식 위탁매매 시장점유율 1위(약 20~25%)를 유지하고 있다.",
     "segments_kr": [
       {
-        "name": "online brokerage services in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "위탁매매(브로커리지)",
+        "pct": "~55",
+        "note": "국내외 주식·ETF 거래 수수료, 개인 MTS 1위"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "금융상품·IB",
+        "pct": "~25",
+        "note": "ELS·채권·펀드 판매, 기업금융"
+      },
+      {
+        "name": "자기매매·기타",
+        "pct": "~20",
+        "note": "채권·파생 자기매매, 해외 법인"
       }
     ],
-    "strength_kr": "동사 offers online trading system to trade in foreign stock, local and overseas futures, and F/X margin trading, as well as equity, futures, and option deals",
-    "customers_kr": ""
+    "strength_kr": "영웅문 플랫폼 락인 효과, 업계 최저 수준 수수료 정책으로 가격 경쟁력 우위, 개인투자자 디지털 금융 원스톱.",
+    "customers_kr": "국내 개인 주식 투자자(계좌수 1,500만+), 중소기업 IB 고객"
   },
   "047050": {
     "custom_signal_reason": "포스코인터내셔널 2026 1Q 매출 8.41조(컨센+2%), 영업익 3,575억(컨센+14%), 순이익 2,654억(컨센+56% 대폭 상회). LNG 트레이딩·에너지 사업 확대 + 미얀마 가스전 분기별 가격 연동 상승. 북미 LNG(알래스카·셰니에르) 100만톤+110만톤 장기 공급계약. 주가 +2.8% — 어닝서프라이즈 반응.",
@@ -270,26 +280,31 @@
       "포스코인터내셔널 연간 영업익 1.3조 달성 (전년 1.2조 대비)",
       "목표주가 컨센서스 10만원 상향 여부"
     ],
-    "bm_kr": "포스코인터내셔널: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "포스코인터내셔널은 POSCO그룹 계열 종합상사로, 철강·2차전지소재 원료 트레이딩, 미얀마·호주 등 에너지 자원 개발, 식품(팜유·곡물) 사업을 영위한다. 양극재 핵심 원료인 니켈 공급망 구축과 LNG 트레이딩 확대로 수익성이 빠르게 개선되고 있다.",
     "segments_kr": [
       {
-        "name": "GIGA STEEL",
-        "pct": "-",
-        "note": ""
+        "name": "철강재·원료 트레이딩",
+        "pct": "~40",
+        "note": "POSCO 철강 수출 대행 + 글로벌 철강 트레이딩"
       },
       {
-        "name": "an automotive steel sheets for automakers",
-        "pct": "-",
-        "note": ""
+        "name": "에너지(LNG·가스전)",
+        "pct": "~30",
+        "note": "미얀마·호주 가스전 생산, LNG 트레이딩"
       },
       {
-        "name": "parts companies",
-        "pct": "-",
-        "note": ""
+        "name": "2차전지소재 원료",
+        "pct": "~15",
+        "note": "니켈·리튬 공급망, 포스코그룹 배터리소재 연계"
+      },
+      {
+        "name": "식품·팜오일",
+        "pct": "~15",
+        "note": "인도네시아 팜유 농장, 곡물 트레이딩"
       }
     ],
-    "strength_kr": "It engages in the development of oil and gas resources; LNG terminal and connected business; power generation project development, investment, financial procurement, execution, and operation; wind power, solar power, sewage heat energy business, CCS,",
-    "customers_kr": ""
+    "strength_kr": "POSCO그룹 철강·배터리 밸류체인 전방 독점 공급망, 에너지 자원 직접 생산으로 마진 안정, 글로벌 트레이딩 네트워크.",
+    "customers_kr": "POSCO·포스코퓨처엠 등 그룹사, 글로벌 철강사·에너지기업"
   },
   "051910": {
     "custom_signal_reason": "LG화학 2026 1Q 매출 12.25조(컨센+8%), 영업손실 -497억(컨센 -1,684억 대비 70% 개선). LG에너지솔루션 영업손실 -2,078억(EV 파우치 물량 감소). 여수 NCC 2공장 가동중단 불구 석화 일회성 이익(유럽 반덤핑 환급) 방어. 손실 폭 예상 대비 크게 줄었으나 구조적 적자 우려는 잔존. 주가 -2.6%.",
@@ -303,31 +318,31 @@
       "양극재 래깅 효과 2Q 영업익 흑자전환 여부",
       "LGES 연간 영업익 흑자전환 시점 (컨센 2027년)"
     ],
-    "bm_kr": "LG화학: 화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "LG화학은 배터리 소재(양극재·분리막), 석유화학(NCC·PE·ABS), 생명과학(의약품·농화학) 3개 축으로 운영되는 LG그룹 소재 핵심 계열사다. LG에너지솔루션 지분 80% 보유로 2차전지 성장 모멘텀을 내포하며, 양극재는 2027년 글로벌 탑3 목표로 증설 중이다.",
     "segments_kr": [
       {
-        "name": "ethylene-based synthetic resin",
-        "pct": "-",
-        "note": ""
+        "name": "첨단소재(양극재·엔지니어링소재)",
+        "pct": "~25",
+        "note": "NCMA 양극재, LG에너지솔루션·해외 배터리사 공급"
       },
       {
-        "name": "such as ethylene vinyl acetate",
-        "pct": "-",
-        "note": ""
+        "name": "석유화학",
+        "pct": "~50",
+        "note": "에틸렌·프로필렌·ABS, 중국 공급과잉으로 마진 압박"
       },
       {
-        "name": "high density polyethylene",
-        "pct": "-",
-        "note": ""
+        "name": "생명과학",
+        "pct": "~10",
+        "note": "의약품 원료·농화학, 안정적 캐시카우"
       },
       {
-        "name": "low density polyethylene",
-        "pct": "-",
-        "note": ""
+        "name": "LG에너지솔루션 지분이익",
+        "pct": "~15",
+        "note": "연결 자회사, EV배터리 글로벌 2위"
       }
     ],
-    "strength_kr": "It offers ethylene-based synthetic resin products, such as ethylene vinyl acetate, high density polyethylene, low density polyethylene, linear low-density polyethylene, polyolefin elastomer, polyvinyl chloride, metallocene PE, and UNIQABLE, a recycla",
-    "customers_kr": ""
+    "strength_kr": "LG에너지솔루션 지분 보유로 배터리 성장 직결, 양극재 독자 기술(NCMA 니켈 90%+), 글로벌 석유화학 생산 인프라.",
+    "customers_kr": "LG에너지솔루션, GM·Ford·Stellantis 등 글로벌 완성차 OEM, 글로벌 화학사"
   },
   "307950": {
     "custom_signal_reason": "현대오토에버 2026 1Q 매출 9,357억(컨센 0%), 영업익 212억(컨센-47% 대폭 하회), 순이익 179억(컨센-51%). 인건비·운영비 상승 + 신규 프로젝트 초기 비용 반영으로 수익성 급감. 자동차 IT서비스의 계절적 특성(1Q 저수익)도 영향. 주가 -5.0%.",
@@ -368,7 +383,32 @@
       "SC 세포치료제 플랫폼 IND 제출 여부",
       "레이저티닙 추가 적응증(뇌전이) 임상 현황",
       "연간 영업익 800억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "유한양행은 레이저티닙(렉라자) 등 항암 신약과 고혈압·당뇨 개량신약 처방 의약품을 주력으로 하는 국내 상위 제약사다. 얀센과 공동 개발한 레이저티닙 병용요법이 FDA 허가를 획득해 글로벌 로열티 수입이 빠르게 증가하고 있다.",
+    "segments_kr": [
+      {
+        "name": "전문의약품(ETC)",
+        "pct": "~60",
+        "note": "레이저티닙·항암제, 고혈압·당뇨 치료제"
+      },
+      {
+        "name": "일반의약품·건강기능식품",
+        "pct": "~20",
+        "note": "삐콤씨·안티푸라민 등 브랜드 OTC"
+      },
+      {
+        "name": "글로벌 기술수출 로열티",
+        "pct": "~15",
+        "note": "얀센 레이저티닙 병용요법 FDA 승인 → 로열티"
+      },
+      {
+        "name": "원료의약품·수입유통",
+        "pct": "~5",
+        "note": "해외 의약품 도입 판매"
+      }
+    ],
+    "strength_kr": "레이저티닙 글로벌 라이선스로 로열티 수입 안정화, 국내 의약품 유통망 최상위, 연구개발 투자 지속.",
+    "customers_kr": "얀센(존슨앤존슨), 국내 병원·약국 유통채널"
   },
   "003570": {
     "custom_signal_reason": "SNT다이내믹스 2026 1Q 매출 1,799억(컨센 없음), 영업익 213억, 순이익 202억. K2 전차 4차 양산 변속기 전면 적용 + 2월 방사청 1,337억 납품 계약. 방산+자동차 드라이브샤프트 이중 구조. 주가 +2.8% — 실적 호조 반응.",
@@ -539,26 +579,26 @@
       "포스코DX AI 솔루션 글로벌 수출 추진 여부",
       "연간 영업익 500억 달성 가능성"
     ],
-    "bm_kr": "포스코DX: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "포스코DX는 POSCO그룹의 스마트팩토리·디지털전환(DX) IT 서비스 전문 자회사다. 제철소 자동화·물류 스마트화·AI 공정 최적화 솔루션을 POSCO 계열사에 공급하며, 그룹 외부 제조업 DX 사업도 확장 중이다.",
     "segments_kr": [
       {
-        "name": "ICT solutions to construction",
-        "pct": "-",
-        "note": ""
+        "name": "스마트팩토리·공정자동화",
+        "pct": "~50",
+        "note": "POSCO 제철소 AI·로봇 자동화, 그룹 내부 수요 안정"
       },
       {
-        "name": "materials industry in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "IT서비스·ERP",
+        "pct": "~30",
+        "note": "그룹사 IT 인프라 운영·관리"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "물류·에너지 솔루션",
+        "pct": "~20",
+        "note": "스마트 물류, 에너지 관리 시스템"
       }
     ],
-    "strength_kr": "동사 offers technologies in various fields, such as self-learning, IoT, cloud, big data and AI, etc",
-    "customers_kr": ""
+    "strength_kr": "POSCO그룹 내부 수요 기반 안정 매출, 제철소 공정 자동화 노하우 경쟁 우위, 그룹 DX 허브 지위.",
+    "customers_kr": "POSCO·포스코인터내셔널·포스코퓨처엠 등 그룹사, 외부 제조업 고객"
   },
   "035250": {
     "custom_signal_reason": "강원랜드 2026 1Q 매출 3,789억(컨센+2%), 영업익 689억(컨센+8%), 순이익 397억(컨센-46%). 순이익 쇼크는 카지노 외 사업 비용 및 세금 이슈. 영업 실적 자체는 양호. 주가 0% — 혼조.",
@@ -570,16 +610,21 @@
       "방문객 수 YoY 회복률",
       "카지노 영업시간 확대 등 규제 완화 논의"
     ],
-    "bm_kr": "강원랜드: Resorts & Casinos 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "강원랜드는 내국인 출입이 허용된 국내 유일 합법 카지노를 운영하는 관광레저 공기업이다. 폐광 지역 경제 활성화 목적으로 설립되었으며, 카지노 수익이 전체 매출의 90% 이상을 차지하고 배당 성향이 높다.",
     "segments_kr": [
       {
-        "name": "Resorts & Casinos",
-        "pct": "-",
-        "note": ""
+        "name": "카지노",
+        "pct": "~92",
+        "note": "슬롯머신·테이블게임, 내국인 독점 허가권 보유"
+      },
+      {
+        "name": "호텔·콘도·스키장",
+        "pct": "~8",
+        "note": "하이원 리조트, 카지노 방문객 연계 숙박"
       }
     ],
-    "strength_kr": "Its business also covers condominium, golf course, and a water park",
-    "customers_kr": ""
+    "strength_kr": "내국인 카지노 독점 허가권으로 경쟁자 없음, 정부 규제 보호 아래 안정적 현금창출, 고배당 성향.",
+    "customers_kr": "내국인 카지노 방문객(연 200만+명), 관광 레저 이용객"
   },
   "051900": {
     "custom_signal_reason": "LG생활건강 2026 1Q 매출 1.58조(컨센-1%), 영업익 1,078억(컨센+101% 대폭 상회!), 순이익 841억(컨센+193%). 중국 사업 회복 + 비용 효율화로 수익성 서프라이즈. 주식소각(자사주 소각) 추가 발표. 주가 -0.2% — 이미 선반영.",
@@ -591,21 +636,26 @@
       "럭셔리 후·숨 중국 점유율 안정화",
       "연간 영업익 4,000억 달성 가능성"
     ],
-    "bm_kr": "LG생활건강: Household & Personal Products 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "LG생활건강은 화장품(후·숨·오휘), 생활용품(페리오·엘라스틴), 음료(코카콜라 국내 독점)를 영위하는 LG그룹 소비재 계열사다. 중국 럭셔리 화장품 수요 침체 장기화로 실적 하락 압박을 받고 있으며, 북미·일본 시장 다변화를 추진 중이다.",
     "segments_kr": [
       {
-        "name": "cosmetics under The History of Whoo",
-        "pct": "-",
-        "note": ""
+        "name": "화장품(럭셔리·매스)",
+        "pct": "~40",
+        "note": "후·숨·오휘 럭셔리, 중국 의존도 완화 추진"
       },
       {
-        "name": "O HUI",
-        "pct": "-",
-        "note": ""
+        "name": "생활용품(HPC)",
+        "pct": "~30",
+        "note": "치약·샴푸·세제, 국내 1~2위 시장지위"
+      },
+      {
+        "name": "음료(코카콜라 라이선스)",
+        "pct": "~30",
+        "note": "코카콜라 국내 독점 생산·유통, 안정적 캐시카우"
       }
     ],
-    "strength_kr": "동사 offers cosmetics under The History of Whoo, O HUI, SU:M37, belif, ISA KNOX, Sooryehan, CODE GLOKOLOR, VONIN, CAREZONE, The Saga of Xiu, BEYOND, CNP, CNP Rx, VDL, VDIVOV, Nature Collection, THEFACESHOP, fmgt, DR.Belmeur, Yehwadam, and BEAUTE brands",
-    "customers_kr": ""
+    "strength_kr": "코카콜라 독점 생산권 안정 현금 기반, 후·숨 럭셔리 브랜드 파워, LG그룹 유통·마케팅 인프라.",
+    "customers_kr": "국내외 백화점·면세점·드럭스토어, 중국·일본·북미 화장품 소비자"
   },
   "064400": {
     "custom_signal_reason": "LG씨엔에스 2026 1Q 매출 1.32조(컨센 0%), 영업익 942억(컨센 0%), 순이익 805억(컨센-7%). AI·클라우드 매출 7,654억(전체 58%, YoY+7%). 팔란티어 AX 협력·금융 차세대 수요 확대. 주가 -2.5%.",
@@ -617,31 +667,26 @@
       "AI 에이전트 솔루션 신규 고객 확보",
       "연간 매출 5.5조, 영업익 3,800억 달성 가능성"
     ],
-    "bm_kr": "LG씨엔에스: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "LG씨엔에스는 LG그룹의 IT서비스·스마트물류·금융IT 전문 자회사로, 2025년 코스피에 상장했다. 금융·제조·물류 분야 대규모 디지털전환 프로젝트와 AI 기반 스마트팩토리·물류 솔루션이 핵심이다.",
     "segments_kr": [
       {
-        "name": "cloud consulting",
-        "pct": "-",
-        "note": ""
+        "name": "IT서비스(SI·ITO)",
+        "pct": "~50",
+        "note": "그룹사 IT 아웃소싱, 금융·공공 대형 SI"
       },
       {
-        "name": "migration",
-        "pct": "-",
-        "note": ""
+        "name": "스마트물류·SCM",
+        "pct": "~30",
+        "note": "물류 자동화·로봇, 스마트 물류센터"
       },
       {
-        "name": "implementation",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "data/AI",
-        "pct": "-",
-        "note": ""
+        "name": "AI·DX 솔루션",
+        "pct": "~20",
+        "note": "AI 팩토리·디지털트윈, 외부 수주 확장"
       }
     ],
-    "strength_kr": "It offers cloud consulting, migration and implementation, data/AI, application modernization, and managed services; cloud infrastructure services; CloudXper, which provides end-to-end cloud services from cloud diagnosis and consulting to migration an",
-    "customers_kr": ""
+    "strength_kr": "LG그룹 IT 독점 수요 기반 안정 매출, 스마트물류 기술 경쟁력, IPO 후 독립 수주 확대.",
+    "customers_kr": "LG전자·LG화학·LG에너지솔루션 등 그룹사, KB국민은행·금융사"
   },
   "066970": {
     "custom_signal_reason": "엘앤에프 2026 1Q 매출 7,396억(컨센+11%), 영업익 1,173억(컨센+95% 어닝서프라이즈), 순이익 -654억(컨센+이탈). 영업 서프라이즈는 리튬 래깅 효과 + NCMA·하이니켈 믹스 개선. 그러나 순이익 적자는 금융비용·일회성 비용. 주가 -6.7%.",
@@ -653,26 +698,21 @@
       "전고체 배터리 소재 개발 단계 공개",
       "연간 영업익 목표 3,000억 달성 여부"
     ],
-    "bm_kr": "엘앤에프: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "엘앤에프는 NCM/NCMA 하이니켈 양극재 전문 제조사로, 테슬라·삼성SDI 등 글로벌 배터리 메이저에 공급한다. 니켈 함량 90%+ 단결정 양극재 기술이 핵심이며, 2024~2025년 EV 업황 부진으로 실적 조정 국면이나 2026년 회복 기대가 높다.",
     "segments_kr": [
       {
-        "name": "wireless TFT LCD",
-        "pct": "-",
-        "note": ""
+        "name": "NCM/NCMA 양극재",
+        "pct": "~95",
+        "note": "테슬라·삼성SDI 납품, EV용 하이니켈 주력"
       },
       {
-        "name": "PMMA plates",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "sheets",
-        "pct": "-",
-        "note": ""
+        "name": "기타소재·연구개발",
+        "pct": "~5",
+        "note": "차세대 소재 개발, LFP 다각화 검토"
       }
     ],
-    "strength_kr": "It offers cathode active materials used in IT devices, household appliances, and power tools, as well as electric vehicles and power storage devices",
-    "customers_kr": ""
+    "strength_kr": "테슬라 직납 양극재 공급사 지위, 단결정 NCMA 기술력, 국내 독립 양극재 업체 중 최대 규모.",
+    "customers_kr": "테슬라, 삼성SDI, SK온 등 글로벌 배터리 제조사"
   },
   "100840": {
     "custom_signal_reason": "SNT에너지 2026 1Q 매출 1,236억(컨센-12%), 영업익 228억(컨센-13%), 순이익 266억(컨센+29%). 발전·에너지 기자재 사업. 방산그룹(SNT그룹) 계열. 매출 컨센 하회에도 순이익은 상회.",
@@ -684,16 +724,21 @@
       "연간 영업익 목표 달성 여부",
       "해외 수주(동남아·중동) 확대 현황"
     ],
-    "bm_kr": "SNT에너지: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "SNT에너지는 열교환기·압력용기·가스터빈 부품 등 발전·플랜트 기자재를 제조하는 SNT그룹 계열 중공업 기업이다. LNG 발전소·정유·석유화학 플랜트 납품이 주력이며, 방산 계열사들과 함께 그룹 시너지를 이루고 있다.",
     "segments_kr": [
       {
-        "name": "Specialty Industrial Machinery",
-        "pct": "-",
-        "note": ""
+        "name": "열교환기·압력용기",
+        "pct": "~60",
+        "note": "발전소·석유화학 플랜트 납품, 고부가 기자재"
+      },
+      {
+        "name": "가스터빈 부품·유지보수",
+        "pct": "~40",
+        "note": "발전 설비 MRO, 해외 플랜트 수출"
       }
     ],
-    "strength_kr": "It provides air cooled heat exchangers/air fin coolers for petrochemical plants, oil refining plants, power plants, and other industrial plants; and surface condensers that are used for thermoelectric power plants, as well as nuclear power plants as ",
-    "customers_kr": ""
+    "strength_kr": "발전·플랜트 특수 기자재 기술력, SNT그룹 방산·에너지 네트워크, 장기 유지보수 계약.",
+    "customers_kr": "한국전력·발전 자회사, 국내외 플랜트 EPC사"
   },
   "103140": {
     "custom_signal_reason": "풍산 2026 1Q 매출 9,688억(컨센-30% 큰 폭 하회), 영업익 873억(컨센-8%), 순이익 780억(컨센+18%). 매출 하회는 구리·동 가격 급락·물량 조정. 그러나 영업익은 구리 마진 개선으로 방어. 방산용 탄약(155mm) 수출 견조. 주가 -2.8%.",
@@ -736,16 +781,26 @@
       "북경한미 중국 실적 회복 여부",
       "연간 영업익 목표 2,000억 달성 가능성"
     ],
-    "bm_kr": "한미약품: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "한미약품은 레이저티닙 계열 항암제 기술수출과 GLP-1 비만·당뇨 신약 파이프라인으로 주목받는 국내 상위 처방 전문 제약사다. 아모잘탄·로수젯 등 복합 개량신약이 원외처방 시장 상위권을 유지하며, 빅파마 라이선스 마일스톤이 핵심 성장축이다.",
     "segments_kr": [
       {
-        "name": "Drug Manufacturers - Specialty & Generic",
-        "pct": "-",
-        "note": ""
+        "name": "처방의약품(ETC)",
+        "pct": "~65",
+        "note": "아모잘탄·로수젯 등 개량신약 원외처방 상위권"
+      },
+      {
+        "name": "글로벌 기술수출 마일스톤",
+        "pct": "~20",
+        "note": "사노피·MSD·BMS 등 빅파마 라이선스 마일스톤"
+      },
+      {
+        "name": "원료의약품(API)·수출",
+        "pct": "~15",
+        "note": "자체 원료 생산, 해외 수출"
       }
     ],
-    "strength_kr": "It focuses on research areas with high unmet medical needs, including obesity, metabolism, oncology, and rare diseases",
-    "customers_kr": ""
+    "strength_kr": "복합제·개량신약 개발 역량, GLP-1 비만약 파이프라인 글로벌 주목, R&D 투자 업계 최고 수준.",
+    "customers_kr": "국내 병원·의원 처방 채널, 사노피·MSD 등 글로벌 빅파마"
   },
   "138930": {
     "custom_signal_reason": "BNK금융지주 2026 1Q 매출 3.39조, 영업익 2,831억(컨센-3%), 순이익 2,114억(컨센-5%). 부산·경남 지역금융 기반 안정적 실적. 배당 확대 기조 유지. 주가 -0.7%.",
@@ -787,21 +842,21 @@
       "삼성전자·SKH 주문 정상화 시점",
       "연간 영업익 500억 목표 달성 여부"
     ],
-    "bm_kr": "해성디에스: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "해성디에스는 반도체 패키징용 리드프레임 제조 전문사로, 차량용·파워반도체 패키징 소재 분야 글로벌 2위 수준이다. 전기차 전장·ADAS 반도체 수요 증가로 차량용 리드프레임 비중이 빠르게 확대되고 있다.",
     "segments_kr": [
       {
-        "name": "semiconductor components in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "리드프레임(차량용·산업용)",
+        "pct": "~70",
+        "note": "파워모듈·MCU 패키징, 전기차 수혜 직결"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "PKG 기판·기타",
+        "pct": "~30",
+        "note": "메모리·통신 반도체 패키지 기판"
       }
     ],
-    "strength_kr": "동사 offers lead frames for use in automotive, mobile device, personal computer, industrial, power, and consumer electronics applications; package substrates for use in AI, personal computer, server, SSD, IOT, mobile, and graphic card applications; tap",
-    "customers_kr": ""
+    "strength_kr": "리드프레임 글로벌 탑2 기술·생산 능력, 차량용 반도체 전환 수혜, NXP·인피니언 등 Tier1 고객.",
+    "customers_kr": "NXP·인피니언·STM·삼성전자·SK하이닉스 등 글로벌 반도체 제조사"
   },
   "214370": {
     "custom_signal_reason": "케어젠 2026 1Q 매출 227억, 영업익 102억, 순이익 117억. 전분기 대규모 적자(-71억)에서 완전 흑자전환. 펩타이드 기반 피부재생 소재(에스케어·헤어케어) 수출 회복. 주가 -0.5%.",
@@ -812,10 +867,26 @@
       "의료기기 소재 신규 파이프라인 공개",
       "연간 매출 900억, 영업익 380억 달성 여부"
     ],
-    "bm_kr": "케어젠 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "케어젠은 펩타이드 합성·바이오 화장품 원료·의약품 개발 전문 기업으로, 탈모·피부 재생 관련 독자 특허 펩타이드 소재를 글로벌 화장품·의약품 회사에 B2B 공급한다.",
+    "segments_kr": [
+      {
+        "name": "기능성 펩타이드 원료(B2B)",
+        "pct": "~60",
+        "note": "탈모·피부 재생 펩타이드, 글로벌 화장품사 공급"
+      },
+      {
+        "name": "의약품·건강기능식품",
+        "pct": "~25",
+        "note": "탈모 치료제·바이오 유사체 개발"
+      },
+      {
+        "name": "화장품 완제품",
+        "pct": "~15",
+        "note": "자체 브랜드 글로벌 수출"
+      }
+    ],
+    "strength_kr": "펩타이드 합성 특허 기술 보유, 고마진 B2B 원료 사업, 글로벌 화장품·의약품사 공급 네트워크.",
+    "customers_kr": "글로벌 화장품 원료 수입사, 국내외 제약·바이오 기업"
   },
   "279570": {
     "custom_signal_reason": "케이뱅크 2026 1Q 매출 3,239억, 영업익 324억, 순이익 332억. 전분기(110억 영업익) 대비 급증. 가상화폐 거래 호황→업비트 연계 수혜, 고금리 예금 수요. 재상장(IPO 재추진) 모멘텀. 주가 -1.0%.",
@@ -827,10 +898,26 @@
       "NIM 및 순이자마진 방어 여부",
       "케이뱅크 중금리대출 부실률 안정화"
     ],
-    "bm_kr": "케이뱅크 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "케이뱅크는 KT 계열의 인터넷전문은행으로, 비대면 예금·대출·결제 서비스를 제공한다. 가상자산 거래소 업비트와의 제휴로 빠르게 고객을 확보했으며, 중금리 대출·주택담보대출 확대를 추진 중이다.",
+    "segments_kr": [
+      {
+        "name": "가계대출(신용·주담대)",
+        "pct": "~70",
+        "note": "중금리 신용대출, 주택담보대출 확장"
+      },
+      {
+        "name": "예금·수신",
+        "pct": "~20",
+        "note": "고금리 정기예금, 업비트 연계 계좌 잔액"
+      },
+      {
+        "name": "수수료·기타",
+        "pct": "~10",
+        "note": "환전·이체 수수료, 업비트 제휴 수수료"
+      }
+    ],
+    "strength_kr": "업비트 독점 제휴로 가상자산 투자자 계좌 확보, 비대면 저비용 구조, KT그룹 디지털 시너지.",
+    "customers_kr": "개인 인터넷뱅킹 이용자, 업비트 가상자산 투자자"
   },
   "293490": {
     "custom_signal_reason": "카카오게임즈 2026 1Q 매출 829억(컨센-14%), 영업손실 -255억(컨센-62% 추가 악화), 순손실 -300억. 게임 출시 지연·비용 증가로 적자 확대. 오딘 글로벌 성과 부진. 주가 -3.0%.",
@@ -842,31 +929,26 @@
       "분기 영업손실 -100억 미만 회복 시점",
       "비용 구조 개선 로드맵 공개"
     ],
-    "bm_kr": "카카오게임즈: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "카카오게임즈는 카카오그룹 계열 게임 퍼블리셔·개발사로, 오딘·에버소울 등 모바일 MMORPG와 PC게임 서비스를 영위한다. 카카오 플랫폼 연동으로 마케팅 비용을 절감하며, 글로벌 시장 진출을 확대하고 있다.",
     "segments_kr": [
       {
-        "name": "and publishes various genres of games",
-        "pct": "-",
-        "note": ""
+        "name": "모바일게임 퍼블리싱",
+        "pct": "~55",
+        "note": "오딘·아키에이지워 등 MMORPG 매출 주력"
       },
       {
-        "name": "including PC",
-        "pct": "-",
-        "note": ""
+        "name": "PC·글로벌 게임",
+        "pct": "~25",
+        "note": "에버소울 글로벌, 스팀 플랫폼 진출"
       },
       {
-        "name": "mobile",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "VR platforms",
-        "pct": "-",
-        "note": ""
+        "name": "메타버스·블록체인",
+        "pct": "~20",
+        "note": "보라 블록체인 게임, NFT 플랫폼"
       }
     ],
-    "strength_kr": "동사 develops and publishes various genres of games, including PC, mobile, and VR platforms",
-    "customers_kr": ""
+    "strength_kr": "카카오 플랫폼 연동 유저 획득 비용 절감, MMORPG 개발·운영 노하우, 카카오프렌즈 IP 활용.",
+    "customers_kr": "국내외 모바일·PC 게임 이용자"
   },
   "375500": {
     "custom_signal_reason": "DL이앤씨 2026 1Q 매출 1.73조(컨센+5%), 영업익 1,574억(컨센+51% 어닝서프라이즈!), 순이익 1,601억(컨센+99%). 주택+플랜트 고수익 프로젝트 집중 인식. 분기 최대 영업익 수준. 주가 -2.1%.",
@@ -909,21 +991,26 @@
       "MLB Kids·Discovery 신규 카테고리 성과",
       "연간 영업익 5,000억 달성 가능성"
     ],
-    "bm_kr": "F&F: Apparel Manufacturing 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "F&F는 MLB·디스커버리 등 라이선스 패션 브랜드를 운영하는 의류 기업이다. MLB 브랜드의 중국·동남아 라이선스 사업이 핵심이며, MZ세대 스트리트 패션 트렌드에 힘입어 고성장했다.",
     "segments_kr": [
       {
-        "name": "apparel",
-        "pct": "-",
-        "note": ""
+        "name": "MLB 브랜드(라이선스)",
+        "pct": "~65",
+        "note": "MLB 볼캡·의류, 중국·동남아 라이선스 운영"
       },
       {
-        "name": "accessories in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "디스커버리·기타",
+        "pct": "~25",
+        "note": "아웃도어 브랜드, 국내 중심"
+      },
+      {
+        "name": "S.I.빌리지 등 유통",
+        "pct": "~10",
+        "note": "패션 편집샵 운영"
       }
     ],
-    "strength_kr": "동사 offers fashion products under the MLB, MLB KIDS, DISCOVERY, DUVETICA, SUPRA, and SERGIO TACCHINI brands; and skincare products under the BANILA CO brand",
-    "customers_kr": ""
+    "strength_kr": "MLB 중국 라이선스 독점권, MZ세대 스트리트 패션 트렌드 포착, 빠른 상품 기획·생산 체계.",
+    "customers_kr": "국내외 MZ세대 소비자, 중국·동남아 MLB 브랜드 팬"
   },
   "036530": {
     "custom_signal_reason": "SNT홀딩스 2026 1Q 매출 4,805억, 영업익 646억, 순이익 161억. SNT그룹 지주사. 자회사(SNT다이내믹스·SNT모티브·SNT에너지) K-방산 수혜 간접 수혜. 지주할인 구조이나 방산 밸류 상승으로 NAV 개선.",
@@ -934,31 +1021,26 @@
       "지주 할인 해소 트리거 여부",
       "연간 배당 확대 발표 여부"
     ],
-    "bm_kr": "SNT홀딩스: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "SNT홀딩스는 방산(자주포·장갑차 부품)·모터·에너지기자재 자회사들을 보유한 SNT그룹 지주회사다. SNT다이내믹스(방산)·SNT에너지(에너지기자재)·SNT모티브(모터)가 핵심 자회사이며, K방산 수출 확대의 수혜가 기대된다.",
     "segments_kr": [
       {
-        "name": "auto parts",
-        "pct": "-",
-        "note": ""
+        "name": "방산(SNT다이내믹스)",
+        "pct": "~40",
+        "note": "자주포·장갑차 구동·전동 시스템, K방산 수출"
       },
       {
-        "name": "defense",
-        "pct": "-",
-        "note": ""
+        "name": "에너지기자재(SNT에너지)",
+        "pct": "~35",
+        "note": "발전소 열교환기·압력용기"
       },
       {
-        "name": "semiconductor equipment",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "materials",
-        "pct": "-",
-        "note": ""
+        "name": "모터·드라이브(SNT모티브)",
+        "pct": "~25",
+        "note": "산업용·EV 구동 모터"
       }
     ],
-    "strength_kr": "It offers auto parts, defense products, semiconductor equipment and materials; precision machine tools and medium-large sized casting products; axle systems; and machine tools",
-    "customers_kr": ""
+    "strength_kr": "방산·에너지·모터 시너지, K9 자주포 수출 확대 시 자회사 수주 동반 성장.",
+    "customers_kr": "방위사업청, 한화에어로스페이스, 현대로템, 발전 자회사"
   },
   "108320": {
     "custom_signal_reason": "LX세미콘 2026 1Q 매출 3,888억(컨센-11%), 영업익 206억(컨센-24%), 순이익 112억. DDI(디스플레이 구동칩) 수요 조정으로 컨센 하회. OLED DDI 믹스 개선 중. 주가 +1.3% — 낙폭 과대 반등.",
@@ -970,26 +1052,26 @@
       "연간 영업익 800억 목표 달성 여부",
       "중국 팹리스 경쟁 대응 전략 공개"
     ],
-    "bm_kr": "LX세미콘: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "LX세미콘은 LX그룹 계열 팹리스 반도체 설계 기업으로, 디스플레이 구동칩(DDI)·전력관리칩(PMIC)이 주력이다. LG디스플레이 OLED DDI 독점 공급 지위를 보유하며 글로벌 DDI 시장 3~4위 수준이다.",
     "segments_kr": [
       {
-        "name": "solutions for mobile",
-        "pct": "-",
-        "note": ""
+        "name": "DDI(디스플레이구동IC)",
+        "pct": "~70",
+        "note": "LG디스플레이·BOE 등 OLED·LCD DDI, 글로벌 3위"
       },
       {
-        "name": "tablet",
-        "pct": "-",
-        "note": ""
+        "name": "PMIC(전력관리IC)",
+        "pct": "~20",
+        "note": "LG전자 가전·TV 전력 관리 칩"
       },
       {
-        "name": "watch",
-        "pct": "-",
-        "note": ""
+        "name": "기타 SoC·차량용",
+        "pct": "~10",
+        "note": "차량용 반도체 확장 시도"
       }
     ],
-    "strength_kr": "동사 offers organic light emitting diode (OLED) and liquid crystal display (LCD) solutions; RealTouch, an in-cell touch technology with touch function in display panels; OLED and LCD timing controller; video processor; power management IC; level shifte",
-    "customers_kr": ""
+    "strength_kr": "LG디스플레이 DDI 독점 공급, OLED DDI 기술 글로벌 탑티어, 팹리스 고마진 구조.",
+    "customers_kr": "LG디스플레이, BOE, 중국 OLED 패널사"
   },
   "034020": {
     "custom_signal_reason": "두산에너빌리티 2026년 4월 30일 1분기 IR 발표 예정(5월 6일). 수주잔고 최대 40조 접근, 가스터빈 7기 미국 빅테크 계약 1.2조, SMR 수주 목표 1.1조, 원전 파이프라인 풍부. 목표주가 105,000-122,000원.",
@@ -1001,7 +1083,32 @@
       "가스터빈 추가 수주(빅테크·발전사) 공시",
       "연간 수주 목표 13조 조기 달성 여부",
       "목표주가 10만원 도달 시점"
-    ]
+    ],
+    "bm_kr": "두산에너빌리티(구 두산중공업)는 원자력·가스터빈·해상풍력 발전설비를 제조하는 에너지 기자재 중공업 기업이다. SMR·APR1400 원자로 기자재, 가스터빈 국산화, 두산밥캣(소형 건설기계) 지분이 핵심 자산이며, 2026년 원자력 수퍼사이클 본격화로 실적이 급격히 개선 중이다.",
+    "segments_kr": [
+      {
+        "name": "원자력 기자재(APR·SMR)",
+        "pct": "~40",
+        "note": "체코·UAE 원전 기자재, SMR 뉴스케일 협력"
+      },
+      {
+        "name": "가스터빈·발전 설비",
+        "pct": "~35",
+        "note": "270MW급 가스터빈 국산화 완료, LNG 발전소 납품"
+      },
+      {
+        "name": "해상풍력·수소",
+        "pct": "~15",
+        "note": "8MW+ 해상풍력, 수소 터빈 개발"
+      },
+      {
+        "name": "두산밥캣(자회사)",
+        "pct": "~10",
+        "note": "소형 건설기계, 북미 시장 글로벌 1~2위"
+      }
+    ],
+    "strength_kr": "APR1400 원자력 기자재 국내 독점 공급, 가스터빈 국산화 성공, SMR 글로벌 협력 선도.",
+    "customers_kr": "한국수력원자력, 한국전력, 체코 CEZ·UAE ENEC(해외), 글로벌 EPC사"
   },
   "010130": {
     "custom_signal_reason": "고려아연 2026년 5월 7일 1Q IR 발표 예정. 아연 제련·비철금속 글로벌 1위. 경영권 분쟁(최윤범 vs 영풍·MBK) 일단락 후 사업 집중. 핵심광물(갈륨·게르마늄·인듐) 공급 독점 가치 부상.",
@@ -1013,31 +1120,31 @@
       "경영권 분쟁 완전 종결 여부",
       "배터리소재 리사이클링 사업 수주 현황"
     ],
-    "bm_kr": "고려아연: Other Industrial Metals & Mining 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "고려아연은 아연·연(납)·금·은·인듐을 생산하는 세계 최대 규모 비철금속 제련사다. 호주 선메탈 등 해외 광산에서 정광을 수입해 국내 온산 제련소에서 처리한다. 2차전지 소재(전구체·황산니켈)와 그린수소 사업으로 신성장 동력을 구축 중이다.",
     "segments_kr": [
       {
-        "name": "zinc slab ingots",
-        "pct": "-",
-        "note": ""
+        "name": "아연·연 제련",
+        "pct": "~55",
+        "note": "세계 1위 아연 제련 생산량, 글로벌 수출"
       },
       {
-        "name": "alloy jumbo blocks",
-        "pct": "-",
-        "note": ""
+        "name": "귀금속(금·은·인듐)",
+        "pct": "~25",
+        "note": "부산물 정제, 고마진 귀금속 회수"
       },
       {
-        "name": "anode ingots",
-        "pct": "-",
-        "note": ""
+        "name": "2차전지소재(황산니켈·전구체)",
+        "pct": "~15",
+        "note": "배터리소재 수직계열화 추진"
       },
       {
-        "name": "die cast ingots",
-        "pct": "-",
-        "note": ""
+        "name": "수소·재생에너지",
+        "pct": "~5",
+        "note": "그린수소 생산, ESG 신사업"
       }
     ],
-    "strength_kr": "동사 offers zinc slab ingots, alloy jumbo blocks, anode ingots, and die cast ingots; and lead and lead alloy ingots; and copper cathodes",
-    "customers_kr": ""
+    "strength_kr": "세계 최대 아연 제련 규모로 원가 경쟁력 우위, 부산물 귀금속 회수율 세계 최고, 해외 광산 수직계열화.",
+    "customers_kr": "글로벌 철강사(갈바나이징용), 배터리 소재사, 반도체 기업(인듐)"
   },
   "017670": {
     "custom_signal_reason": "SK텔레콤 2026년 5월 7일 1Q IR 발표 예정. AI 구독 서비스(에이닷·AI전화) 확대, 5G ARPU 개선 기대. 통신 3사 중 AI 전환 가장 적극적. 목표주가 10만원 컨센.",
@@ -1116,21 +1223,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "팬오션: 해운 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "팬오션은 하림그룹 계열 벌크선·탱커 해운사로, 곡물·석탄·철광석 건화물과 원유·화학제품 탱커를 운영한다. 하림그룹 식품 사업과의 곡물 수송 시너지와 BDI 사이클 포지셔닝이 강점이다.",
     "segments_kr": [
       {
-        "name": "marine transportation",
-        "pct": "-",
-        "note": ""
+        "name": "건화물(벌크) 운송",
+        "pct": "~70",
+        "note": "케이프사이즈·파나막스, 곡물·석탄·철광석"
       },
       {
-        "name": "other related services worldwide",
-        "pct": "-",
-        "note": ""
+        "name": "탱커 운송",
+        "pct": "~25",
+        "note": "원유·화학제품 탱커"
+      },
+      {
+        "name": "기타(컨테이너·LNG)",
+        "pct": "~5",
+        "note": "틈새 선종 운영"
       }
     ],
-    "strength_kr": "동사 offers break bulk liner services for steel, coal, wood, equipment, and machinery cargoes; tramper services for dry bulk cargo shipping, such as iron ore, coal, grain, sugar, logs, minerals, fertilizers, and scrap metal; and large bulker services f",
-    "customers_kr": ""
+    "strength_kr": "건화물 운임 사이클 포지셔닝, 하림그룹 곡물 수요 안정 물량 확보, 중고선 매매 수익.",
+    "customers_kr": "포스코·KEPCO 등 원자재 수입 기업, 하림그룹 곡물 계열사, 글로벌 곡물 트레이더"
   },
   "004170": {
     "custom_signal_reason": "신세계 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 8,442억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1178,16 +1290,31 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "이마트: Discount Stores 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "이마트는 신세계그룹 계열 대형마트·창고형 할인점(트레이더스)·온라인(SSG닷컴·G마켓)·편의점(이마트24) 등 유통 복합 그룹이다. PB 노브랜드와 스타필드 복합쇼핑몰로 오프라인 차별화를 추구하며, 쿠팡 공세 속 디지털 전환을 가속하고 있다.",
     "segments_kr": [
       {
-        "name": "Discount Stores",
-        "pct": "-",
-        "note": ""
+        "name": "대형마트(이마트)",
+        "pct": "~50",
+        "note": "전국 147개 매장, PB 노브랜드·피코크"
+      },
+      {
+        "name": "트레이더스(창고형)",
+        "pct": "~20",
+        "note": "코스트코 대항마, 빠른 성장"
+      },
+      {
+        "name": "SSG닷컴·G마켓(온라인)",
+        "pct": "~20",
+        "note": "온라인 플랫폼, 쿠팡과 경쟁"
+      },
+      {
+        "name": "이마트24·스타필드",
+        "pct": "~10",
+        "note": "편의점 3위, 복합쇼핑몰 임대"
       }
     ],
-    "strength_kr": "동사 operates Emart, a discount store; Emart Traders, an everyday low-price store for small business owners; and Emart Mall and Traders Mall, the online shopping stores",
-    "customers_kr": ""
+    "strength_kr": "스타필드·트레이더스 오프라인 체험형 공간 차별화, 노브랜드 PB 가격 경쟁력, 신세계그룹 시너지.",
+    "customers_kr": "국내 가정 소비자, 중산층 쇼핑객"
   },
   "020150": {
     "custom_signal_reason": "롯데에너지머티리얼즈 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 5,451억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1199,21 +1326,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "롯데에너지머티리얼즈: 전기장비·부품. 주요 사업 — elecfoils",
+    "bm_kr": "롯데에너지머티리얼즈(구 일진머티리얼즈)는 2차전지용 동박(Elecfoil)을 제조하는 롯데그룹 계열 소재 기업으로 글로벌 점유율 3~4위다. EV배터리 음극 집전체와 AI 서버용 고주파 PCB용 동박으로 사업 다변화 중이다.",
     "segments_kr": [
       {
-        "name": "and sells elecfoils in Korea",
-        "pct": "-",
-        "note": ""
+        "name": "2차전지용 동박(Elecfoil)",
+        "pct": "~70",
+        "note": "EV배터리 음극 집전체, 삼성SDI·SK온 납품"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "AI서버·PCB용 동박",
+        "pct": "~20",
+        "note": "고주파 초박 동박, AI 가속기 PCB 수요 급증"
+      },
+      {
+        "name": "일반 PCB용 동박",
+        "pct": "~10",
+        "note": "가전·IT 기기 회로기판"
       }
     ],
-    "strength_kr": "Its elecfoils are used as core material for electronic products",
-    "customers_kr": ""
+    "strength_kr": "동박 초박화 기술력(4μm 이하), AI 서버 수요 확보로 EV 부진 상쇄, 롯데그룹 자금력.",
+    "customers_kr": "삼성SDI, SK온, LG에너지솔루션, AI 서버 PCB 제조사"
   },
   "145020": {
     "custom_signal_reason": "휴젤 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 1,068억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1225,21 +1357,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "휴젤: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "휴젤은 보툴리눔 톡신(레티보)·HA 필러 제조 전문 바이오 기업으로, 미국·유럽·중국 허가를 통해 글로벌 에스테틱 시장에 진출했다. 국내 1위 보툴리눔 톡신 생산 능력을 보유하며, 글로벌 직판·라이선스 수익이 빠르게 성장 중이다.",
     "segments_kr": [
       {
-        "name": "biopharmaceuticals in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "보툴리눔 톡신(레티보)",
+        "pct": "~70",
+        "note": "미국·유럽·중국 허가 완료, 글로벌 에스테틱 직판"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "HA 필러",
+        "pct": "~20",
+        "note": "국내 1위 필러, 해외 수출"
+      },
+      {
+        "name": "기타 의약품·원료",
+        "pct": "~10",
+        "note": "원료 수출, CMO"
       }
     ],
-    "strength_kr": "동사 offers Botulinum Toxin, a white injectable dry powder in a transparent glass vial for use in the treatment of positive essential eyelid convulsion in adults over 18 years of age; improvement of severe lasso wrinkles associated with corrugator musc",
-    "customers_kr": ""
+    "strength_kr": "레티보 미국 FDA 허가 완료, 국내 최대 보툴리눔 톡신 생산 시설, 에스테틱 글로벌 확장.",
+    "customers_kr": "성형외과·피부과 의원, 글로벌 에스테틱 유통사, 중국·북미·유럽 의료기관"
   },
   "000370": {
     "custom_signal_reason": "한화손해보험 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 7,740억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1251,31 +1388,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "한화손해보험: Insurance - Property & Casualty 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "한화손해보험은 한화그룹 계열 손해보험사로, 자동차보험·일반손해보험·장기보험(건강·상해)을 영위한다. 디지털 채널 강화와 다이렉트 보험 확대로 수익성 개선을 추진 중이다.",
     "segments_kr": [
       {
-        "name": "long-term insurance",
-        "pct": "-",
-        "note": ""
+        "name": "장기보험(건강·상해·연금)",
+        "pct": "~55",
+        "note": "주력 성장 채널, 안정적 보험료 수입"
       },
       {
-        "name": "including injury",
-        "pct": "-",
-        "note": ""
+        "name": "자동차보험",
+        "pct": "~30",
+        "note": "의무보험, 다이렉트 채널 확장"
       },
       {
-        "name": "diseases",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "property damage",
-        "pct": "-",
-        "note": ""
+        "name": "일반손해보험·해외",
+        "pct": "~15",
+        "note": "기업 재산보험·배상책임보험"
       }
     ],
-    "strength_kr": "provides insurance services in 한국",
-    "customers_kr": ""
+    "strength_kr": "한화그룹 네트워크 기반 영업력, 디지털 전환으로 비용 절감 추진.",
+    "customers_kr": "개인 자동차·건강보험 가입자, 기업 손해보험 계약자"
   },
   "032640": {
     "custom_signal_reason": "LG유플러스 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 6조 8,515억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1313,21 +1445,31 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "GS: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "GS는 GS칼텍스(정유)·GS리테일(편의점·마트)·GS에너지·GS건설 등 에너지·유통·건설 사업을 영위하는 GS그룹 지주회사다. 정유와 편의점(GS25) 부문이 핵심 캐시카우며, 신재생에너지·수소 사업으로 포트폴리오 전환 중이다.",
     "segments_kr": [
       {
-        "name": "electricity through combined heat",
-        "pct": "-",
-        "note": ""
+        "name": "GS칼텍스(정유·석유화학)",
+        "pct": "~45",
+        "note": "원유 정제, 석유제품 판매, 정유 마진 사이클 의존"
       },
       {
-        "name": "power plant",
-        "pct": "-",
-        "note": ""
+        "name": "GS리테일(GS25·GS더프레시)",
+        "pct": "~25",
+        "note": "편의점 1위(GS25), 슈퍼마켓"
+      },
+      {
+        "name": "GS에너지·신재생",
+        "pct": "~15",
+        "note": "LNG·수소·태양광 에너지"
+      },
+      {
+        "name": "GS건설·기타",
+        "pct": "~15",
+        "note": "자이 브랜드 주택건설, 플랜트"
       }
     ],
-    "strength_kr": "동사 supplies heating and cooling facilities; composite resin; electricity and steam by operating coal power plant and wind power farms; produces electricity through combined heat and power plant; provides LNG to power distribution companies; bio diese",
-    "customers_kr": ""
+    "strength_kr": "정유·편의점·건설 포트폴리오 분산, GS25 전국 유통망, GS칼텍스 대규모 정유 설비.",
+    "customers_kr": "국내 소비자(편의점·주유소), 기업 고객(정유·화학제품)"
   },
   "005440": {
     "custom_signal_reason": "현대지에프홀딩스 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 2,591억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1339,16 +1481,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "현대지에프홀딩스: Food Distribution 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "현대지에프홀딩스(구 현대그린푸드)는 식품·유통·건설서비스를 영위하는 현대백화점그룹 계열 지주사다. 단체급식(그린푸드)·식자재 유통(현대마트)·면세점 운영이 주력이다.",
     "segments_kr": [
       {
-        "name": "Food Distribution",
-        "pct": "-",
-        "note": ""
+        "name": "단체급식·식자재 유통",
+        "pct": "~60",
+        "note": "기업·학교·병원 급식, 식자재 B2B 유통"
+      },
+      {
+        "name": "백화점·아울렛 F&B",
+        "pct": "~25",
+        "note": "현대백화점 그룹 내 식음 운영"
+      },
+      {
+        "name": "건설서비스·기타",
+        "pct": "~15",
+        "note": "빌딩 관리·시설 운영"
       }
     ],
-    "strength_kr": "설립 1968 and is 본사 Seoul, 한국.",
-    "customers_kr": ""
+    "strength_kr": "현대백화점그룹 계열 안정 수요, 단체급식 대형 계약 기반 안정 매출.",
+    "customers_kr": "기업·학교·병원 급식 고객, 현대백화점 그룹사"
   },
   "006040": {
     "custom_signal_reason": "동원산업 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 1조 6,997억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1359,7 +1511,27 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "동원산업은 동원그룹 핵심 계열사로, 원양참치 어업과 참치캔·수산 가공식품 제조·유통을 영위한다. 글로벌 원양 어업 선단과 동원F&B 연계 수직계열화가 강점이며, 참치 외 연어·굴·해조류 등으로 다변화 중이다.",
+    "segments_kr": [
+      {
+        "name": "원양어업(참치·연어)",
+        "pct": "~40",
+        "note": "태평양·인도양 원양 선단, 원료 자체 조달"
+      },
+      {
+        "name": "수산가공·참치캔",
+        "pct": "~35",
+        "note": "동원참치 브랜드, 국내 1위"
+      },
+      {
+        "name": "냉동·냉장 유통",
+        "pct": "~25",
+        "note": "수산물 B2B 유통, 마트 납품"
+      }
+    ],
+    "strength_kr": "원양어업→가공→유통 수직계열화, 동원참치 국민 브랜드 파워, 글로벌 어장 접근권.",
+    "customers_kr": "대형마트·편의점·급식업체, 일반 소비자"
   },
   "002350": {
     "custom_signal_reason": "넥센타이어 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 7,237억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1370,7 +1542,27 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "넥센타이어는 경쟁사 대비 가격 경쟁력 있는 OE(신차용)·RE(교체용) 타이어를 제조하는 중견 타이어 기업이다. 체코 유럽공장 가동으로 현지 공급을 확대하고 있으며, EV·SUV 전용 타이어 비중을 늘리고 있다.",
+    "segments_kr": [
+      {
+        "name": "승용차·SUV 타이어",
+        "pct": "~70",
+        "note": "OE(현대기아·유럽 완성차) + RE 교체 시장"
+      },
+      {
+        "name": "상용차·트럭 타이어",
+        "pct": "~20",
+        "note": "화물차·버스용, 안정적 B2B"
+      },
+      {
+        "name": "특수·경주용 타이어",
+        "pct": "~10",
+        "note": "고마진 특수 타이어"
+      }
+    ],
+    "strength_kr": "체코 유럽공장으로 현지 공급·관세 우위, OE 완성차 납품 레퍼런스, 가성비 타이어 시장 포지셔닝.",
+    "customers_kr": "현대기아차·유럽 완성차 OEM, 글로벌 교체 타이어 유통망"
   },
   "016360": {
     "custom_signal_reason": "삼성증권 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 9조 5,998억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1382,21 +1574,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "삼성증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "삼성증권은 삼성그룹 계열 종합증권사로, 리테일(WM)·IB·트레이딩 전 영역을 커버한다. 고액 자산가 대상 PB 서비스 및 펀드·ELS 등 금융상품 판매가 강점이며, 디지털 플랫폼 강화로 리테일 경쟁력도 높이고 있다.",
     "segments_kr": [
       {
-        "name": "asset",
-        "pct": "-",
-        "note": ""
+        "name": "리테일(WM·브로커리지)",
+        "pct": "~45",
+        "note": "PB 서비스, 금융상품 판매, 고액 자산가 타겟"
       },
       {
-        "name": "wealth management",
-        "pct": "-",
-        "note": ""
+        "name": "IB(기업금융·DCM·ECM)",
+        "pct": "~30",
+        "note": "기업공개·채권 인수, M&A 자문"
+      },
+      {
+        "name": "트레이딩·자기매매",
+        "pct": "~25",
+        "note": "채권·파생상품 자기매매"
       }
     ],
-    "strength_kr": "동사 offers asset and wealth management services; global investment strategy; tax, real estate, and legal consulting services; digital and pension services, such as pension asset management services; investment products, including domestic and overseas",
-    "customers_kr": ""
+    "strength_kr": "삼성 브랜드 신뢰도 기반 고액 자산가 유치, IB 딜 수주 경쟁력, 글로벌 투자 네트워크.",
+    "customers_kr": "개인 부유층·기관투자자, 상장 준비 기업, 대기업 IB 고객"
   },
   "000990": {
     "custom_signal_reason": "DB하이텍 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 6조 8,955억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1408,31 +1605,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "DB하이텍: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "DB하이텍은 8인치 파운드리(수탁 반도체 제조)를 주력으로 하는 DB그룹 계열 반도체 기업이다. 아날로그·파워반도체·BCD 공정이 특기이며, 산업용·차량용·가전용 반도체를 생산한다. 8인치 파운드리 공급 제약이 완화되는 가운데 가격 경쟁력 유지가 과제다.",
     "segments_kr": [
       {
-        "name": "semiconductors",
-        "pct": "-",
-        "note": ""
+        "name": "8인치 파운드리(수탁생산)",
+        "pct": "~80",
+        "note": "아날로그·파워·BCD 공정, 국내 1위 8인치 파운드리"
       },
       {
-        "name": "such as power management ICs",
-        "pct": "-",
-        "note": ""
+        "name": "자체 설계 반도체",
+        "pct": "~15",
+        "note": "전력관리·드라이버IC 등"
       },
       {
-        "name": "contact image sensor",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "display driver ICs used in mobile phones",
-        "pct": "-",
-        "note": ""
+        "name": "기타",
+        "pct": "~5",
+        "note": "레거시 제품 유지"
       }
     ],
-    "strength_kr": "It provides semiconductors, such as power management ICs, contact image sensor, display driver ICs used in mobile phones, industrial, medical equipment, and automobile applications, as well as provides wafer fabrication facilities that produces a ran",
-    "customers_kr": ""
+    "strength_kr": "국내 8인치 파운드리 독보적 1위, 아날로그·BCD 공정 전문성, 차량·산업용 고마진 시장 포지셔닝.",
+    "customers_kr": "국내외 팹리스 반도체 설계사, 삼성전기·실리콘마이터스 등"
   },
   "000120": {
     "custom_signal_reason": "CJ대한통운 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 3,063억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -1475,31 +1667,26 @@
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
     ],
-    "bm_kr": "DL: 정밀화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "DL(구 대림산업)은 건설(DL이앤씨)·석유화학(DL케미칼·크레이튼)·에너지 사업을 영위하는 복합 그룹 지주사다. e편한세상 아파트 브랜드와 폴리부텐·특수화학 등이 주력이다.",
     "segments_kr": [
       {
-        "name": "polyethylene",
-        "pct": "-",
-        "note": ""
+        "name": "건설(DL이앤씨)",
+        "pct": "~50",
+        "note": "e편한세상 주택, 플랜트·토목 공사"
       },
       {
-        "name": "related",
-        "pct": "-",
-        "note": ""
+        "name": "석유화학(DL케미칼·크레이튼)",
+        "pct": "~35",
+        "note": "폴리부텐·특수폴리머, 크레이튼 인수 글로벌"
       },
       {
-        "name": "adhesives",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "plastic films",
-        "pct": "-",
-        "note": ""
+        "name": "에너지·기타",
+        "pct": "~15",
+        "note": "LNG 발전, 신재생에너지"
       }
     ],
-    "strength_kr": "동사 offers polyethylene and related products, adhesives, plastic films, and other chemical products",
-    "customers_kr": ""
+    "strength_kr": "e편한세상 주거 브랜드 인지도, 석유화학 특수폴리머 글로벌 경쟁력(크레이튼), 그룹 사업 다각화.",
+    "customers_kr": "주택 분양 수요자, 글로벌 화학·타이어 기업(폴리부텐·특수폴리머)"
   },
   "000270": {
     "custom_signal_reason": "기아 2026 기업가치제고계획 이행현황 공시. ROE 15%+ 유지, TSR 35%, 자사주 7,000억 소각. 2030년 영업익 17조(현재 대비 2배) 목표 재확인. 배당 6,500원(YoY+16%). 주가 -0.0%.",
@@ -1542,21 +1729,26 @@
       "경영권 영향 명시 지속 여부",
       "주요 사업 이슈 연계 모니터링"
     ],
-    "bm_kr": "부국증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "부국증권은 중소형 증권사로, 주식 위탁매매·채권 트레이딩·자산관리 서비스를 제공한다. 채권 딜링과 배당 수익이 상대적으로 안정적인 수익 기반이다.",
     "segments_kr": [
       {
-        "name": "retail",
-        "pct": "-",
-        "note": ""
+        "name": "위탁매매(브로커리지)",
+        "pct": "~40",
+        "note": "주식 위탁매매 수수료"
       },
       {
-        "name": "institutional brokerage services in South",
-        "pct": "-",
-        "note": ""
+        "name": "채권 트레이딩·자기매매",
+        "pct": "~40",
+        "note": "채권 딜링, 금리 사이클 연동"
+      },
+      {
+        "name": "자산관리·기타",
+        "pct": "~20",
+        "note": "WM, 금융상품 판매"
       }
     ],
-    "strength_kr": "또한 offers financial product sales, corporate finance, such as IPO, corporate bond, etc; project financing, and structured financing business",
-    "customers_kr": ""
+    "strength_kr": "채권 트레이딩 전문성, 안정적 배당 성향, 보수적 리스크 관리.",
+    "customers_kr": "개인 투자자, 기관 채권 거래 고객"
   },
   "002620": {
     "custom_signal_reason": "제일파마홀딩스 주식 대량보유상황보고서 공시. 최대주주 수증으로 지분 증가(73.12%→73.21%). 경영권 안정화.",
@@ -1595,16 +1787,21 @@
       "경영권 영향 명시 지속 여부",
       "주요 사업 이슈 연계 모니터링"
     ],
-    "bm_kr": "신라교역: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "신라교역은 면세점·명품 수입유통 전문 기업으로, 신라호텔그룹 계열이다. 국내 면세점 명품 브랜드 수입 대행과 독점 유통 계약이 주력이다.",
     "segments_kr": [
       {
-        "name": "식품 제조",
-        "pct": "-",
-        "note": ""
+        "name": "면세점 명품 유통",
+        "pct": "~70",
+        "note": "신라면세점·호텔 명품 브랜드 독점 공급"
+      },
+      {
+        "name": "수입 화장품·기타",
+        "pct": "~30",
+        "note": "화장품·잡화 수입 유통"
       }
     ],
-    "strength_kr": "It catches tuna, yellow fin, and big eye tuna; sells stainless and carbon alloy steel products, such as wire rods, wires, coils, and steel bars; operates Silla Darangwon, a Japanese Style restaurant; and processes seafood",
-    "customers_kr": ""
+    "strength_kr": "신라호텔그룹 계열 안정 거래처, 면세점 명품 독점 수입 계약.",
+    "customers_kr": "신라면세점, 호텔신라, 국내 명품 유통채널"
   },
   "001500": {
     "custom_signal_reason": "현대차증권 2026 1Q 매출 8,478억, 영업익 323억 잠정실적 공시. 가격변동 -3.2%. 시총 6,783억.",
@@ -1616,21 +1813,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "현대차증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "현대차증권은 현대자동차그룹 계열 중형 증권사로, 법인 IB·채권·리테일 서비스를 영위한다. 현대차그룹 계열사 채권 인수·M&A 자문이 강점이며, 그룹 시너지 기반 안정 수요가 있다.",
     "segments_kr": [
       {
-        "name": "financial",
-        "pct": "-",
-        "note": ""
+        "name": "IB(채권인수·DCM)",
+        "pct": "~45",
+        "note": "현대차그룹 계열사 채권 주관, DCM 강점"
       },
       {
-        "name": "services in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "브로커리지·WM",
+        "pct": "~35",
+        "note": "리테일 주식·펀드 판매"
+      },
+      {
+        "name": "자기매매·기타",
+        "pct": "~20",
+        "note": "채권 자기매매"
       }
     ],
-    "strength_kr": "provides financial products and services in 한국",
-    "customers_kr": ""
+    "strength_kr": "현대차그룹 계열 안정 IB 딜, DCM 경쟁력, 그룹 계열사 연계 수요.",
+    "customers_kr": "현대차그룹 계열사, 기관투자자, 개인 투자자"
   },
   "002390": {
     "custom_signal_reason": "한독 2026 1Q 매출 1,315억, 영업익 2억 잠정실적 공시. 가격변동 -1.8%. 시총 1,427억.",
@@ -1642,21 +1844,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "한독: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "한독은 처방의약품·OTC·건강기능식품을 취급하는 중견 제약·유통 기업이다. 독일 베링거인겔하임 등 해외 의약품 독점 수입 판매와 자체 브랜드 의약품이 주요 수익원이다.",
     "segments_kr": [
       {
-        "name": "prescription",
-        "pct": "-",
-        "note": ""
+        "name": "처방의약품(ETC·수입)",
+        "pct": "~55",
+        "note": "해외 제약사 독점 수입, 전문의약품 유통"
       },
       {
-        "name": "OTC drugs",
-        "pct": "-",
-        "note": ""
+        "name": "일반의약품·건기식",
+        "pct": "~30",
+        "note": "게루삼·훼스탈 등 OTC 브랜드"
+      },
+      {
+        "name": "의료기기·기타",
+        "pct": "~15",
+        "note": "해외 의료기기 수입 유통"
       }
     ],
-    "strength_kr": "동사 provides prescription and OTC drugs; medical devices, such as blood pressure monitors, cholesterol monitoring systems, insulin pumps, self-monitoring system of blood glucose, and blood glucose monitoring system; in vitro diagnostic medical devices",
-    "customers_kr": ""
+    "strength_kr": "해외 처방약 독점 수입 계약, 훼스탈·게루삼 등 국민 OTC 브랜드.",
+    "customers_kr": "병원·약국 유통 채널, 일반 소비자"
   },
   "003850": {
     "custom_signal_reason": "보령 2026 1Q 매출 2,554억, 영업익 202억 잠정실적 공시. 가격변동 -1.4%. 시총 8,527억.",
@@ -1699,21 +1906,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "풍산홀딩스: 동·비철금속 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "풍산홀딩스는 구리 가공(동판·동봉·동관)과 방산용 탄약 소재를 제조하는 풍산그룹 지주회사다. 구리 가격 연동 수익 구조이며, 탄약 케이스 제조 방산 부문이 K방산 수출 수혜를 받고 있다.",
     "segments_kr": [
       {
-        "name": "copper",
-        "pct": "-",
-        "note": ""
+        "name": "구리 가공재(동판·봉·관)",
+        "pct": "~55",
+        "note": "전기·건축·자동차용 구리 소재, 구리 가격 연동"
       },
       {
-        "name": "nonferrous metal products worldwide",
-        "pct": "-",
-        "note": ""
+        "name": "방산(탄약 케이스·소재)",
+        "pct": "~35",
+        "note": "탄약 황동 케이스, K방산 수출 수혜"
+      },
+      {
+        "name": "기타·해외법인",
+        "pct": "~10",
+        "note": "미국·독일 등 해외 구리 가공"
       }
     ],
-    "strength_kr": "It offers fabricated non-ferrous material, including copper, copper alloy sheets, strips, rods, bars, wires, leadframe alloys, coin blanks, copper-based roofing material, steel strips, and biobrass; defense products, such as military ammunition, spor",
-    "customers_kr": ""
+    "strength_kr": "구리 가공 국내 1위, 방산 탄약 케이스 독점 공급, 글로벌 방산 수요 급증 수혜.",
+    "customers_kr": "전기·자동차·건설 산업, 방위사업청, K방산 수출 계약"
   },
   "009520": {
     "custom_signal_reason": "포스코엠텍 2026 1Q 매출 1,033억, 영업익 25억 잠정실적 공시. 가격변동 -5.8%. 시총 8,299억.",
@@ -1725,10 +1937,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "포스코엠텍 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "포스코엠텍은 POSCO그룹 계열 마그네슘·희소금속·폐배터리 소재 재활용 기업이다. 2차전지 폐배터리에서 리튬·니켈·코발트를 회수하는 블랙매스(전구체 원료) 사업이 성장 중이다.",
+    "segments_kr": [
+      {
+        "name": "마그네슘·희소금속",
+        "pct": "~45",
+        "note": "마그네슘 잉곳·합금, 철강 탈황재"
+      },
+      {
+        "name": "폐배터리 재활용(블랙매스)",
+        "pct": "~35",
+        "note": "리튬·니켈·코발트 회수, 포스코그룹 공급"
+      },
+      {
+        "name": "기타 금속소재",
+        "pct": "~20",
+        "note": "니켈·망간 소재"
+      }
+    ],
+    "strength_kr": "POSCO그룹 배터리소재 리사이클링 허브, 폐배터리 회수 경쟁력, 희소금속 전처리 기술.",
+    "customers_kr": "포스코퓨처엠, 배터리 소재사, 철강·마그네슘 소재 수요 산업"
   },
   "014820": {
     "custom_signal_reason": "동원시스템즈 2026 1Q 매출 3,378억, 영업익 130억 잠정실적 공시. 가격변동 -1.2%. 시총 8,147억.",
@@ -1771,16 +1999,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "유나이티드: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "유나이티드제약은 처방의약품·개량신약·해외 수출을 영위하는 중견 제약사다. 서방형·복합 개량신약과 CMO(위탁생산) 수주가 주력이다.",
     "segments_kr": [
       {
-        "name": "Drug Manufacturers - Specialty & Generic",
-        "pct": "-",
-        "note": ""
+        "name": "처방의약품(ETC·개량신약)",
+        "pct": "~65",
+        "note": "서방형·복합제 개량신약, 원외처방 중심"
+      },
+      {
+        "name": "CMO 위탁생산·수출",
+        "pct": "~25",
+        "note": "해외 제약사 CMO, 동남아 수출"
+      },
+      {
+        "name": "일반의약품",
+        "pct": "~10",
+        "note": "OTC 브랜드"
       }
     ],
-    "strength_kr": "It offers products in the areas of respiratory system, musculo-skeletal system, gastro-intestinal tract system, cardiovascular system, anti-cancer, anti-infectives, allergy, immune system, central nervous system, and other diseases, as well OTC drugs",
-    "customers_kr": ""
+    "strength_kr": "개량신약 전문성, CMO 생산 능력, 수출 다변화 추진.",
+    "customers_kr": "국내 병원·약국, 해외 CMO 수주처"
   },
   "052260": {
     "custom_signal_reason": "현대바이오랜드 2026 1Q 매출 382억, 영업익 52억 잠정실적 공시. 가격변동 +2.2%. 시총 1,340억.",
@@ -1792,10 +2030,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "현대바이오랜드 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "현대바이오랜드는 화장품 원료(히알루론산·콜라겐·발효 소재)와 건강기능식품 원료 B2B 공급 전문 기업이다. 히알루론산 발효 생산 기술이 핵심이며, 국내외 화장품·건기식 브랜드에 원료를 납품한다.",
+    "segments_kr": [
+      {
+        "name": "화장품 원료(히알루론산·콜라겐)",
+        "pct": "~60",
+        "note": "발효 HA·콜라겐, 국내외 화장품사 납품"
+      },
+      {
+        "name": "건강기능식품 원료",
+        "pct": "~30",
+        "note": "프로바이오틱스·기능성 원료 B2B"
+      },
+      {
+        "name": "완제품·기타",
+        "pct": "~10",
+        "note": "자체 브랜드 소량 판매"
+      }
+    ],
+    "strength_kr": "히알루론산 발효 기술 경쟁력, 고마진 B2B 원료 사업, 글로벌 화장품사 원료 공급 레퍼런스.",
+    "customers_kr": "국내외 화장품·건기식 제조사, 아모레퍼시픽·LG생활건강 등"
   },
   "058430": {
     "custom_signal_reason": "포스코스틸리온 2026 1Q 매출 2,741억, 영업익 59억 잠정실적 공시. 가격변동 -6.9%. 시총 4,962억.",
@@ -1807,21 +2061,21 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "포스코스틸리온: 금속 가공 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "포스코스틸리온은 POSCO그룹 계열 강판 가공·유통 전문 서비스센터다. 냉연·도금·컬러강판 등을 POSCO에서 구매해 고객 맞춤 가공·납품하며, 자동차·가전 업체가 주요 고객이다.",
     "segments_kr": [
       {
-        "name": "hot-dip galvanized",
-        "pct": "-",
-        "note": ""
+        "name": "도금·컬러강판 가공 유통",
+        "pct": "~70",
+        "note": "자동차·가전용 강판 슬리팅·커팅 가공"
       },
       {
-        "name": "aluminized-plated steel sheets",
-        "pct": "-",
-        "note": ""
+        "name": "냉연강판 유통",
+        "pct": "~30",
+        "note": "POSCO 냉연 중간 유통"
       }
     ],
-    "strength_kr": "It provides hot-dip galvanized and aluminized-plated steel sheets",
-    "customers_kr": ""
+    "strength_kr": "POSCO 독점 공급 관계, 강판 가공 물류 효율성, 자동차·가전 대형 고객 기반.",
+    "customers_kr": "현대기아차·삼성전자·LG전자 등 자동차·가전 제조사"
   },
   "064550": {
     "custom_signal_reason": "바이오니아 2026 1Q 매출 819억, 영업익 -8억 잠정실적 공시. 가격변동 -3.4%. 시총 2,720억.",
@@ -1833,10 +2087,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "바이오니아 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "바이오니아는 유전자 분석·진단키트 제조 및 DNA·RNA 합성 시약 전문 기업이다. COVID-19 PCR 키트로 급성장했으며, siRNA 치료제(RNAi) 플랫폼과 글로벌 진단 시약 수출이 중장기 성장 동력이다.",
+    "segments_kr": [
+      {
+        "name": "진단키트(PCR·감염병)",
+        "pct": "~50",
+        "note": "분자진단 키트, 코로나 이후 감소 추세나 독감·원숭이두창 등 신규 수요"
+      },
+      {
+        "name": "DNA·RNA 합성 시약(올리고)",
+        "pct": "~30",
+        "note": "연구용 올리고뉴클레오타이드 글로벌 수출"
+      },
+      {
+        "name": "siRNA 치료제 플랫폼",
+        "pct": "~20",
+        "note": "SAMiRNA 플랫폼, 간질환·종양 타겟"
+      }
+    ],
+    "strength_kr": "분자진단 기술 20년+ 축적, SAMiRNA 독자 siRNA 전달 플랫폼, 글로벌 시약 수출 인프라.",
+    "customers_kr": "글로벌 연구기관·제약사·병원 진단소, 국내외 정부 방역 기관"
   },
   "064960": {
     "custom_signal_reason": "SNT모티브 2026 1Q 매출 2,156억, 영업익 215억 잠정실적 공시. 가격변동 -6.0%. 시총 9,873억.",
@@ -1848,31 +2118,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "SNT모티브: 자동차 부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "SNT모티브(구 S&T모티브)는 방산용 소형화기·탄약, 산업용 모터, EV용 전동화 부품을 제조하는 SNT그룹 계열 방산·모터 기업이다. K2소총·권총 생산과 EV 모터·리졸버가 핵심 제품이다.",
     "segments_kr": [
       {
-        "name": "motors",
-        "pct": "-",
-        "note": ""
+        "name": "방산(소형화기·탄약 부품)",
+        "pct": "~50",
+        "note": "K2소총·K5권총, 방위사업청 납품, 수출 확대 중"
       },
       {
-        "name": "engine/transmission components",
-        "pct": "-",
-        "note": ""
+        "name": "산업·EV 모터·리졸버",
+        "pct": "~40",
+        "note": "EV 모터 위치 감지 리졸버, 산업용 모터"
       },
       {
-        "name": "chassis",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "airbags",
-        "pct": "-",
-        "note": ""
+        "name": "기타 방산·정밀기계",
+        "pct": "~10",
+        "note": "군용 야시경·광학기기"
       }
     ],
-    "strength_kr": "동사 offers motors, engine/transmission components, chassis, airbags, power train parts, shock absorbers; semiconductor machinery components; and defense products, as well as suspension modules, wheels and tires, and knuckles",
-    "customers_kr": ""
+    "strength_kr": "소형화기 국내 독점 생산 지위, EV 리졸버 기술 경쟁력, SNT그룹 방산 시너지.",
+    "customers_kr": "방위사업청, 현대기아차(EV 모터부품), 해외 방산 수출"
   },
   "067160": {
     "custom_signal_reason": "SOOP 2026 1Q 매출 1,060억, 영업익 212억 잠정실적 공시. 가격변동 -2.8%. 시총 6,713억.",
@@ -1884,10 +2149,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "SOOP — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "SOOP(구 아프리카TV)은 개인 방송 스트리밍 플랫폼(아프리카TV·SOOP)을 운영하는 라이브 스트리밍 미디어 기업이다. BJ(방송진행자) 생태계 기반 유료 아이템 판매와 광고 수익이 핵심이며, 게임·스포츠·먹방 콘텐츠가 주력이다.",
+    "segments_kr": [
+      {
+        "name": "유료 아이템·별풍선",
+        "pct": "~60",
+        "note": "시청자→BJ 후원 아이템 결제, 플랫폼 수수료 수취"
+      },
+      {
+        "name": "광고 수익",
+        "pct": "~25",
+        "note": "라이브·VOD 광고, 브랜드 협찬"
+      },
+      {
+        "name": "이스포츠·글로벌",
+        "pct": "~15",
+        "note": "이스포츠 중계권, 해외 SOOP 서비스 확장"
+      }
+    ],
+    "strength_kr": "10년+ 축적된 BJ·시청자 생태계 독점적 락인, 유료 아이템 고마진 수익, 이스포츠 콘텐츠 경쟁력.",
+    "customers_kr": "국내외 라이브 스트리밍 시청자, 광고주, 이스포츠 스폰서"
   },
   "091700": {
     "custom_signal_reason": "파트론 2026 1Q 매출 4,510억, 영업익 122억 잠정실적 공시. 가격변동 -0.7%. 시총 4,554억.",
@@ -1899,10 +2180,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "파트론 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "파트론은 카메라 모듈·안테나·무선충전 모듈 등 스마트폰 전자 부품을 삼성전자에 납품하는 협력 기업이다. 폴더블폰·갤럭시용 초소형·고화소 카메라 모듈이 주력이며, 사물인터넷(IoT) 안테나 부품으로 다변화하고 있다.",
+    "segments_kr": [
+      {
+        "name": "카메라 모듈",
+        "pct": "~55",
+        "note": "삼성 갤럭시 폴더블·플래그십 카메라 모듈"
+      },
+      {
+        "name": "안테나·무선충전 모듈",
+        "pct": "~35",
+        "note": "스마트폰 5G 안테나·무선충전 코일"
+      },
+      {
+        "name": "IoT·기타",
+        "pct": "~10",
+        "note": "웨어러블·IoT 안테나 부품"
+      }
+    ],
+    "strength_kr": "삼성전자 1차 공급사 지위, 폴더블폰 카메라 모듈 기술력, 안테나 소형화 경쟁력.",
+    "customers_kr": "삼성전자(스마트폰·태블릿), 기타 스마트 기기 제조사"
   },
   "108670": {
     "custom_signal_reason": "LX하우시스 2026 1Q 매출 8,147억, 영업익 459억 잠정실적 공시. 가격변동 +6.2%. 시총 3,237억.",
@@ -1940,21 +2237,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "윈스테크넷: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "윈스테크넷은 네트워크 보안 장비(침입탐지·방화벽·DDoS 방어)를 제조·공급하는 사이버보안 전문 기업이다. 국내 관공서·통신사·금융권 보안 인프라 구축이 주력이며, AI 기반 위협 탐지 솔루션으로 전환 중이다.",
     "segments_kr": [
       {
-        "name": "information security",
-        "pct": "-",
-        "note": ""
+        "name": "네트워크 보안 장비(IDS·IPS·방화벽)",
+        "pct": "~65",
+        "note": "침입탐지·방지 시스템, 국내 1위 수준"
       },
       {
-        "name": "services in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "DDoS 방어·CDN",
+        "pct": "~25",
+        "note": "통신사·데이터센터 DDoS 방어"
+      },
+      {
+        "name": "AI 보안·클라우드 솔루션",
+        "pct": "~10",
+        "note": "AI 위협 탐지, 클라우드 보안"
       }
     ],
-    "strength_kr": "동사 offers SNIPER ONE-i, an intelligent intrusion prevention system; SNIPER NGFW, a smart next-generation firewall; SNIPER ONE-d, a DDoS response system; SNIPER AP, a sand box-based APT response system; SNIPER TMS-Plus, information security management",
-    "customers_kr": ""
+    "strength_kr": "국내 네트워크 보안 1위 수준, 관공서·통신사 레퍼런스 축적, 고도화되는 사이버 위협 수혜.",
+    "customers_kr": "국내 관공서·군·통신사·금융기관·데이터센터"
   },
   "194370": {
     "custom_signal_reason": "제이에스코퍼레이션 2026 1Q 매출 3,080억, 영업익 311억 잠정실적 공시. 가격변동 -0.4%. 시총 4,419억.",
@@ -1966,16 +2268,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "제이에스코퍼레이션: Footwear & Accessories 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "제이에스코퍼레이션은 스마트폰 케이스·의류(스포츠·골프) OEM/ODM 제조 기업이다. 삼성전자 스마트폰 케이스 제조와 나이키·아디다스 등 글로벌 스포츠 브랜드 의류 OEM이 주요 사업이다.",
     "segments_kr": [
       {
-        "name": "Footwear & Accessories",
-        "pct": "-",
-        "note": ""
+        "name": "스마트폰 케이스·액세서리",
+        "pct": "~50",
+        "note": "삼성 갤럭시 케이스 OEM, 대량 수주"
+      },
+      {
+        "name": "스포츠·골프 의류 OEM",
+        "pct": "~40",
+        "note": "나이키·아디다스 등 글로벌 브랜드 OEM"
+      },
+      {
+        "name": "기타 소비재",
+        "pct": "~10",
+        "note": "잡화·생활용품 OEM"
       }
     ],
-    "strength_kr": "It provides luxury leather handbags",
-    "customers_kr": ""
+    "strength_kr": "삼성·글로벌 스포츠 브랜드 장기 OEM 계약, 생산 효율성 경쟁력, 동남아 생산기지 운영.",
+    "customers_kr": "삼성전자, 나이키·아디다스·캘러웨이 등 글로벌 브랜드"
   },
   "215000": {
     "custom_signal_reason": "골프존 2026 1Q 매출 1,118억, 영업익 141억 잠정실적 공시. 가격변동 +0.0%. 시총 3,219억.",
@@ -1987,21 +2299,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "골프존: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "골프존은 스크린골프 시뮬레이터 제조·설치와 스크린골프 가맹점(스크린골프방) 운영 플랫폼을 보유한 스크린골프 국내 1위 기업이다. 골프존 브랜드 가맹 네트워크와 자체 골프 코스 데이터·통신 솔루션이 독점적 지위를 형성한다.",
     "segments_kr": [
       {
-        "name": "golf simulators",
-        "pct": "-",
-        "note": ""
+        "name": "스크린골프 장비·시뮬레이터",
+        "pct": "~45",
+        "note": "스크린골프 기기 판매, 국내 1위 시장 90%+"
       },
       {
-        "name": "under the GOLFZON Vision name",
-        "pct": "-",
-        "note": ""
+        "name": "가맹 플랫폼·운영 수수료",
+        "pct": "~35",
+        "note": "3,000+ 가맹점 통신·데이터 수수료"
+      },
+      {
+        "name": "콘텐츠·해외·기타",
+        "pct": "~20",
+        "note": "중국·동남아 수출, 골프 콘텐츠 구독"
       }
     ],
-    "strength_kr": "It offers golf simulators, under the GOLFZON Vision name",
-    "customers_kr": ""
+    "strength_kr": "스크린골프 국내 시장 독과점(90%+), 20년+ 축적된 골프 코스 데이터 독점, 가맹점 네트워크 락인.",
+    "customers_kr": "스크린골프 가맹점주, 골프 동호인, 중국·동남아 스크린골프 사업자"
   },
   "232680": {
     "custom_signal_reason": "라온로보틱스 2026 1Q 매출 141억, 영업익 9억 잠정실적 공시. 가격변동 -2.1%. 시총 2,181억.",
@@ -2039,26 +2356,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "슈프리마: Security & Protection Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "슈프리마는 지문 인식·얼굴 인식·출입통제 시스템 전문 보안 기업이다. 생체인식 출입통제 솔루션을 글로벌 100개국 이상에 수출하며, AI 기반 안면인식 기술로 스마트빌딩·보안 시장을 공략 중이다.",
     "segments_kr": [
       {
-        "name": "and manufactures biometric",
-        "pct": "-",
-        "note": ""
+        "name": "생체인식 출입통제 장비",
+        "pct": "~65",
+        "note": "지문·얼굴인식 리더기, 글로벌 수출 주력"
       },
       {
-        "name": "security products in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "보안 솔루션·소프트웨어",
+        "pct": "~25",
+        "note": "출입관리 SW, 스마트빌딩 연동"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "기타 보안·IoT",
+        "pct": "~10",
+        "note": "IoT 연동 보안 플랫폼"
       }
     ],
-    "strength_kr": "동사 offers biometric access control systems, time and attendance solutions, fingerprint live scanners, mobile authentication solutions, and embedded fingerprint modules",
-    "customers_kr": ""
+    "strength_kr": "글로벌 100개국 이상 수출 레퍼런스, AI 안면인식 기술 경쟁력, 출입통제 시장 글로벌 탑티어 인지도.",
+    "customers_kr": "글로벌 빌딩·공공시설·공항·정부 기관, 국내외 보안 SI 업체"
   },
   "286940": {
     "custom_signal_reason": "롯데이노베이트 2026 1Q 매출 2,812억, 영업익 97억 잠정실적 공시. 가격변동 -0.9%. 시총 3,487억.",
@@ -2096,31 +2413,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "자이에스앤디: Real Estate - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "자이에스앤디는 GS건설 계열 건물관리·시설유지·환경서비스 전문 기업이다. 자이 아파트·오피스빌딩 관리와 미화·경비·에너지 절감 서비스를 제공한다.",
     "segments_kr": [
       {
-        "name": "smart home",
-        "pct": "-",
-        "note": ""
+        "name": "빌딩·아파트 시설관리",
+        "pct": "~65",
+        "note": "자이·상업용 빌딩 관리, GS건설 연계 수요"
       },
       {
-        "name": "communication construction work",
-        "pct": "-",
-        "note": ""
+        "name": "환경·청소 서비스",
+        "pct": "~25",
+        "note": "미화·청소·폐기물 처리"
       },
       {
-        "name": "facility maintenance",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "real estate rental",
-        "pct": "-",
-        "note": ""
+        "name": "에너지 절감·기타",
+        "pct": "~10",
+        "note": "에너지 관리, 보안 서비스"
       }
     ],
-    "strength_kr": "It constructs clean rooms, factories, Internet Data Centers, research facilities and offices, and chemical plants",
-    "customers_kr": ""
+    "strength_kr": "GS건설 자이 아파트 관리 독점 수요, 장기 관리 계약 기반 안정 매출.",
+    "customers_kr": "자이 아파트 입주민, 오피스·상업용 빌딩 관리 고객"
   },
   "037950": {
     "custom_signal_reason": "엘컴텍 2026 1Q 매출 179억, 영업익 15억 잠정실적 공시. 가격변동 +0.0%. 시총 599억.",
@@ -2132,26 +2444,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "엘컴텍: Communication Equipment 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "엘컴텍은 2차전지·스마트폰용 전자파 차폐(EMI 실드)·방열 소재 전문 기업이다. EV배터리 팩 방열·차폐 부품이 주력이며, 삼성SDI·SK온 납품이 핵심이다.",
     "segments_kr": [
       {
-        "name": "factory",
-        "pct": "-",
-        "note": ""
+        "name": "2차전지 방열·EMI 차폐 소재",
+        "pct": "~60",
+        "note": "EV배터리 팩 방열 패드, EMI 실드"
       },
       {
-        "name": "indoor",
-        "pct": "-",
-        "note": ""
+        "name": "스마트폰·가전 EMI 소재",
+        "pct": "~30",
+        "note": "스마트폰 내부 차폐 소재"
       },
       {
-        "name": "plant growth lights",
-        "pct": "-",
-        "note": ""
+        "name": "기타 전자소재",
+        "pct": "~10",
+        "note": "PCB용 방열 소재"
       }
     ],
-    "strength_kr": "It offers 25W engine modules for use as street, security, tunnel, and flood light; floor-type pedestrian traffic lights; NELF-100 lights; MLR-Y and MLR-W for road signs; and mobile lens, including TOF, VGA, 48 MEGA, 13 MEGA, 8 Mega, and 5 MEGA lens",
-    "customers_kr": ""
+    "strength_kr": "EV 배터리 방열 소재 기술력, 2차전지 고객사 인증 레퍼런스.",
+    "customers_kr": "삼성SDI·SK온·LG에너지솔루션, 삼성전자"
   },
   "066130": {
     "custom_signal_reason": "하츠 2026 1Q 매출 362억, 영업익 11억 잠정실적 공시. 가격변동 +0.0%. 시총 573억.",
@@ -2163,31 +2475,26 @@
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
     ],
-    "bm_kr": "하츠: Furnishings, Fixtures & Appliances 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "하츠는 주방용 렌지후드·빌트인 가스레인지 제조사로 국내 렌지후드 시장 1위다. 고급 주방 가전 라인업을 확장하며, 대형 건설사 빌트인 납품이 주요 수익원이다.",
     "segments_kr": [
       {
-        "name": "kitchen appliances",
-        "pct": "-",
-        "note": ""
+        "name": "렌지후드",
+        "pct": "~55",
+        "note": "국내 렌지후드 시장 점유율 1위"
       },
       {
-        "name": "including hood",
-        "pct": "-",
-        "note": ""
+        "name": "빌트인 가스레인지·인덕션",
+        "pct": "~35",
+        "note": "건설사 빌트인 납품, 고마진"
       },
       {
-        "name": "cooking zone",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "electric",
-        "pct": "-",
-        "note": ""
+        "name": "기타 주방가전",
+        "pct": "~10",
+        "note": "전기오븐·소형 주방가전"
       }
     ],
-    "strength_kr": "동사 offers kitchen appliances, including hood and cooking zone systems, electric and gas cooktops, food dehydrators, detergent and sink faucets, sink bowls, built-in electrical outlets, flap and built-in lift-up doors, electric cooktop stands, and wat",
-    "customers_kr": ""
+    "strength_kr": "렌지후드 국내 1위 브랜드, 건설사 빌트인 납품 장기 계약.",
+    "customers_kr": "국내 건설사(빌트인), 일반 가정 소비자"
   },
   "192080": {
     "custom_signal_reason": "더블유게임즈 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 2,937억.",
@@ -2199,16 +2506,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "더블유게임즈: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "더블유게임즈는 소셜 카지노 게임(무료 슬롯·포커)을 모바일·웹 플랫폼으로 제공하는 글로벌 게임사다. 실제 현금 도박이 아닌 소셜 방식으로 미국·유럽 등 영어권 시장을 주력으로 하며, 인앱 구매와 광고 수익이 핵심이다.",
     "segments_kr": [
       {
-        "name": "게임",
-        "pct": "-",
-        "note": ""
+        "name": "소셜 슬롯 게임(앱·웹)",
+        "pct": "~70",
+        "note": "DoubleDown Casino 등, 북미·유럽 이용자 인앱 결제"
+      },
+      {
+        "name": "소셜 포커·기타 카지노",
+        "pct": "~20",
+        "note": "텍사스홀덤 등 소셜 포커"
+      },
+      {
+        "name": "광고 수익",
+        "pct": "~10",
+        "note": "무료 유저 대상 광고 노출"
       }
     ],
-    "strength_kr": "It offers DoubleDown Casino; DoubleU Casino, a social casino game; Take5 Slots, a multiplayer slot room game; DoubleU Bingo; and Undead World",
-    "customers_kr": ""
+    "strength_kr": "글로벌 소셜 카지노 탑3 수준, 북미 영어권 사용자 기반, IGT 미국 슬롯 콘텐츠 라이선스.",
+    "customers_kr": "북미·유럽 소셜 카지노 게임 이용자(30~60대 여성 주요 세그먼트)"
   },
   "294870": {
     "custom_signal_reason": "IPARK현대산업개발 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 5,126억.",
@@ -2246,31 +2563,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "달바글로벌: Household & Personal Products 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "달바글로벌은 자연 유래·비건 화장품 브랜드 '달바(d'Alba)'를 운영하는 K-뷰티 스타트업이다. 화이트 트러플 원료 기반 앰플·선크림이 히트 상품이며, 면세점·국내외 멀티샵 채널 확대가 빠르다.",
     "segments_kr": [
       {
-        "name": "mists",
-        "pct": "-",
-        "note": ""
+        "name": "스킨케어(앰플·세럼)",
+        "pct": "~55",
+        "note": "화이트 트러플 앰플 시그니처 제품, 온라인 직판"
       },
       {
-        "name": "sun care",
-        "pct": "-",
-        "note": ""
+        "name": "선케어(선크림·UV 제품)",
+        "pct": "~30",
+        "note": "비건 선크림, 일본·글로벌 히트"
       },
       {
-        "name": "serums",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "creams",
-        "pct": "-",
-        "note": ""
+        "name": "메이크업·기타",
+        "pct": "~15",
+        "note": "쿠션·립 등 색조 라인 확장"
       }
     ],
-    "strength_kr": "동사 offers mists, sun care, serums, creams, masks, and sunscreens under the d'Alba brand; health functional foods under the Veganery brand name; health beauty devices; and low-irritation beauty solutions",
-    "customers_kr": ""
+    "strength_kr": "화이트 트러플 소재 차별화, 비건 K-뷰티 트렌드 선점, 일본·동남아·북미 글로벌 확장 중.",
+    "customers_kr": "20~40대 K-뷰티 소비자, 국내외 멀티샵·면세점·온라인 직판"
   },
   "253450": {
     "custom_signal_reason": "스튜디오드래곤 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 566억.",
@@ -2281,7 +2593,27 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "스튜디오드래곤은 CJ ENM 계열 드라마 제작 전문사로, '사랑의 불시착·이상한 변호사 우영우·눈물의 여왕' 등 글로벌 히트작을 제작한다. 넷플릭스·디즈니+ 등 글로벌 OTT 납품과 한국 지상파·케이블 방영이 주요 수익원이다.",
+    "segments_kr": [
+      {
+        "name": "드라마 제작·판매",
+        "pct": "~60",
+        "note": "tvN·OCN·OTT 납품, 글로벌 히트작 제작"
+      },
+      {
+        "name": "글로벌 OTT 라이선스",
+        "pct": "~30",
+        "note": "넷플릭스·디즈니+ 등 스트리밍 판권"
+      },
+      {
+        "name": "포맷·리메이크 판매",
+        "pct": "~10",
+        "note": "해외 드라마 포맷 수출"
+      }
+    ],
+    "strength_kr": "K드라마 글로벌 히트 제작 능력, CJ ENM 방영 플랫폼 연계, 스타 작가·감독 전속 계약.",
+    "customers_kr": "CJ ENM, 넷플릭스·디즈니+ 등 글로벌 OTT, 아시아·유럽 방송국"
   },
   "137310": {
     "custom_signal_reason": "에스디바이오센서 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 95억.",
@@ -2293,21 +2625,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "에스디바이오센서: Medical Instruments & Supplies 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "에스디바이오센서는 신속 분자진단·항원 검사 키트 전문 기업으로, COVID-19 PCR 및 신속항원 키트로 글로벌 시장에 진출했다. 현재는 독감·호흡기·결핵 등 감염병 진단 포트폴리오로 전환 중이다.",
     "segments_kr": [
       {
-        "name": "STANDARD Q",
-        "pct": "-",
-        "note": ""
+        "name": "분자진단(PCR) 키트",
+        "pct": "~45",
+        "note": "COVID·독감·결핵 PCR 키트, OEM 수출"
       },
       {
-        "name": "which provides rapid diagnostic",
-        "pct": "-",
-        "note": ""
+        "name": "신속항원 키트",
+        "pct": "~35",
+        "note": "STANDARD Q 브랜드, 글로벌 100개국+ 수출"
+      },
+      {
+        "name": "검사 장비·시스템",
+        "pct": "~20",
+        "note": "분자진단 자동화 장비"
       }
     ],
-    "strength_kr": "동사 offers STANDARD Q, which provides rapid diagnostic products; STANDARD F, a fluorescence immunodiagnostic system for various qualitative and quantitative diagnosis items; STANDARD E, an enzyme immunoassay diagnosis for large-volume tests; and STAND",
-    "customers_kr": ""
+    "strength_kr": "STANDARD Q 브랜드 글로벌 인지도, WHO·CEPI 긴급승인 레퍼런스, 저비용 진단 접근성 기술.",
+    "customers_kr": "글로벌 정부·방역기관, 병원·진단소, UN·NGO 기관"
   },
   "007690": {
     "custom_signal_reason": "국도화학 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,871억.",
@@ -2319,21 +2656,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "국도화학: 화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "국도화학은 에폭시 수지·경화제·특수화학 소재를 제조하는 중견 화학 기업이다. PCB·전자재료·접착제용 에폭시 수지가 주력이며, 반도체·AI 기판 수요 증가로 고부가 에폭시 수요가 증가하고 있다.",
     "segments_kr": [
       {
-        "name": "epoxy",
-        "pct": "-",
-        "note": ""
+        "name": "에폭시 수지(전자재료·PCB)",
+        "pct": "~55",
+        "note": "AI 기판용 에폭시, 반도체 봉지재 수혜"
       },
       {
-        "name": "polyol resins",
-        "pct": "-",
-        "note": ""
+        "name": "경화제·특수 수지",
+        "pct": "~30",
+        "note": "도료·코팅·접착제용 경화제"
+      },
+      {
+        "name": "기타 화학소재",
+        "pct": "~15",
+        "note": "건축·자동차용 에폭시"
       }
     ],
-    "strength_kr": "It offers epoxy resins; hardeners and accelerators; and composite materials comprising infusion, hand lay-ups, filament winding, pultrusion, prepreg, and resin transfer moldings, as well as rigid, semi-rigid, flexible, and elastomer non-foam polyuret",
-    "customers_kr": ""
+    "strength_kr": "에폭시 수지 국내 최대 생산 능력, AI/반도체 기판 고부가 수요 수혜, 기술 특허 보유.",
+    "customers_kr": "PCB·반도체 봉지재 제조사, 도료·코팅 업체"
   },
   "024850": {
     "custom_signal_reason": "HLB이노베이션 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 7,271억.",
@@ -2345,31 +2687,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "HLB이노베이션: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "HLB이노베이션(구 해광)은 HLB그룹 계열 항암제 원료의약품(API)·중간체 제조 기업이다. HLB 그룹의 리보세라닙(항암제) API 공급이 핵심이며, 글로벌 항암제 임상 진전에 따라 수요가 확대된다.",
     "segments_kr": [
       {
-        "name": "various lead frames",
-        "pct": "-",
-        "note": ""
+        "name": "항암제 API·중간체",
+        "pct": "~65",
+        "note": "리보세라닙·선택적 키나아제 억제제 원료"
       },
       {
-        "name": "such as plastic dual in-line package",
-        "pct": "-",
-        "note": ""
+        "name": "일반 의약품 원료",
+        "pct": "~25",
+        "note": "다양한 API 수탁 제조"
       },
       {
-        "name": "plastic leaded chip carrier",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "small outline integrated circuit",
-        "pct": "-",
-        "note": ""
+        "name": "기타 화학 중간체",
+        "pct": "~10",
+        "note": "정밀화학 중간체"
       }
     ],
-    "strength_kr": "동사 offers various lead frames, such as plastic dual in-line package, plastic leaded chip carrier, small outline integrated circuit, quad flat pack, transistor outline, and other products; lead frame used in smart power modules or intelligent power mo",
-    "customers_kr": ""
+    "strength_kr": "HLB그룹 내부 항암제 원료 독점 공급, 리보세라닙 글로벌 승인 시 수혜 직결.",
+    "customers_kr": "HLB그룹 계열 제약사, 국내외 CMO 고객"
   },
   "031440": {
     "custom_signal_reason": "신세계푸드 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 2,025억.",
@@ -2381,26 +2718,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "신세계푸드: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "신세계푸드는 신세계그룹 계열 식품 제조·외식·단체급식 전문 기업이다. 이마트·신세계백화점 연계 식품 유통과 no brand burger 등 외식 브랜드, 급식 서비스를 제공한다.",
     "segments_kr": [
       {
-        "name": "food",
-        "pct": "-",
-        "note": ""
+        "name": "단체급식·식자재 유통",
+        "pct": "~50",
+        "note": "기업·학교·병원 급식, B2B 식자재"
       },
       {
-        "name": "beverage",
-        "pct": "-",
-        "note": ""
+        "name": "외식(노브랜드버거·데블스도어)",
+        "pct": "~30",
+        "note": "가성비 버거 체인, 프랜차이즈 확장"
       },
       {
-        "name": "food m",
-        "pct": "-",
-        "note": ""
+        "name": "식품 제조·HMR",
+        "pct": "~20",
+        "note": "밀키트·가정간편식(HMR) 이마트 납품"
       }
     ],
-    "strength_kr": "동사 engages in researching, developing, and producing home meal replacements, bakery products, and fresh foods; bakery business under BO&MIE, BOULANGERIE, and Bakery brand names; and operating of franchise businesses, such as the western casual food s",
-    "customers_kr": ""
+    "strength_kr": "신세계그룹 유통 채널 연계, 노브랜드버거 가성비 포지셔닝, B2B 급식 안정 매출.",
+    "customers_kr": "기업·학교·병원 급식 고객, 이마트·신세계 유통 채널"
   },
   "035600": {
     "custom_signal_reason": "KG이니시스 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,163억.",
@@ -2443,21 +2780,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "CJ프레시웨이: Food Distribution 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "CJ프레시웨이는 CJ그룹 계열 식자재 유통·외식 솔루션 전문 기업으로, B2B 식자재 유통 시장 1위다. 외식업체·급식업체·편의점에 식자재를 공급하며, 자체 브랜드 농산물·가공식품도 취급한다.",
     "segments_kr": [
       {
-        "name": "consulting service for menu development",
-        "pct": "-",
-        "note": ""
+        "name": "식자재 유통(B2B)",
+        "pct": "~75",
+        "note": "외식업체·단체급식·편의점 식자재 공급, 국내 1위"
       },
       {
-        "name": "as well as trains staff on new recipes",
-        "pct": "-",
-        "note": ""
+        "name": "외식 솔루션·컨설팅",
+        "pct": "~15",
+        "note": "메뉴 개발·운영 솔루션"
+      },
+      {
+        "name": "기타 가공식품",
+        "pct": "~10",
+        "note": "자체 PB 가공식품 제조"
       }
     ],
-    "strength_kr": "동사 provides consulting service for menu development, as well as trains staff on new recipes",
-    "customers_kr": ""
+    "strength_kr": "식자재 유통 국내 1위 규모 경제, CJ그룹 식품 계열 시너지, 콜드체인 물류 인프라.",
+    "customers_kr": "국내 외식업체·급식기업·편의점 체인"
   },
   "052400": {
     "custom_signal_reason": "코나아이 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 8,053억.",
@@ -2469,16 +2811,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "코나아이: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "코나아이는 선불카드·전자지갑·지역사랑상품권 플랫폼 전문 핀테크 기업이다. 지역화폐·정부 복지 포인트 발행·운영 시스템이 핵심이며, 공공 핀테크 분야 독보적 지위를 보유한다.",
     "segments_kr": [
       {
-        "name": "platforms for the financial technology ma",
-        "pct": "-",
-        "note": ""
+        "name": "지역사랑상품권·지역화폐 운영",
+        "pct": "~55",
+        "note": "전국 지자체 지역화폐 시스템 운영, 수수료 수익"
+      },
+      {
+        "name": "선불카드·전자지갑",
+        "pct": "~30",
+        "note": "기업 복지포인트·선불 결제 플랫폼"
+      },
+      {
+        "name": "해외 핀테크·기타",
+        "pct": "~15",
+        "note": "아프리카·동남아 선불결제 시스템 수출"
       }
     ],
-    "strength_kr": "동사 offers digital identification products, such as IC chips for the financial, telecommunications, and public sectors; smart cards; MONA, a USIM-based budget phone service for the contactless market; and authentication services",
-    "customers_kr": "for businesses"
+    "strength_kr": "전국 지역화폐 시스템 운영 레퍼런스, 공공 발주 진입장벽, 정부 복지 지급 플랫폼 지위.",
+    "customers_kr": "전국 지자체·정부 부처, 기업 복지포인트 수요처"
   },
   "294570": {
     "custom_signal_reason": "쿠콘 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,017억.",
@@ -2490,26 +2842,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "쿠콘: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "쿠콘은 금융 데이터 API·오픈뱅킹 연동 플랫폼 서비스 기업이다. 은행·카드사·핀테크 앱에 계좌조회·결제·스크레이핑 API를 제공하며, 마이데이터 사업 성장과 함께 B2B 데이터 수익이 확대되고 있다.",
     "segments_kr": [
       {
-        "name": "personal data",
-        "pct": "-",
-        "note": ""
+        "name": "금융 데이터 API·스크레이핑",
+        "pct": "~60",
+        "note": "은행·카드사 데이터 API, 오픈뱅킹 연동"
       },
       {
-        "name": "corporate data",
-        "pct": "-",
-        "note": ""
+        "name": "마이데이터·결제 서비스",
+        "pct": "~30",
+        "note": "마이데이터 종합플랫폼, 결제 중개"
       },
       {
-        "name": "global APIs for data",
-        "pct": "-",
-        "note": ""
+        "name": "해외 금융 API",
+        "pct": "~10",
+        "note": "동남아 등 해외 금융 데이터 수출"
       }
     ],
-    "strength_kr": "동사 offers personal data, corporate data, and global APIs for data services; and easy payment and e-banking APIs for payment services",
-    "customers_kr": ""
+    "strength_kr": "금융 데이터 API 시장 선도, 오픈뱅킹 레퍼런스 축적, 마이데이터 사업 수혜.",
+    "customers_kr": "은행·카드사·핀테크 앱 개발사, 금융서비스 기업"
   },
   "331920": {
     "custom_signal_reason": "셀레믹스 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1,224억.",
@@ -2521,31 +2873,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "셀레믹스: 의료기기 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "셀레믹스는 NGS(차세대 염기서열 분석) 타겟 시퀀싱 패널과 유전체 분석 시약·소모품 전문 기업이다. 암 조기진단·동반진단·희귀질환 유전자 패널 제품이 국내외 병원·연구소에 납품된다.",
     "segments_kr": [
       {
-        "name": "celemics analysis",
-        "pct": "-",
-        "note": ""
+        "name": "NGS 타겟 패널·시약",
+        "pct": "~65",
+        "note": "암 유전자 패널, 희귀질환 진단 패널"
       },
       {
-        "name": "whole exome sequencing",
-        "pct": "-",
-        "note": ""
+        "name": "맞춤형 NGS 패널 설계",
+        "pct": "~25",
+        "note": "제약사·연구소 맞춤 패널 수탁 설계"
       },
       {
-        "name": "customized NGS panels",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "sequencing",
-        "pct": "-",
-        "note": ""
+        "name": "바이오인포매틱스 서비스",
+        "pct": "~10",
+        "note": "분석 소프트웨어·클라우드 서비스"
       }
     ],
-    "strength_kr": "동사 offers whole exome sequencing panels; NGS target enrichment panels; customized and ready-to-use enrichment panels; and modular accessories, including library preparation kits, double standard Cdna synthesis, hybridization enhancer, celan-up and st",
-    "customers_kr": ""
+    "strength_kr": "NGS 패널 자체 설계·제조 역량, 동반진단 시장 진입, 글로벌 제약사 협력.",
+    "customers_kr": "병원 진단검사실, 제약사 임상연구팀, 대학·연구소"
   },
   "393890": {
     "custom_signal_reason": "더블유씨피 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 6,836억.",
@@ -2557,26 +2904,26 @@
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
     ],
-    "bm_kr": "더블유씨피: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "더블유씨피(WCP)는 리튬이온 배터리용 분리막(습식 코팅 세퍼레이터) 전문 제조사로, LG에너지솔루션 등 글로벌 배터리사에 납품한다. 고출력 EV용 코팅 세퍼레이터 기술이 핵심이다.",
     "segments_kr": [
       {
-        "name": "battery parts",
-        "pct": "-",
-        "note": ""
+        "name": "코팅 세퍼레이터(EV용)",
+        "pct": "~75",
+        "note": "습식 PE 기재 + 세라믹 코팅, LG에너지솔루션 주납품"
       },
       {
-        "name": "materials for automobiles",
-        "pct": "-",
-        "note": ""
+        "name": "에너지저장장치(ESS)용 세퍼레이터",
+        "pct": "~20",
+        "note": "ESS 배터리 분리막"
       },
       {
-        "name": "energy storage",
-        "pct": "-",
-        "note": ""
+        "name": "기타",
+        "pct": "~5",
+        "note": "소형전지 분리막"
       }
     ],
-    "strength_kr": "It offers bare film, and ceramic coated separators",
-    "customers_kr": ""
+    "strength_kr": "고품질 코팅 세퍼레이터 기술, LG에너지솔루션 장기 공급 계약, EV 고출력 배터리 수요 직결.",
+    "customers_kr": "LG에너지솔루션, SK온, 글로벌 EV 배터리 제조사"
   },
   "047810": {
     "custom_signal_reason": "한국항공우주 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 16조 4,733억.",
@@ -2588,26 +2935,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "한국항공우주: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "한국항공우주(KAI)는 국내 유일 항공기 개발·제조 기업으로, T-50·FA-50 고등훈련기·경전투기와 KUH-1 수리온 헬기, 위성을 개발·생산한다. K방산 수출 확대와 한국형 전투기(KF-21) 양산이 중장기 성장 동력이다.",
     "segments_kr": [
       {
-        "name": "fixed",
-        "pct": "-",
-        "note": ""
+        "name": "완성기(훈련기·전투기·헬기)",
+        "pct": "~55",
+        "note": "FA-50·KF-21 양산, T-50 수출 확대"
       },
       {
-        "name": "rotary wing aircrafts",
-        "pct": "-",
-        "note": ""
+        "name": "기체 구조물(보잉·에어버스 납품)",
+        "pct": "~25",
+        "note": "보잉 787·737 동체 구조물 제조"
       },
       {
-        "name": "airframe products in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "항공우주·위성·유지보수",
+        "pct": "~20",
+        "note": "다목적위성·군 항공기 MRO"
       }
     ],
-    "strength_kr": "manufactures and sells fixed and rotary wing aircrafts, and airframe products in 한국",
-    "customers_kr": ""
+    "strength_kr": "국내 항공기 개발·제조 독점 지위, KF-21 전투기 독점 양산, FA-50 글로벌 수출 확대.",
+    "customers_kr": "방위사업청·공군, 보잉·에어버스(구조물), 폴란드·이라크·인도네시아 등 FA-50 수출국"
   },
   "007660": {
     "custom_signal_reason": "이수페타시스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 11조 334억.",
@@ -2619,26 +2966,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "이수페타시스: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "이수페타시스는 MLB(다층 고속 PCB) 전문 제조사로, AI 서버·네트워크 장비용 고다층 PCB 수요 급증의 최대 수혜주다. 엔비디아 AI 가속기·하이퍼스케일 데이터센터 스위치 PCB 납품이 핵심 성장 동력이다.",
     "segments_kr": [
       {
-        "name": "network equipment",
-        "pct": "-",
-        "note": ""
+        "name": "AI 서버·네트워크 MLB PCB",
+        "pct": "~65",
+        "note": "엔비디아 AI 가속기·스위치 PCB, 고마진 고다층"
       },
       {
-        "name": "including router/switch",
-        "pct": "-",
-        "note": ""
+        "name": "통신·방산용 PCB",
+        "pct": "~25",
+        "note": "기지국·위성·방산 PCB"
       },
       {
-        "name": "backplane",
-        "pct": "-",
-        "note": ""
+        "name": "산업·기타 PCB",
+        "pct": "~10",
+        "note": "산업용 제어 PCB"
       }
     ],
-    "strength_kr": "동사 offers network equipment, including router/switch and backplane; server/storage PCB; supercomputer high-performance computing PCB; aerospace PCB; and IC testers, including probe card, load board, and burn-in board",
-    "customers_kr": ""
+    "strength_kr": "고다층(30층+) MLB PCB 기술력 국내 1위, 엔비디아 공급망 진입, AI 데이터센터 구축 수요 직결.",
+    "customers_kr": "엔비디아·AMD·브로드컴 서버 ODM사, 시스코·주니퍼 네트워크 장비사"
   },
   "014680": {
     "custom_signal_reason": "한솔케미칼 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 3조 2,348억.",
@@ -2686,10 +3033,21 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "피에스케이홀딩스 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "피에스케이홀딩스는 반도체 세정·애싱(Ashing) 장비 전문사 피에스케이의 지주회사다. 피에스케이의 건식 세정(Dry Clean)·포토레지스트 제거(Strip) 장비가 삼성전자·SK하이닉스 첨단 반도체 공정에 납품된다.",
+    "segments_kr": [
+      {
+        "name": "반도체 세정·Ashing 장비(피에스케이)",
+        "pct": "~80",
+        "note": "건식 세정·포토레지스트 제거 장비, 삼성·하이닉스 납품"
+      },
+      {
+        "name": "지주·기타 자회사",
+        "pct": "~20",
+        "note": "지주 배당 수익, 기타 투자"
+      }
+    ],
+    "strength_kr": "삼성전자·SK하이닉스 반도체 공정 납품 인증, 건식 세정 기술 경쟁력, HBM 공정 수혜.",
+    "customers_kr": "삼성전자·SK하이닉스·마이크론 등 반도체 제조사"
   },
   "282330": {
     "custom_signal_reason": "BGF리테일 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 2,815억.",
@@ -2701,16 +3059,21 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "BGF리테일: Grocery Stores 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "BGF리테일은 CU 편의점 브랜드를 운영하는 국내 편의점 1~2위 기업이다. 전국 18,000개+ 가맹점을 통해 도시락·간편식·생활용품 판매가 핵심이며, 근거리 소비 트렌드 수혜로 안정적 성장을 이어가고 있다.",
     "segments_kr": [
       {
-        "name": "Grocery Stores",
-        "pct": "-",
-        "note": ""
+        "name": "CU 편의점 가맹(수수료·물류)",
+        "pct": "~85",
+        "note": "가맹점 수수료 + 식품·생필품 물류 공급"
+      },
+      {
+        "name": "물류·제조(도시락·HMR)",
+        "pct": "~15",
+        "note": "자체 식품 제조·물류센터 운영"
       }
     ],
-    "strength_kr": "동사's stores retail various products, such as quick meals, instant cooking, processed meals, food ingredients, beverages, dairy products, alcohol, confectionery, ice cream, breads, desserts, snacks, tobacco, household and personal goods, hobbies and l",
-    "customers_kr": ""
+    "strength_kr": "CU 브랜드 전국 18,000+점 밀도, 도시락·간편식 PB 경쟁력, 편의점 디지털 전환.",
+    "customers_kr": "도시 소비자(직장인·1인가구), CU 가맹점주"
   },
   "319660": {
     "custom_signal_reason": "피에스케이 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 5,751억.",
@@ -2722,31 +3085,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "피에스케이: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "피에스케이는 반도체 건식 세정(Dry Clean)·포토레지스트 애싱(Strip) 장비 전문 제조사다. 삼성전자·SK하이닉스의 첨단 로직·메모리 공정에 필수 소모 공정 장비를 납품하며, HBM·GAA 공정 확대의 수혜가 기대된다.",
     "segments_kr": [
       {
-        "name": "dry strip",
-        "pct": "-",
-        "note": ""
+        "name": "건식 세정(Dry Clean) 장비",
+        "pct": "~55",
+        "note": "반도체 패턴 잔류물 제거, 첨단 공정 필수"
       },
       {
-        "name": "selective material removal",
-        "pct": "-",
-        "note": ""
+        "name": "Ashing(PR Strip) 장비",
+        "pct": "~35",
+        "note": "포토레지스트 제거, 메모리·로직 공정"
       },
       {
-        "name": "bevel etch",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "integrated process equipment",
-        "pct": "-",
-        "note": ""
+        "name": "서비스·부품",
+        "pct": "~10",
+        "note": "장비 유지보수·소모품"
       }
     ],
-    "strength_kr": "동사 offers dry strip, selective material removal, bevel etch, integrated process equipment, dry cleaning, new hard mask strip, etch back, power device etch, and wafer edge clean products",
-    "customers_kr": ""
+    "strength_kr": "국내 건식 세정 장비 1위, HBM·3D NAND 고단화 공정 수요 직결, 삼성·SK하이닉스 인증.",
+    "customers_kr": "삼성전자·SK하이닉스·마이크론 등 메모리·파운드리"
   },
   "403870": {
     "custom_signal_reason": "HPSP 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 4조 3,290억.",
@@ -2758,21 +3116,21 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "HPSP: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "HPSP는 고압 수소 어닐링(HPA) 반도체 공정 장비를 독점 공급하는 기업이다. HPA 장비는 차세대 반도체(GAA·HBM)의 계면 결함 제거에 필수이며, 삼성전자·TSMC·SK하이닉스 모두 도입하고 있다.",
     "segments_kr": [
       {
-        "name": "GENI-SYS",
-        "pct": "-",
-        "note": ""
+        "name": "고압수소어닐링(HPA) 장비",
+        "pct": "~90",
+        "note": "사실상 글로벌 독점, 차세대 반도체 필수 공정"
       },
       {
-        "name": "a high-pressure hydrogen annealing equipm",
-        "pct": "-",
-        "note": ""
+        "name": "서비스·유지보수",
+        "pct": "~10",
+        "note": "장비 AS·소모품 공급"
       }
     ],
-    "strength_kr": "It offers GENI-SYS, a high-pressure hydrogen annealing equipment; and GENI and GENI-SE",
-    "customers_kr": ""
+    "strength_kr": "HPA 장비 글로벌 사실상 독점 공급, GAA·HBM 공정 확대로 수요 급증, 특허 보호된 기술 진입장벽.",
+    "customers_kr": "삼성전자·SK하이닉스·TSMC·인텔 등 글로벌 반도체 제조사"
   },
   "140860": {
     "custom_signal_reason": "파크시스템스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 223억.",
@@ -2784,26 +3142,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "파크시스템스: Scientific & Technical Instruments 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "파크시스템스는 원자 분해능 원자력간현미경(AFM)을 제조하는 나노계측 전문 기업으로, 반도체 공정 품질 측정에 필수적인 장비를 삼성·하이닉스·TSMC에 납품한다. 비파괴 나노 계측 분야 글로벌 탑2 수준이다.",
     "segments_kr": [
       {
-        "name": "AFM for research",
-        "pct": "-",
-        "note": ""
+        "name": "반도체용 AFM 계측 장비",
+        "pct": "~65",
+        "note": "삼성·하이닉스·TSMC 첨단 공정 라인 구축"
       },
       {
-        "name": "surface analysis",
-        "pct": "-",
-        "note": ""
+        "name": "연구용 AFM(대학·연구소)",
+        "pct": "~25",
+        "note": "글로벌 대학·국가연구소 납품"
       },
       {
-        "name": "in-line metrology",
-        "pct": "-",
-        "note": ""
+        "name": "서비스·소모품",
+        "pct": "~10",
+        "note": "탐침·유지보수 서비스"
       }
     ],
-    "strength_kr": "It provides AFM for research and surface analysis, and in-line metrology; photomask repair; optical profilometry; and nano infrared spectroscopy services",
-    "customers_kr": ""
+    "strength_kr": "반도체 AFM 글로벌 탑2, 비파괴 나노 계측 원천 기술, GAA 공정 전환 수혜.",
+    "customers_kr": "삼성전자·SK하이닉스·TSMC·인텔, 글로벌 대학·연구소"
   },
   "084110": {
     "custom_signal_reason": "휴온스글로벌 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 7,988억.",
@@ -2815,10 +3173,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "휴온스글로벌 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "휴온스글로벌은 주사제·히알루론산 필러·생리식염수를 제조하는 제약 기업 휴온스의 지주회사다. 히알루론산 필러와 보툴리눔 톡신(휴톡스)이 글로벌 에스테틱 시장에 수출되며, 안과·성형·피부 전문 의약품이 주력이다.",
+    "segments_kr": [
+      {
+        "name": "주사제·생리식염수·점안제",
+        "pct": "~40",
+        "note": "병원 처방 전문의약품, 안정적 매출"
+      },
+      {
+        "name": "HA 필러·보툴리눔(에스테틱)",
+        "pct": "~35",
+        "note": "휴톡스·더채움 필러, 글로벌 에스테틱 수출"
+      },
+      {
+        "name": "건강기능식품·기타",
+        "pct": "~25",
+        "note": "루테인·오메가3 건기식"
+      }
+    ],
+    "strength_kr": "히알루론산 소재 원천 기술, 에스테틱 전문 의약품 라인업, 글로벌 수출 채널 확장.",
+    "customers_kr": "국내외 병원·피부과·성형외과, 글로벌 에스테틱 유통사"
   },
   "215200": {
     "custom_signal_reason": "메가스터디교육 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 4,908억.",
@@ -2830,21 +3204,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "메가스터디교육: Education & Training Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "메가스터디교육은 수능 입시 온·오프라인 학원과 초·중·고 교육 플랫폼을 운영하는 교육 기업이다. 메가스터디닷컴(수능 인강)과 직영 러셀학원이 핵심이며, 교원·교육 SaaS 영역으로 확장 중이다.",
     "segments_kr": [
       {
-        "name": "online",
-        "pct": "-",
-        "note": ""
+        "name": "수능 온라인 강의(메가스터디닷컴)",
+        "pct": "~45",
+        "note": "수능 인강 1위, 구독·단과 결제"
       },
       {
-        "name": "offline educational services primarily in",
-        "pct": "-",
-        "note": ""
+        "name": "입시 학원(러셀·메가씨엔이)",
+        "pct": "~35",
+        "note": "대치동 직영 학원, 의대 입시 특화"
+      },
+      {
+        "name": "초중등 교육·SaaS",
+        "pct": "~20",
+        "note": "엠베스트·학교 교육 플랫폼"
       }
     ],
-    "strength_kr": "It engages in the provision of online education academy, education information, entrance examination consulting, offline school direct management, education-related database, publishing services, etc",
-    "customers_kr": ""
+    "strength_kr": "수능 인강 시장 1위 브랜드, 의대 입시 특화 오프라인 학원, 디지털 전환 선도.",
+    "customers_kr": "수능 수험생·재수생, 의대 지망생, 학부모"
   },
   "243070": {
     "custom_signal_reason": "휴온스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 3,163억.",
@@ -2856,31 +3235,26 @@
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
     ],
-    "bm_kr": "휴온스: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "휴온스는 주사제·점안제·히알루론산 필러 제조 전문 제약사로, 휴온스글로벌의 핵심 사업 자회사다. 안과·성형외과 전문 의약품과 보툴리눔 톡신(휴톡스)이 주요 제품이다.",
     "segments_kr": [
       {
-        "name": "oral solid form drugs",
-        "pct": "-",
-        "note": ""
+        "name": "전문의약품(주사제·점안제)",
+        "pct": "~50",
+        "note": "안과·성형·마취 주사제 병원 처방"
       },
       {
-        "name": "including circulatory",
-        "pct": "-",
-        "note": ""
+        "name": "에스테틱(HA필러·보툴리눔)",
+        "pct": "~35",
+        "note": "더채움 필러·휴톡스 보툴리눔, 글로벌 수출"
       },
       {
-        "name": "metabolic",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "antipyretic",
-        "pct": "-",
-        "note": ""
+        "name": "건기식·기타",
+        "pct": "~15",
+        "note": "루테인·오메가3 건강기능식품"
       }
     ],
-    "strength_kr": "동사 offers oral solid form drugs, including circulatory system, metabolic, antipyretic, analgesic, anti-inflammatory, musculoskeletal system, digestive system, antihistamine, respiratory system, anti-coagulant, antiviral, central nervous system, antib",
-    "customers_kr": ""
+    "strength_kr": "히알루론산 원료 자체 생산, 에스테틱 전문 의약품 라인업, 글로벌 수출 확장.",
+    "customers_kr": "국내외 병원·피부과·성형외과, 에스테틱 유통사"
   },
   "383310": {
     "custom_signal_reason": "에코프로에이치엔 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 6,691억.",
@@ -2891,7 +3265,27 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "에코프로에이치엔은 에코프로그룹 계열 대기환경장치·리튬 전구체 제조 기업이다. 이차전지 공정 폐가스 처리 시스템과 NCM 전구체 제조가 핵심이며, 에코프로비엠 양극재 생산 공정의 핵심 연계 기업이다.",
+    "segments_kr": [
+      {
+        "name": "대기환경장치(배가스처리)",
+        "pct": "~45",
+        "note": "반도체·배터리 공장 유해가스 처리 시스템"
+      },
+      {
+        "name": "NCM 전구체",
+        "pct": "~40",
+        "note": "양극재 전구체, 에코프로비엠 공급"
+      },
+      {
+        "name": "기타 환경소재",
+        "pct": "~15",
+        "note": "화학흡착제, 공조 필터"
+      }
+    ],
+    "strength_kr": "에코프로그룹 내부 배터리 소재 밸류체인 연계, 대기환경 독보적 기술, 전구체 증설 진행 중.",
+    "customers_kr": "에코프로비엠, 반도체·배터리 공장 환경 설비 수요처"
   },
   "068270": {
     "custom_signal_reason": "셀트리온 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 44조 3,877억.",
@@ -2903,21 +3297,26 @@
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
     ],
-    "bm_kr": "셀트리온: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "셀트리온은 항체 바이오시밀러(램시마·허쥬마·유플라이마) 개발·제조·판매 전문 바이오 기업으로, 글로벌 시장에 직접 진출한 국내 최초 바이오시밀러 기업이다. 셀트리온헬스케어·셀트리온제약과 통합 후 풀 밸류체인을 보유하며, 신약(CT-P59 코로나 항체치료제 등) 개발도 병행한다.",
     "segments_kr": [
       {
-        "name": "biosimilars",
-        "pct": "-",
-        "note": ""
+        "name": "항체 바이오시밀러 제조·판매",
+        "pct": "~65",
+        "note": "램시마(레미케이드 시밀러)·허쥬마·유플라이마 글로벌 직판"
       },
       {
-        "name": "including Remsima for rheumatoid arthriti",
-        "pct": "-",
-        "note": ""
+        "name": "바이오시밀러 CMO 수탁",
+        "pct": "~20",
+        "note": "글로벌 제약사 바이오의약품 위탁생산"
+      },
+      {
+        "name": "신약·파이프라인",
+        "pct": "~15",
+        "note": "자가면역·종양·바이러스 항체 신약 개발"
       }
     ],
-    "strength_kr": "It offers biosimilars, including Remsima for rheumatoid arthritis and inflammatory bowel disease; Truxima for non-hodgkin's lymphoma and chronic lymphocytic leukemia; Herzuma for metastatic breast and gastric cancer; Remsima SC and Yuflyma for rheuma",
-    "customers_kr": ""
+    "strength_kr": "글로벌 바이오시밀러 시장 개척자 지위, 인천 송도 대규모 바이오 공장, 셀트리온그룹 통합 풀밸류체인.",
+    "customers_kr": "글로벌 병원·의약품 유통사, 유럽·미국·신흥시장 바이오의약품 수요처"
   },
   "003090": {
     "custom_signal_reason": "대웅 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 1조 3,111억.",
@@ -2950,31 +3349,26 @@
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
     ],
-    "bm_kr": "대웅제약: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "대웅제약은 국내 상위 처방 전문 제약사로, 나보타(보툴리눔 톡신)·알비스·우루사 등 자체 브랜드 의약품과 해외 수입 의약품 유통이 주력이다. 나보타 미국 FDA 허가로 글로벌 에스테틱 시장 수출이 빠르게 성장하고 있다.",
     "segments_kr": [
       {
-        "name": "products in therapeutic areas",
-        "pct": "-",
-        "note": ""
+        "name": "전문의약품(ETC·보툴리눔·소화기)",
+        "pct": "~60",
+        "note": "나보타·알비스·우루사, 국내 원외처방 상위"
       },
       {
-        "name": "such as central nervous",
-        "pct": "-",
-        "note": ""
+        "name": "보툴리눔 글로벌 수출(나보타)",
+        "pct": "~25",
+        "note": "미국·유럽 나보타(에볼루스 제휴) 수출"
       },
       {
-        "name": "endocrinology",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "musculoskeletal",
-        "pct": "-",
-        "note": ""
+        "name": "원료의약품·수입유통",
+        "pct": "~15",
+        "note": "해외 의약품 수입 판매, API"
       }
     ],
-    "strength_kr": "develops, manufactures and commercializes pharmaceutical products in 한국 and 해외",
-    "customers_kr": ""
+    "strength_kr": "나보타 미국 허가로 에스테틱 글로벌 수출 본격화, 우루사 국민 브랜드, R&D 파이프라인 강화.",
+    "customers_kr": "국내 병원·약국, 에볼루스(미국 나보타 파트너), 글로벌 에스테틱 유통사"
   },
   "096760": {
     "custom_signal_reason": "JW홀딩스 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 3,164억.",
@@ -2986,31 +3380,26 @@
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
     ],
-    "bm_kr": "JW홀딩스: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "JW홀딩스는 JW중외제약·JW생명과학·JW신약 등을 거느린 JW그룹 제약 지주회사다. 수액(링거)·항생제·희귀질환 의약품이 핵심이며, JW중외제약이 보유한 글로벌 수액 제조 경쟁력이 강점이다.",
     "segments_kr": [
       {
-        "name": "amino acid",
-        "pct": "-",
-        "note": ""
+        "name": "수액·영양수액(JW생명과학)",
+        "pct": "~40",
+        "note": "국내 수액 시장 1위, 병원 필수 의약품"
       },
       {
-        "name": "gastrointestinal agents",
-        "pct": "-",
-        "note": ""
+        "name": "전문의약품(JW중외제약)",
+        "pct": "~40",
+        "note": "항생제·소화기·항암 처방약"
       },
       {
-        "name": "wound care",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "eye care",
-        "pct": "-",
-        "note": ""
+        "name": "희귀질환·신약 개발",
+        "pct": "~20",
+        "note": "희귀질환 치료제, 글로벌 기술수출"
       }
     ],
-    "strength_kr": "동사 offers amino acid solutions, gastrointestinal agents, wound care, eye care, liver disease treatment, cold medicine, API, oral and topical analgesic, and other miscellaneous pharmaceutical products",
-    "customers_kr": ""
+    "strength_kr": "국내 수액 시장 독보적 1위, 병원 필수 수액 공급 안정성, 희귀질환 신약 파이프라인.",
+    "customers_kr": "국내 병원·중환자실, 요양기관, 글로벌 수액 수입 바이어"
   },
   "123010": {
     "custom_signal_reason": "알엔티엑스 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 504억.",
@@ -3058,31 +3447,21 @@
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
     ],
-    "bm_kr": "산일전기: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "산일전기는 전력 변압기(파워 트랜스포머) 국내 1위 제조사로, 배전용·전력용·특수 변압기를 생산한다. 데이터센터 전력 인프라, 신재생에너지 계통 연계, 전력망 현대화 수혜가 직결되며, 미국 전력망 업그레이드 수혜로 수출이 급증하고 있다.",
     "segments_kr": [
       {
-        "name": "transformers",
-        "pct": "-",
-        "note": ""
+        "name": "전력 변압기(Power Transformer)",
+        "pct": "~85",
+        "note": "배전·전력용 변압기 국내 1위, 데이터센터·재생에너지 수혜"
       },
       {
-        "name": "reactors for power grid",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "renewable energy",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "industrial transformer markets in Kor",
-        "pct": "-",
-        "note": ""
+        "name": "리액터·특수 전기기기",
+        "pct": "~15",
+        "note": "전력 계통 보조 장치"
       }
     ],
-    "strength_kr": "동사 offers power, distribution, pad-mounted, oil-filled, cast-resin, pole-mounted, and dry-type transformers, as well as high and low voltage soft starters",
-    "customers_kr": ""
+    "strength_kr": "전력 변압기 국내 1위, 미국 전력망 현대화·AI 데이터센터 수요 폭증 수혜, 납기 경쟁력.",
+    "customers_kr": "한국전력·발전 자회사, 미국·중동 전력 유틸리티, 데이터센터 건설사"
   },
   "005960": {
     "custom_signal_reason": "동부건설 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 2,189억.",
@@ -3094,21 +3473,26 @@
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
     ],
-    "bm_kr": "동부건설: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "동부건설은 센트레빌 브랜드 아파트 주택사업과 토목·건축 공사를 영위하는 중견 건설사다. 아파트 분양 매출과 공공 토목 수주가 주력이며, 재건축·재개발 사업 수주 확대를 추진 중이다.",
     "segments_kr": [
       {
-        "name": "건설",
-        "pct": "-",
-        "note": ""
+        "name": "주택(센트레빌 아파트)",
+        "pct": "~55",
+        "note": "분양 사업, 재건축·재개발 수주"
       },
       {
-        "name": "엔지니어링",
-        "pct": "-",
-        "note": ""
+        "name": "토목·공공공사",
+        "pct": "~30",
+        "note": "도로·항만·공공시설 토목"
+      },
+      {
+        "name": "건축·플랜트",
+        "pct": "~15",
+        "note": "오피스·상업시설 건축"
       }
     ],
-    "strength_kr": "동사 undertakes various civil works, such as roads, bridges, tunnels, port facilities, expressway, railway, subway, water treatment, sewage, airport, leisure facility, and other related services; architecture works, including building of medical facili",
-    "customers_kr": ""
+    "strength_kr": "센트레빌 브랜드 인지도, 공공 토목 수주 경쟁력, 재건축 수주 확대 추진.",
+    "customers_kr": "아파트 분양 수요자, 발주처(LH·지자체·민간)"
   },
   "282880": {
     "custom_signal_reason": "코윈테크 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 1,906억.",
@@ -3120,26 +3504,26 @@
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
     ],
-    "bm_kr": "코윈테크: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "코윈테크는 2차전지 제조 공정의 전극 권취(와인딩)·조립 장비 전문 기업이다. 파우치형·각형 배터리 제조 핵심 공정 장비를 삼성SDI·SK온 등에 납품하며, EV 배터리 라인 증설 수혜를 직접 받는다.",
     "segments_kr": [
       {
-        "name": "bucket",
-        "pct": "-",
-        "note": ""
+        "name": "전극 권취(와인딩) 장비",
+        "pct": "~60",
+        "note": "파우치·각형 배터리 핵심 공정, 삼성SDI 납품"
       },
       {
-        "name": "pallet",
-        "pct": "-",
-        "note": ""
+        "name": "조립·스태킹 장비",
+        "pct": "~30",
+        "note": "전지 조립 자동화 장비"
       },
       {
-        "name": "roll type automation warehouse",
-        "pct": "-",
-        "note": ""
+        "name": "기타 배터리 공정 장비",
+        "pct": "~10",
+        "note": "검사·클리닝 장비"
       }
     ],
-    "strength_kr": "동사 offers bucket, pallet and roll type automation warehouse products; building and unit racks; single and double reach types; material logistic equipment, including conveyor, automatic shuttle, lifter automation warehouse, de-stacker/magazine, and en",
-    "customers_kr": ""
+    "strength_kr": "배터리 와인딩 장비 기술력, 삼성SDI·SK온 장기 공급 계약, EV 배터리 설비 투자 수혜.",
+    "customers_kr": "삼성SDI·SK온·LG에너지솔루션 등 배터리 제조사"
   },
   "332570": {
     "custom_signal_reason": "PS일렉트로닉스 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 3,810억.",
@@ -3151,31 +3535,26 @@
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
     ],
-    "bm_kr": "PS일렉트로닉스: Communication Equipment 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "PS일렉트로닉스는 PCB용 특수 화학 소재(액상 감광재·도금액)와 반도체 패키징 소재를 제조하는 전자재료 기업이다.",
     "segments_kr": [
       {
-        "name": "products for mobile",
-        "pct": "-",
-        "note": ""
+        "name": "PCB 감광재·도금액",
+        "pct": "~65",
+        "note": "PCB 제조 공정 핵심 소재"
       },
       {
-        "name": "automotive",
-        "pct": "-",
-        "note": ""
+        "name": "반도체 패키징 소재",
+        "pct": "~25",
+        "note": "반도체 PKG 공정 소재"
       },
       {
-        "name": "IoT industries",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "including multimode",
-        "pct": "-",
-        "note": ""
+        "name": "기타 전자재료",
+        "pct": "~10",
+        "note": "디스플레이·전자부품 소재"
       }
     ],
-    "strength_kr": "It offers products for mobile, automotive, and IoT industries, including multimode and multiband, LTE band multimode and multiband, and LTE band linear power amplifier modules; and front end modules, multiband RF front-end module, and integrated RF f",
-    "customers_kr": ""
+    "strength_kr": "PCB·반도체 공정 특수 소재 전문성, AI 기판 PCB 소재 수요 수혜.",
+    "customers_kr": "PCB 제조사·반도체 패키징 업체"
   },
   "381620": {
     "custom_signal_reason": "제닉스로보틱스 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 1,331억.",
@@ -3213,10 +3592,26 @@
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
     ],
-    "bm_kr": "범한퓨얼셀 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "범한퓨얼셀은 인산형 연료전지(PAFC) 발전 시스템과 수소 충전소용 수소압축기 제조 전문 기업이다. 건물용 분산전원 연료전지 공급과 수소 인프라 구축이 주요 사업이다.",
+    "segments_kr": [
+      {
+        "name": "연료전지 발전 시스템(PAFC)",
+        "pct": "~55",
+        "note": "건물·공장 분산전원, 한국가스공사 공급"
+      },
+      {
+        "name": "수소 충전소 압축기",
+        "pct": "~35",
+        "note": "수소차 충전 인프라 핵심 장비"
+      },
+      {
+        "name": "기타 수소·에너지",
+        "pct": "~10",
+        "note": "그린수소 연계 사업"
+      }
+    ],
+    "strength_kr": "인산형 연료전지 독자 기술, 수소 충전 압축기 국산화, 정부 수소 인프라 정책 수혜.",
+    "customers_kr": "한국가스공사·발전사, 수소충전소 운영사, 공공기관·건물주"
   },
   "124500": {
     "custom_signal_reason": "아이티센글로벌 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 1조 2,554억.",
@@ -3228,31 +3623,26 @@
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
     ],
-    "bm_kr": "아이티센글로벌: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "아이티센글로벌은 IT서비스·클라우드·AI 솔루션을 공공·금융·민간 기업에 공급하는 중견 IT서비스 기업이다. 아이티센그룹의 상장 계열사로 공공 SI와 AI 전환 서비스가 핵심이다.",
     "segments_kr": [
       {
-        "name": "IT services for the public",
-        "pct": "-",
-        "note": ""
+        "name": "공공·금융 IT 시스템(SI·ITO)",
+        "pct": "~60",
+        "note": "정부·공공기관 IT 시스템 구축·운영"
       },
       {
-        "name": "financial",
-        "pct": "-",
-        "note": ""
+        "name": "클라우드·AI 솔루션",
+        "pct": "~30",
+        "note": "클라우드 전환, AI 기반 업무 자동화"
       },
       {
-        "name": "education",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "enterprise sectors",
-        "pct": "-",
-        "note": ""
+        "name": "기타 IT 서비스",
+        "pct": "~10",
+        "note": "통신·유통 IT 서비스"
       }
     ],
-    "strength_kr": "It offers rental; wholesale and retail of gold and other precious metals; and Cloud, AI, IT Consulting, and Implementation",
-    "customers_kr": ""
+    "strength_kr": "공공 IT 발주 경쟁력, 그룹사 수주 시너지, 클라우드·AI 전환 수혜.",
+    "customers_kr": "정부·공공기관, 금융사, 민간 기업"
   },
   "140410": {
     "custom_signal_reason": "메지온 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 2조 8,386억.",
@@ -3264,10 +3654,21 @@
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
     ],
-    "bm_kr": "메지온 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "메지온은 폐동맥고혈압(PAH) 치료제 유데나필(Udenafil)과 심부전 치료제 파이프라인을 보유한 바이오 신약 개발사다. 유데나필의 단심실 심장병 임상 3상이 글로벌 허가 신청 단계다.",
+    "segments_kr": [
+      {
+        "name": "유데나필(PAH·단심실 심장병)",
+        "pct": "~70",
+        "note": "국내 PAH 처방, 미국 FDA 허가 신청 추진"
+      },
+      {
+        "name": "파이프라인(심부전·기타)",
+        "pct": "~30",
+        "note": "심부전·호흡기 신약 개발"
+      }
+    ],
+    "strength_kr": "유데나필 희귀질환 orphan drug 지정, 단심실 미충족 의학 수요, 글로벌 파트너링 추진.",
+    "customers_kr": "글로벌 빅파마 파트너, 희귀심장질환 환자"
   },
   "091580": {
     "custom_signal_reason": "상신이디피 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 3,545억.",
@@ -3279,21 +3680,21 @@
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
     ],
-    "bm_kr": "상신이디피: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "상신이디피는 2차전지 원통형·각형 배터리용 캡 조립체(CID·캡어셈블리) 전문 제조사다. 배터리 안전 밸브 역할을 하는 핵심 소모 부품으로 삼성SDI에 대부분 납품한다.",
     "segments_kr": [
       {
-        "name": "전기장비",
-        "pct": "-",
-        "note": ""
+        "name": "배터리 캡 조립체(CID·캡어셈블리)",
+        "pct": "~85",
+        "note": "원통형·각형 배터리 안전장치, 삼성SDI 납품"
       },
       {
-        "name": "부품",
-        "pct": "-",
-        "note": ""
+        "name": "기타 배터리 부품",
+        "pct": "~15",
+        "note": "전극 탭, 기타 전지 부품"
       }
     ],
-    "strength_kr": "engages in the manufacture and sale of secondary batteries in 한국, China, Malaysia, Hungary, and 해외",
-    "customers_kr": ""
+    "strength_kr": "삼성SDI 1차 협력사 지위, 배터리 안전 부품 기술 경쟁력, EV 배터리 증설 수혜.",
+    "customers_kr": "삼성SDI, 중소형 배터리 제조사"
   },
   "474170": {
     "custom_signal_reason": "루미르 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 2,888억.",
@@ -3305,26 +3706,26 @@
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
     ],
-    "bm_kr": "루미르: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "루미르는 초소형 위성(큐브샛·마이크로샛)과 SAR(합성개구레이더) 위성 시스템 개발 전문 우주 기업이다. 국방 정찰·기상·환경 관측 위성을 설계·제조·발사하는 뉴스페이스 스타트업이다.",
     "segments_kr": [
       {
-        "name": "search",
-        "pct": "-",
-        "note": ""
+        "name": "SAR 정찰 위성 시스템",
+        "pct": "~60",
+        "note": "군·정부 정찰 위성, 방위사업청 수주"
       },
       {
-        "name": "purchase",
-        "pct": "-",
-        "note": ""
+        "name": "초소형 관측 위성(큐브샛)",
+        "pct": "~30",
+        "note": "환경·해양 모니터링 상업 위성"
       },
       {
-        "name": "analysis",
-        "pct": "-",
-        "note": ""
+        "name": "위성 지상국·소프트웨어",
+        "pct": "~10",
+        "note": "위성 데이터 수신·처리 솔루션"
       }
     ],
-    "strength_kr": "It develops small synthetic aperture radar (SAR) satellite system; CAS500-5 C-band SAR satellite system; small SAR payload; Ka-band transmitter and phased array antenna; space internet communication device for lunar exploration; image data handling u",
-    "customers_kr": ""
+    "strength_kr": "SAR 위성 독자 기술, 국내 뉴스페이스 선도 기업, 정부 우주개발 예산 수혜.",
+    "customers_kr": "방위사업청·국방부, 한국항공우주연구원, 환경부·해수부"
   },
   "418250": {
     "custom_signal_reason": "시큐레터 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 476억.",
@@ -3336,16 +3737,26 @@
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
     ],
-    "bm_kr": "시큐레터: Software - Infrastructure 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "시큐레터는 악성코드 탐지·이메일 보안·APT 대응 사이버보안 솔루션 기업이다. 파일·이메일·웹 기반 악성코드를 AI로 탐지하는 제품이 공공·금융 기관에 납품된다.",
     "segments_kr": [
       {
-        "name": "Software - Infrastructure",
-        "pct": "-",
-        "note": ""
+        "name": "이메일·파일 악성코드 탐지(AI)",
+        "pct": "~65",
+        "note": "AI 기반 APT·제로데이 탐지, 공공·금융 납품"
+      },
+      {
+        "name": "웹 보안·클라우드 보안",
+        "pct": "~25",
+        "note": "웹 격리·클라우드 보안 서비스"
+      },
+      {
+        "name": "보안 컨설팅·유지보수",
+        "pct": "~10",
+        "note": "취약점 분석·침해사고 대응"
       }
     ],
-    "strength_kr": "It offers SecuLetter Email (SLE), an email security solution; SecuLetter File Security, a malware protection solution",
-    "customers_kr": ""
+    "strength_kr": "AI 악성코드 탐지 독자 엔진, 공공기관 인증·납품 레퍼런스, 사이버 위협 고도화 수혜.",
+    "customers_kr": "국내 공공기관·금융사·대기업 보안팀"
   },
   "365340": {
     "custom_signal_reason": "성일하이텍 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 1조 88억.",
@@ -3357,21 +3768,26 @@
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
     ],
-    "bm_kr": "성일하이텍: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "성일하이텍은 폐배터리(블랙매스)에서 니켈·코발트·리튬·망간을 습식제련으로 회수하는 배터리 리사이클링 전문 기업이다. 국내 1위 규모의 폐배터리 재활용 능력을 보유하며, 2차전지 순환경제 핵심 플레이어다.",
     "segments_kr": [
       {
-        "name": "전기장비",
-        "pct": "-",
-        "note": ""
+        "name": "블랙매스 습식제련(니켈·코발트·리튬 회수)",
+        "pct": "~70",
+        "note": "황산니켈·황산코발트·탄산리튬 생산, 배터리소재사 납품"
       },
       {
-        "name": "부품",
-        "pct": "-",
-        "note": ""
+        "name": "전처리(방전·파쇄·블랙매스 생산)",
+        "pct": "~25",
+        "note": "폐배터리 전처리 공정"
+      },
+      {
+        "name": "기타 금속 회수",
+        "pct": "~5",
+        "note": "알루미늄·구리 등 부산물 회수"
       }
     ],
-    "strength_kr": "동사 enages in the lithium secondary battery recycling business",
-    "customers_kr": ""
+    "strength_kr": "폐배터리 재활용 국내 1위 규모, 습식제련 기술 보유, EU 배터리 규정(배터리 재활용 의무화) 수혜.",
+    "customers_kr": "포스코퓨처엠·에코프로비엠 등 배터리소재사, 완성차 폐배터리 공급처"
   },
   "187660": {
     "custom_signal_reason": "페니트리움바이오 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 6,218억.",
@@ -3419,16 +3835,26 @@
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
     ],
-    "bm_kr": "지구홀딩스: Diagnostics & Research 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "지구홀딩스는 방산·자동차부품·환경사업을 영위하는 복합 지주회사다. 방산용 함포 탄약·차량 부품 제조와 환경 서비스가 주요 자회사 사업이다.",
     "segments_kr": [
       {
-        "name": "Diagnostics & Research",
-        "pct": "-",
-        "note": ""
+        "name": "방산(탄약·함포 부품)",
+        "pct": "~50",
+        "note": "군용 탄약·함포 주요 부품"
+      },
+      {
+        "name": "자동차 부품",
+        "pct": "~30",
+        "note": "스탬핑·프레스 차체 부품"
+      },
+      {
+        "name": "환경·기타",
+        "pct": "~20",
+        "note": "환경 서비스·폐기물 처리"
       }
     ],
-    "strength_kr": "동사 also offers specimen testing services; digital healthcare services related to testing and health examinations; and bio-technology platforms",
-    "customers_kr": ""
+    "strength_kr": "방산 탄약 부품 장기 납품 계약, 자동차 부품 안정 수요.",
+    "customers_kr": "방위사업청, 현대기아차, 환경 공공 발주처"
   },
   "403550": {
     "custom_signal_reason": "쏘카 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 4,522억.",
@@ -3440,16 +3866,26 @@
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
     ],
-    "bm_kr": "쏘카: Software - Application 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "쏘카는 카셰어링(차량 공유) 플랫폼 운영 기업으로 국내 1위다. 시간 단위 차량 대여·구독형 서비스와 전기차 카셰어링을 주력으로 하며, 모빌리티 플랫폼으로 확장하고 있다.",
     "segments_kr": [
       {
-        "name": "Software - Application",
-        "pct": "-",
-        "note": ""
+        "name": "카셰어링(쏘카)",
+        "pct": "~75",
+        "note": "시간제·일간 차량 공유, 전국 5,000+대"
+      },
+      {
+        "name": "구독형 장기 이용(패스포트)",
+        "pct": "~15",
+        "note": "월정액 구독 카셰어링"
+      },
+      {
+        "name": "기타 모빌리티 서비스",
+        "pct": "~10",
+        "note": "대리운전·주차·렌터카 연계"
       }
     ],
-    "strength_kr": "It provides car sharing services",
-    "customers_kr": ""
+    "strength_kr": "카셰어링 국내 1위 브랜드, 전기차 전환 선도, 모바일 앱 기반 원활한 예약·반납.",
+    "customers_kr": "20~40대 도시 1인 가구·직장인, 출장·여행 이용객"
   },
   "476040": {
     "custom_signal_reason": "오가노이드사이언스 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 1,495억.",
@@ -3460,7 +3896,27 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "오가노이드사이언스는 인간 장기 유사체인 오가노이드(Organoid) 기술 기반 신약 개발·정밀의료 플랫폼 기업이다. 환자 유래 오가노이드를 활용한 항암제 반응 예측과 신약 효능 스크리닝 서비스를 제공한다.",
+    "segments_kr": [
+      {
+        "name": "오가노이드 기반 신약 스크리닝 서비스",
+        "pct": "~55",
+        "note": "제약사 신약 효능 테스트 플랫폼 수탁"
+      },
+      {
+        "name": "정밀의료(항암제 반응 예측)",
+        "pct": "~35",
+        "note": "환자 종양 오가노이드로 최적 치료제 선택"
+      },
+      {
+        "name": "오가노이드 소재·연구 키트",
+        "pct": "~10",
+        "note": "연구용 오가노이드 배양 소재"
+      }
+    ],
+    "strength_kr": "오가노이드 플랫폼 독자 원천 기술, 정밀의료·신약 스크리닝 고부가가치 시장, 글로벌 임상 협력.",
+    "customers_kr": "글로벌 제약사 신약팀, 암 병원·연구소, 정밀의료 플랫폼 파트너"
   },
   "006490": {
     "custom_signal_reason": "인스코비 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 678억.",
@@ -3472,26 +3928,21 @@
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
     ],
-    "bm_kr": "인스코비: 통신 서비스 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "인스코비는 면세점·항공 기내면세·여행 서비스 플랫폼을 운영하는 여행 유통 기업이다. 아시아나항공 기내면세 운영 및 인천공항 면세 관련 서비스가 주력이다.",
     "segments_kr": [
       {
-        "name": "power meter modems",
-        "pct": "-",
-        "note": ""
+        "name": "기내면세·항공 부가서비스",
+        "pct": "~60",
+        "note": "아시아나항공 기내 면세품 판매 대행"
       },
       {
-        "name": "data concentrators",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "power meter",
-        "pct": "-",
-        "note": ""
+        "name": "여행 플랫폼·기타",
+        "pct": "~40",
+        "note": "여행 상품 유통, 온라인 면세"
       }
     ],
-    "strength_kr": "It offers power meter modems, data concentrators, and power meter solutions; and provides budget phone communication services",
-    "customers_kr": ""
+    "strength_kr": "아시아나항공 기내면세 독점 계약, 항공 여행 회복 수혜.",
+    "customers_kr": "국제선 항공 이용객, 인바운드·아웃바운드 여행객"
   },
   "108230": {
     "custom_signal_reason": "톱텍 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 1,745억.",
@@ -3503,10 +3954,26 @@
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
     ],
-    "bm_kr": "톱텍 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "톱텍은 반도체·디스플레이·2차전지 공정 자동화 장비 및 로봇 전문 기업이다. 배터리 전극 라미네이션·스태킹 장비와 디스플레이 공정 자동화 시스템이 핵심 제품이다.",
+    "segments_kr": [
+      {
+        "name": "배터리 라미네이션·스태킹 장비",
+        "pct": "~45",
+        "note": "전고체·파우치 배터리 공정 핵심 장비"
+      },
+      {
+        "name": "디스플레이 공정 자동화",
+        "pct": "~35",
+        "note": "OLED·LCD 패널 자동화 장비"
+      },
+      {
+        "name": "반도체·기타 자동화",
+        "pct": "~20",
+        "note": "반도체 후공정 자동화"
+      }
+    ],
+    "strength_kr": "배터리·디스플레이 이중 플랫폼 자동화 기술, 전고체 배터리 전환 수혜.",
+    "customers_kr": "삼성SDI·LG에너지솔루션·LG디스플레이 등"
   },
   "334970": {
     "custom_signal_reason": "프레스티지바이오로직스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 1,851억.",
@@ -3518,10 +3985,26 @@
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
     ],
-    "bm_kr": "프레스티지바이오로직스 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "프레스티지바이오로직스는 항체 의약품 CMO(위탁생산) 전문 바이오 기업으로, 유럽 EMA 승인 cGMP 시설을 보유하고 있다. 바이오시밀러·바이오신약 위탁생산과 자체 바이오시밀러 파이프라인 개발을 병행한다.",
+    "segments_kr": [
+      {
+        "name": "항체의약품 CMO",
+        "pct": "~65",
+        "note": "유럽 cGMP 시설, 글로벌 제약사 위탁생산"
+      },
+      {
+        "name": "바이오시밀러 파이프라인",
+        "pct": "~25",
+        "note": "리툭시맙·베바시주맙 등 항암 시밀러"
+      },
+      {
+        "name": "기타 바이오 서비스",
+        "pct": "~10",
+        "note": "CRO·분석 서비스"
+      }
+    ],
+    "strength_kr": "EMA 승인 유럽 수출 가능 시설, CMO 고마진 수익, 유럽 바이오시밀러 시장 진출.",
+    "customers_kr": "글로벌 제약사 CMO 고객, 유럽 의약품 유통사"
   },
   "083790": {
     "custom_signal_reason": "CG인바이츠 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 967억.",
@@ -3533,10 +4016,26 @@
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
     ],
-    "bm_kr": "CG인바이츠 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "CG인바이츠(구 크리스탈지노믹스)는 표적항암제·자가면역 신약 개발 전문 바이오 기업이다. 경구용 PI3K 억제제 등 종양·면역 신약 파이프라인을 글로벌 빅파마에 기술수출하는 것이 목표다.",
+    "segments_kr": [
+      {
+        "name": "표적 항암제 파이프라인(PI3K 등)",
+        "pct": "~60",
+        "note": "경구용 항암 신약 임상 진행 중"
+      },
+      {
+        "name": "자가면역·염증 신약",
+        "pct": "~30",
+        "note": "JAK·PI3K 억제 면역 질환 치료제"
+      },
+      {
+        "name": "기술수출·마일스톤",
+        "pct": "~10",
+        "note": "글로벌 기술수출 추진"
+      }
+    ],
+    "strength_kr": "구조기반 신약 설계 플랫폼, 키나아제 억제제 전문성, 항암·면역 이중 적응증.",
+    "customers_kr": "글로벌 제약사(기술수출 파트너)"
   },
   "254120": {
     "custom_signal_reason": "자비스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 456억.",
@@ -3548,21 +4047,21 @@
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
     ],
-    "bm_kr": "자비스: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "자비스는 스마트팩토리 AI 비전검사·불량 자동 분류 솔루션 기업이다. 제조 현장의 제품 외관 검사를 AI 카메라로 자동화하며, 반도체·자동차·식품 생산 라인에 납품한다.",
     "segments_kr": [
       {
-        "name": "X-ray scanners",
-        "pct": "-",
-        "note": ""
+        "name": "AI 비전 검사 시스템",
+        "pct": "~70",
+        "note": "제조 불량 자동 탐지, 반도체·자동차 라인"
       },
       {
-        "name": "automation machines in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "스마트팩토리 솔루션",
+        "pct": "~30",
+        "note": "MES 연동, 공정 데이터 분석"
       }
     ],
-    "strength_kr": "동사 offers X scan equipment for semiconductor, battery, SMT/ PCB, and diecasting sector; and Fscan equipment for food and pharm sector, as well as X-ray, machine vision, and factory automation equipment",
-    "customers_kr": ""
+    "strength_kr": "제조 AI 비전 검사 전문성, 산업 현장 적용 레퍼런스, 스마트팩토리 전환 수혜.",
+    "customers_kr": "반도체·자동차·전자·식품 제조사"
   },
   "412540": {
     "custom_signal_reason": "제일엠앤에스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 811억.",
@@ -3604,7 +4103,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "에코프로는 에코프로비엠(양극재)·에코프로에이치엔(전구체·환경)·에코프로씨엔지(리사이클링) 등을 지배하는 에코프로그룹 지주회사다. EV 배터리 소재 풀밸류체인(전구체→양극재→리사이클링) 구축이 핵심 전략이다.",
+    "segments_kr": [
+      {
+        "name": "에코프로비엠(양극재)",
+        "pct": "~55",
+        "note": "하이니켈 NCMA 양극재, 삼성SDI·SK온 납품"
+      },
+      {
+        "name": "에코프로에이치엔(전구체·환경)",
+        "pct": "~25",
+        "note": "NCM 전구체, 대기환경 장치"
+      },
+      {
+        "name": "에코프로씨엔지·기타(리사이클링)",
+        "pct": "~20",
+        "note": "폐배터리 재활용, 니켈·코발트 회수"
+      }
+    ],
+    "strength_kr": "2차전지 소재 풀밸류체인 국내 유일, 하이니켈 양극재 글로벌 2위, 삼성SDI 독점 공급 관계.",
+    "customers_kr": "삼성SDI, SK온, 글로벌 배터리 메이저"
   },
   "012510": {
     "custom_signal_reason": "더존비즈온 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 3조 6,474억.",
@@ -3616,16 +4135,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "더존비즈온: Software - Application 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "더존비즈온은 기업용 ERP·그룹웨어·세무회계 소프트웨어 클라우드 SaaS 선두 기업이다. 국내 ERP 시장 1위이며, 중소기업 디지털 전환의 핵심 솔루션 공급사로서 반복 구독 수익 모델이 안정적이다.",
     "segments_kr": [
       {
-        "name": "services in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "ERP·그룹웨어 SaaS",
+        "pct": "~60",
+        "note": "iCUBE·WEHAGO 클라우드 ERP, 구독 수익"
+      },
+      {
+        "name": "세무·회계 솔루션",
+        "pct": "~25",
+        "note": "세무사·회계사무소 전용 소프트웨어 1위"
+      },
+      {
+        "name": "전자세금계산서·공공",
+        "pct": "~15",
+        "note": "전자세금계산서 발행 플랫폼, 공공 연동"
       }
     ],
-    "strength_kr": "Its products and services include accounting programs; ERP; cloud; groupware; information security; electronic tax invoices; electronic banking; mobile solutions; electronic fax; and education services",
-    "customers_kr": ""
+    "strength_kr": "ERP·세무 소프트웨어 국내 1위, 고객 락인 높은 SaaS 구독 모델, 50만+ 기업 고객 기반.",
+    "customers_kr": "국내 중소·중견 기업, 세무·회계 법인"
   },
   "098460": {
     "custom_signal_reason": "고영 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 2조 7,634억.",
@@ -3637,21 +4166,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "고영: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "고영은 3D 솔더 페이스트 검사(SPI)·3D AOI(자동광학검사) 장비 전문 기업으로, PCB 기판 납땜 품질 검사의 글로벌 1위 수준이다. AI 기반 불량 제로 스마트팩토리 솔루션과 수술 로봇 사업으로 다변화 중이다.",
     "segments_kr": [
       {
-        "name": "반도체 장비",
-        "pct": "-",
-        "note": ""
+        "name": "SPI·AOI 검사 장비",
+        "pct": "~70",
+        "note": "PCB 납땜 검사 글로벌 1위, 삼성·LG 납품"
       },
       {
-        "name": "소재",
-        "pct": "-",
-        "note": ""
+        "name": "수술 로봇(뇌신경·정형외과)",
+        "pct": "~20",
+        "note": "Kymera·Robosys 수술 로봇, 의료기기 확장"
+      },
+      {
+        "name": "AI 공정 솔루션",
+        "pct": "~10",
+        "note": "스마트팩토리 검사 데이터 분석"
       }
     ],
-    "strength_kr": "동사's products portfolio comprises solder paste, automated optical, semiconductor, dispensing process, and final optical inspection equipment; smart factory solutions comprising KSMART solution, a 3D measurement-based process control system; KPO print",
-    "customers_kr": ""
+    "strength_kr": "SPI·AOI 검사 글로벌 1위, 의료 로봇 기술 다각화, 고부가 장비 고마진 구조.",
+    "customers_kr": "삼성전자·LG전자·폭스콘 등 PCB 제조사, 병원(수술 로봇)"
   },
   "237690": {
     "custom_signal_reason": "에스티팜 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 3조 1,787억.",
@@ -3663,10 +4197,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "에스티팜 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "에스티팜은 올리고뉴클레오타이드(siRNA·ASO) 원료의약품(API) 합성 전문 CMO 기업이다. 빠르게 성장하는 RNA 치료제(지데나마브·인클리시란 등) 생산에 필수적인 올리고 API 합성 수탁 제조가 핵심이다.",
+    "segments_kr": [
+      {
+        "name": "올리고 API(siRNA·ASO) CMO",
+        "pct": "~65",
+        "note": "RNA 치료제 원료 합성, 글로벌 빅파마 수탁"
+      },
+      {
+        "name": "소분자(Small Molecule) API",
+        "pct": "~25",
+        "note": "기존 항암·항바이러스 원료 제조"
+      },
+      {
+        "name": "연구 시약·기타",
+        "pct": "~10",
+        "note": "연구용 올리고뉴클레오타이드"
+      }
+    ],
+    "strength_kr": "올리고 RNA 치료제 CMO 국내 독보적 1위, 노바티스·사노피 등 빅파마 고객, RNA 치료제 성장 직결.",
+    "customers_kr": "노바티스·사노피·알닐람 등 글로벌 RNA 치료제 개발사"
   },
   "011810": {
     "custom_signal_reason": "STX 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 1,095억.",
@@ -3677,7 +4227,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "STX는 조선·해운·에너지 관련 사업을 영위하는 STX그룹 지주회사다. STX엔진(선박·발전 엔진)과 해외 사업이 핵심이며, 조선 업황 회복으로 엔진 수주가 증가하고 있다.",
+    "segments_kr": [
+      {
+        "name": "STX엔진(선박·산업 엔진)",
+        "pct": "~60",
+        "note": "선박용 중속엔진·발전용 엔진 제조"
+      },
+      {
+        "name": "에너지·무역",
+        "pct": "~30",
+        "note": "에너지 트레이딩, 해외 사업"
+      },
+      {
+        "name": "기타 자회사",
+        "pct": "~10",
+        "note": "기타 제조·서비스"
+      }
+    ],
+    "strength_kr": "선박 엔진 제조 전문성, 조선 사이클 수혜, STX 브랜드 재건.",
+    "customers_kr": "국내 조선사, 발전소, 해외 선박 수요처"
   },
   "016740": {
     "custom_signal_reason": "두올 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반) | 투자판단관련주요경영사항). 시총 1,491억.",
@@ -3720,21 +4290,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "스모트로닉: 자동차 부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "스모트로닉은 LED 조명·전자 부품 제조 중소 기업으로, 산업용 LED 조명과 전력 변환 장치를 주요 제품으로 한다.",
     "segments_kr": [
       {
-        "name": "automobile components in South Korea",
-        "pct": "-",
-        "note": ""
+        "name": "산업용 LED 조명",
+        "pct": "~60",
+        "note": "공장·건물용 LED 조명"
       },
       {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "전력 변환 장치",
+        "pct": "~40",
+        "note": "인버터·SMPS 등 전력 전자"
       }
     ],
-    "strength_kr": "동사 offers electrical vehicles products, such as micro E/V, micro EV pickup truck and motor, inverter, PDU, differential case, and rotor shaft",
-    "customers_kr": ""
+    "strength_kr": "산업용 LED 전문성, 에너지 절감 수요.",
+    "customers_kr": "공장·건물 조명 수요 기업"
   },
   "088280": {
     "custom_signal_reason": "쏘닉스 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 1,241억.",
@@ -3746,21 +4316,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "쏘닉스: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "쏘닉스는 초음파·레이저 기반 반도체 패키징 장비(와이어 본딩·레이저 가공) 전문 기업이다. 반도체 후공정 패키징 장비를 삼성전자·SK하이닉스에 납품한다.",
     "segments_kr": [
       {
-        "name": "반도체 설계",
-        "pct": "-",
-        "note": ""
+        "name": "와이어 본딩 장비",
+        "pct": "~55",
+        "note": "반도체 칩-기판 연결 와이어 본딩"
       },
       {
-        "name": "제조",
-        "pct": "-",
-        "note": ""
+        "name": "레이저 마킹·가공 장비",
+        "pct": "~35",
+        "note": "반도체 레이저 식각·마킹"
+      },
+      {
+        "name": "기타 패키징 장비",
+        "pct": "~10",
+        "note": "서비스·소모품"
       }
     ],
-    "strength_kr": "It offers RF filters; SAW filters and duplexers; and RF components, such as dielectric products",
-    "customers_kr": ""
+    "strength_kr": "반도체 후공정 패키징 장비 전문성, 삼성·하이닉스 납품 레퍼런스.",
+    "customers_kr": "삼성전자·SK하이닉스·OSAT 업체"
   },
   "093320": {
     "custom_signal_reason": "케이아이엔엑스 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 5,246억.",
@@ -3772,10 +4347,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "케이아이엔엑스 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "케이아이엔엑스는 인터넷 교환노드(IX)·데이터센터·클라우드 네트워킹 서비스 전문 기업이다. 국내 최대 인터넷 교환 인프라 운영과 코로케이션 데이터센터가 핵심 사업이다.",
+    "segments_kr": [
+      {
+        "name": "인터넷 교환(IX)·코로케이션",
+        "pct": "~60",
+        "note": "ISP·CDN·클라우드 트래픽 교환, 국내 1위 IX"
+      },
+      {
+        "name": "클라우드 커넥트·전용회선",
+        "pct": "~30",
+        "note": "AWS·Azure 직접 연결 서비스"
+      },
+      {
+        "name": "데이터센터 임대",
+        "pct": "~10",
+        "note": "서버 코로케이션 임대"
+      }
+    ],
+    "strength_kr": "국내 인터넷 교환 1위 인프라, 클라우드 직접 연결 서비스, AI 트래픽 급증 수혜.",
+    "customers_kr": "통신사·ISP, AWS·Azure·구글 클라우드, CDN 사업자"
   },
   "163730": {
     "custom_signal_reason": "핑거 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 1,891억.",
@@ -3786,7 +4377,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "핑거는 금융 모바일 앱 UI/UX 플랫폼 및 핀테크 솔루션 전문 기업으로, 은행·증권·보험사 디지털 채널 구축 SI와 SaaS가 주력이다.",
+    "segments_kr": [
+      {
+        "name": "금융 모바일 앱·플랫폼 SI",
+        "pct": "~65",
+        "note": "은행·증권사 앱 UI/UX 구축"
+      },
+      {
+        "name": "핀테크 SaaS(비대면인증·전자서명)",
+        "pct": "~25",
+        "note": "금융 비대면 서비스 플랫폼"
+      },
+      {
+        "name": "기타 IT 서비스",
+        "pct": "~10",
+        "note": "공공·통신 IT 서비스"
+      }
+    ],
+    "strength_kr": "금융 UI/UX 전문성, 주요 시중은행·증권사 납품 레퍼런스, 비대면 금융 전환 수혜.",
+    "customers_kr": "국내 주요 은행·증권·보험사"
   },
   "244920": {
     "custom_signal_reason": "에이플러스에셋 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 2,442억.",
@@ -3798,21 +4409,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "에이플러스에셋: Insurance - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "에이플러스에셋은 법인보험 대리점(GA)과 자산관리 플랫폼을 운영하는 금융 서비스 기업이다. 생명보험·손해보험 설계 대리점 중 상위권 규모를 자랑한다.",
     "segments_kr": [
       {
-        "name": "life",
-        "pct": "-",
-        "note": ""
+        "name": "보험 GA(대리점) 수수료",
+        "pct": "~75",
+        "note": "생보·손보 상품 판매 수수료, 전속 설계사 네트워크"
       },
       {
-        "name": "non-life insurance",
-        "pct": "-",
-        "note": ""
+        "name": "자산관리·투자 서비스",
+        "pct": "~25",
+        "note": "금융 종합 자산관리 서비스"
       }
     ],
-    "strength_kr": "또한 offers coverage analysis services; and comparative sales services of good insurance",
-    "customers_kr": ""
+    "strength_kr": "법인 GA 상위권 규모, 다양한 보험사 상품 판매 채널 다변화, 금융 플랫폼 디지털화.",
+    "customers_kr": "개인·법인 보험 가입자, 자산 관리 고객"
   },
   "285490": {
     "custom_signal_reason": "노바텍 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 2,464억.",
@@ -3824,26 +4435,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "노바텍: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "노바텍은 자동차용 선루프·차량 전장 부품을 제조하는 자동차 부품 기업이다. 현대기아차 선루프 시스템 납품이 주력이다.",
     "segments_kr": [
       {
-        "name": "magnet",
-        "pct": "-",
-        "note": ""
+        "name": "선루프·무빙 루프 시스템",
+        "pct": "~70",
+        "note": "현대기아차 선루프 납품, 글로벌 확장"
       },
       {
-        "name": "shield magnet",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "magnet plate for various IT devices",
-        "pct": "-",
-        "note": ""
+        "name": "차량 전장·기타 부품",
+        "pct": "~30",
+        "note": "차체 모터·전장 부품"
       }
     ],
-    "strength_kr": "동사 offers magnet, shield magnet, and magnet plate for various IT devices",
-    "customers_kr": ""
+    "strength_kr": "현대기아차 선루프 1차 공급사 지위, 파노라믹 선루프 기술력.",
+    "customers_kr": "현대기아차·글로벌 완성차"
   },
   "289080": {
     "custom_signal_reason": "SV인베스트먼트 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식) | 전환청구권행사). 시총 2,213억.",
@@ -3854,7 +4460,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "SV인베스트먼트는 중소·벤처 기업 투자 전문 사모펀드(PEF)·벤처캐피탈 운용사다. 바이오·IT·제조 분야 스타트업과 중소기업에 투자하고 회수 수익을 창출한다.",
+    "segments_kr": [
+      {
+        "name": "벤처·PEF 투자 운용",
+        "pct": "~70",
+        "note": "바이오·IT·제조 벤처 투자, 운용 보수·성과 수수료"
+      },
+      {
+        "name": "투자 회수·배당",
+        "pct": "~30",
+        "note": "IPO·M&A 엑시트 수익"
+      }
+    ],
+    "strength_kr": "중소·벤처 투자 네트워크, 바이오·IT 포트폴리오 다양화.",
+    "customers_kr": "기관 LP(연기금·증권사), 벤처 투자 피투자 기업"
   },
   "322310": {
     "custom_signal_reason": "오로스테크놀로지 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 3,166억.",
@@ -3866,31 +4487,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "오로스테크놀로지: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "오로스테크놀로지는 반도체 공정 광학 계측 장비(OCD·오버레이 계측) 전문 기업이다. 노광 후 패턴 정밀도를 측정하는 계측 장비를 삼성전자·SK하이닉스에 납품하며, 첨단 반도체 공정 미세화 수혜를 받는다.",
     "segments_kr": [
       {
-        "name": "wafer overlay metrology",
-        "pct": "-",
-        "note": ""
+        "name": "OCD·오버레이 계측 장비",
+        "pct": "~80",
+        "note": "EUV 노광 후 패턴 오버레이 측정, 첨단 공정 필수"
       },
       {
-        "name": "wafer inspection",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "package overlay metrology",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "package inspection",
-        "pct": "-",
-        "note": ""
+        "name": "서비스·유지보수",
+        "pct": "~20",
+        "note": "장비 유지보수·소모품 공급"
       }
     ],
-    "strength_kr": "It offers wafer overlay metrology, wafer inspection, package overlay metrology, and package inspection products",
-    "customers_kr": ""
+    "strength_kr": "반도체 광학 계측 국내 독보적 기술, EUV·GAA 공정 전환 수혜, 삼성·SK하이닉스 인증.",
+    "customers_kr": "삼성전자·SK하이닉스·TSMC 등 파운드리·메모리"
   },
   "424870": {
     "custom_signal_reason": "이뮨온시아 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 5,198억.",
@@ -3902,16 +4513,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "이뮨온시아: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "이뮨온시아는 차세대 면역항암제(CD47·PD-L1 항체) 신약 개발 바이오 벤처로, 유한양행 자회사다. CD47 '먹지마 신호' 차단 항체가 암세포 면역 회피 억제 핵심 기전이다.",
     "segments_kr": [
       {
-        "name": "바이오테크",
-        "pct": "-",
-        "note": ""
+        "name": "CD47 항체(IMC-002) 임상",
+        "pct": "~60",
+        "note": "고형암·혈액암 대상 임상 1/2상 진행"
+      },
+      {
+        "name": "PD-L1·복합 면역항암 파이프라인",
+        "pct": "~40",
+        "note": "병용 면역 요법 개발"
       }
     ],
-    "strength_kr": "It develops IMC-001, a human monoclonal antibody of the IgG1 type that targets PD-L1 an immunotherapy for cancer, which is in Phase II clinical trial for the treatment of NK/T cell lymphoma and solid cancer patients with high tumor mutation burden; a",
-    "customers_kr": ""
+    "strength_kr": "유한양행 자회사 자금력, CD47 독자 항체 원천 기술, 글로벌 파트너링 추진.",
+    "customers_kr": "글로벌 제약사(기술수출 파트너)"
   },
   "023960": {
     "custom_signal_reason": "에쓰씨엔지니어링 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 510억.",
@@ -3923,21 +4539,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "에쓰씨엔지니어링: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "에쓰씨엔지니어링은 플랜트·환경·건설 엔지니어링 서비스 기업으로, 석유화학·화공 플랜트 설계·감리와 환경 시설 구축 서비스가 주력이다.",
     "segments_kr": [
       {
-        "name": "건설",
-        "pct": "-",
-        "note": ""
+        "name": "플랜트 엔지니어링·설계감리",
+        "pct": "~60",
+        "note": "화공·석유화학 플랜트 FEED·PMC"
       },
       {
-        "name": "엔지니어링",
-        "pct": "-",
-        "note": ""
+        "name": "환경 시설 구축",
+        "pct": "~30",
+        "note": "폐수처리·대기 환경 설비"
+      },
+      {
+        "name": "건설 엔지니어링",
+        "pct": "~10",
+        "note": "건설 감리·기술 서비스"
       }
     ],
-    "strength_kr": "동사 engages in the manufacturing, selling, importing, and exporting of biological products and medical devices using cell culture",
-    "customers_kr": ""
+    "strength_kr": "플랜트 엔지니어링 전문성, 환경 규제 강화 수혜.",
+    "customers_kr": "정유·화학사, 공공 환경 발주처"
   },
   "277410": {
     "custom_signal_reason": "인산가 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 433억.",
@@ -3949,31 +4570,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "인산가: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "인산가는 인삼·홍삼 가공 건강기능식품 전문 기업으로, 홍삼 스틱·홍삼 음료·홍삼 추출물을 국내외에 유통한다.",
     "segments_kr": [
       {
-        "name": "bamboo salt",
-        "pct": "-",
-        "note": ""
+        "name": "홍삼 건강기능식품",
+        "pct": "~75",
+        "note": "홍삼 스틱·음료·캡슐, 온라인 직판 확대"
       },
       {
-        "name": "bamboo salt paste types",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "essence types",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "pills",
-        "pct": "-",
-        "note": ""
+        "name": "인삼 원료·기타 건기식",
+        "pct": "~25",
+        "note": "인삼 가공, 면역 건기식"
       }
     ],
-    "strength_kr": "동사 offers bamboo salt, bamboo salt paste types, essence types, pills, healthy food, native products, household items, and books under the Insan brand",
-    "customers_kr": ""
+    "strength_kr": "홍삼 브랜드 인지도, 온라인 직판 채널 성장, K-건강식품 수출 수혜.",
+    "customers_kr": "국내 중장년 건강 소비자, 중국·동남아 홍삼 수입 바이어"
   },
   "351870": {
     "custom_signal_reason": "차이커뮤니케이션 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 464억.",
@@ -3985,21 +4596,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "차이커뮤니케이션: Advertising Agencies 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "차이커뮤니케이션은 모바일 앱 마케팅·디지털 광고 대행 전문 기업이다. 앱 설치·리텐션 광고 집행과 데이터 분석 기반 퍼포먼스 마케팅이 핵심이다.",
     "segments_kr": [
       {
-        "name": "various advertising",
-        "pct": "-",
-        "note": ""
+        "name": "모바일 앱 마케팅·UA",
+        "pct": "~65",
+        "note": "앱 설치·유저 획득 광고 대행"
       },
       {
-        "name": "including ATL",
-        "pct": "-",
-        "note": ""
+        "name": "디지털 광고·데이터 분석",
+        "pct": "~35",
+        "note": "퍼포먼스 마케팅, 광고 효율 분석"
       }
     ],
-    "strength_kr": "동사 offers various advertising solutions and services, including ATL, AI, application, BTL, brand film, banner advertising, creativity, contents, campaigns, consulting, DA, digital journey, design, e CRM, event, feed contents, goods, growth hacking",
-    "customers_kr": ""
+    "strength_kr": "모바일 앱 마케팅 전문성, 데이터 기반 광고 최적화.",
+    "customers_kr": "게임·커머스·앱 서비스 기업"
   },
   "402340": {
     "custom_signal_reason": "SK스퀘어 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 110조 9,770억.",
@@ -4011,21 +4622,26 @@
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
     ],
-    "bm_kr": "SK스퀘어: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "SK스퀘어는 SK그룹의 반도체·통신 자회사 지분을 보유한 투자 지주회사다. SK하이닉스 지분(약 20%)이 핵심 자산이며, 11번가·티맵모빌리티·원스토어 등 디지털 서비스 자회사도 보유한다.",
     "segments_kr": [
       {
-        "name": "반도체 설계",
-        "pct": "-",
-        "note": ""
+        "name": "SK하이닉스 지분(핵심)",
+        "pct": "~65",
+        "note": "메모리 반도체 글로벌 2위 HBM 수혜 직결"
       },
       {
-        "name": "제조",
-        "pct": "-",
-        "note": ""
+        "name": "디지털 서비스(11번가·티맵·원스토어)",
+        "pct": "~25",
+        "note": "이커머스·모빌리티·앱마켓 투자 자산"
+      },
+      {
+        "name": "기타 ICT 투자",
+        "pct": "~10",
+        "note": "ADT캡스·SK플래닛 등"
       }
     ],
-    "strength_kr": "설립 2021 and is 본사 Icheon-si, 한국.",
-    "customers_kr": ""
+    "strength_kr": "SK하이닉스 HBM 폭발 성장 가치 직결, 구조 조정·기업가치 제고 추진, SK그룹 ICT 투자 허브.",
+    "customers_kr": "SK하이닉스·그룹 자회사 투자 관계사"
   },
   "033920": {
     "custom_signal_reason": "무학 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 2,542억.",
@@ -4037,26 +4653,21 @@
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
     ],
-    "bm_kr": "무학: Beverages - Wineries & Distilleries 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "무학은 경남 지역 소주 1위 브랜드 '좋은데이'를 생산하는 주류 기업이다. 지역 소주 시장에서 하이트진로·롯데주류와 경쟁하며, 저도 소주 트렌드에 맞춘 제품 라인업을 강화하고 있다.",
     "segments_kr": [
       {
-        "name": "diluted shochu",
-        "pct": "-",
-        "note": ""
+        "name": "소주(좋은데이)",
+        "pct": "~80",
+        "note": "경남 지역 소주 1위, 전국 점유율 확대 중"
       },
       {
-        "name": "fruit liquors",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "liqueurs",
-        "pct": "-",
-        "note": ""
+        "name": "막걸리·기타 주류",
+        "pct": "~20",
+        "note": "지역 전통주, 저알코올 RTD"
       }
     ],
-    "strength_kr": "It offers diluted shochu products, fruit liquors, and liqueurs",
-    "customers_kr": ""
+    "strength_kr": "경남 지역 소주 브랜드 파워, 저도 소주 트렌드 수혜, 유통망 확장.",
+    "customers_kr": "경남·부산 유흥 및 가정 소비자, 전국 대형마트·편의점"
   },
   "204610": {
     "custom_signal_reason": "티쓰리 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 1,947억.",
@@ -4068,31 +4679,21 @@
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
     ],
-    "bm_kr": "티쓰리: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "티쓰리는 의류·패션 브랜드 기획·OEM 제조 기업으로, 기능성 스포츠·아웃도어 의류를 국내외 유통한다.",
     "segments_kr": [
       {
-        "name": "games for PCs",
-        "pct": "-",
-        "note": ""
+        "name": "스포츠·기능성 의류",
+        "pct": "~65",
+        "note": "국내외 스포츠·아웃도어 OEM·ODM"
       },
       {
-        "name": "mobiles",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "consoles in South Korea",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "internationally",
-        "pct": "-",
-        "note": ""
+        "name": "일반 의류·기타",
+        "pct": "~35",
+        "note": "캐주얼 의류 제조·유통"
       }
     ],
-    "strength_kr": "설립 2000 and is based in Seoul, 한국.",
-    "customers_kr": ""
+    "strength_kr": "의류 기획·생산 효율성, 글로벌 브랜드 OEM 수주.",
+    "customers_kr": "국내외 패션·스포츠 브랜드"
   },
   "005380": {
     "custom_signal_reason": "현대자동차 풍문·보도 해명 공시. 내용 확인 및 시장 반응 모니터링. 시총 108조 7,264억.",
@@ -4103,7 +4704,27 @@
       "시장 신뢰 회복 여부",
       "관련 추가 공시 여부",
       "주가 반응 안정화 시점"
-    ]
+    ],
+    "bm_kr": "현대자동차는 승용·SUV·전기차(아이오닉 시리즈)·상용차를 제조하는 글로벌 완성차 3~4위 그룹이다. 제네시스 프리미엄 브랜드, 기아와 함께 그룹 합산 글로벌 판매 700만대+를 기록하며, 전동화 전환을 가속하고 있다.",
+    "segments_kr": [
+      {
+        "name": "승용·SUV(현대·제네시스)",
+        "pct": "~55",
+        "note": "아반떼·투싼·팰리세이드·제네시스 G시리즈"
+      },
+      {
+        "name": "전기차(아이오닉5·6·9)",
+        "pct": "~25",
+        "note": "EGMP 플랫폼 기반 EV 확장, 글로벌 판매 급증"
+      },
+      {
+        "name": "상용차·금융",
+        "pct": "~20",
+        "note": "버스·트럭, 현대캐피탈 금융 서비스"
+      }
+    ],
+    "strength_kr": "아이오닉 EV 디자인·주행성능 글로벌 수상, 제네시스 프리미엄 브랜드 격상, 미국·유럽 현지 생산.",
+    "customers_kr": "글로벌 자동차 소비자, 법인 차량 구매자"
   },
   "106240": {
     "custom_signal_reason": "파인테크닉스 풍문·보도 해명 공시. 내용 확인 및 시장 반응 모니터링. 시총 489억.",
@@ -4115,10 +4736,26 @@
       "관련 추가 공시 여부",
       "주가 반응 안정화 시점"
     ],
-    "bm_kr": "파인테크닉스 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "파인테크닉스는 스마트폰·노트북용 초박형 힌지(Hinge) 및 정밀 금속 부품 제조 기업이다. 삼성 갤럭시 폴더블폰 힌지 납품이 핵심이며, 폴더블·롤러블 기기 확산으로 성장이 가속된다.",
+    "segments_kr": [
+      {
+        "name": "폴더블폰 힌지·정밀 부품",
+        "pct": "~70",
+        "note": "삼성 갤럭시 Z폴드·Z플립 힌지 납품"
+      },
+      {
+        "name": "노트북·태블릿 힌지",
+        "pct": "~20",
+        "note": "PC·태블릿 힌지 부품"
+      },
+      {
+        "name": "기타 정밀 금속",
+        "pct": "~10",
+        "note": "자동차·의료기기 정밀 부품"
+      }
+    ],
+    "strength_kr": "삼성 폴더블폰 힌지 1차 납품사, 초정밀 금속 가공 기술력, 폴더블 시장 성장 수혜.",
+    "customers_kr": "삼성전자 모바일 사업부, 노트북 ODM사"
   },
   "044990": {
     "custom_signal_reason": "에이치엔에스하이텍 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,260억.",
@@ -4130,10 +4767,21 @@
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
     ],
-    "bm_kr": "에이치엔에스하이텍 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "에이치엔에스하이텍은 산업용·전력용 커넥터·소켓 전문 제조사다. 반도체 번인(Burn-in) 소켓·IC 테스트 소켓, 전력용 고전압 커넥터가 주력이다.",
+    "segments_kr": [
+      {
+        "name": "반도체 번인·테스트 소켓",
+        "pct": "~60",
+        "note": "반도체 신뢰성 테스트 소켓, 고부가 소모품"
+      },
+      {
+        "name": "산업·전력용 커넥터",
+        "pct": "~40",
+        "note": "고전압 전력 커넥터·단자"
+      }
+    ],
+    "strength_kr": "번인 소켓 전문 기술력, 반도체 테스트 수요 안정, 고부가 소모품 반복 수요.",
+    "customers_kr": "반도체 테스트 전문 업체, EV·산업 전력 기기 제조사"
   },
   "126730": {
     "custom_signal_reason": "코칩 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,802억.",
@@ -4145,16 +4793,26 @@
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
     ],
-    "bm_kr": "코칩: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "코칩은 팹리스 반도체 설계사로, AI 엣지 추론용 NPU(신경망처리장치)와 영상처리(ISP) 칩 설계가 주력이다. 저전력 AI 엣지 디바이스와 스마트홈·IoT 기기에 탑재되는 SoC를 개발한다.",
     "segments_kr": [
       {
-        "name": "renewable energy-related",
-        "pct": "-",
-        "note": ""
+        "name": "AI NPU·SoC 설계",
+        "pct": "~60",
+        "note": "엣지 AI 추론 칩, 스마트홈·CCTV·로봇"
+      },
+      {
+        "name": "ISP(영상처리) 칩",
+        "pct": "~30",
+        "note": "카메라·드론·스마트TV 영상처리"
+      },
+      {
+        "name": "기타 팹리스 솔루션",
+        "pct": "~10",
+        "note": "IoT·통신 칩"
       }
     ],
-    "strength_kr": "또한 offers new and renewable energy-related products; and electronic components related to electricity, and electronic communication equipment",
-    "customers_kr": ""
+    "strength_kr": "AI 엣지 NPU 설계 전문성, 저전력 고효율 SoC 기술, 팹리스 고마진 구조.",
+    "customers_kr": "스마트홈 기기·CCTV·드론 제조사, 글로벌 IoT 솔루션 기업"
   },
   "396470": {
     "custom_signal_reason": "워트 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,275억.",
@@ -4166,21 +4824,21 @@
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
     ],
-    "bm_kr": "워트: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "워트는 전력반도체 설계 팹리스 기업으로, MOSFET·SiC 파워반도체 칩 설계가 주력이다. EV·산업용 전력 제어 수요 증가로 성장이 기대된다.",
     "segments_kr": [
       {
-        "name": "temperature",
-        "pct": "-",
-        "note": ""
+        "name": "SiC·MOSFET 파워반도체",
+        "pct": "~65",
+        "note": "EV 인버터·DC-DC 컨버터용 전력소자"
       },
       {
-        "name": "humidity control equipment for the semico",
-        "pct": "-",
-        "note": ""
+        "name": "IC 드라이버·제어 칩",
+        "pct": "~35",
+        "note": "모터 드라이버·LED 드라이버 IC"
       }
     ],
-    "strength_kr": "또한 offers semiconductor-related equipment repair services",
-    "customers_kr": ""
+    "strength_kr": "SiC 파워반도체 설계 기술력, EV·신재생에너지 수혜, 팹리스 경량 구조.",
+    "customers_kr": "EV 파워트레인 제조사, 산업용 전력변환 기업"
   },
   "063440": {
     "custom_signal_reason": "SM Life Design 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 666억.",
@@ -4192,10 +4850,26 @@
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
     ],
-    "bm_kr": "SM Life Design — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "SM Life Design은 SM엔터테인먼트 계열사로, SM 아티스트 공식 굿즈·MD 제품 기획·제조·판매와 팬클럽 플랫폼(버블) 사업을 영위한다.",
+    "segments_kr": [
+      {
+        "name": "K팝 굿즈·MD 제조 판매",
+        "pct": "~65",
+        "note": "SM 아티스트 공식 MD, 팬 이벤트 물품"
+      },
+      {
+        "name": "버블(팬 소통 플랫폼) 수수료",
+        "pct": "~25",
+        "note": "아티스트 1:1 메시지 구독 서비스"
+      },
+      {
+        "name": "기타 라이프스타일 제품",
+        "pct": "~10",
+        "note": "IP 콜라보 생활용품"
+      }
+    ],
+    "strength_kr": "SM 엔터 IP 독점 활용, K팝 팬덤 글로벌 확장, 버블 구독 반복 수익.",
+    "customers_kr": "SM 아티스트 국내외 팬(NCT·에스파·샤이니 등)"
   },
   "299900": {
     "custom_signal_reason": "위지윅스튜디오 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 706억.",
@@ -4207,31 +4881,26 @@
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
     ],
-    "bm_kr": "위지윅스튜디오: 엔터테인먼트 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "위지윅스튜디오는 VFX(시각특수효과)·버추얼 프로덕션·AI 영상 솔루션 전문 기업으로, 영화·드라마·광고의 디지털 영상 제작을 담당한다. 넷플릭스 K콘텐츠 VFX 납품이 성장 동력이다.",
     "segments_kr": [
       {
-        "name": "content business",
-        "pct": "-",
-        "note": ""
+        "name": "VFX·디지털 영상 제작",
+        "pct": "~55",
+        "note": "영화·드라마 VFX, 넷플릭스·디즈니 K콘텐츠"
       },
       {
-        "name": "such as movies",
-        "pct": "-",
-        "note": ""
+        "name": "버추얼 프로덕션·LED 스튜디오",
+        "pct": "~30",
+        "note": "LED 볼륨 스테이지, 실시간 3D 배경"
       },
       {
-        "name": "dramas",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "entertainment programs",
-        "pct": "-",
-        "note": ""
+        "name": "AI 영상·IP 사업",
+        "pct": "~15",
+        "note": "AI 생성 영상, IP 콘텐츠 개발"
       }
     ],
-    "strength_kr": "동사 provides content business, such as movies, dramas, and entertainment programs; exhibition and event agency business; and VFX and new media business, including CG/VFX and VR, AR, etc",
-    "customers_kr": ""
+    "strength_kr": "K콘텐츠 VFX 글로벌 수준 기술력, 버추얼 프로덕션 선도, 넷플릭스 제작 파트너.",
+    "customers_kr": "넷플릭스·디즈니+ K콘텐츠 제작사, 광고·게임 기업"
   },
   "024840": {
     "custom_signal_reason": "KBI메탈 전환청구권 행사 공시. 전환주식수 및 희석 영향 확인. 시총 1,780억.",
@@ -4242,7 +4911,27 @@
       "전환가격 vs 현재 주가 비교",
       "기관 매도 압력 여부",
       "잔여 전환 물량 일정"
-    ]
+    ],
+    "bm_kr": "KBI메탈은 비철금속(구리·스테인리스·알루미늄) 가공 및 용접 소재 제조 전문 기업이다. 산업용 고부가 합금 제품과 해양·플랜트용 특수 소재가 주력이다.",
+    "segments_kr": [
+      {
+        "name": "구리·비철금속 가공재",
+        "pct": "~55",
+        "note": "동합금·황동 가공, 산업용 금속 소재"
+      },
+      {
+        "name": "특수 합금·용접 소재",
+        "pct": "~35",
+        "note": "해양·플랜트 특수 합금, 용접 소재"
+      },
+      {
+        "name": "기타 금속소재",
+        "pct": "~10",
+        "note": "알루미늄·스테인리스 가공"
+      }
+    ],
+    "strength_kr": "비철금속 가공 기술력, 해양·플랜트 특수 합금 전문성.",
+    "customers_kr": "조선사·플랜트 EPC사, 산업 기기 제조사"
   },
   "067390": {
     "custom_signal_reason": "아스트 전환청구권 행사 공시. 전환주식수 및 희석 영향 확인. 시총 3,216억.",
@@ -4254,21 +4943,21 @@
       "기관 매도 압력 여부",
       "잔여 전환 물량 일정"
     ],
-    "bm_kr": "아스트: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "아스트는 항공기 기체 구조물(동체·날개 조립)을 제조하는 항공 부품 전문 기업이다. 보잉·에어버스 등 글로벌 항공기 OEM 구조물을 한국항공우주(KAI) 협력사로 제조한다.",
     "segments_kr": [
       {
-        "name": "항공우주",
-        "pct": "-",
-        "note": ""
+        "name": "항공기 기체 구조물 제조",
+        "pct": "~80",
+        "note": "보잉 B737·B787 기체 구조물, KAI 하청"
       },
       {
-        "name": "방산",
-        "pct": "-",
-        "note": ""
+        "name": "MRO·기타 부품",
+        "pct": "~20",
+        "note": "항공기 유지보수 부품"
       }
     ],
-    "strength_kr": "manufactures, sells, and assembles aircraft parts and related tools in Korea, the United States, and 해외",
-    "customers_kr": ""
+    "strength_kr": "항공 기체 구조물 제조 기술 인증, KAI·보잉 납품 레퍼런스, 항공 업황 회복 수혜.",
+    "customers_kr": "KAI·한국항공우주, 보잉·에어버스 공급망"
   },
   "066410": {
     "custom_signal_reason": "버킷스튜디오 최대주주변경 공시. 경영권 변동 내용 확인. 시총 1,596억.",
@@ -4280,10 +4969,26 @@
       "경영진 교체 여부",
       "실적 개선 시그널"
     ],
-    "bm_kr": "버킷스튜디오 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "버킷스튜디오는 연예 매니지먼트·드라마 제작·광고 대행을 영위하는 소규모 엔터테인먼트 기업이다. 소속 아티스트 활동과 콘텐츠 제작이 주력이다.",
+    "segments_kr": [
+      {
+        "name": "연예 매니지먼트",
+        "pct": "~55",
+        "note": "소속 배우·아티스트 광고·드라마 수익"
+      },
+      {
+        "name": "드라마·콘텐츠 제작",
+        "pct": "~35",
+        "note": "OTT·방송 드라마 제작"
+      },
+      {
+        "name": "광고·기타",
+        "pct": "~10",
+        "note": "광고 기획·대행"
+      }
+    ],
+    "strength_kr": "소속 배우 IP 활용, K콘텐츠 OTT 확장 수혜.",
+    "customers_kr": "방송사·OTT·광고주"
   },
   "001060": {
     "custom_signal_reason": "JW중외제약 영업정지 공시. 의약품 판매업무정지 처분. 시총 7,265억.",
@@ -4326,16 +5031,26 @@
       "투자 회수 시점 예상",
       "추가 투자 가능성"
     ],
-    "bm_kr": "펄어비스: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "펄어비스는 검은사막 온라인·모바일을 자체 개발·서비스하는 게임사로, 자체 개발 엔진(Black Space Engine) 기반의 오픈월드 MMORPG가 핵심이다. 글로벌 150개국 직접 서비스와 신작 DokeV·붉은사막 출시가 중장기 성장 열쇠다.",
     "segments_kr": [
       {
-        "name": "게임",
-        "pct": "-",
-        "note": ""
+        "name": "검은사막 PC·글로벌 서비스",
+        "pct": "~55",
+        "note": "150개국 직접 서비스, 북미·유럽 구독·패키지"
+      },
+      {
+        "name": "검은사막 모바일",
+        "pct": "~30",
+        "note": "국내외 모바일 MMORPG 서비스"
+      },
+      {
+        "name": "신작 파이프라인(붉은사막·DokeV)",
+        "pct": "~15",
+        "note": "차기작 출시 시 폭발적 성장 기대"
       }
     ],
-    "strength_kr": "It is involved  in game publishing; the provision of server, line and operation services; investment and management consulting services; and operating services",
-    "customers_kr": ""
+    "strength_kr": "자체 엔진 독보적 그래픽 기술력, 150개국 직접 서비스 인프라, 오픈월드 MMORPG 독자 IP.",
+    "customers_kr": "글로벌 PC·모바일 MMORPG 게임 이용자"
   },
   "035080": {
     "custom_signal_reason": "그래디언트 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 1,384억.",
@@ -4373,10 +5088,26 @@
       "투자 회수 시점 예상",
       "추가 투자 가능성"
     ],
-    "bm_kr": "한컴위드 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "한컴위드는 한글과컴퓨터 그룹 계열 IT 서비스·공공 솔루션 기업이다. 공공기관·지자체 전산 시스템 유지보수와 한컴오피스 기반 그룹웨어·전자결재 솔루션이 주력이다.",
+    "segments_kr": [
+      {
+        "name": "공공 IT 시스템 유지보수·SI",
+        "pct": "~60",
+        "note": "지자체·공공기관 전산 시스템 구축 운영"
+      },
+      {
+        "name": "한컴오피스 기업 솔루션",
+        "pct": "~30",
+        "note": "한컴오피스·그룹웨어·전자결재"
+      },
+      {
+        "name": "기타 IT 서비스",
+        "pct": "~10",
+        "note": "클라우드 전환 서비스"
+      }
+    ],
+    "strength_kr": "공공 IT 수주 레퍼런스, 한컴 그룹 소프트웨어 연계, 공공 디지털전환 수혜.",
+    "customers_kr": "지자체·공공기관·정부 부처"
   },
   "118990": {
     "custom_signal_reason": "모트렉스 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 2,216억.",
@@ -4423,7 +5154,22 @@
       "경영 안정성 여부",
       "법원 판결 일정 모니터링",
       "분쟁 해소 후 주가 정상화 기대"
-    ]
+    ],
+    "bm_kr": "씨씨에스는 케이블TV·IPTV 솔루션과 디지털 방송 장비를 제조·공급하는 미디어 기술 기업이다. 유선방송·IPTV 스트리밍 솔루션이 통신사·방송사에 납품된다.",
+    "segments_kr": [
+      {
+        "name": "IPTV·케이블TV 플랫폼 솔루션",
+        "pct": "~65",
+        "note": "통신사 IPTV 미들웨어·셋톱박스 솔루션"
+      },
+      {
+        "name": "디지털 방송 장비",
+        "pct": "~35",
+        "note": "방송국 인코더·스트리밍 장비"
+      }
+    ],
+    "strength_kr": "IPTV 플랫폼 솔루션 전문성, 통신사 장기 계약 기반 안정 매출.",
+    "customers_kr": "KT·SKB·LG유플러스 IPTV, 케이블TV 방송사"
   },
   "259960": {
     "custom_signal_reason": "크래프톤 2026년 4월 30일 공시(주요사항보고서(자기주식취득결정) | 주요사항보고서(자기주식처분결정)). 시총 13조 3,454억.",
@@ -4435,16 +5181,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "크래프톤: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "크래프톤은 배틀그라운드(PUBG) IP를 보유한 글로벌 게임사로, PC·콘솔·모바일 배틀로얄 게임 플랫폼이 핵심이다. 인도·동남아·중동 등 신흥국에서 강력한 팬덤을 보유하며, AI·메타버스 기반 신작으로 포트폴리오를 확장 중이다.",
     "segments_kr": [
       {
-        "name": "게임",
-        "pct": "-",
-        "note": ""
+        "name": "PUBG PC·콘솔",
+        "pct": "~40",
+        "note": "스팀·콘솔 서비스, 신규 콘텐츠로 MAU 유지"
+      },
+      {
+        "name": "PUBG 모바일(인도·신흥국)",
+        "pct": "~40",
+        "note": "인도·동남아·중동 시장 독보적 1위"
+      },
+      {
+        "name": "신작·AI 게임·메타버스",
+        "pct": "~20",
+        "note": "The Callisto Protocol·다크앤다커·AI NPC 플랫폼"
       }
     ],
-    "strength_kr": "동사 offers PC, mobile, console, and other games",
-    "customers_kr": ""
+    "strength_kr": "PUBG 글로벌 배틀로얄 IP 독보적 지위, 인도·신흥국 1위, AI 기반 인터랙티브 콘텐츠 개발.",
+    "customers_kr": "글로벌 PC·모바일·콘솔 게임 이용자(특히 인도·동남아·중동)"
   },
   "115180": {
     "custom_signal_reason": "큐리언트 2026년 4월 30일 공시(주식매수선택권행사). 시총 1조 4,027억.",
@@ -4456,16 +5212,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "큐리언트: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "큐리언트는 항생제·항암제 신약 개발 바이오 기업이다. 다제내성균 치료를 위한 새로운 작용 기전의 항생제 파이프라인이 글로벌 임상 단계이며, 빅파마와의 기술수출을 목표로 한다.",
     "segments_kr": [
       {
-        "name": "바이오테크",
-        "pct": "-",
-        "note": ""
+        "name": "항생제 신약(Q-Griffithsin·Q202·Q301)",
+        "pct": "~65",
+        "note": "다제내성균·결핵 항생제, 글로벌 임상"
+      },
+      {
+        "name": "항암 파이프라인",
+        "pct": "~35",
+        "note": "종양 미세환경 표적 항암제"
       }
     ],
-    "strength_kr": "동사's pipeline products include Q301, a topical 5LO inhibitor, which is in Phase II clinical trial for the treatment of atopic dermatitis; and Telacebec (Q203), Cyt bc1 Inhibitor, that is in Phase II to treat Mycobacterial Infections, such as tubercul",
-    "customers_kr": ""
+    "strength_kr": "다제내성균 미충족 의학 수요 타겟, 독자 항생제 기전 특허, 빌게이츠재단·글로벌 파트너 연구 지원.",
+    "customers_kr": "글로벌 빅파마(기술수출), 항생제 파이프라인 투자자"
   },
   "035890": {
     "custom_signal_reason": "서희건설 2026년 4월 30일 공시(기타시장안내              (기업심사위원회 심의·의결 결과 및 상장유지 결정 안내). 시총 3,730억.",
@@ -4477,21 +5238,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "서희건설: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "서희건설은 지역 주택·토목 전문 건설사로, 수도권·지방 아파트 분양과 공공 토목 공사를 영위한다.",
     "segments_kr": [
       {
-        "name": "건설",
-        "pct": "-",
-        "note": ""
+        "name": "주택 분양(아파트)",
+        "pct": "~60",
+        "note": "수도권·지방 중소규모 아파트 분양"
       },
       {
-        "name": "엔지니어링",
-        "pct": "-",
-        "note": ""
+        "name": "토목·공공 공사",
+        "pct": "~30",
+        "note": "지자체 발주 토목·도로 공사"
+      },
+      {
+        "name": "건축·기타",
+        "pct": "~10",
+        "note": "상업시설·오피스 건축"
       }
     ],
-    "strength_kr": "동사 primarily undertakes housing, implementation, redevelopment/reconstruction, officetel, public apartment, civil engineering, and environment projects, as well as other private contracts",
-    "customers_kr": ""
+    "strength_kr": "중소규모 주택 분양 효율성, 공공 토목 수주 네트워크.",
+    "customers_kr": "아파트 분양 수요자, 공공 발주처"
   },
   "039840": {
     "custom_signal_reason": "디오 2026년 4월 30일 공시(주요사항보고서(자기주식처분결정)). 시총 2,316억.",
@@ -4529,16 +5295,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "KSS해운: 해운 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "KSS해운은 LPG·LNG·화학제품 탱커 전문 해운사로, 국내 LPG 수입 운송과 글로벌 가스 해운이 주력이다. SK그룹과 롯데케미칼 등에 가스 운송을 제공한다.",
     "segments_kr": [
       {
-        "name": "해운",
-        "pct": "-",
-        "note": ""
+        "name": "LPG 탱커 운송",
+        "pct": "~55",
+        "note": "국내 LPG 수입 운송, SK·롯데 계약화물"
+      },
+      {
+        "name": "LNG·화학제품 탱커",
+        "pct": "~35",
+        "note": "소형 LNG·화학제품 탱커"
+      },
+      {
+        "name": "기타 해운·서비스",
+        "pct": "~10",
+        "note": "해운 관련 서비스"
       }
     ],
-    "strength_kr": "동사's gas cargoes include anhydrous ammonia, butadiene, butane, butane 1, C4 raffinate, ethylene, propane, propylene, vinyl chloride monomer, and others",
-    "customers_kr": ""
+    "strength_kr": "LPG 운송 장기 계약 안정 물량, 가스 해운 전문 기술, LNG 소형선 확장.",
+    "customers_kr": "SK에너지·롯데케미칼·GS칼텍스 등 에너지화학사"
   },
   "102120": {
     "custom_signal_reason": "어보브반도체 2026년 4월 30일 공시(주요사항보고서(자기주식처분결정)). 시총 2,477억.",
@@ -4550,10 +5326,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "어보브반도체 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "어보브반도체는 MCU(마이크로컨트롤러)·터치 IC·BLE 칩 설계 팹리스 기업이다. 가전·IoT·스마트홈 기기용 저전력 MCU와 터치 컨트롤러 IC가 주력이다.",
+    "segments_kr": [
+      {
+        "name": "MCU(마이크로컨트롤러)",
+        "pct": "~55",
+        "note": "가전·IoT·산업용 저전력 MCU"
+      },
+      {
+        "name": "터치 IC·BLE 칩",
+        "pct": "~35",
+        "note": "스마트홈·가전 터치 컨트롤러, BLE 무선 칩"
+      },
+      {
+        "name": "기타 SoC",
+        "pct": "~10",
+        "note": "LED 드라이버·전력 관리 IC"
+      }
+    ],
+    "strength_kr": "MCU 국내 팹리스 전문성, 가전·IoT 고객 기반, 저전력 BLE 기술 경쟁력.",
+    "customers_kr": "삼성전자·LG전자 가전, 스마트홈 기기 제조사"
   },
   "121800": {
     "custom_signal_reason": "비덴트 2026년 4월 30일 공시(기타시장안내              (개선계획 이행내역서 제출)). 시총 2,563억.",
@@ -4565,10 +5357,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "비덴트 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "비덴트는 가상자산(암호화폐) 투자 전문 기업으로, 업비트 운영사 두나무 지분 보유가 핵심 자산이다. 가상자산 시장 거래량과 두나무 실적에 직접 연동되는 지분 투자 구조다.",
+    "segments_kr": [
+      {
+        "name": "두나무 지분 투자(핵심)",
+        "pct": "~70",
+        "note": "업비트 운영사 두나무 지분, 가상자산 거래량 연동"
+      },
+      {
+        "name": "미디어·콘텐츠",
+        "pct": "~20",
+        "note": "디지털 미디어·콘텐츠 사업"
+      },
+      {
+        "name": "기타 투자",
+        "pct": "~10",
+        "note": "블록체인·핀테크 투자"
+      }
+    ],
+    "strength_kr": "업비트 독점적 가상자산 거래소 지분, 가상자산 불장 시 폭발적 가치 상승.",
+    "customers_kr": "기관 투자자(두나무 가치 연동)"
   },
   "149980": {
     "custom_signal_reason": "하이로닉 2026년 4월 30일 공시(기타시장안내              (상장적격성 실질심사 대상 제외 결정)). 시총 1,079억.",
@@ -4580,26 +5388,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "하이로닉: 의료기기 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "하이로닉은 의료·에스테틱용 고강도 집속 초음파(HIFU)·고주파·레이저 기기를 제조하는 의료기기 기업이다. 피부 리프팅·지방 제거·탈모 치료 기기가 주력이며, 국내외 피부과·성형외과에 납품한다.",
     "segments_kr": [
       {
-        "name": "and sale of medical",
-        "pct": "-",
-        "note": ""
+        "name": "HIFU·고주파 에스테틱 기기",
+        "pct": "~60",
+        "note": "피부 리프팅·탄력 기기, 국내외 피부과"
       },
       {
-        "name": "surgical equipment",
-        "pct": "-",
-        "note": ""
+        "name": "레이저 의료기기",
+        "pct": "~30",
+        "note": "탈모·색소 레이저 기기"
       },
       {
-        "name": "other orthopedic appliances in South",
-        "pct": "-",
-        "note": ""
+        "name": "소모품·유지보수",
+        "pct": "~10",
+        "note": "카트리지·AS 서비스"
       }
     ],
-    "strength_kr": "It offers its products for the MFU and RF, laser, plasma, and cryotherapy",
-    "customers_kr": ""
+    "strength_kr": "HIFU 에스테틱 기기 기술력, 글로벌 에스테틱 시장 수출, 반복 소모품 수익.",
+    "customers_kr": "국내외 피부과·성형외과·에스테틱 센터"
   },
   "261780": {
     "custom_signal_reason": "차백신연구소 2026년 4월 30일 공시(상호변경안내 | 최대주주변경). 시총 1,103억.",
@@ -4611,31 +5419,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "차백신연구소: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "차백신연구소는 예방백신·치료백신 개발 전문 바이오 기업이다. 폐렴구균·대상포진 등 예방백신과 HPV·암 치료백신 파이프라인이 주요 사업이다.",
     "segments_kr": [
       {
-        "name": "influenza vaccine",
-        "pct": "-",
-        "note": ""
+        "name": "예방백신(폐렴구균·대상포진)",
+        "pct": "~55",
+        "note": "국내 예방백신 공급, 글로벌 수출 추진"
       },
       {
-        "name": "recombinant MBL",
-        "pct": "-",
-        "note": ""
+        "name": "치료백신(HPV·암)",
+        "pct": "~35",
+        "note": "HPV 치료백신 임상, 개인화 암 백신"
       },
       {
-        "name": "TB vaccine",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "cancer vaccine",
-        "pct": "-",
-        "note": ""
+        "name": "기타 면역·바이오",
+        "pct": "~10",
+        "note": "면역증강제 기술"
       }
     ],
-    "strength_kr": "Its product pipeline includes HBV vaccine that is in Phase IIb planning for the prevention of hepatitis B; Adjuvanted HBV vaccine that is in Phase I/IIa for the treatment of chronic hepatitis B; and VZV Vaccine, which is in pre-clinical planning stag",
-    "customers_kr": ""
+    "strength_kr": "예방·치료 이중 백신 플랫폼, 백신 면역증강제 독자 기술, 국가 필수예방접종 납품.",
+    "customers_kr": "정부 예방접종 사업, 병원·의원, 글로벌 백신 파트너"
   },
   "293940": {
     "custom_signal_reason": "신한알파리츠 2026년 4월 30일 공시(기타경영사항(자율공시)). 시총 7,317억.",
@@ -4647,16 +5450,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "신한알파리츠: REIT - Office 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "신한알파리츠는 신한그룹 계열 상업용 부동산 리츠(REITs)로, 서울 도심 오피스·리테일 자산을 운용한다. 정기 배당 수익과 임차 안정성이 투자 포인트다.",
     "segments_kr": [
       {
-        "name": "REIT - Office",
-        "pct": "-",
-        "note": ""
+        "name": "오피스 임대(서울 도심)",
+        "pct": "~70",
+        "note": "판교·강남·도심 프라임 오피스 임대 수익"
+      },
+      {
+        "name": "리테일·복합시설",
+        "pct": "~30",
+        "note": "상업용 리테일 공간 임대"
       }
     ],
-    "strength_kr": "is a real estate investment trust company",
-    "customers_kr": ""
+    "strength_kr": "신한그룹 자산운용 신뢰도, 서울 도심 우량 오피스 자산, 안정적 배당 수익.",
+    "customers_kr": "오피스 임차 기업, 배당 수익 추구 기관·개인 투자자"
   },
   "298000": {
     "custom_signal_reason": "효성화학 2026년 4월 30일 공시(기타시장안내              (개선기간 종료 및 향후 절차 안내)). 시총 1,475억.",
@@ -4668,26 +5476,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "효성화학: 화학. 주요 사업 — various chemical products",
+    "bm_kr": "효성화학은 효성그룹 계열 화학 기업으로, PP(폴리프로필렌)·NF3(반도체 세정가스)·하이드라조익산(HN3) 등을 제조한다. 반도체 공정 가스 NF3와 폴리프로필렌이 핵심 제품이다.",
     "segments_kr": [
       {
-        "name": "PP Random Copolymer",
-        "pct": "-",
-        "note": ""
+        "name": "NF3(반도체 세정가스)",
+        "pct": "~35",
+        "note": "반도체·디스플레이 식각·세정 공정 가스"
       },
       {
-        "name": "PP-B for pipes",
-        "pct": "-",
-        "note": ""
+        "name": "폴리프로필렌(PP)",
+        "pct": "~45",
+        "note": "석유화학 PP, 가전·자동차·포장재용"
       },
       {
-        "name": "as well as PP for conduit pipe",
-        "pct": "-",
-        "note": ""
+        "name": "기타 특수화학",
+        "pct": "~20",
+        "note": "수소불화물·특수가스"
       }
     ],
-    "strength_kr": "동사 offers PP Random Copolymer and PP-B for pipes, as well as PP for conduit pipe; polypropylene for transparent containers, corrugated sheets, heat resistant appliances, and caps; TWIM PP and high-impact BCP; PP for retort and protective films; TER-P",
-    "customers_kr": ""
+    "strength_kr": "NF3 반도체 가스 글로벌 탑3 수준, 반도체 공정 가스 안정 수요, PP 원가 경쟁력.",
+    "customers_kr": "삼성전자·SK하이닉스(NF3), 자동차·가전 업체(PP)"
   },
   "404990": {
     "custom_signal_reason": "신한서부티엔디리츠 2026년 4월 30일 공시(기타경영사항(자율공시)). 시총 2,680억.",
@@ -4699,16 +5507,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "신한서부티엔디리츠: REIT - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "신한서부티엔디리츠는 신한그룹 계열 리츠로, 물류·산업·상업용 부동산 자산을 운용한다. 물류센터 임대 수익이 핵심이며, e커머스 성장으로 물류 자산 수요가 증가하고 있다.",
     "segments_kr": [
       {
-        "name": "REIT - Diversified",
-        "pct": "-",
-        "note": ""
+        "name": "물류센터 임대",
+        "pct": "~65",
+        "note": "수도권 물류센터 임대, e커머스 수혜"
+      },
+      {
+        "name": "산업·상업 자산",
+        "pct": "~35",
+        "note": "산업용지·상업시설 임대"
       }
     ],
-    "strength_kr": "is a diversified REIT firm and is 본사 Seoul, 한국.",
-    "customers_kr": ""
+    "strength_kr": "물류 자산 안정적 임대 수익, e커머스 성장 수혜, 신한그룹 자산관리 신뢰도.",
+    "customers_kr": "물류기업·e커머스 업체, 배당 투자자"
   },
   "950130": {
     "custom_signal_reason": "엑세스바이오 2026년 4월 30일 공시([기재정정]주식소각결정). 시총 1,288억.",
@@ -4720,31 +5533,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "엑세스바이오: Diagnostics & Research 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "엑세스바이오는 진단키트(신속 면역진단·분자진단) 개발·제조 기업으로, 미국 법인 기반 글로벌 진단 시장에 진출한 바이오 기업이다. COVID-19 이후 호흡기·열대성 감염병 진단 포트폴리오로 전환 중이다.",
     "segments_kr": [
       {
-        "name": "of in vitro rapid diagnostic tests",
-        "pct": "-",
-        "note": ""
+        "name": "신속 면역진단(RDT) 키트",
+        "pct": "~60",
+        "note": "말라리아·코로나·독감 신속 진단키트 수출"
       },
       {
-        "name": "immunochemical diagnostics",
-        "pct": "-",
-        "note": ""
+        "name": "분자진단(PCR) 키트",
+        "pct": "~30",
+        "note": "감염병 분자진단, OEM 공급"
       },
       {
-        "name": "biosensors",
-        "pct": "-",
-        "note": ""
-      },
-      {
-        "name": "molecular diagnostic products worldwi",
-        "pct": "-",
-        "note": ""
+        "name": "기타 진단 소모품",
+        "pct": "~10",
+        "note": "채혈기·검사 소모품"
       }
     ],
-    "strength_kr": "동사 provides Covid-19 detection kits, which are tests for assessing the current or past presence of SARS-CoV-2.; rapid diagnostic tests, suitable for preliminary diagnosis or emergency medical screening in medical facilities with limited resources; an",
-    "customers_kr": ""
+    "strength_kr": "미국·글로벌 WHO 긴급승인 레퍼런스, 열대성 질환 신속 진단 전문성, 저소득국 공급 경험.",
+    "customers_kr": "아프리카·동남아 정부·NGO, 글로벌 진단 유통사, 미국 의료기관"
   },
   "950170": {
     "custom_signal_reason": "JTC 2026년 4월 30일 공시(주요사항보고서(자기주식취득결정)). 시총 2,124억.",
@@ -4756,21 +5564,21 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "JTC: 백화점·유통 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "JTC는 베트남 등 동남아 부동산 개발·분양을 주력으로 하는 해외 부동산 기업이다. 베트남 하노이·호치민 주거·상업 복합 개발 프로젝트가 주요 사업이다.",
     "segments_kr": [
       {
-        "name": "백화점",
-        "pct": "-",
-        "note": ""
+        "name": "베트남 주거·복합 부동산 개발",
+        "pct": "~75",
+        "note": "하노이·호치민 아파트·복합시설 분양"
       },
       {
-        "name": "유통",
-        "pct": "-",
-        "note": ""
+        "name": "기타 동남아 부동산",
+        "pct": "~25",
+        "note": "인도네시아·기타 동남아 개발"
       }
     ],
-    "strength_kr": "It is involved in the retail sale of food, cosmetics, daily necessities, and other souvenirs",
-    "customers_kr": ""
+    "strength_kr": "베트남 부동산 현지 네트워크, 동남아 도시화 성장 수혜.",
+    "customers_kr": "베트남 현지 주거 수요자, 한국계 교민·투자자"
   },
   "067170": {
     "custom_signal_reason": "오텍 2026년 4월 30일 공시(신주인수권행사). 시총 640억.",
@@ -4782,26 +5590,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "오텍: 완성차 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "오텍은 장애인·환자 이동 보조 차량(특수 목적 차량)과 의료 리프트 제조 기업이다. 장애인 특수 차량과 병원·요양원용 의료 리프트가 주력이며, 복지 예산 확대 수혜가 기대된다.",
     "segments_kr": [
       {
-        "name": "medical vehicles",
-        "pct": "-",
-        "note": ""
+        "name": "특수 목적 차량(장애인·앰뷸런스)",
+        "pct": "~60",
+        "note": "휠체어 리프트 버스·승합차 개조"
       },
       {
-        "name": "including ambulance/EMS",
-        "pct": "-",
-        "note": ""
+        "name": "의료 리프트·환자 이송 장비",
+        "pct": "~30",
+        "note": "병원·요양원 환자 리프트"
       },
       {
-        "name": "mobile hospital",
-        "pct": "-",
-        "note": ""
+        "name": "기타 복지 기기",
+        "pct": "~10",
+        "note": "재활 보조 기기"
       }
     ],
-    "strength_kr": "동사 offers medical vehicles, including ambulance/EMS and mobile hospital; wheelchair accessible car/van and large/public transport vehicles for welfare application; life and leisure vehicles, such as camping vans, office vans, and tourists' trolleys; ",
-    "customers_kr": ""
+    "strength_kr": "복지 차량·의료기기 전문성, 정부 복지 예산 증가 수혜, 고령화 사회 수요.",
+    "customers_kr": "지자체·복지기관·병원·요양원"
   },
   "094940": {
     "custom_signal_reason": "푸른기술 2026년 4월 30일 공시(상호변경안내). 시총 876억.",
@@ -4813,10 +5621,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "푸른기술 — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "푸른기술은 ATM·금융자동화기기 및 스마트 금융 단말기를 제조하는 금융 기기 전문 기업이다. 국내외 은행·편의점·마트 ATM 납품이 주력이며, 해외 수출도 확대 중이다.",
+    "segments_kr": [
+      {
+        "name": "ATM·현금자동화기기",
+        "pct": "~65",
+        "note": "국내 은행·편의점 ATM 납품"
+      },
+      {
+        "name": "스마트 금융 단말기·키오스크",
+        "pct": "~25",
+        "note": "무인 금융 단말기·키오스크"
+      },
+      {
+        "name": "해외 수출·기타",
+        "pct": "~10",
+        "note": "동남아·중동 ATM 수출"
+      }
+    ],
+    "strength_kr": "ATM 국내 주요 은행 납품 레퍼런스, 금융 디지털 전환 수혜, 해외 수출 확장.",
+    "customers_kr": "국내 은행·편의점·금융기관, 동남아·중동 ATM 수입사"
   },
   "455180": {
     "custom_signal_reason": "케이지에이 2026년 4월 30일 공시(주요사항보고서(유형자산양도결정)). 시총 424억.",
@@ -4828,16 +5652,26 @@
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
     ],
-    "bm_kr": "케이지에이: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "bm_kr": "케이지에이는 가스 절연 개폐기(GIS)·배전 자동화 시스템 전문 기업이다. 전력망 현대화와 신재생에너지 계통 연결 수요 증가로 전력 기자재 납품이 늘고 있다.",
     "segments_kr": [
       {
-        "name": "Specialty Industrial Machinery",
-        "pct": "-",
-        "note": ""
+        "name": "GIS·개폐기 전력 기자재",
+        "pct": "~65",
+        "note": "한국전력·발전사 전력 개폐기 납품"
+      },
+      {
+        "name": "배전 자동화 시스템",
+        "pct": "~25",
+        "note": "스마트 배전망 자동화 솔루션"
+      },
+      {
+        "name": "기타 전력 기기",
+        "pct": "~10",
+        "note": "변전소 보호 계전기"
       }
     ],
-    "strength_kr": "또한 engages in manufacturing equipment for secondary battery electrodes and duct automation systems",
-    "customers_kr": ""
+    "strength_kr": "전력 기자재 전문 기술, 한국전력 공급사 인증, 전력망 현대화 수혜.",
+    "customers_kr": "한국전력·전력거래소·발전사"
   },
   "900300": {
     "custom_signal_reason": "오가닉티코스메틱 2026년 4월 30일 공시(사업보고서 (2025.12)). 시총 547억.",
@@ -4880,9 +5714,20 @@
       "연간 흑자 공식 달성 전망",
       "추가 기술특례 R&D 파이프라인 공개 여부"
     ],
-    "bm_kr": " — 상장사",
-    "segments_kr": [],
-    "strength_kr": "",
-    "customers_kr": ""
+    "bm_kr": "메쥬는 2026년 코스닥 신규 상장 바이오·뷰티 기업으로, 기능성 화장품 원료·뷰티 디바이스를 개발·제조한다. 2026년 1분기 흑자전환에 성공하며 성장 궤도 진입을 시사하고 있다.",
+    "segments_kr": [
+      {
+        "name": "기능성 뷰티 디바이스·화장품",
+        "pct": "~70",
+        "note": "피부 케어 디바이스, 기능성 화장품"
+      },
+      {
+        "name": "B2B 원료·OEM",
+        "pct": "~30",
+        "note": "화장품 원료 B2B, OEM 제조"
+      }
+    ],
+    "strength_kr": "2026년 1분기 첫 흑자전환 달성, 바이오·뷰티 고성장 시장 포지셔닝.",
+    "customers_kr": "국내외 화장품·뷰티 브랜드, 온라인 직판 소비자"
   }
 }
