@@ -2206,7 +2206,7 @@ function toggleFavFromPage(code) {
   if(btn) { btn.textContent = f[code]?'⭐':'☆'; btn.classList.toggle('fav-on', !!f[code]); }
   document.querySelectorAll('.fav-star-idx[data-code="'+code+'"]').forEach(function(b){
     b.textContent = f[code]?'⭐':'☆'; b.classList.toggle('fav-on', !!f[code]);
-    if(f[code]) storeMeta(b, code);
+    // storeMeta는 이미 위에서 company page btn으로 저장 완료 — 덮어쓰지 않음
   });
   applyIdxFilter();
 }
