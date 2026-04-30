@@ -1480,6 +1480,12 @@ parts_html.append(f"""<div class="page">
 <table class="index-table" id="idx-table"><thead>
 <tr><th style="width:32px;text-align:center;">⭐</th><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
 
+# 기업별 첫 번째 공시 ID 매핑 (인덱스 링크가 실제 기업 페이지 앵커를 가리키도록)
+_code_first_id = {}
+for _d in DISCLOSURES:
+    if _d["code"] not in _code_first_id:
+        _code_first_id[_d["code"]] = _d["id"]
+
 for d in DISCLOSURES:
     sig_class = {"up":"sig-buy","down":"sig-sell","neutral":"sig-neutral"}.get(d["signal_kind"],"sig-neutral")
     _chg_val = d.get("chg_pct") or 0
@@ -1497,9 +1503,9 @@ for d in DISCLOSURES:
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
-<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" data-signal="{d["signal_kind"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-anchor="stock-{html.escape(d["code"])}-{_code_first_id[d["code"]]}" data-signal="{d["signal_kind"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
-<td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
+<td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{_code_first_id[d["code"]]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
 <td class="disc">{html.escape(d["report"][:80])}</td>
 <td>{chg_pill(d["chg_pct"])}</td>
