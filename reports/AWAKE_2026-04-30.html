@@ -158,7 +158,7 @@ html, body { margin:0; padding:0; font-family:'Noto Sans KR','Apple SD Gothic Ne
 <div class="industry-stat-grid">
   <div class="industry-stat"><div class="lbl">오늘 공시</div><div class="num">240</div></div>
   <div class="industry-stat"><div class="lbl">분석 종목</div><div class="num">189</div></div>
-  <div class="industry-stat"><div class="lbl">최다 산업</div><div class="num" style="font-size:20px;">로봇/AI</div></div>
+  <div class="industry-stat"><div class="lbl">최다 산업</div><div class="num" style="font-size:20px;">바이오/제약</div></div>
   <div class="industry-stat"><div class="lbl">매수 시그널</div><div class="num">41</div></div>
 </div>
 
@@ -166,18 +166,18 @@ html, body { margin:0; padding:0; font-family:'Noto Sans KR','Apple SD Gothic Ne
   <canvas id="industryChart" style="max-height:340px;"></canvas>
 </div>
 
-<div class="industry-insight">오늘 산업별 분포: 로봇/AI(58), 배터리/2차전지(58), 반도체(28), 바이오/제약(27), 자동차/모빌리티(21).</div>
+<div class="industry-insight">오늘 산업별 분포: 바이오/제약(26), IT/SW(25), 금융(20), 반도체(16), 배터리/소재(13).</div>
 
 <h3 class="section-title">🏭 오늘 산업별 분포 (Top 8)</h3>
 <table class="nf-table"><thead><tr>
 <th style="text-align:left;">산업</th><th>건수</th><th style="text-align:left;">참여 종목</th>
 </tr></thead><tbody>
-<tr><td class="metric">로봇/AI</td><td>58</td><td style="text-align:left; font-size:12px;">BNK금융지주, CG인바이츠, CJ프레시웨이, DL, DL이앤씨, GS건설, IPARK현대산업개발, KG이니시스...</td></tr><tr><td class="metric">배터리/2차전지</td><td>58</td><td style="text-align:left; font-size:12px;">BGF리테일, CJ대한통운, F&amp;F, GS, JTC, SK텔레콤, 강원랜드, 그래디언트...</td></tr><tr><td class="metric">반도체</td><td>28</td><td style="text-align:left; font-size:12px;">DB하이텍, HLB이노베이션, HPSP, LX세미콘, PS일렉트로닉스, SK스퀘어, SNT모티브, SNT홀딩스...</td></tr><tr><td class="metric">바이오/제약</td><td>27</td><td style="text-align:left; font-size:12px;">JW중외제약, JW홀딩스, STX, SV인베스트먼트, 대웅제약, 바이오니아, 보령, 셀트리온...</td></tr><tr><td class="metric">자동차/모빌리티</td><td>21</td><td style="text-align:left; font-size:12px;">LX하우시스, SNT다이내믹스, 기아, 넥센타이어, 더블유씨피, 두올, 롯데이노베이트, 모트렉스...</td></tr><tr><td class="metric">조선/엔진</td><td>9</td><td style="text-align:left; font-size:12px;">KBI메탈, KSS해운, 동원산업, 삼성중공업, 팬오션</td></tr><tr><td class="metric">IT/SW</td><td>6</td><td style="text-align:left; font-size:12px;">NAVER, 메지온, 삼성전기, 이수페타시스, 케이아이엔엑스</td></tr><tr><td class="metric">엔터테인먼트</td><td>5</td><td style="text-align:left; font-size:12px;">SM Life Design, 고려아연, 골프존, 윈스테크넷</td></tr>
+<tr><td class="metric">바이오/제약</td><td>26</td><td style="text-align:left; font-size:12px;">JW중외제약, JW홀딩스, 대웅, 대웅제약, 메지온, 바이오니아, 보령, 셀트리온...</td></tr><tr><td class="metric">IT/SW</td><td>25</td><td style="text-align:left; font-size:12px;">KG이니시스, LG씨엔에스, NAVER, PS일렉트로닉스, 그래디언트, 더존비즈온, 라온로보틱스, 롯데이노베이트...</td></tr><tr><td class="metric">금융</td><td>20</td><td style="text-align:left; font-size:12px;">BNK금융지주, SV인베스트먼트, 미래에셋증권, 부국증권, 삼성증권, 신한서부티엔디리츠, 신한알파리츠, 에이플러스에셋...</td></tr><tr><td class="metric">반도체</td><td>16</td><td style="text-align:left; font-size:12px;">DB하이텍, HLB이노베이션, LX세미콘, SK스퀘어, 고영, 쏘닉스, 알엔티엑스, 어보브반도체...</td></tr><tr><td class="metric">배터리/소재</td><td>13</td><td style="text-align:left; font-size:12px;">더블유씨피, 롯데에너지머티리얼즈, 산일전기, 상신이디피, 성일하이텍, 엘앤에프, 제일엠앤에스, 코칩...</td></tr><tr><td class="metric">자동차/모빌리티</td><td>12</td><td style="text-align:left; font-size:12px;">SNT모티브, 기아, 넥센타이어, 두올, 모트렉스, 스모트로닉, 오텍, 톱텍...</td></tr><tr><td class="metric">의료기기</td><td>12</td><td style="text-align:left; font-size:12px;">CG인바이츠, 디오, 버킷스튜디오, 셀레믹스, 에스디바이오센서, 엑세스바이오, 지구홀딩스, 케어젠...</td></tr><tr><td class="metric">게임</td><td>10</td><td style="text-align:left; font-size:12px;">골프존, 더블유게임즈, 카카오게임즈, 크래프톤, 티쓰리, 펄어비스</td></tr>
 </tbody></table>
 
 </div>
 <script>
-const chartData = {"labels": ["2026-04-29", "2026-04-30"], "industries": ["로봇/AI", "배터리/2차전지", "반도체", "바이오/제약", "자동차/모빌리티", "조선/엔진", "IT/SW", "엔터테인먼트"], "values": [[58, 58, 28, 27, 21, 9, 6, 5], [58, 58, 28, 27, 21, 9, 6, 5]], "totals": [240, 240]};
+const chartData = {"labels": ["2026-04-29", "2026-04-30"], "industries": ["바이오/제약", "IT/SW", "금융", "반도체", "배터리/소재", "자동차/모빌리티", "의료기기", "게임"], "values": [[26, 25, 20, 16, 13, 12, 12, 10], [26, 25, 20, 16, 13, 12, 12, 10]], "totals": [240, 240]};
 const ctx = document.getElementById('industryChart').getContext('2d');
 const palette = ['#1e3a8a','#3b82f6','#dc2626','#16a34a','#f59e0b','#9333ea','#0891b2','#db2777'];
 const datasets = chartData.industries.map((ind, i) => ({
@@ -2192,7 +2192,7 @@ function applyIdxFilter() {
     <div class="co-name">NAVER</div>
     <div class="co-code">A035420</div>
     <div>
-      <span class="co-sector">전기/전자</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -2316,7 +2316,7 @@ function applyIdxFilter() {
     <div class="co-name">핑거</div>
     <div class="co-code">A163730</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -2501,7 +2501,7 @@ function applyIdxFilter() {
     <div class="co-name">삼성전자</div>
     <div class="co-code">A005930</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">반도체/전자</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -2629,7 +2629,7 @@ function applyIdxFilter() {
     <div class="co-name">SNT에너지</div>
     <div class="co-code">A100840</div>
     <div>
-      <span class="co-sector">디스플레이</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -2711,7 +2711,7 @@ function applyIdxFilter() {
     <div class="co-name">SNT모티브</div>
     <div class="co-code">A064960</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">자동차/모빌리티</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -2805,7 +2805,7 @@ function applyIdxFilter() {
     <div class="co-name">SNT다이내믹스</div>
     <div class="co-code">A003570</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -2897,7 +2897,7 @@ function applyIdxFilter() {
     <div class="co-name">코칩</div>
     <div class="co-code">A126730</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -2981,7 +2981,7 @@ function applyIdxFilter() {
     <div class="co-name">SNT홀딩스</div>
     <div class="co-code">A036530</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">지주/복합</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -3075,7 +3075,7 @@ function applyIdxFilter() {
     <div class="co-name">신한서부티엔디리츠</div>
     <div class="co-code">A404990</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -3151,7 +3151,7 @@ function applyIdxFilter() {
     <div class="co-name">LG씨엔에스</div>
     <div class="co-code">A064400</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -3350,7 +3350,7 @@ Non-Deal Roadshow
     <div class="co-name">코윈테크</div>
     <div class="co-code">A282880</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -3440,7 +3440,7 @@ Non-Deal Roadshow
     <div class="co-name">한화에어로스페이스</div>
     <div class="co-code">A012450</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -3526,7 +3526,7 @@ Non-Deal Roadshow
     <div class="co-name">GS건설</div>
     <div class="co-code">A006360</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -3618,7 +3618,7 @@ Non-Deal Roadshow
     <div class="co-name">풍산</div>
     <div class="co-code">A103140</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -3742,7 +3742,7 @@ Non-Deal Roadshow
     <div class="co-name">풍산홀딩스</div>
     <div class="co-code">A005810</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -3862,7 +3862,7 @@ Non-Deal Roadshow
     <div class="co-name">메지온</div>
     <div class="co-code">A140410</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -3943,7 +3943,7 @@ Non-Deal Roadshow
     <div class="co-name">자이에스앤디</div>
     <div class="co-code">A317400</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -4037,7 +4037,7 @@ Non-Deal Roadshow
     <div class="co-name">케어젠</div>
     <div class="co-code">A214370</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -4202,7 +4202,7 @@ Non-Deal Roadshow
     <div class="co-name">케이아이엔엑스</div>
     <div class="co-code">A093320</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -4364,7 +4364,7 @@ Non-Deal Roadshow
     <div class="co-name">LG유플러스</div>
     <div class="co-code">A032640</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">통신</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -4481,7 +4481,7 @@ Non-Deal Roadshow
     <div class="co-name">SV인베스트먼트</div>
     <div class="co-code">A289080</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -4608,7 +4608,7 @@ Non-Deal Roadshow
     <div class="co-name">포스코DX</div>
     <div class="co-code">A022100</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -4698,7 +4698,7 @@ Non-Deal Roadshow
     <div class="co-name">노바텍</div>
     <div class="co-code">A285490</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">디스플레이/전자부품</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -4790,7 +4790,7 @@ Non-Deal Roadshow
     <div class="co-name">더블유씨피</div>
     <div class="co-code">A393890</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -4878,7 +4878,7 @@ Non-Deal Roadshow
     <div class="co-name">위지윅스튜디오</div>
     <div class="co-code">A299900</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">엔터/콘텐츠</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -4974,7 +4974,7 @@ Non-Deal Roadshow
     <div class="co-name">삼성전기</div>
     <div class="co-code">A009150</div>
     <div>
-      <span class="co-sector">전기/전자</span>
+      <span class="co-sector">디스플레이/전자부품</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -5066,7 +5066,7 @@ Non-Deal Roadshow
     <div class="co-name">에이치엔에스하이텍</div>
     <div class="co-code">A044990</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">반도체/전자</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -5141,7 +5141,7 @@ Non-Deal Roadshow
     <div class="co-name">한솔케미칼</div>
     <div class="co-code">A014680</div>
     <div>
-      <span class="co-sector">연료전지/수소</span>
+      <span class="co-sector">화학/소재</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -5380,7 +5380,7 @@ Non-Deal Roadshow
     <div class="co-name">푸른기술</div>
     <div class="co-code">A094940</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">반도체/전자</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -5533,7 +5533,7 @@ Non-Deal Roadshow
     <div class="co-name">산일전기</div>
     <div class="co-code">A062040</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -5781,7 +5781,7 @@ Non-Deal Roadshow
     <div class="co-name">포스코인터내셔널</div>
     <div class="co-code">A047050</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">지주/복합</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -5871,7 +5871,7 @@ Non-Deal Roadshow
     <div class="co-name">포스코퓨처엠</div>
     <div class="co-code">A003670</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -5997,7 +5997,7 @@ Non-Deal Roadshow
     <div class="co-name">SM Life Design</div>
     <div class="co-code">A063440</div>
     <div>
-      <span class="co-sector">엔터/콘텐츠</span>
+      <span class="co-sector">기타</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -6215,7 +6215,7 @@ Non-Deal Roadshow
     <div class="co-name">메쥬</div>
     <div class="co-code">A</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">기타</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -6486,7 +6486,7 @@ Non-Deal Roadshow
     <div class="co-name">한독</div>
     <div class="co-code">A002390</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -6665,7 +6665,7 @@ Non-Deal Roadshow
     <div class="co-name">포스코스틸리온</div>
     <div class="co-code">A058430</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -6985,7 +6985,7 @@ Non-Deal Roadshow
     <div class="co-name">인스코비</div>
     <div class="co-code">A006490</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">통신</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -7076,7 +7076,7 @@ Non-Deal Roadshow
     <div class="co-name">GS</div>
     <div class="co-code">A078930</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">지주/복합</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -7192,7 +7192,7 @@ Non-Deal Roadshow
     <div class="co-name">유한양행</div>
     <div class="co-code">A000100</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -7284,7 +7284,7 @@ Non-Deal Roadshow
     <div class="co-name">피에스케이홀딩스</div>
     <div class="co-code">A031980</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">반도체</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -7382,7 +7382,7 @@ Non-Deal Roadshow
     <div class="co-name">케이지에이</div>
     <div class="co-code">A455180</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -7479,7 +7479,7 @@ Non-Deal Roadshow
     <div class="co-name">무학</div>
     <div class="co-code">A033920</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">식품</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -7571,7 +7571,7 @@ Non-Deal Roadshow
     <div class="co-name">제이에스코퍼레이션</div>
     <div class="co-code">A194370</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">섬유/패션</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -7653,7 +7653,7 @@ Non-Deal Roadshow
     <div class="co-name">SK텔레콤</div>
     <div class="co-code">A017670</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">통신</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -7741,7 +7741,7 @@ Non-Deal Roadshow
     <div class="co-name">BNK금융지주</div>
     <div class="co-code">A138930</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -7931,7 +7931,7 @@ Non-Deal Roadshow
     <div class="co-name">POSCO홀딩스</div>
     <div class="co-code">A005490</div>
     <div>
-      <span class="co-sector">화학/소재</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -8062,7 +8062,7 @@ Non-Deal Roadshow
     <div class="co-name">롯데이노베이트</div>
     <div class="co-code">A286940</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -8180,7 +8180,7 @@ Non-Deal Roadshow
     <div class="co-name">신라교역</div>
     <div class="co-code">A004970</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">식품</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -8265,7 +8265,7 @@ Non-Deal Roadshow
     <div class="co-name">스튜디오드래곤</div>
     <div class="co-code">A253450</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">엔터/콘텐츠</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -8355,7 +8355,7 @@ Non-Deal Roadshow
     <div class="co-name">에코프로</div>
     <div class="co-code">A086520</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -8450,7 +8450,7 @@ Non-Deal Roadshow
     <div class="co-name">엘앤에프</div>
     <div class="co-code">A066970</div>
     <div>
-      <span class="co-sector">화학/소재</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -8540,7 +8540,7 @@ Non-Deal Roadshow
     <div class="co-name">워트</div>
     <div class="co-code">A396470</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">디스플레이/전자부품</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -8628,7 +8628,7 @@ Non-Deal Roadshow
     <div class="co-name">동원산업</div>
     <div class="co-code">A006040</div>
     <div>
-      <span class="co-sector">조선/엔진</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -8718,7 +8718,7 @@ Non-Deal Roadshow
     <div class="co-name">KSS해운</div>
     <div class="co-code">A044450</div>
     <div>
-      <span class="co-sector">조선/엔진</span>
+      <span class="co-sector">조선/해운</span>
       <span class="signal-pill" style="background:#dc2626;">강매수</span>
     </div>
   </div>
@@ -8902,7 +8902,7 @@ Non-Deal Roadshow
     <div class="co-name">롯데에너지머티리얼즈</div>
     <div class="co-code">A020150</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -9018,7 +9018,7 @@ Non-Deal Roadshow
     <div class="co-name">포스코엠텍</div>
     <div class="co-code">A009520</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -9091,7 +9091,7 @@ Non-Deal Roadshow
     <div class="co-name">버킷스튜디오</div>
     <div class="co-code">A066410</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -9171,7 +9171,7 @@ Non-Deal Roadshow
     <div class="co-name">쏘카</div>
     <div class="co-code">A403550</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -9254,7 +9254,7 @@ Non-Deal Roadshow
     <div class="co-name">에스디바이오센서</div>
     <div class="co-code">A137310</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -9338,7 +9338,7 @@ Non-Deal Roadshow
     <div class="co-name">KG이니시스</div>
     <div class="co-code">A035600</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -9499,7 +9499,7 @@ Non-Deal Roadshow
     <div class="co-name">쿠콘</div>
     <div class="co-code">A294570</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -9587,7 +9587,7 @@ Non-Deal Roadshow
     <div class="co-name">씨씨에스</div>
     <div class="co-code">A066790</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">엔터/콘텐츠</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -9863,7 +9863,7 @@ Non-Deal Roadshow
     <div class="co-name">크래프톤</div>
     <div class="co-code">A259960</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">게임</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -10130,7 +10130,7 @@ Non-Deal Roadshow
     <div class="co-name">동부건설</div>
     <div class="co-code">A005960</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -10216,7 +10216,7 @@ Non-Deal Roadshow
     <div class="co-name">한화손해보험</div>
     <div class="co-code">A000370</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -10308,7 +10308,7 @@ Non-Deal Roadshow
     <div class="co-name">이마트</div>
     <div class="co-code">A139480</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -10478,7 +10478,7 @@ Non-Deal Roadshow
     <div class="co-name">팬오션</div>
     <div class="co-code">A028670</div>
     <div>
-      <span class="co-sector">조선/엔진</span>
+      <span class="co-sector">조선/해운</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -10594,7 +10594,7 @@ Non-Deal Roadshow
     <div class="co-name">인산가</div>
     <div class="co-code">A277410</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">식품</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -10687,7 +10687,7 @@ Non-Deal Roadshow
     <div class="co-name">DL이앤씨</div>
     <div class="co-code">A375500</div>
     <div>
-      <span class="co-sector">화학/소재</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -10905,7 +10905,7 @@ Non-Deal Roadshow
     <div class="co-name">케이뱅크</div>
     <div class="co-code">A279570</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -11042,7 +11042,7 @@ Samsung Global Investors Conference
     <div class="co-name">메가스터디교육</div>
     <div class="co-code">A215200</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">교육</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -11142,7 +11142,7 @@ Samsung Global Investors Conference
     <div class="co-name">현대지에프홀딩스</div>
     <div class="co-code">A005440</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -11222,7 +11222,7 @@ Samsung Global Investors Conference
     <div class="co-name">라온로보틱스</div>
     <div class="co-code">A232680</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -11308,7 +11308,7 @@ Samsung Global Investors Conference
     <div class="co-name">큐리언트</div>
     <div class="co-code">A115180</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -11467,7 +11467,7 @@ Samsung Global Investors Conference
     <div class="co-name">미래에셋증권</div>
     <div class="co-code">A006800</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -11561,7 +11561,7 @@ Samsung Global Investors Conference
     <div class="co-name">엑세스바이오</div>
     <div class="co-code">A950130</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -11744,7 +11744,7 @@ Samsung Global Investors Conference
     <div class="co-name">CJ프레시웨이</div>
     <div class="co-code">A051500</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -11828,7 +11828,7 @@ Samsung Global Investors Conference
     <div class="co-name">삼성증권</div>
     <div class="co-code">A016360</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -11912,7 +11912,7 @@ Samsung Global Investors Conference
     <div class="co-name">삼성중공업</div>
     <div class="co-code">A010140</div>
     <div>
-      <span class="co-sector">조선/엔진</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -12006,7 +12006,7 @@ Samsung Global Investors Conference
     <div class="co-name">에코프로에이치엔</div>
     <div class="co-code">A383310</div>
     <div>
-      <span class="co-sector">의료기기</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -12151,7 +12151,7 @@ Samsung Global Investors Conference
     <div class="co-name">SOOP</div>
     <div class="co-code">A067160</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">엔터/콘텐츠</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -12224,7 +12224,7 @@ Samsung Global Investors Conference
     <div class="co-name">F&amp;F</div>
     <div class="co-code">A383220</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">섬유/패션</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -12428,7 +12428,7 @@ Samsung Global Investors Conference
     <div class="co-name">에스원</div>
     <div class="co-code">A012750</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -12616,7 +12616,7 @@ Samsung Global Investors Conference
     <div class="co-name">페니트리움바이오</div>
     <div class="co-code">A187660</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -12850,7 +12850,7 @@ Appendix
     <div class="co-name">이수페타시스</div>
     <div class="co-code">A007660</div>
     <div>
-      <span class="co-sector">전기/전자</span>
+      <span class="co-sector">디스플레이/전자부품</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -13002,7 +13002,7 @@ Appendix
     <div class="co-name">신세계</div>
     <div class="co-code">A004170</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -13126,7 +13126,7 @@ Appendix
     <div class="co-name">그래디언트</div>
     <div class="co-code">A035080</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -13213,7 +13213,7 @@ Appendix
     <div class="co-name">더블유게임즈</div>
     <div class="co-code">A192080</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">게임</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -13293,7 +13293,7 @@ Appendix
     <div class="co-name">한컴위드</div>
     <div class="co-code">A054920</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">기타</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -13621,7 +13621,7 @@ Appendix
     <div class="co-name">국도화학</div>
     <div class="co-code">A007690</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">화학/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -13705,7 +13705,7 @@ Appendix
     <div class="co-name">강원랜드</div>
     <div class="co-code">A035250</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">레저/관광</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -13787,7 +13787,7 @@ Appendix
     <div class="co-name">대웅</div>
     <div class="co-code">A003090</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#dc2626;">강매수</span>
     </div>
   </div>
@@ -13885,7 +13885,7 @@ Appendix
     <div class="co-name">두산에너빌리티</div>
     <div class="co-code">A034020</div>
     <div>
-      <span class="co-sector">연료전지/수소</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -13975,7 +13975,7 @@ Appendix
     <div class="co-name">시큐레터</div>
     <div class="co-code">A418250</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -14060,7 +14060,7 @@ Appendix
     <div class="co-name">엘컴텍</div>
     <div class="co-code">A037950</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -14150,7 +14150,7 @@ Appendix
     <div class="co-name">상신이디피</div>
     <div class="co-code">A091580</div>
     <div>
-      <span class="co-sector">디스플레이</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -14363,7 +14363,7 @@ Appendix
     <div class="co-name">하츠</div>
     <div class="co-code">A066130</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -14543,7 +14543,7 @@ Appendix
     <div class="co-name">파트론</div>
     <div class="co-code">A091700</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">반도체/전자</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -14616,7 +14616,7 @@ Appendix
     <div class="co-name">LX하우시스</div>
     <div class="co-code">A108670</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -14702,7 +14702,7 @@ Appendix
     <div class="co-name">DL</div>
     <div class="co-code">A000210</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">화학/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -14794,7 +14794,7 @@ Appendix
     <div class="co-name">파인테크닉스</div>
     <div class="co-code">A106240</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -14979,7 +14979,7 @@ Appendix
     <div class="co-name">CJ대한통운</div>
     <div class="co-code">A000120</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -15203,7 +15203,7 @@ Appendix
     <div class="co-name">JTC</div>
     <div class="co-code">A950170</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -15291,7 +15291,7 @@ Appendix
     <div class="co-name">휴젤</div>
     <div class="co-code">A145020</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -15448,7 +15448,7 @@ Appendix
     <div class="co-name">성일하이텍</div>
     <div class="co-code">A365340</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -15535,7 +15535,7 @@ Appendix
     <div class="co-name">신세계푸드</div>
     <div class="co-code">A031440</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">식품</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -15623,7 +15623,7 @@ Appendix
     <div class="co-name">아스트</div>
     <div class="co-code">A067390</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -15705,7 +15705,7 @@ Appendix
     <div class="co-name">동원시스템즈</div>
     <div class="co-code">A014820</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">화학/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -15829,7 +15829,7 @@ Appendix
     <div class="co-name">에스티팜</div>
     <div class="co-code">A237690</div>
     <div>
-      <span class="co-sector">철강/금속</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -15911,7 +15911,7 @@ Appendix
     <div class="co-name">HPSP</div>
     <div class="co-code">A403870</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -16041,7 +16041,7 @@ Appendix
     <div class="co-name">오가닉티코스메틱</div>
     <div class="co-code">A900300</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">화장품/뷰티</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -16305,7 +16305,7 @@ Appendix
     <div class="co-name">에쓰씨엔지니어링</div>
     <div class="co-code">A023960</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -16390,7 +16390,7 @@ Appendix
     <div class="co-name">휴온스글로벌</div>
     <div class="co-code">A084110</div>
     <div>
-      <span class="co-sector">기타</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -16560,7 +16560,7 @@ Appendix
     <div class="co-name">고려아연</div>
     <div class="co-code">A010130</div>
     <div>
-      <span class="co-sector">엔터/콘텐츠</span>
+      <span class="co-sector">철강/금속</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -16652,7 +16652,7 @@ Appendix
     <div class="co-name">한국항공우주</div>
     <div class="co-code">A047810</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -16802,7 +16802,7 @@ Appendix
     <div class="co-name">BGF리테일</div>
     <div class="co-code">A282330</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">물류/유통</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -16930,7 +16930,7 @@ Appendix
     <div class="co-name">휴온스</div>
     <div class="co-code">A243070</div>
     <div>
-      <span class="co-sector">의료기기</span>
+      <span class="co-sector">바이오/제약</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -17032,7 +17032,7 @@ Appendix
     <div class="co-name">파크시스템스</div>
     <div class="co-code">A140860</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#dc2626;">매수</span>
     </div>
   </div>
@@ -17500,7 +17500,7 @@ Appendix
     <div class="co-name">자비스</div>
     <div class="co-code">A254120</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -17583,7 +17583,7 @@ Appendix
     <div class="co-name">서희건설</div>
     <div class="co-code">A035890</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -17749,7 +17749,7 @@ Appendix
     <div class="co-name">차이커뮤니케이션</div>
     <div class="co-code">A351870</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">미디어/광고</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -17835,7 +17835,7 @@ Appendix
     <div class="co-name">KBI메탈</div>
     <div class="co-code">A024840</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">디스플레이/전자부품</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -17923,7 +17923,7 @@ Appendix
     <div class="co-name">신한알파리츠</div>
     <div class="co-code">A293940</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -17999,7 +17999,7 @@ Appendix
     <div class="co-name">루미르</div>
     <div class="co-code">A474170</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">방산/항공</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -18129,7 +18129,7 @@ Appendix
     <div class="co-name">에이플러스에셋</div>
     <div class="co-code">A244920</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -18232,7 +18232,7 @@ Appendix
     <div class="co-name">윈스테크넷</div>
     <div class="co-code">A136540</div>
     <div>
-      <span class="co-sector">엔터/콘텐츠</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -18352,7 +18352,7 @@ Appendix
     <div class="co-name">더존비즈온</div>
     <div class="co-code">A012510</div>
     <div>
-      <span class="co-sector">금융</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -18520,7 +18520,7 @@ Appendix
     <div class="co-name">부국증권</div>
     <div class="co-code">A001270</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -18609,7 +18609,7 @@ Appendix
     <div class="co-name">셀레믹스</div>
     <div class="co-code">A331920</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -18701,7 +18701,7 @@ Appendix
     <div class="co-name">제일엠앤에스</div>
     <div class="co-code">A412540</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">배터리/소재</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -18862,7 +18862,7 @@ Appendix
     <div class="co-name">현대오토에버</div>
     <div class="co-code">A307950</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -18980,7 +18980,7 @@ Appendix
     <div class="co-name">효성화학</div>
     <div class="co-code">A298000</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">화학/소재</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -19064,7 +19064,7 @@ Appendix
     <div class="co-name">비덴트</div>
     <div class="co-code">A121800</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">반도체/전자</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -19135,7 +19135,7 @@ Appendix
     <div class="co-name">IPARK현대산업개발</div>
     <div class="co-code">A294870</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">건설/건축</span>
       <span class="signal-pill" style="background:#6b7280;">중립</span>
     </div>
   </div>
@@ -19570,7 +19570,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">슈프리마</div>
     <div class="co-code">A236200</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -19660,7 +19660,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">현대차증권</div>
     <div class="co-code">A001500</div>
     <div>
-      <span class="co-sector">자동차/모빌리티</span>
+      <span class="co-sector">금융</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매수</span>
     </div>
   </div>
@@ -19746,7 +19746,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">지구홀딩스</div>
     <div class="co-code">A221800</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -20050,7 +20050,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">골프존</div>
     <div class="co-code">A215000</div>
     <div>
-      <span class="co-sector">엔터/콘텐츠</span>
+      <span class="co-sector">게임</span>
       <span class="signal-pill" style="background:#2563eb;">매도</span>
     </div>
   </div>
@@ -20136,7 +20136,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">CG인바이츠</div>
     <div class="co-code">A083790</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">의료기기</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>
@@ -20291,7 +20291,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">STX</div>
     <div class="co-code">A011810</div>
     <div>
-      <span class="co-sector">바이오/제약</span>
+      <span class="co-sector">기계/장비</span>
       <span class="signal-pill" style="background:#6b7280;">중립~확인</span>
     </div>
   </div>
@@ -20471,7 +20471,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">아이티센글로벌</div>
     <div class="co-code">A124500</div>
     <div>
-      <span class="co-sector">로봇/AI</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#6b7280;">중립~매도</span>
     </div>
   </div>
@@ -20568,7 +20568,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">PS일렉트로닉스</div>
     <div class="co-code">A332570</div>
     <div>
-      <span class="co-sector">반도체</span>
+      <span class="co-sector">IT/SW</span>
       <span class="signal-pill" style="background:#dc2626;">강매수</span>
     </div>
   </div>
@@ -20662,7 +20662,7 @@ NDR(Non-Deal Roadshow) IR미팅
     <div class="co-name">톱텍</div>
     <div class="co-code">A108230</div>
     <div>
-      <span class="co-sector">배터리/2차전지</span>
+      <span class="co-sector">자동차/모빌리티</span>
       <span class="signal-pill" style="background:#2563eb;">매도⚠</span>
     </div>
   </div>

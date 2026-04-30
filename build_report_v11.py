@@ -62,48 +62,148 @@ WARNINGS = parsed["warnings"]
 
 
 # ============= INDUSTRY CLASSIFICATION =============
-INDUSTRY_KEYWORDS = [
-    ("반도체", ["반도체", "장비", "패키징", "DRAM", "NAND", "HBM", "포토", "에칭", "CVD", "ALD", "비메모리", "SoC", "Semiconductor", "Foundry"]),
-    ("디스플레이", ["디스플레이", "OLED", "LCD", "패널", "Display"]),
-    ("조선/엔진", ["조선", "엔진", "선박", "마린엔진", "Marine", "Shipbuild"]),
-    ("자동차/모빌리티", ["자동차", "차량", "모터스", "타이어", "변속", "Motor", "Auto", "현대차", "기아"]),
-    ("배터리/2차전지", ["배터리", "2차전지", "양극재", "음극재", "전해", "분리막", "전구체", "리튬", "ESS", "Battery"]),
-    ("연료전지/수소", ["연료전지", "수소", "퓨얼셀", "Hydrogen", "FuelCell"]),
-    ("바이오/제약", ["바이오", "제약", "치료제", "백신", "신약", "CAR-T", "오가노이드", "임상", "면역", "항체", "Pharma", "Bio"]),
-    ("의료기기", ["의료", "진단", "기기", "Medical", "Diagnos"]),
-    ("화장품/뷰티", ["화장품", "뷰티", "코스메", "아모레", "Cosm", "Beauty"]),
-    ("게임", ["게임", "Game", "Studio", "넷마블", "엔씨", "크래프톤", "넥슨", "위메이드", "데브시스터즈"]),
-    ("엔터/콘텐츠", ["엔터", "콘텐츠", "드라마", "음악", "아이돌", "K-POP", "HYBE", "JYP", "SM", "Entertainment", "스튜디오드래곤"]),
-    ("미디어/방송", ["방송", "미디어", "CGV", "CJ ENM", "방송통신"]),
-    ("로봇/AI", ["로봇", "Robot", "AI", "인공지능", "자동화"]),
-    ("화학/소재", ["화학", "Polymer", "석유", "유화", "소재", "Chemical", "Materials"]),
-    ("철강/금속", ["철강", "Steel", "금속", "전선", "동", "알루미늄", "Cable", "Wire", "비철"]),
-    ("건설/건축", ["건설", "건축", "토목", "시공", "Construction", "건자재", "주택"]),
-    ("금융", ["증권", "금융지주", "Bank", "보험", "운용", "Asset", "Holdings", "Finance", "은행", "Securities"]),
-    ("IT/SW", ["플랫폼", "소프트웨어", "Software", "클라우드", "Cloud", "보안", "인터넷", "디지털"]),
-    ("전기/전자", ["전기", "전자", "Electric", "Electron"]),
-    ("식품/유통", ["식품", "음료", "Food", "유통", "편의", "마트", "백화", "호텔", "리츠", "Beverage", "F&B"]),
-    ("방산/항공", ["방산", "국방", "항공", "드론", "Defense", "Aero", "MRO"]),
-    ("에너지/유틸리티", ["에너지", "Energy", "전력", "Power", "Utility", "발전", "신재생"]),
+# ── yfinance industry → 한국어 산업 분류 (1차: 가장 정확) ──────────────
+YF_INDUSTRY_MAP = {
+    # 반도체
+    "Semiconductors": "반도체", "Semiconductor Equipment & Materials": "반도체",
+    # 디스플레이
+    "Electronic Components": "디스플레이/전자부품",
+    # 자동차
+    "Auto Manufacturers": "자동차/모빌리티", "Auto Parts": "자동차/모빌리티",
+    "Auto Manufacturers - Domestic": "자동차/모빌리티",
+    # 배터리/소재
+    "Electrical Equipment & Parts": "배터리/소재",
+    # 조선
+    "Marine Shipping": "조선/해운", "Shipbuilding": "조선/해운",
+    # 바이오/제약
+    "Biotechnology": "바이오/제약",
+    "Drug Manufacturers - General": "바이오/제약",
+    "Drug Manufacturers - Specialty & Generic": "바이오/제약",
+    "Medical Devices": "의료기기",
+    "Medical Instruments & Supplies": "의료기기",
+    "Diagnostics & Research": "의료기기",
+    "Medical Care Facilities": "의료기기",
+    "Medical Distribution": "바이오/제약",
+    # 화장품
+    "Household & Personal Products": "화장품/뷰티",
+    # 게임
+    "Electronic Gaming & Multimedia": "게임",
+    # 엔터
+    "Entertainment": "엔터/콘텐츠",
+    # 방산/항공
+    "Aerospace & Defense": "방산/항공",
+    # 화학
+    "Chemicals": "화학/소재", "Specialty Chemicals": "화학/소재",
+    # 철강/금속
+    "Steel": "철강/금속", "Copper": "철강/금속", "Aluminum": "철강/금속",
+    "Metal Fabrication": "철강/금속", "Other Industrial Metals & Mining": "철강/금속",
+    # 건설
+    "Engineering & Construction": "건설/건축", "Building Products & Equipment": "건설/건축",
+    # 금융
+    "Capital Markets": "금융", "Banks - Regional": "금융", "Banks - Diversified": "금융",
+    "Insurance - Property & Casualty": "금융", "Insurance - Life": "금융",
+    "Insurance - Diversified": "금융", "Financial Data & Stock Exchanges": "금융",
+    "REIT - Office": "금융", "REIT - Diversified": "금융", "REIT - Retail": "금융",
+    # IT/SW
+    "Software - Application": "IT/SW", "Software - Infrastructure": "IT/SW",
+    "Information Technology Services": "IT/SW",
+    "Internet Content & Information": "IT/SW",
+    "Internet Retail": "IT/SW",
+    # 통신
+    "Telecom Services": "통신",
+    # 물류/유통
+    "Integrated Freight & Logistics": "물류/유통",
+    "Grocery Stores": "물류/유통", "Discount Stores": "물류/유통",
+    "Department Stores": "물류/유통", "Food Distribution": "물류/유통",
+    "Specialty Retail": "물류/유통",
+    # 식품
+    "Packaged Foods": "식품", "Beverages - Wineries & Distilleries": "식품",
+    # 에너지
+    "Oil & Gas Refining & Marketing": "에너지/유틸리티",
+    "Utilities - Regulated Electric": "에너지/유틸리티",
+    "Specialty Industrial Machinery": "기계/장비",
+    "Farm & Heavy Construction Machinery": "기계/장비",
+    "Security & Protection Services": "IT/SW",
+    "Advertising Agencies": "미디어/광고",
+    "Broadcasting": "미디어/광고",
+    "Publishing": "미디어/광고",
+    "Education & Training Services": "교육",
+    "Resorts & Casinos": "레저/관광",
+    "Conglomerates": "지주/복합",
+    "Apparel Manufacturing": "섬유/패션",
+    "Footwear & Accessories": "섬유/패션",
+    "Paper & Paper Products": "화학/소재",
+    "Packaging & Containers": "화학/소재",
+    "Communication Equipment": "IT/SW",
+    "Computer Hardware": "IT/SW",
+    "Scientific & Technical Instruments": "기계/장비",
+}
+
+# ── 회사명 기반 키워드 (본문·summary 절대 사용 안 함) ───────────────────
+# 형식: (산업, [회사명에 포함될 때 매칭되는 고유 키워드])
+NAME_KEYWORDS = [
+    ("반도체",       ["반도체", "하이닉스", "DB하이텍", "매그나칩", "어보브반도체", "LX세미콘", "코나아이", "HPSP", "파크시스템스", "피에스케이", "오로스테크", "이수페타시스", "해성디에스"]),
+    ("디스플레이/전자부품", ["디스플레이", "OLED", "삼성SDI", "LG디스플레이"]),
+    ("배터리/소재",  ["양극재", "음극재", "배터리", "2차전지", "엘앤에프", "에코프로", "포스코퓨처엠", "롯데에너지머티리얼즈", "한솔케미칼"]),
+    ("조선/해운",    ["조선", "중공업", "삼성중공업", "한화오션", "HD현대중공업", "팬오션"]),
+    ("자동차/모빌리티", ["자동차", "기아", "현대모비스", "현대위아", "한온시스템", "SNT모티브", "넥센타이어", "한국타이어", "모트렉스", "오텍"]),
+    ("방산/항공",    ["방산", "한화에어로", "한국항공우주", "KAI", "SNT다이내믹스", "LIG넥스원", "현대로템", "풍산", "SNT에너지", "루미르"]),
+    ("로봇/AI",      ["로봇", "제닉스로보틱스", "코윈테크", "라온로보틱스"]),
+    ("바이오/제약",  ["바이오", "제약", "셀트리온", "유한양행", "한미약품", "HLB", "메지온", "에스티팜", "차백신", "셀레믹스", "바이오니아", "에스디바이오", "엑세스바이오", "대웅제약", "대웅", "보령", "한독", "JW중외제약", "제일파마", "더존비즈온"]),
+    ("의료기기",     ["디오", "하이로닉", "인바이츠", "케어젠", "휴온스", "휴젤"]),
+    ("화장품/뷰티",  ["화장품", "코스메", "아모레", "LG생활건강", "달바글로벌", "오가닉티코스메틱"]),
+    ("게임",         ["게임", "카카오게임즈", "골프존", "넥슨", "넷마블", "크래프톤", "위메이드"]),
+    ("엔터/콘텐츠",  ["엔터테인먼트", "스튜디오", "콘텐츠", "위지윅", "SOOP", "버킷스튜디오", "티쓰리"]),
+    ("연료전지/수소",["연료전지", "수소", "퓨얼셀", "범한퓨얼셀"]),
+    ("화학/소재",    ["화학", "LG화학", "DL", "국도화학", "효성화학", "현대바이오랜드"]),
+    ("철강/금속",    ["철강", "스틸", "포스코스틸리온", "포스코엠텍", "고려아연"]),
+    ("건설/건축",    ["건설", "DL이앤씨", "자이에스앤디", "GS건설", "동원시스템즈"]),
+    ("금융",         ["증권", "금융지주", "금융그룹", "은행", "보험", "리츠", "키움증권", "삼성증권", "BNK금융", "케이뱅크", "신한알파", "신한서부", "미래에셋증권", "에이플러스에셋", "SV인베스트먼트"]),
+    ("IT/SW",        ["소프트웨어", "시스템", "클라우드", "IT", "NAVER", "카카오", "현대오토에버", "포스코DX", "LG씨엔에스", "더존비즈온", "KG이니시스", "쿠콘", "케이아이엔엑스", "아이티센", "윈스테크", "롯데이노베이트", "슈프리마", "시큐레터", "차이커뮤니케이션", "에스원", "파인테크닉스"]),
+    ("통신",         ["통신", "SK텔레콤", "LG유플러스", "KT", "인스코비"]),
+    ("물류/유통",    ["물류", "이마트", "신세계", "BGF리테일", "CJ프레시웨이", "GS"]),
+    ("식품",         ["식품", "F&F", "신세계푸드", "무학", "인산가", "두올"]),
+    ("에너지/유틸리티", ["에너지", "발전", "전력", "수소"]),
+    ("미디어/광고",  ["미디어", "방송", "PS일렉트로닉스"]),
+    ("기계/장비",    ["기계", "자비스", "KG에이"]),
+    ("지주/복합",    ["홀딩스", "지주", "포스코인터내셔널", "현대지에프홀딩스", "풍산홀딩스", "SNT홀딩스", "JW홀딩스", "한미사이언스", "지구홀딩스", "피에스케이홀딩스"]),
+    ("섬유/패션",    ["제이에스코퍼레이션", "패션", "섬유"]),
+    ("교육",         ["메가스터디"]),
+    ("레저/관광",    ["강원랜드", "호텔"]),
 ]
 
-
 def classify_industry(d):
-    ci = company_info.get(d["code"], {})
-    parts = [d["company"]]
-    if ci.get("dart"):
-        parts.append(ci["dart"].get("corp_name", ""))
-    if ci.get("yf"):
-        parts.append(ci["yf"].get("name_en", ""))
-        parts.append(ci["yf"].get("industry", ""))
-        parts.append((ci["yf"].get("summary") or "")[:300])
-    parts.append(d["report"])
-    parts.append(d["body_full"][:300])
-    blob = " ".join(parts).lower()
-    for label, kws in INDUSTRY_KEYWORDS:
+    code = d.get("code", "")
+    company = d.get("company", "")
+    ci = company_info.get(code, {})
+    yf = ci.get("yf") or {}
+
+    # 1순위: yfinance industry 필드 (가장 정확)
+    yf_industry = yf.get("industry", "")
+    if yf_industry and yf_industry in YF_INDUSTRY_MAP:
+        return YF_INDUSTRY_MAP[yf_industry]
+
+    # 2순위: 회사명에서 키워드 매칭 (본문/summary 절대 사용 안 함)
+    for label, kws in NAME_KEYWORDS:
         for kw in kws:
-            if kw.lower() in blob:
+            if kw in company:
                 return label
+
+    # 3순위: DART 업종코드 (KSIC 대분류)
+    dart = ci.get("dart") or {}
+    induty = dart.get("induty_code", "") or ""
+    ksic_map = {
+        "C": "제조업", "26": "반도체/전자", "27": "전기장비", "28": "기계/장비",
+        "29": "자동차/모빌리티", "30": "조선/해운", "21": "바이오/제약",
+        "20": "화학/소재", "24": "철강/금속", "41": "건설/건축",
+        "62": "IT/SW", "63": "IT/SW", "64": "금융", "65": "금융", "66": "금융",
+        "46": "물류/유통", "47": "물류/유통",
+    }
+    if induty:
+        for prefix, label in ksic_map.items():
+            if induty.startswith(prefix):
+                return label
+
     return "기타"
 
 
