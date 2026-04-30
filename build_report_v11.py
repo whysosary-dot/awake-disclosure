@@ -4,41 +4,48 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-04-29"
-TODAY_DISP = "2026년 4월 29일 (수)"
+TODAY = "2026-04-30"
+TODAY_DISP = "2026년 4월 30일 (목)"
 
-with open("/sessions/pensive-awesome-meitner/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/peaceful-admiring-mayer/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/pensive-awesome-meitner/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/peaceful-admiring-mayer/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/pensive-awesome-meitner/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/peaceful-admiring-mayer/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/pensive-awesome-meitner/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/peaceful-admiring-mayer/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
-# 한글 큐레이션된 overrides (BM·segments·strength·customers 베이스라인 — 영구 누적)
+# 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/pensive-awesome-meitner/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/peaceful-admiring-mayer/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
-# 매일 새 WebSearch 기반 분석 (custom_signal_reason/insight/watch — 매일 갱신)
-# 사용자 정책 (2026-04-30): "기존이든 신규든 구분없이 매일 새로 분석"
-DAILY_ANALYSES = {}
-import glob as _glob
-_daily_candidates = sorted(_glob.glob("/sessions/pensive-awesome-meitner/mnt/outputs/daily_analyses_*.json"), reverse=True)
-if _daily_candidates:
-    with open(_daily_candidates[0], encoding="utf-8") as f:
-        DAILY_ANALYSES = json.load(f)
-    print(f"✓ Loaded daily analyses from {_daily_candidates[0]}: {len(DAILY_ANALYSES)} companies")
-
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/pensive-awesome-meitner/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/peaceful-admiring-mayer/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
         agg_data = json.load(f)
+
+
+# ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
+DAILY_ANALYSES = {}
+daily_path = f"/sessions/peaceful-admiring-mayer/mnt/outputs/daily_analyses_{TODAY}.json"
+if os.path.exists(daily_path):
+    with open(daily_path, encoding='utf-8') as f:
+        DAILY_ANALYSES = json.load(f)
+    print(f'✓ Loaded daily_analyses_{TODAY}.json: {len(DAILY_ANALYSES)} companies')
+
+# Merge: daily_analyses가 ENRICHED custom_*를 오버라이드
+for code, data in DAILY_ANALYSES.items():
+    if code not in ENRICHED:
+        ENRICHED[code] = {}
+    ENRICHED[code]['custom_signal_reason'] = data.get('custom_signal_reason', '')
+    ENRICHED[code]['custom_insight'] = data.get('custom_insight', '')
+    ENRICHED[code]['custom_watch'] = data.get('custom_watch', [])
 
 DISCLOSURES = parsed["disclosures"]
 BIG_TRADES = parsed["big_trades"]
@@ -1001,20 +1008,10 @@ for d in DISCLOSURES:
     d["segments"] = ov.get("segments") or extract_segments(d)
     d["customers"] = ov.get("customers") or extract_customers(d)
     d["strength"] = ov.get("strength") or extract_strength(d)
-    # 우선순위: ① 오늘자 daily_analyses (매일 새 WebSearch 기반)
-    #          ② enriched_overrides의 custom_* (정적 백업)
-    #          ③ 강화된 자동 분석 함수
-    daily = DAILY_ANALYSES.get(d["code"], {})
-    d["signal_reason"] = daily.get("custom_signal_reason") or ov.get("custom_signal_reason") or signal_reason(d)
-    d["insight"] = daily.get("custom_insight") or ov.get("custom_insight") or auto_insight(d)
-    d["watch"] = daily.get("custom_watch") or ov.get("custom_watch") or auto_watch(d)
-    # 분석 출처 표기
-    if d["code"] in DAILY_ANALYSES:
-        d["_analysis_source"] = "daily-fresh"
-    elif ov.get("custom_signal_reason"):
-        d["_analysis_source"] = "curated"
-    else:
-        d["_analysis_source"] = "auto"
+    # Custom override가 있으면 그것 사용, 없으면 강화된 자동 분석
+    d["signal_reason"] = ov.get("custom_signal_reason") or signal_reason(d)
+    d["insight"] = ov.get("custom_insight") or auto_insight(d)
+    d["watch"] = ov.get("custom_watch") or auto_watch(d)
     d["fin"] = fin_oneline(d)
     p = prices.get(d["code"])
     d["price"] = p
@@ -1540,7 +1537,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/pensive-awesome-meitner/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/peaceful-admiring-mayer/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
