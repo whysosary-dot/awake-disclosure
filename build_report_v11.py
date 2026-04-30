@@ -39,13 +39,22 @@ if os.path.exists(daily_path):
         DAILY_ANALYSES = json.load(f)
     print(f'✓ Loaded daily_analyses_{TODAY}.json: {len(DAILY_ANALYSES)} companies')
 
-# Merge: daily_analyses가 ENRICHED custom_*를 오버라이드
+# Merge: daily_analyses가 ENRICHED custom_*를 오버라이드 (BM 필드 포함)
 for code, data in DAILY_ANALYSES.items():
     if code not in ENRICHED:
         ENRICHED[code] = {}
     ENRICHED[code]['custom_signal_reason'] = data.get('custom_signal_reason', '')
     ENRICHED[code]['custom_insight'] = data.get('custom_insight', '')
     ENRICHED[code]['custom_watch'] = data.get('custom_watch', [])
+    # ★ 방안A: daily_analyses BM 필드 — enriched 없을 때 우선 사용
+    if data.get('bm_kr'):
+        ENRICHED[code]['bm_daily'] = data['bm_kr']
+    if data.get('segments_kr'):
+        ENRICHED[code]['segments_daily'] = data['segments_kr']
+    if data.get('strength_kr'):
+        ENRICHED[code]['strength_daily'] = data['strength_kr']
+    if data.get('customers_kr'):
+        ENRICHED[code]['customers_daily'] = data['customers_kr']
 
 DISCLOSURES = parsed["disclosures"]
 BIG_TRADES = parsed["big_trades"]
@@ -1003,11 +1012,12 @@ for d in DISCLOSURES:
     d["industry"] = classify_industry(d)
     # 한글 큐레이션된 overrides 우선
     ov = ENRICHED.get(d["code"], {})
-    d["bm"] = ov.get("bm") or auto_bm(d)
-    # segments override는 dict list 형태 ({name, pct, note}), auto는 list[str]
-    d["segments"] = ov.get("segments") or extract_segments(d)
-    d["customers"] = ov.get("customers") or extract_customers(d)
-    d["strength"] = ov.get("strength") or extract_strength(d)
+    # ★ 우선순위: daily_analyses BM > enriched_overrides BM > auto_bm
+    d["bm"] = ov.get("bm") or ov.get("bm_daily") or auto_bm(d)
+    # segments: dict list({name,pct,note}) or list[str] from daily
+    d["segments"] = ov.get("segments") or ov.get("segments_daily") or extract_segments(d)
+    d["customers"] = ov.get("customers") or ov.get("customers_daily") or extract_customers(d)
+    d["strength"] = ov.get("strength") or ov.get("strength_daily") or extract_strength(d)
     # Custom override가 있으면 그것 사용, 없으면 강화된 자동 분석
     d["signal_reason"] = ov.get("custom_signal_reason") or signal_reason(d)
     d["insight"] = ov.get("custom_insight") or auto_insight(d)
@@ -1208,6 +1218,9 @@ html, body {{ margin:0; padding:0; font-family:'Noto Sans KR','Apple SD Gothic N
 .index-table td.disc {{ white-space:normal; max-width:300px; }}
 .index-table tr:hover {{ background:#f1f5f9; }}
 .idx-anchor {{ color:var(--c-dark); text-decoration:none; }}
+.idx-btn {{ background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; padding:5px 12px; font-size:13px; font-weight:600; cursor:pointer; color:var(--c-dark); transition:all 0.15s; }}
+.idx-btn:hover {{ background:#e2e8f0; }}
+.idx-btn.active {{ background:var(--c-darkest); color:white; border-color:var(--c-darkest); }}
 .sig-buy,.sig-sell,.sig-neutral {{ color:white; padding:3px 8px; border-radius:10px; font-size:12px; font-weight:700; }}
 .sig-buy {{ background:#dc2626; }}
 .sig-sell {{ background:#2563eb; }}
@@ -1323,13 +1336,27 @@ parts_html.append(f"""<div class="page">
 </div>
 <div class="page-body">
 <h2 style="font-size:30px; font-weight:900; color:var(--c-darkest); margin:6px 0 4px 0;">📋 오늘의 공시 인덱스 ({len(DISCLOSURES)}건)</h2>
-<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">{TODAY} · 시간순 정렬 · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동</div>
-<table class="index-table"><thead>
-<tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th>등락률</th><th>시그널</th></tr></thead><tbody>""")
+<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">{TODAY} · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동</div>
+<div id="idx-controls" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
+  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);">시그널:</span>
+  <button class="idx-btn active" onclick="idxFilter(this,'all')">전체</button>
+  <button class="idx-btn" onclick="idxFilter(this,'up')">매수▲</button>
+  <button class="idx-btn" onclick="idxFilter(this,'down')">매도▼</button>
+  <button class="idx-btn" onclick="idxFilter(this,'neutral')">중립</button>
+  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);margin-left:8px;">정렬:</span>
+  <button class="idx-btn" onclick="idxSort('time')">시간순</button>
+  <button class="idx-btn" onclick="idxSort('chg_desc')">등락률↓</button>
+  <button class="idx-btn" onclick="idxSort('chg_asc')">등락률↑</button>
+  <button class="idx-btn" onclick="idxSort('signal')">시그널순</button>
+</div>
+<table class="index-table" id="idx-table"><thead>
+<tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
 
 for d in DISCLOSURES:
     sig_class = {"up":"sig-buy","down":"sig-sell","neutral":"sig-neutral"}.get(d["signal_kind"],"sig-neutral")
-    parts_html.append(f"""<tr>
+    _chg_val = d.get("chg_pct") or 0
+    _sig_ord = {"up":"0","down":"1","neutral":"2"}.get(d["signal_kind"],"2")
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}">
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1337,7 +1364,34 @@ for d in DISCLOSURES:
 <td>{chg_pill(d["chg_pct"])}</td>
 <td><span class="{sig_class}">{html.escape(short_signal(d["signal"]))}</span></td>
 </tr>""")
-parts_html.append("</tbody></table>")
+parts_html.append("""</tbody></table>
+<script>
+var idxSortState = 'time';
+function idxFilter(btn, sig) {
+  document.querySelectorAll('.idx-btn').forEach(b => { if(['전체','매수▲','매도▼','중립'].some(t=>b.textContent.includes(t.replace('▲','').replace('▼',''))||b.textContent===t)) b.classList.remove('active'); });
+  btn.classList.add('active');
+  var rows = document.querySelectorAll('#idx-tbody tr');
+  rows.forEach(function(r) {
+    r.style.display = (sig === 'all' || r.dataset.signal === sig) ? '' : 'none';
+  });
+}
+function idxSort(mode) {
+  idxSortState = mode;
+  var tbody = document.getElementById('idx-tbody');
+  var rows = Array.from(tbody.querySelectorAll('tr'));
+  rows.sort(function(a, b) {
+    if (mode === 'chg_desc') return parseFloat(b.dataset.chg||0) - parseFloat(a.dataset.chg||0);
+    if (mode === 'chg_asc')  return parseFloat(a.dataset.chg||0) - parseFloat(b.dataset.chg||0);
+    if (mode === 'signal')   return (a.dataset.sigord||'2').localeCompare(b.dataset.sigord||'2');
+    return (a.dataset.time||'').localeCompare(b.dataset.time||''); // time
+  });
+  rows.forEach(r => tbody.appendChild(r));
+  document.querySelectorAll('.idx-btn').forEach(b => {
+    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+mode+"'")) b.classList.add('active');
+    else if(['시간순','등락률↓','등락률↑','시그널순'].includes(b.textContent)) b.classList.remove('active');
+  });
+}
+</script>""")
 
 parts_html.append(f"""<h3 style="font-size:18px; margin-top:24px; color:var(--c-darkest);">📈 시간외 대량매매 ({len(BIG_TRADES)}건)</h3>
 <ul style="font-size:13px; line-height:1.7; columns:2;">""")
@@ -1471,7 +1525,13 @@ for code, recs in companies:
                 <div style="font-size:13px; color:var(--c-mute); margin-top:6px; line-height:1.4;">{html.escape(note)}</div>
             </div>'''
         # Source label
-        src_label = "수동 큐레이션" if d["code"] in ENRICHED else "yfinance 자동 추출"
+        ov_c = ENRICHED.get(d["code"], {})
+        if ov_c.get("segments"):
+            src_label = "수동 큐레이션"
+        elif ov_c.get("segments_daily"):
+            src_label = "WebSearch 분석"
+        else:
+            src_label = "yfinance 자동 추출"
         parts_html.append(f"""<div style="margin-top:14px;">
         <div style="font-size:14px; color:var(--c-mute); font-weight:700; margin-bottom:8px;">매출 구성 <span style="font-weight:400; opacity:0.7;">({src_label})</span></div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">{seg_cards}</div>
@@ -1527,7 +1587,7 @@ for code, recs in companies:
 <h3 class="section-title">🔗 외부 링크</h3>
 <div class="ext-links">
   <a class="ext-link" href="https://search.naver.com/search.naver?where=news&query={name_enc}&sort=1" target="_blank">📰 네이버 뉴스</a>
-  <a class="ext-link" href="https://finance.naver.com/item/main.naver?code={code}" target="_blank">📈 네이버 금융</a>
+  <a class="ext-link" href="https://m.stock.naver.com/domestic/stock/{code}/overview" target="_blank">📈 네이버 금융</a>
   <a class="ext-link" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm={name_enc}" target="_blank">🏛 DART 공시</a>
   <a class="ext-link" href="https://www.google.com/search?q={name_enc}+{code}&tbm=nws" target="_blank">🌐 Google 뉴스</a>
 </div>

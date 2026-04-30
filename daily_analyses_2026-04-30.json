@@ -10,7 +10,27 @@
       "SOCAMM2 판매 본격화에 따른 ASP 상승폭 (3Q26 실적)",
       "파운드리 수주 회복 시점 - 2나노 GAA 양산 경쟁력",
       "연간 영업이익 200조 달성 가능성 (2026년 연간 컨센서스)"
-    ]
+    ],
+    "bm_kr": "글로벌 종합 전자·반도체 기업. DX(스마트폰·가전)·DS(메모리·파운드리)·SDC(OLED 패널)·하만(차량 오디오) 4개 부문 운영. 반도체(HBM·NAND·DRAM)와 스마트폰(갤럭시S)이 영업이익 90%+ 창출.",
+    "segments_kr": [
+      {
+        "name": "DS (반도체)",
+        "pct": "~60",
+        "note": "DRAM·NAND·HBM·파운드리 — OPM 66% (2026 1Q 역대 최대)"
+      },
+      {
+        "name": "DX (스마트폰·가전)",
+        "pct": "~30",
+        "note": "갤럭시S·폴더블·냉장고·TV"
+      },
+      {
+        "name": "SDC·하만",
+        "pct": "~10",
+        "note": "OLED 패널 + 차량용 오디오·인포테인먼트"
+      }
+    ],
+    "strength_kr": "메모리반도체 세계 1위(DRAM 42%·NAND 30% 점유율). HBM4 양산 삼성 유일 체제. 스마트폰 글로벌 2위(갤럭시). 수직계열화로 경쟁사 대비 원가 우위.",
+    "customers_kr": "애플(NAND 공급), 엔비디아·AMD(HBM·메모리), 통신사 채널(스마트폰), 글로벌 전자 OEM"
   },
   "003670": {
     "custom_signal_reason": "포스코퓨처엠 2026 1Q 매출 7,291억(컨센+17%), 영업익 119억(컨센+105%), 순이익 -63억(컨센 하회). 연결 기준은 177억 흑자전환. 배터리소재(NCA·N87 양극재) 출하량 2배 급증으로 전분기 적자에서 회복. 주가 -3.5% — 순이익 여전히 적자에 실망 + 양극재 주요 고객사 GM·스텔란티스 물량 불확실성 잔존.",
@@ -23,7 +43,27 @@
       "리튬 현물 가격 추이 — 50달러/kg 유지 여부",
       "포스코그룹 리튬 상업화(아르헨티나 광산) 2026년 생산량",
       "전고체 배터리 파트너 팩토리얼 임상 결과"
-    ]
+    ],
+    "bm_kr": "POSCO그룹 배터리소재·내화물 전문사. 양극재(NCA·하이니켈)·음극재(인조흑연)가 핵심 성장 사업. 기존 내화물·석회 사업이 안정적 현금 창출.",
+    "segments_kr": [
+      {
+        "name": "에너지소재(양극재·음극재)",
+        "pct": "~50",
+        "note": "NCA 양극재·인조흑연·천연흑연 — 배터리셀 메이커 공급"
+      },
+      {
+        "name": "내화물",
+        "pct": "~30",
+        "note": "마그네시아카본·알루미나 — 철강사향 필수재"
+      },
+      {
+        "name": "석회·탄소소재",
+        "pct": "~20",
+        "note": "제철용 생석회·석탄계 피치·코크스"
+      }
+    ],
+    "strength_kr": "POSCO Holdings 계열로 원재료(리튬·니켈 광산) 수직계열화 진행 중. 하이니켈 NCA 양극재 국내 유일 양산. 포스코 철강 내화물 독점 공급 기반 안정 수익.",
+    "customers_kr": "삼성SDI·SK온·LG에너지솔루션(양극재/음극재), POSCO(내화물), 글로벌 EV 배터리 셀 메이커"
   },
   "005490": {
     "custom_signal_reason": "POSCO홀딩스 2026 1Q 공시 매출 -337,781억(파싱 이상, 실제 약 17.6조 추정), 영업익 -5,487억(컨센 6,337억 vs 실적 6,337억 부합 추정). 공시 본문 숫자 이상은 연결조정 항목 포함 가능. 철강 부진(원가 압박, 중국 가격 하락)에도 인프라·에너지 부문 방어. 배당수입 구조로 순이익 3,099억은 컨센 부합. 주가 -1.5%.",
@@ -36,7 +76,27 @@
       "연간 영업이익 2조 회복 시점 (현재 컨센 1.8조)",
       "그린수소 HyREX 파일럿 투자 결정 여부",
       "중국 부동산 경기 지표 회복 여부"
-    ]
+    ],
+    "bm_kr": "POSCO그룹 지주사. 철강(포스코)·2차전지소재(포스코퓨처엠)·리튬(아르헨티나 광산)·수소 사업 포트폴리오. 철강이 영업이익 65%+이나 배터리소재·광물로 피벗 중.",
+    "segments_kr": [
+      {
+        "name": "철강(포스코)",
+        "pct": "~65",
+        "note": "HRC·후판·냉연 — 국내 1위"
+      },
+      {
+        "name": "배터리소재(포스코퓨처엠)",
+        "pct": "~20",
+        "note": "양극재·음극재 — 고성장"
+      },
+      {
+        "name": "리튬·광물자원",
+        "pct": "~15",
+        "note": "아르헨티나 염호 리튬·니켈 광산"
+      }
+    ],
+    "strength_kr": "철강 국내 독점적 지위 + 배터리소재 밸류체인 수직계열화(광물→소재→셀). 아르헨티나 리튬 염호(4만톤/년) 직접 보유.",
+    "customers_kr": "현대차·기아·GM(철강 공급), 삼성SDI·LG에너지솔루션(배터리소재)"
   },
   "009150": {
     "custom_signal_reason": "삼성전기 2026 1Q 매출 3.2조(컨센+3%), 영업익 2,806억(컨센+2%), 순이익 2,492억(컨센+11%). 패키지솔루션(FC-BGA) 매출 7,250억 YoY +45% — 글로벌 빅테크향 AI 가속기·서버CPU·네트워크 고부가 기판. MLCC도 AI서버 전력용 고용량 제품 믹스 개선. 주가 +0.6% — 컨센 소폭 상회, 2분기·하반기 가이던스 강화로 안정적.",
@@ -49,7 +109,27 @@
       "차량용 전장 모듈 신규 고객사 확보 현황",
       "연간 영업익 1.2조 달성 가능성 확인 (컨센 1.1조)",
       "KB 목표주가 105만원 달성 시점 추적"
-    ]
+    ],
+    "bm_kr": "삼성그룹 전자부품 전문사. MLCC·카메라모듈·반도체패키지기판(FC-BGA) 3대 사업. 전장·AI서버 수요 급증으로 프리미엄 MLCC·FC-BGA 비중 확대 중.",
+    "segments_kr": [
+      {
+        "name": "컴포넌트(MLCC)",
+        "pct": "~50",
+        "note": "IT·전장·산업용 MLCC — 글로벌 3위, 전장향 고마진"
+      },
+      {
+        "name": "광학통신솔루션(카메라모듈)",
+        "pct": "~30",
+        "note": "스마트폰 멀티카메라·폴디드줌"
+      },
+      {
+        "name": "패키지솔루션(FC-BGA)",
+        "pct": "~20",
+        "note": "AI서버·고성능 CPU향 반도체 기판"
+      }
+    ],
+    "strength_kr": "삼성전자 계열 안정 수주 + 독립 영업으로 글로벌 고객 다변화. FC-BGA는 AI서버 수요 급증 수혜. MLCC 전장향 점유율 확대(일본 무라타·TDK 추격).",
+    "customers_kr": "삼성전자(내부 공급), 애플·샤오미(카메라모듈), 인텔·AMD·엔비디아(FC-BGA)"
   },
   "010140": {
     "custom_signal_reason": "삼성중공업 2026 1Q 매출 2.9조(컨센-3%), 영업익 2,731억(컨센-20%, 전년비+122%). 2번 도크 재가동 지연(1Q→2Q)으로 매출 인식 이월 — 일시적 요인. LNG선·에탄운반선·원유운반선 고선가 반영 본격화. FLNG 3개 프로젝트(말레이시아·캐나다·모잠비크) 공정 가속. 주가 -2.0% — 컨센 하회 단기 실망, 2Q 도크 재가동 시 만회 기대.",
@@ -62,7 +142,32 @@
       "신규 수주 목표 60억달러 달성 여부 (2026년 연간)",
       "철강 원가(후판 가격) 분기별 추이",
       "경쟁사 한화오션과 수주잔고 격차 변화"
-    ]
+    ],
+    "bm_kr": "삼성중공업: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "shipbuilding",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including LNG carriers",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "LNG-FSRU",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "small LNG carriers/LNG bunkering vessels",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "engages in shipbuilding, offshore, and energy and infra businesses 글로벌",
+    "customers_kr": ""
   },
   "012450": {
     "custom_signal_reason": "한화에어로스페이스 2026 1Q 매출 5.75조(컨센-8%), 영업익 6,389억(컨센-18%), 순이익 2,604억(컨센-45%). 폴란드 K9·천무 수출 인식 일정 이월로 예상 하회. 그러나 수주잔고 40조 최대(노르웨이 천무 1.3조 추가), 2030년 CAGR 15-20% 유지. 주가 -0.2% — 컨센 하회 충격 이미 사전에 반영, 잔고 40조 확인으로 하방 지지.",
@@ -75,7 +180,22 @@
       "루마니아 대형 방산 패키지 계약 진행 현황",
       "우주항공사업부 분사 또는 상장 검토 여부",
       "연간 수주 목표 30조 달성 여부 (2026년 연간)"
-    ]
+    ],
+    "bm_kr": "한화에어로스페이스: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "marine gas turbine engines",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "gensets",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers Korea space launch vehicle; satellite services, such as earth observation and satellite communication; fixed and rotary wing engines, guided missile engines, electric propulsion systems, aircraft and missile components, and aircraft engine ",
+    "customers_kr": ""
   },
   "035420": {
     "custom_signal_reason": "NAVER 2026 1Q 매출 3.24조(컨센+3%), 영업익 5,418억(컨센-3%), 순이익 2,853억(컨센-43% 대폭 하회). 순이익 하회는 AI 인프라 GPU 투자 및 LG CNS 지분 평가손 등 일회성 요인. 광고·커머스·클라우드 매출은 안정적 성장. 엔터프라이즈(라인웍스) +18.8%. 주가 -4.1% — 순이익 쇼크.",
@@ -88,7 +208,27 @@
       "라인웍스 일본 시장 점유율 (엔터프라이즈 B2B)",
       "NAVER 클라우드 매출 연간 1조 돌파 시점",
       "카카오 대비 AI 검색 전환율 비교 데이터"
-    ]
+    ],
+    "bm_kr": "NAVER: 인터넷 플랫폼. 주요 사업 — online search portal and information services",
+    "segments_kr": [
+      {
+        "name": "online search portal",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "information services in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It is involved in the electronic financial; film and audio content production and distribution; Webtoon service development and operation; language learning application development; monitoring and advertisement operation; mobile service operation; tr",
+    "customers_kr": ""
   },
   "039490": {
     "custom_signal_reason": "키움증권 2026 1Q 영업익 6,212억(컨센+15%), 순이익 4,764억(컨센+18%). 브로커리지 수수료 3,115억(YoY +121%) — 주식 일평균 거래대금 27.8조(전년비 3배). 운용손익+배당 1,557억(+59%). 주가 -6.0% — 예상 외 강한 실적에도 '2분기 거래대금 피크아웃 우려' 선반영.",
@@ -101,7 +241,22 @@
       "금융당국 증권거래세 추가 인하 여부",
       "연간 순이익 목표 1.5조 달성 가능성",
       "주주환원 확대(배당·자사주) 발표 여부"
-    ]
+    ],
+    "bm_kr": "키움증권: 증권·자본시장. 주요 사업 — online brokerage services",
+    "segments_kr": [
+      {
+        "name": "online brokerage services in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers online trading system to trade in foreign stock, local and overseas futures, and F/X margin trading, as well as equity, futures, and option deals",
+    "customers_kr": ""
   },
   "047050": {
     "custom_signal_reason": "포스코인터내셔널 2026 1Q 매출 8.41조(컨센+2%), 영업익 3,575억(컨센+14%), 순이익 2,654억(컨센+56% 대폭 상회). LNG 트레이딩·에너지 사업 확대 + 미얀마 가스전 분기별 가격 연동 상승. 북미 LNG(알래스카·셰니에르) 100만톤+110만톤 장기 공급계약. 주가 +2.8% — 어닝서프라이즈 반응.",
@@ -114,7 +269,27 @@
       "에너지 직접투자 매출 비중 트레이딩 초과 시점",
       "포스코인터내셔널 연간 영업익 1.3조 달성 (전년 1.2조 대비)",
       "목표주가 컨센서스 10만원 상향 여부"
-    ]
+    ],
+    "bm_kr": "포스코인터내셔널: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "GIGA STEEL",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "an automotive steel sheets for automakers",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "parts companies",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It engages in the development of oil and gas resources; LNG terminal and connected business; power generation project development, investment, financial procurement, execution, and operation; wind power, solar power, sewage heat energy business, CCS,",
+    "customers_kr": ""
   },
   "051910": {
     "custom_signal_reason": "LG화학 2026 1Q 매출 12.25조(컨센+8%), 영업손실 -497억(컨센 -1,684억 대비 70% 개선). LG에너지솔루션 영업손실 -2,078억(EV 파우치 물량 감소). 여수 NCC 2공장 가동중단 불구 석화 일회성 이익(유럽 반덤핑 환급) 방어. 손실 폭 예상 대비 크게 줄었으나 구조적 적자 우려는 잔존. 주가 -2.6%.",
@@ -127,7 +302,32 @@
       "석화 사업부 자산 매각·구조조정 완료 시점",
       "양극재 래깅 효과 2Q 영업익 흑자전환 여부",
       "LGES 연간 영업익 흑자전환 시점 (컨센 2027년)"
-    ]
+    ],
+    "bm_kr": "LG화학: 화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "ethylene-based synthetic resin",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as ethylene vinyl acetate",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "high density polyethylene",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "low density polyethylene",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers ethylene-based synthetic resin products, such as ethylene vinyl acetate, high density polyethylene, low density polyethylene, linear low-density polyethylene, polyolefin elastomer, polyvinyl chloride, metallocene PE, and UNIQABLE, a recycla",
+    "customers_kr": ""
   },
   "307950": {
     "custom_signal_reason": "현대오토에버 2026 1Q 매출 9,357억(컨센 0%), 영업익 212억(컨센-47% 대폭 하회), 순이익 179억(컨센-51%). 인건비·운영비 상승 + 신규 프로젝트 초기 비용 반영으로 수익성 급감. 자동차 IT서비스의 계절적 특성(1Q 저수익)도 영향. 주가 -5.0%.",
@@ -140,7 +340,22 @@
       "비그룹사 외부 고객 매출 비중 확대 여부",
       "연간 영업익 목표 800억 달성 가능성 (1분기 212억)",
       "현대오토에버-현대글로비스 물류IT 통합 가능성"
-    ]
+    ],
+    "bm_kr": "현대오토에버: Information Technology Services. 주요 사업 — information and communication technology services",
+    "segments_kr": [
+      {
+        "name": "information",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "communication technology services in Sout",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers vehicle IT services, such as mobility SW and SW development environment platforms, edge cloud computing, digital cockpit, and high definition map",
+    "customers_kr": ""
   },
   "000100": {
     "custom_signal_reason": "유한양행 2026 1Q 매출 5,096억(컨센-5%), 영업익 88억(컨센 220억 대비 -60%). 렉라자 유럽 허가 마일스톤 450억이 2분기 이월로 실적 쇼크. J&J 리브리반트+렉라자 병용요법 글로벌 매출 2,570억달러(YoY+82%) — 본 사업은 초고속 성장. 주가 -1.7% — 마일스톤 지연 선반영으로 낙폭 제한.",
@@ -166,7 +381,27 @@
       "연간 영업익 800억 달성 가능성",
       "폴란드·루마니아 K2 전차 운용유지(MRO) 사업 수주",
       "SNT모티브와의 그룹 시너지 확대 여부"
-    ]
+    ],
+    "bm_kr": "SNT그룹 방산·자동차부품 복합사. K2전차 파워팩·장갑차 변속기 등 방산 수출이 핵심 성장 동력. 자동차 변속기·구동부품은 안정적 캐시카우.",
+    "segments_kr": [
+      {
+        "name": "방산(파워팩·변속기)",
+        "pct": "~55",
+        "note": "K2전차·K21 방산 수출 — 폴란드·루마니아·UAE"
+      },
+      {
+        "name": "자동차 부품",
+        "pct": "~40",
+        "note": "자동변속기·DCT·자동차 구동부품"
+      },
+      {
+        "name": "기타",
+        "pct": "~5",
+        "note": "산업기계·서비스"
+      }
+    ],
+    "strength_kr": "K2전차 파워팩 국내 독점 공급. 방산 수출 붐(NATO 재무장)으로 수주잔고 역대 최고. 현대차그룹 자동차 부품 장기공급 계약 기반.",
+    "customers_kr": "방위사업청(국내), 폴란드·루마니아 등 방산 수출국, 현대차·기아(자동차 부품)"
   },
   "006360": {
     "custom_signal_reason": "GS건설 2026 1Q 매출 2.4조(컨센-13%), 영업익 735억(컨센-34%), 순이익 1억(컨센 778억 대비 거의 0). 건축·주택 매출 감소, 해외 원가 정산 이슈. 그러나 중동·원전 수주 파이프라인 유지. 신규수주 2.6조는 양호. 주가 -8.8% — 어닝 쇼크.",
@@ -179,7 +414,27 @@
       "자회사 자이에스앤디 실적 안정화",
       "부동산 미분양 해소 여부 (PF 리스크 점검)",
       "연간 영업익 목표 3,000억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "GS그룹 종합건설사. 주택(자이 브랜드)·토목·플랜트·해외 4대 사업. 서울 재개발·재건축 수주 비중이 높고, 중동·원전 해외 플랜트가 성장 드라이버.",
+    "segments_kr": [
+      {
+        "name": "건축·주택(자이)",
+        "pct": "~55",
+        "note": "아파트 브랜드 자이 — 서울·수도권 재건축 중심"
+      },
+      {
+        "name": "해외 플랜트",
+        "pct": "~25",
+        "note": "중동(UAE·사우디) 석유화학·원전 플랜트"
+      },
+      {
+        "name": "토목·인프라",
+        "pct": "~20",
+        "note": "도로·교량·지하철 SOC"
+      }
+    ],
+    "strength_kr": "'자이' 프리미엄 브랜드로 서울 재건축 수주 경쟁력. 중동 원전(UAE 바라카 연계) 수주 파이프라인. 원전·SMR 글로벌 확장 기회.",
+    "customers_kr": "재건축 조합·시행사(주택), UAE·사우디 국영기업(해외 플랜트), 국토교통부(토목)"
   },
   "008930": {
     "custom_signal_reason": "한미사이언스 2026 1Q 매출 3,537억, 영업익 336억, 순이익 427억. 한미약품 지주사로 렉라자·GLP-1 파이프라인 간접 수혜. 한미약품 1Q 영업익 536억(컨센-10%). 지주 할인 구조이나 바이오텍 가치 내재.",
@@ -190,7 +445,22 @@
       "한미사이언스-한미약품 지주 할인 해소 트리거",
       "한미약품 연간 영업익 2,000억 달성 여부",
       "오너 3세 경영권 안정화 여부"
-    ]
+    ],
+    "bm_kr": "한미사이언스: Medical Distribution. 주요 사업 — and sells pharmaceutical products",
+    "segments_kr": [
+      {
+        "name": "pharmaceutical products in Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It develops drugs in the areas of diabetes and anti-cancer, as well as children's and adult's bowel preparation and cold medicines, and cephalosporin antibiotics",
+    "customers_kr": ""
   },
   "012750": {
     "custom_signal_reason": "에스원 2026 1Q 매출 6,737억(컨센-7%), 영업익 207억(컨센-65%), 순이익 215억(컨센-51%). 인건비+운영비 상승이 수익성 압박. 삼성그룹 보안·시설관리 독점 사업자로 안정적 매출 기반이나 비용 증가 구조적 문제.",
@@ -201,7 +471,27 @@
       "최저임금 인상 영향 분기별 비용 추이",
       "삼성그룹 신규 건물·데이터센터 보안 계약",
       "연간 영업익 목표 달성 여부"
-    ]
+    ],
+    "bm_kr": "에스원: Security & Protection Services. 주요 사업 — safety and security services",
+    "segments_kr": [
+      {
+        "name": "safety",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "security services in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "Its physical security solutions include alarm monitoring services, physical security information management software, smart video management systems, access control systems, optical sensing systems, and ultra wide band sensors",
+    "customers_kr": ""
   },
   "018880": {
     "custom_signal_reason": "한온시스템 2026 1Q 매출 2.75조(컨센+3%), 영업익 972억(컨센+4%), 순이익 666억(컨센+43%). 전기차 열관리 시스템 수요 안정 회복. 전분기(-2,149억) 대규모 일회성 손실에서 정상화. 주가 -2.9% — 완전 정상화에 대한 확신 부족.",
@@ -212,7 +502,32 @@
       "현대차 울산 EV공장 9월 가동 후 수주 물량 반영",
       "히트펌프 글로벌 수주 현황",
       "연간 영업익 3,800억 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "한온시스템: 자동차 부품. 주요 사업 — automotive thermal management solutions",
+    "segments_kr": [
+      {
+        "name": "heating",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "ventilation",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "air conditioning technologies",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as omnifarious HVAC designs",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers heating, ventilation, and air conditioning technologies, such as omnifarious HVAC designs, high-efficiency blower scrolls, visible (VR) LED photocatalyst, co2 sensor, and fragrance system; compressors, including fixed swash plate, rotary su",
+    "customers_kr": ""
   },
   "022100": {
     "custom_signal_reason": "포스코DX 2026 1Q 매출 2,415억, 영업익 37억, 순이익 39억. 전분기 적자(-12억)에서 흑자전환. 포스코그룹 스마트팩토리·AI 솔루션 공급 독점 구조. 그러나 영업익 37억은 수익성 여전히 낮은 수준. 주가 -4.0%.",
@@ -223,7 +538,27 @@
       "외부 고객사(포스코그룹 외) 매출 비중 확대",
       "포스코DX AI 솔루션 글로벌 수출 추진 여부",
       "연간 영업익 500억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "포스코DX: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "ICT solutions to construction",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "materials industry in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers technologies in various fields, such as self-learning, IoT, cloud, big data and AI, etc",
+    "customers_kr": ""
   },
   "035250": {
     "custom_signal_reason": "강원랜드 2026 1Q 매출 3,789억(컨센+2%), 영업익 689억(컨센+8%), 순이익 397억(컨센-46%). 순이익 쇼크는 카지노 외 사업 비용 및 세금 이슈. 영업 실적 자체는 양호. 주가 0% — 혼조.",
@@ -234,7 +569,17 @@
       "분기 배당 정책 유지 여부",
       "방문객 수 YoY 회복률",
       "카지노 영업시간 확대 등 규제 완화 논의"
-    ]
+    ],
+    "bm_kr": "강원랜드: Resorts & Casinos 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Resorts & Casinos",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "Its business also covers condominium, golf course, and a water park",
+    "customers_kr": ""
   },
   "051900": {
     "custom_signal_reason": "LG생활건강 2026 1Q 매출 1.58조(컨센-1%), 영업익 1,078억(컨센+101% 대폭 상회!), 순이익 841억(컨센+193%). 중국 사업 회복 + 비용 효율화로 수익성 서프라이즈. 주식소각(자사주 소각) 추가 발표. 주가 -0.2% — 이미 선반영.",
@@ -245,7 +590,22 @@
       "주식소각 규모 및 일정 확인",
       "럭셔리 후·숨 중국 점유율 안정화",
       "연간 영업익 4,000억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "LG생활건강: Household & Personal Products 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "cosmetics under The History of Whoo",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "O HUI",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers cosmetics under The History of Whoo, O HUI, SU:M37, belif, ISA KNOX, Sooryehan, CODE GLOKOLOR, VONIN, CAREZONE, The Saga of Xiu, BEYOND, CNP, CNP Rx, VDL, VDIVOV, Nature Collection, THEFACESHOP, fmgt, DR.Belmeur, Yehwadam, and BEAUTE brands",
+    "customers_kr": ""
   },
   "064400": {
     "custom_signal_reason": "LG씨엔에스 2026 1Q 매출 1.32조(컨센 0%), 영업익 942억(컨센 0%), 순이익 805억(컨센-7%). AI·클라우드 매출 7,654억(전체 58%, YoY+7%). 팔란티어 AX 협력·금융 차세대 수요 확대. 주가 -2.5%.",
@@ -256,7 +616,32 @@
       "금융 차세대 수주 건수·규모 발표",
       "AI 에이전트 솔루션 신규 고객 확보",
       "연간 매출 5.5조, 영업익 3,800억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "LG씨엔에스: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "cloud consulting",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "migration",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "implementation",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "data/AI",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers cloud consulting, migration and implementation, data/AI, application modernization, and managed services; cloud infrastructure services; CloudXper, which provides end-to-end cloud services from cloud diagnosis and consulting to migration an",
+    "customers_kr": ""
   },
   "066970": {
     "custom_signal_reason": "엘앤에프 2026 1Q 매출 7,396억(컨센+11%), 영업익 1,173억(컨센+95% 어닝서프라이즈), 순이익 -654억(컨센+이탈). 영업 서프라이즈는 리튬 래깅 효과 + NCMA·하이니켈 믹스 개선. 그러나 순이익 적자는 금융비용·일회성 비용. 주가 -6.7%.",
@@ -267,7 +652,27 @@
       "차입금 감축 계획 및 재무구조 개선 속도",
       "전고체 배터리 소재 개발 단계 공개",
       "연간 영업익 목표 3,000억 달성 여부"
-    ]
+    ],
+    "bm_kr": "엘앤에프: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "wireless TFT LCD",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "PMMA plates",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "sheets",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers cathode active materials used in IT devices, household appliances, and power tools, as well as electric vehicles and power storage devices",
+    "customers_kr": ""
   },
   "100840": {
     "custom_signal_reason": "SNT에너지 2026 1Q 매출 1,236억(컨센-12%), 영업익 228억(컨센-13%), 순이익 266억(컨센+29%). 발전·에너지 기자재 사업. 방산그룹(SNT그룹) 계열. 매출 컨센 하회에도 순이익은 상회.",
@@ -278,7 +683,17 @@
       "LNG 가스발전소 발주 파이프라인",
       "연간 영업익 목표 달성 여부",
       "해외 수주(동남아·중동) 확대 현황"
-    ]
+    ],
+    "bm_kr": "SNT에너지: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Specialty Industrial Machinery",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides air cooled heat exchangers/air fin coolers for petrochemical plants, oil refining plants, power plants, and other industrial plants; and surface condensers that are used for thermoelectric power plants, as well as nuclear power plants as ",
+    "customers_kr": ""
   },
   "103140": {
     "custom_signal_reason": "풍산 2026 1Q 매출 9,688억(컨센-30% 큰 폭 하회), 영업익 873억(컨센-8%), 순이익 780억(컨센+18%). 매출 하회는 구리·동 가격 급락·물량 조정. 그러나 영업익은 구리 마진 개선으로 방어. 방산용 탄약(155mm) 수출 견조. 주가 -2.8%.",
@@ -289,7 +704,27 @@
       "나토 탄약 재고 보충 수주 계약 진행",
       "연간 영업익 목표 3,000억 달성 여부",
       "구리 원가 스프레드 마진 유지 여부"
-    ]
+    ],
+    "bm_kr": "풍산: 금속 가공. 주요 사업 — and sells copper and copper-related products",
+    "segments_kr": [
+      {
+        "name": "copper",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "copper-related products in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers fabricated nonferrous material, such as copper and copper alloy sheets and strips; lead frame alloys; coin blanks and commemorative precious metal coin blanks; copper and copper alloy rods, bars, and wires; lead free cutting brass; and stai",
+    "customers_kr": ""
   },
   "128940": {
     "custom_signal_reason": "한미약품 2026 1Q 매출 3,929억(컨센 0%), 영업익 536억(컨센-10%), 순이익 455억(컨센-9%). 로수젯·북경한미 안정 성장, GLP-1 비만신약 임상 진행. 주가 -4.8%.",
@@ -300,7 +735,17 @@
       "로수젯 국내외 점유율 유지 여부",
       "북경한미 중국 실적 회복 여부",
       "연간 영업익 목표 2,000억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "한미약품: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Drug Manufacturers - Specialty & Generic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It focuses on research areas with high unmet medical needs, including obesity, metabolism, oncology, and rare diseases",
+    "customers_kr": ""
   },
   "138930": {
     "custom_signal_reason": "BNK금융지주 2026 1Q 매출 3.39조, 영업익 2,831억(컨센-3%), 순이익 2,114억(컨센-5%). 부산·경남 지역금융 기반 안정적 실적. 배당 확대 기조 유지. 주가 -0.7%.",
@@ -311,7 +756,27 @@
       "배당성향 추가 확대 발표",
       "자회사 BNK캐피탈·BNK증권 실적 안정화",
       "ROE 7% 이상 유지 여부"
-    ]
+    ],
+    "bm_kr": "BNK금융지주: Banks - Regional. 주요 사업 — various financial products and services",
+    "segments_kr": [
+      {
+        "name": "various financial",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "services in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 is involved in banking; specialized credit financial; investment brokerage and trading; financial advisory and collective investment; credit investigation and collection agency; start-up investment company advisory; and leasing activities",
+    "customers_kr": ""
   },
   "195870": {
     "custom_signal_reason": "해성디에스 2026 1Q 매출 1,887억(컨센-1%), 영업익 110억(컨센-51%), 순이익 108억(컨센-36%). 반도체 리드프레임·기판 수요 일시 둔화. AI반도체 채용 증가로 회복 기대. 주가 +6.7% — 낙폭 과대 반등.",
@@ -321,7 +786,22 @@
       "AI HBM 패키지용 고부가 리드프레임 수주 확대",
       "삼성전자·SKH 주문 정상화 시점",
       "연간 영업익 500억 목표 달성 여부"
-    ]
+    ],
+    "bm_kr": "해성디에스: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "semiconductor components in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers lead frames for use in automotive, mobile device, personal computer, industrial, power, and consumer electronics applications; package substrates for use in AI, personal computer, server, SSD, IOT, mobile, and graphic card applications; tap",
+    "customers_kr": ""
   },
   "214370": {
     "custom_signal_reason": "케어젠 2026 1Q 매출 227억, 영업익 102억, 순이익 117억. 전분기 대규모 적자(-71억)에서 완전 흑자전환. 펩타이드 기반 피부재생 소재(에스케어·헤어케어) 수출 회복. 주가 -0.5%.",
@@ -331,7 +811,11 @@
       "중국·미국 K-뷰티 채널 신규 계약",
       "의료기기 소재 신규 파이프라인 공개",
       "연간 매출 900억, 영업익 380억 달성 여부"
-    ]
+    ],
+    "bm_kr": "케어젠 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "279570": {
     "custom_signal_reason": "케이뱅크 2026 1Q 매출 3,239억, 영업익 324억, 순이익 332억. 전분기(110억 영업익) 대비 급증. 가상화폐 거래 호황→업비트 연계 수혜, 고금리 예금 수요. 재상장(IPO 재추진) 모멘텀. 주가 -1.0%.",
@@ -342,7 +826,11 @@
       "가상화폐 시장 강세 지속 여부",
       "NIM 및 순이자마진 방어 여부",
       "케이뱅크 중금리대출 부실률 안정화"
-    ]
+    ],
+    "bm_kr": "케이뱅크 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "293490": {
     "custom_signal_reason": "카카오게임즈 2026 1Q 매출 829억(컨센-14%), 영업손실 -255억(컨센-62% 추가 악화), 순손실 -300억. 게임 출시 지연·비용 증가로 적자 확대. 오딘 글로벌 성과 부진. 주가 -3.0%.",
@@ -353,7 +841,32 @@
       "카카오그룹 지원·구조조정 발표 여부",
       "분기 영업손실 -100억 미만 회복 시점",
       "비용 구조 개선 로드맵 공개"
-    ]
+    ],
+    "bm_kr": "카카오게임즈: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "and publishes various genres of games",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including PC",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "mobile",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "VR platforms",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 develops and publishes various genres of games, including PC, mobile, and VR platforms",
+    "customers_kr": ""
   },
   "375500": {
     "custom_signal_reason": "DL이앤씨 2026 1Q 매출 1.73조(컨센+5%), 영업익 1,574억(컨센+51% 어닝서프라이즈!), 순이익 1,601억(컨센+99%). 주택+플랜트 고수익 프로젝트 집중 인식. 분기 최대 영업익 수준. 주가 -2.1%.",
@@ -364,7 +877,27 @@
       "원전 사업 진출 공시 여부",
       "배당 확대 정책 지속 여부",
       "연간 영업익 4,000억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "DL이앤씨: 건설·엔지니어링. 주요 사업 — engineering, procurement, and construction solutions",
+    "segments_kr": [
+      {
+        "name": "engineering",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "procurement",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "construction solutions in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 undertakes various plant works in refinery/gas, petrochemical, energy, industrial facilities, environment, and other sectors; and offers civil works in road/bridge, port/water resources, and railroad/metro/tunnel",
+    "customers_kr": ""
   },
   "383220": {
     "custom_signal_reason": "F&F 2026 1Q 매출 5,609억(컨센+5%), 영업익 1,535억(컨센+13%), 순이익 1,976억(컨센+83%). MLB·Discovery 글로벌 수출 호조 + 중국 면세·K-패션 확장. 밸류업 계획도 함께 발표. 주가 -1.0%.",
@@ -375,7 +908,22 @@
       "밸류업 주주환원율 목표 달성 여부",
       "MLB Kids·Discovery 신규 카테고리 성과",
       "연간 영업익 5,000억 달성 가능성"
-    ]
+    ],
+    "bm_kr": "F&F: Apparel Manufacturing 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "apparel",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "accessories in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers fashion products under the MLB, MLB KIDS, DISCOVERY, DUVETICA, SUPRA, and SERGIO TACCHINI brands; and skincare products under the BANILA CO brand",
+    "customers_kr": ""
   },
   "036530": {
     "custom_signal_reason": "SNT홀딩스 2026 1Q 매출 4,805억, 영업익 646억, 순이익 161억. SNT그룹 지주사. 자회사(SNT다이내믹스·SNT모티브·SNT에너지) K-방산 수혜 간접 수혜. 지주할인 구조이나 방산 밸류 상승으로 NAV 개선.",
@@ -385,7 +933,32 @@
       "SNT다이내믹스 수출 수주 반영 시점",
       "지주 할인 해소 트리거 여부",
       "연간 배당 확대 발표 여부"
-    ]
+    ],
+    "bm_kr": "SNT홀딩스: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "auto parts",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "defense",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "semiconductor equipment",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "materials",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers auto parts, defense products, semiconductor equipment and materials; precision machine tools and medium-large sized casting products; axle systems; and machine tools",
+    "customers_kr": ""
   },
   "108320": {
     "custom_signal_reason": "LX세미콘 2026 1Q 매출 3,888억(컨센-11%), 영업익 206억(컨센-24%), 순이익 112억. DDI(디스플레이 구동칩) 수요 조정으로 컨센 하회. OLED DDI 믹스 개선 중. 주가 +1.3% — 낙폭 과대 반등.",
@@ -396,7 +969,27 @@
       "T-Con OLED 보상 알고리즘 채용 확대",
       "연간 영업익 800억 목표 달성 여부",
       "중국 팹리스 경쟁 대응 전략 공개"
-    ]
+    ],
+    "bm_kr": "LX세미콘: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "solutions for mobile",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "tablet",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "watch",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers organic light emitting diode (OLED) and liquid crystal display (LCD) solutions; RealTouch, an in-cell touch technology with touch function in display panels; OLED and LCD timing controller; video processor; power management IC; level shifte",
+    "customers_kr": ""
   },
   "034020": {
     "custom_signal_reason": "두산에너빌리티 2026년 4월 30일 1분기 IR 발표 예정(5월 6일). 수주잔고 최대 40조 접근, 가스터빈 7기 미국 빅테크 계약 1.2조, SMR 수주 목표 1.1조, 원전 파이프라인 풍부. 목표주가 105,000-122,000원.",
@@ -419,7 +1012,32 @@
       "갈륨·게르마늄 서방 공급계약 체결 공시",
       "경영권 분쟁 완전 종결 여부",
       "배터리소재 리사이클링 사업 수주 현황"
-    ]
+    ],
+    "bm_kr": "고려아연: Other Industrial Metals & Mining 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "zinc slab ingots",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "alloy jumbo blocks",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "anode ingots",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "die cast ingots",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers zinc slab ingots, alloy jumbo blocks, anode ingots, and die cast ingots; and lead and lead alloy ingots; and copper cathodes",
+    "customers_kr": ""
   },
   "017670": {
     "custom_signal_reason": "SK텔레콤 2026년 5월 7일 1Q IR 발표 예정. AI 구독 서비스(에이닷·AI전화) 확대, 5G ARPU 개선 기대. 통신 3사 중 AI 전환 가장 적극적. 목표주가 10만원 컨센.",
@@ -430,7 +1048,27 @@
       "AI IDC 증설 투자 계획 발표",
       "5G ARPU YoY 개선폭",
       "연간 영업익 목표 달성 여부"
-    ]
+    ],
+    "bm_kr": "SK텔레콤: 통신 서비스 업종. Cellular Services / Fixed-Line Telecommunications Services / Other Businesses 사업 부문 영위. 매출·이익 구성은 하단 부문별 차트 참조.",
+    "segments_kr": [
+      {
+        "name": "Cellular Services",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Fixed-Line Telecommunications Services",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Other Businesses",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 operates through three segments: Cellular Services, Fixed-Line Telecommunications Services, and Other Businesses",
+    "customers_kr": ""
   },
   "006800": {
     "custom_signal_reason": "미래에셋증권 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 36조 3,159억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -441,7 +1079,32 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "미래에셋그룹 대형 증권사. 리테일 WM·법인 중개·IB·해외(미국·홍콩·인도 등)가 4대 수익 축. 해외 자산 비중이 국내 대형 증권사 중 최고 수준.",
+    "segments_kr": [
+      {
+        "name": "리테일 WM",
+        "pct": "~35",
+        "note": "리테일 중개·자산관리 — 계좌 수 업계 1위"
+      },
+      {
+        "name": "IB·구조화",
+        "pct": "~30",
+        "note": "ECM·DCM·부동산PF·M&A 자문"
+      },
+      {
+        "name": "해외 법인",
+        "pct": "~25",
+        "note": "미국·홍콩·인도·베트남 — 글로벌 수익 비중 높음"
+      },
+      {
+        "name": "트레이딩",
+        "pct": "~10",
+        "note": "채권·주식 자기매매"
+      }
+    ],
+    "strength_kr": "미래에셋그룹 브랜드와 박현주 회장 글로벌 투자 철학. 해외 법인 PnL 비중 업계 최고. ETF·TDF 등 자산운용 계열사 시너지.",
+    "customers_kr": "개인 리테일 투자자, 기관·연기금, 중견·대기업(IB), 해외 현지 법인 고객"
   },
   "028670": {
     "custom_signal_reason": "팬오션 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 9,428억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -452,7 +1115,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "팬오션: 해운 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "marine transportation",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "other related services worldwide",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers break bulk liner services for steel, coal, wood, equipment, and machinery cargoes; tramper services for dry bulk cargo shipping, such as iron ore, coal, grain, sugar, logs, minerals, fertilizers, and scrap metal; and large bulker services f",
+    "customers_kr": ""
   },
   "004170": {
     "custom_signal_reason": "신세계 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 8,442억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -463,7 +1141,32 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "신세계: 백화점·유통 업종. Department Store / Wholesale / Retail Industry 사업 부문 영위. 매출·이익 구성은 하단 부문별 차트 참조.",
+    "segments_kr": [
+      {
+        "name": "Department Store",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Wholesale",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Retail Industry",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Real Estate Industry",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 operates through Department Store, Wholesale and Retail Industry, Real Estate Industry, Terminal industry, Hospitality, Duty-Free Store, and Others segments",
+    "customers_kr": ""
   },
   "139480": {
     "custom_signal_reason": "이마트 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 9,334억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -474,7 +1177,17 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "이마트: Discount Stores 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Discount Stores",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 operates Emart, a discount store; Emart Traders, an everyday low-price store for small business owners; and Emart Mall and Traders Mall, the online shopping stores",
+    "customers_kr": ""
   },
   "020150": {
     "custom_signal_reason": "롯데에너지머티리얼즈 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 5,451억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -485,7 +1198,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "롯데에너지머티리얼즈: 전기장비·부품. 주요 사업 — elecfoils",
+    "segments_kr": [
+      {
+        "name": "and sells elecfoils in Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "Its elecfoils are used as core material for electronic products",
+    "customers_kr": ""
   },
   "145020": {
     "custom_signal_reason": "휴젤 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 3조 1,068억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -496,7 +1224,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "휴젤: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "biopharmaceuticals in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers Botulinum Toxin, a white injectable dry powder in a transparent glass vial for use in the treatment of positive essential eyelid convulsion in adults over 18 years of age; improvement of severe lasso wrinkles associated with corrugator musc",
+    "customers_kr": ""
   },
   "000370": {
     "custom_signal_reason": "한화손해보험 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 7,740억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -507,7 +1250,32 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "한화손해보험: Insurance - Property & Casualty 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "long-term insurance",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including injury",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "diseases",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "property damage",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "provides insurance services in 한국",
+    "customers_kr": ""
   },
   "032640": {
     "custom_signal_reason": "LG유플러스 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 6조 8,515억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -518,7 +1286,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "LG유플러스: 통신 서비스 업종. LG U+ / LG Hello Vision 사업 부문 영위. 매출·이익 구성은 하단 부문별 차트 참조.",
+    "segments_kr": [
+      {
+        "name": "LG U+",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "LG Hello Vision",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It operates through LG U+ and LG Hello Vision segments",
+    "customers_kr": ""
   },
   "078930": {
     "custom_signal_reason": "GS 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 7조 5,633억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -529,7 +1312,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "GS: 복합기업(지주) 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "electricity through combined heat",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "power plant",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 supplies heating and cooling facilities; composite resin; electricity and steam by operating coal power plant and wind power farms; produces electricity through combined heat and power plant; provides LNG to power distribution companies; bio diese",
+    "customers_kr": ""
   },
   "005440": {
     "custom_signal_reason": "현대지에프홀딩스 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 2,591억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -540,7 +1338,17 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "현대지에프홀딩스: Food Distribution 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Food Distribution",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "설립 1968 and is 본사 Seoul, 한국.",
+    "customers_kr": ""
   },
   "006040": {
     "custom_signal_reason": "동원산업 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 1조 6,997억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -573,7 +1381,22 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "삼성증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "asset",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "wealth management",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers asset and wealth management services; global investment strategy; tax, real estate, and legal consulting services; digital and pension services, such as pension asset management services; investment products, including domestic and overseas",
+    "customers_kr": ""
   },
   "000990": {
     "custom_signal_reason": "DB하이텍 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 6조 8,955억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -584,7 +1407,32 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "DB하이텍: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "semiconductors",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as power management ICs",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "contact image sensor",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "display driver ICs used in mobile phones",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides semiconductors, such as power management ICs, contact image sensor, display driver ICs used in mobile phones, industrial, medical equipment, and automobile applications, as well as provides wafer fabrication facilities that produces a ran",
+    "customers_kr": ""
   },
   "000120": {
     "custom_signal_reason": "CJ대한통운 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 2조 3,063억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -595,7 +1443,27 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "CJ그룹 종합물류·택배 기업. 국내 택배 1위(점유율 약 45%). 글로벌 포워딩·항만·항공화물 사업도 운영. CJ올리브영·CJ제일제당 등 계열 물량이 안정 기반.",
+    "segments_kr": [
+      {
+        "name": "택배",
+        "pct": "~50",
+        "note": "국내 1위, 점유율 45%. 이커머스 성장 수혜"
+      },
+      {
+        "name": "글로벌 포워딩",
+        "pct": "~30",
+        "note": "해상·항공화물 포워딩, 미국·유럽·동남아"
+      },
+      {
+        "name": "계약물류·항만",
+        "pct": "~20",
+        "note": "3PL·물류센터 운영, 항만 하역"
+      }
+    ],
+    "strength_kr": "CJ대한통운 택배 네트워크(전국 서브터미널 200+). 이커머스 풀필먼트 특화. CJ그룹 계열사 물류 독점 공급.",
+    "customers_kr": "CJ올리브영·CJ제일제당(계열), 이커머스(쿠팡·SSG 제외), 기업 3PL 고객"
   },
   "000210": {
     "custom_signal_reason": "DL 2026년 4월 30일 IR 공시 (1분기 실적 발표 예정). 시가총액 1조 4,983억. 투자자 이해 제고 및 실적 Q&A 미팅.",
@@ -606,7 +1474,32 @@
       "배당·주주환원 계획 업데이트",
       "2분기 전망 가이던스 발표 여부",
       "신규 사업 투자 계획 공시"
-    ]
+    ],
+    "bm_kr": "DL: 정밀화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "polyethylene",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "related",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "adhesives",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "plastic films",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers polyethylene and related products, adhesives, plastic films, and other chemical products",
+    "customers_kr": ""
   },
   "000270": {
     "custom_signal_reason": "기아 2026 기업가치제고계획 이행현황 공시. ROE 15%+ 유지, TSR 35%, 자사주 7,000억 소각. 2030년 영업익 17조(현재 대비 2배) 목표 재확인. 배당 6,500원(YoY+16%). 주가 -0.0%.",
@@ -619,7 +1512,27 @@
       "인도 법인 상장 일정 확인",
       "TSR 35% 달성을 위한 추가 주주환원 계획",
       "현대차 대비 글로벌 판매 점유율 유지 여부"
-    ]
+    ],
+    "bm_kr": "현대차그룹 완성차 제조사. 내연기관·EV·하이브리드·SUV 풀라인업. 한국·미국·유럽·인도 현지 생산. EV(EV6·EV9) 및 HEV 판매 비중 확대 중.",
+    "segments_kr": [
+      {
+        "name": "SUV·EV",
+        "pct": "~55",
+        "note": "EV6·EV9·스포티지·쏘렌토 — 수익성 핵심"
+      },
+      {
+        "name": "세단·상용",
+        "pct": "~30",
+        "note": "K5·K8·카니발·봉고"
+      },
+      {
+        "name": "글로벌 판매",
+        "pct": "~15",
+        "note": "미국·유럽·인도 현지 법인"
+      }
+    ],
+    "strength_kr": "현대차그룹 전동화 플랫폼(E-GMP) 공유로 EV 개발 효율 극대화. 미국 IRA 현지 생산 혜택(조지아 공장). 글로벌 브랜드 인지도 상승(JD파워 품질 평가 상위).",
+    "customers_kr": "한국·미국·유럽·인도 딜러망, 렌터카·플릿 법인"
   },
   "001270": {
     "custom_signal_reason": "부국증권 주식 대량보유상황보고서 공시. 최대주주 지분 소폭 변동(34.54%→34.57%). 경영권 영향. 증권업 호황 수혜.",
@@ -628,7 +1541,22 @@
       "최대주주 지분 추가 변동 여부",
       "경영권 영향 명시 지속 여부",
       "주요 사업 이슈 연계 모니터링"
-    ]
+    ],
+    "bm_kr": "부국증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "retail",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "institutional brokerage services in South",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 offers financial product sales, corporate finance, such as IPO, corporate bond, etc; project financing, and structured financing business",
+    "customers_kr": ""
   },
   "002620": {
     "custom_signal_reason": "제일파마홀딩스 주식 대량보유상황보고서 공시. 최대주주 수증으로 지분 증가(73.12%→73.21%). 경영권 안정화.",
@@ -637,7 +1565,27 @@
       "최대주주 지분 추가 변동 여부",
       "경영권 영향 명시 지속 여부",
       "주요 사업 이슈 연계 모니터링"
-    ]
+    ],
+    "bm_kr": "제일파마홀딩스: Drug Manufacturers - Specialty & Generic. 주요 사업 — and sells ingredients of drugs, incrementally modified drugs, and generic drugs",
+    "segments_kr": [
+      {
+        "name": "ingredients of drugs",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "incrementally modified drugs",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "generic drugs in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers active pharmaceutical ingredients in the areas of antibiotics, gastrointestinal, cardiovascular, neuropsychiatry, oncology, endocrinology, urology, antiviral, and antihistamines, as well as patch products",
+    "customers_kr": ""
   },
   "004970": {
     "custom_signal_reason": "신라교역 주식 대량보유상황보고서 공시. 최대주주 지분 소폭 감소(64.42%→64.33%). 신라홀딩스 계열사.",
@@ -646,7 +1594,17 @@
       "최대주주 지분 추가 변동 여부",
       "경영권 영향 명시 지속 여부",
       "주요 사업 이슈 연계 모니터링"
-    ]
+    ],
+    "bm_kr": "신라교역: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "식품 제조",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It catches tuna, yellow fin, and big eye tuna; sells stainless and carbon alloy steel products, such as wire rods, wires, coils, and steel bars; operates Silla Darangwon, a Japanese Style restaurant; and processes seafood",
+    "customers_kr": ""
   },
   "001500": {
     "custom_signal_reason": "현대차증권 2026 1Q 매출 8,478억, 영업익 323억 잠정실적 공시. 가격변동 -3.2%. 시총 6,783억.",
@@ -657,7 +1615,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "현대차증권: 증권·자본시장 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "financial",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "services in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "provides financial products and services in 한국",
+    "customers_kr": ""
   },
   "002390": {
     "custom_signal_reason": "한독 2026 1Q 매출 1,315억, 영업익 2억 잠정실적 공시. 가격변동 -1.8%. 시총 1,427억.",
@@ -668,7 +1641,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "한독: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "prescription",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "OTC drugs",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 provides prescription and OTC drugs; medical devices, such as blood pressure monitors, cholesterol monitoring systems, insulin pumps, self-monitoring system of blood glucose, and blood glucose monitoring system; in vitro diagnostic medical devices",
+    "customers_kr": ""
   },
   "003850": {
     "custom_signal_reason": "보령 2026 1Q 매출 2,554억, 영업익 202억 잠정실적 공시. 가격변동 -1.4%. 시총 8,527억.",
@@ -679,7 +1667,27 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "보령: Drug Manufacturers - Specialty & Generic. 주요 사업 — and sale of pharmaceutical products",
+    "segments_kr": [
+      {
+        "name": "prescription drugs for hypertension",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "dyslipidemia",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "diabetes drugs",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers prescription drugs for hypertension, dyslipidemia, and diabetes drugs",
+    "customers_kr": ""
   },
   "005810": {
     "custom_signal_reason": "풍산홀딩스 2026 1Q 매출 599억, 영업익 220억 잠정실적 공시. 가격변동 -1.4%. 시총 6,596억.",
@@ -690,7 +1698,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "풍산홀딩스: 동·비철금속 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "copper",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "nonferrous metal products worldwide",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers fabricated non-ferrous material, including copper, copper alloy sheets, strips, rods, bars, wires, leadframe alloys, coin blanks, copper-based roofing material, steel strips, and biobrass; defense products, such as military ammunition, spor",
+    "customers_kr": ""
   },
   "009520": {
     "custom_signal_reason": "포스코엠텍 2026 1Q 매출 1,033억, 영업익 25억 잠정실적 공시. 가격변동 -5.8%. 시총 8,299억.",
@@ -701,7 +1724,11 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "포스코엠텍 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "014820": {
     "custom_signal_reason": "동원시스템즈 2026 1Q 매출 3,378억, 영업익 130억 잠정실적 공시. 가격변동 -1.2%. 시총 8,147억.",
@@ -712,7 +1739,27 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "동원시스템즈: Packaging & Containers. 주요 사업 — and markets packaging materials",
+    "segments_kr": [
+      {
+        "name": "flexible packaging products for food",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "beverage",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "non-food packaging applications",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers flexible packaging products for food, beverage, and non-food packaging applications; glass bottles; aluminum cans, such as two-piece steel can bodies and bottle cans; and PET bottles, including non-pressure, heat resistance, heat pressure r",
+    "customers_kr": ""
   },
   "033270": {
     "custom_signal_reason": "유나이티드 2026 1Q 매출 738억, 영업익 113억 잠정실적 공시. 가격변동 -1.7%. 시총 3,214억.",
@@ -723,7 +1770,17 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "유나이티드: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Drug Manufacturers - Specialty & Generic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers products in the areas of respiratory system, musculo-skeletal system, gastro-intestinal tract system, cardiovascular system, anti-cancer, anti-infectives, allergy, immune system, central nervous system, and other diseases, as well OTC drugs",
+    "customers_kr": ""
   },
   "052260": {
     "custom_signal_reason": "현대바이오랜드 2026 1Q 매출 382억, 영업익 52억 잠정실적 공시. 가격변동 +2.2%. 시총 1,340억.",
@@ -734,7 +1791,11 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "현대바이오랜드 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "058430": {
     "custom_signal_reason": "포스코스틸리온 2026 1Q 매출 2,741억, 영업익 59억 잠정실적 공시. 가격변동 -6.9%. 시총 4,962억.",
@@ -745,7 +1806,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "포스코스틸리온: 금속 가공 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "hot-dip galvanized",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "aluminized-plated steel sheets",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides hot-dip galvanized and aluminized-plated steel sheets",
+    "customers_kr": ""
   },
   "064550": {
     "custom_signal_reason": "바이오니아 2026 1Q 매출 819억, 영업익 -8억 잠정실적 공시. 가격변동 -3.4%. 시총 2,720억.",
@@ -756,7 +1832,11 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "바이오니아 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "064960": {
     "custom_signal_reason": "SNT모티브 2026 1Q 매출 2,156억, 영업익 215억 잠정실적 공시. 가격변동 -6.0%. 시총 9,873억.",
@@ -767,7 +1847,32 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "SNT모티브: 자동차 부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "motors",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "engine/transmission components",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "chassis",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "airbags",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers motors, engine/transmission components, chassis, airbags, power train parts, shock absorbers; semiconductor machinery components; and defense products, as well as suspension modules, wheels and tires, and knuckles",
+    "customers_kr": ""
   },
   "067160": {
     "custom_signal_reason": "SOOP 2026 1Q 매출 1,060억, 영업익 212억 잠정실적 공시. 가격변동 -2.8%. 시총 6,713억.",
@@ -778,7 +1883,11 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "SOOP — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "091700": {
     "custom_signal_reason": "파트론 2026 1Q 매출 4,510억, 영업익 122억 잠정실적 공시. 가격변동 -0.7%. 시총 4,554억.",
@@ -789,7 +1898,11 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "파트론 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "108670": {
     "custom_signal_reason": "LX하우시스 2026 1Q 매출 8,147억, 영업익 459억 잠정실적 공시. 가격변동 +6.2%. 시총 3,237억.",
@@ -800,7 +1913,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "LX하우시스: Building Products & Equipment. 주요 사업 — and sells building materials",
+    "segments_kr": [
+      {
+        "name": "building materials in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 operates through two divisions, Building Materials and Automotive Materials/Industrial Film",
+    "customers_kr": ""
   },
   "136540": {
     "custom_signal_reason": "윈스테크넷 2026 1Q 매출 175억, 영업익 17억 잠정실적 공시. 가격변동 -0.4%. 시총 1,596억.",
@@ -811,7 +1939,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "윈스테크넷: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "information security",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "services in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers SNIPER ONE-i, an intelligent intrusion prevention system; SNIPER NGFW, a smart next-generation firewall; SNIPER ONE-d, a DDoS response system; SNIPER AP, a sand box-based APT response system; SNIPER TMS-Plus, information security management",
+    "customers_kr": ""
   },
   "194370": {
     "custom_signal_reason": "제이에스코퍼레이션 2026 1Q 매출 3,080억, 영업익 311억 잠정실적 공시. 가격변동 -0.4%. 시총 4,419억.",
@@ -822,7 +1965,17 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "제이에스코퍼레이션: Footwear & Accessories 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Footwear & Accessories",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides luxury leather handbags",
+    "customers_kr": ""
   },
   "215000": {
     "custom_signal_reason": "골프존 2026 1Q 매출 1,118억, 영업익 141억 잠정실적 공시. 가격변동 +0.0%. 시총 3,219억.",
@@ -833,7 +1986,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "골프존: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "golf simulators",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "under the GOLFZON Vision name",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers golf simulators, under the GOLFZON Vision name",
+    "customers_kr": ""
   },
   "232680": {
     "custom_signal_reason": "라온로보틱스 2026 1Q 매출 141억, 영업익 9억 잠정실적 공시. 가격변동 -2.1%. 시총 2,181억.",
@@ -844,7 +2012,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "라온로보틱스: Computer Hardware. 주요 사업 — and markets robot systems and inspection automation equipment for semiconductor ",
+    "segments_kr": [
+      {
+        "name": "and markets robot",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "inspection automation equipment for semic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 develops, manufactures, and sells automated systems",
+    "customers_kr": ""
   },
   "236200": {
     "custom_signal_reason": "슈프리마 2026 1Q 매출 311억, 영업익 54억 잠정실적 공시. 가격변동 +0.4%. 시총 3,892억.",
@@ -855,7 +2038,27 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "슈프리마: Security & Protection Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "and manufactures biometric",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "security products in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers biometric access control systems, time and attendance solutions, fingerprint live scanners, mobile authentication solutions, and embedded fingerprint modules",
+    "customers_kr": ""
   },
   "286940": {
     "custom_signal_reason": "롯데이노베이트 2026 1Q 매출 2,812억, 영업익 97억 잠정실적 공시. 가격변동 -0.9%. 시총 3,487억.",
@@ -866,7 +2069,22 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "롯데이노베이트: Information Technology Services. 주요 사업 — IT services",
+    "segments_kr": [
+      {
+        "name": "IT services in Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers digital transformation consulting solutions, such as Smart Factory, a platform that views and controls demand prediction, production process, and safety management in real time; Smart Logistics, an automated logistic and IT solution for the",
+    "customers_kr": ""
   },
   "317400": {
     "custom_signal_reason": "자이에스앤디 2026 1Q 매출 2,703억, 영업익 113억 잠정실적 공시. 가격변동 -6.0%. 시총 1,962억.",
@@ -877,7 +2095,32 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "자이에스앤디: Real Estate - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "smart home",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "communication construction work",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "facility maintenance",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "real estate rental",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It constructs clean rooms, factories, Internet Data Centers, research facilities and offices, and chemical plants",
+    "customers_kr": ""
   },
   "037950": {
     "custom_signal_reason": "엘컴텍 2026 1Q 매출 179억, 영업익 15억 잠정실적 공시. 가격변동 +0.0%. 시총 599억.",
@@ -888,7 +2131,27 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "엘컴텍: Communication Equipment 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "factory",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "indoor",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "plant growth lights",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers 25W engine modules for use as street, security, tunnel, and flood light; floor-type pedestrian traffic lights; NELF-100 lights; MLR-Y and MLR-W for road signs; and mobile lens, including TOF, VGA, 48 MEGA, 13 MEGA, 8 Mega, and 5 MEGA lens",
+    "customers_kr": ""
   },
   "066130": {
     "custom_signal_reason": "하츠 2026 1Q 매출 362억, 영업익 11억 잠정실적 공시. 가격변동 +0.0%. 시총 573억.",
@@ -899,7 +2162,32 @@
       "사업부별 매출 믹스 변화",
       "원가율 개선 여부",
       "연간 목표 달성 가능성"
-    ]
+    ],
+    "bm_kr": "하츠: Furnishings, Fixtures & Appliances 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "kitchen appliances",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including hood",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "cooking zone",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "electric",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers kitchen appliances, including hood and cooking zone systems, electric and gas cooktops, food dehydrators, detergent and sink faucets, sink bowls, built-in electrical outlets, flap and built-in lift-up doors, electric cooktop stands, and wat",
+    "customers_kr": ""
   },
   "192080": {
     "custom_signal_reason": "더블유게임즈 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 2,937억.",
@@ -910,7 +2198,17 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "더블유게임즈: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "게임",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers DoubleDown Casino; DoubleU Casino, a social casino game; Take5 Slots, a multiplayer slot room game; DoubleU Bingo; and Undead World",
+    "customers_kr": ""
   },
   "294870": {
     "custom_signal_reason": "IPARK현대산업개발 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 5,126억.",
@@ -921,7 +2219,22 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "IPARK현대산업개발: 건설·엔지니어링. 주요 사업 — real estate services primarily",
+    "segments_kr": [
+      {
+        "name": "건설",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "엔지니어링",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 is involved in general architecture, civil engineering, outsourced housing, and self-construction activities",
+    "customers_kr": ""
   },
   "483650": {
     "custom_signal_reason": "달바글로벌 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 2조 8,197억.",
@@ -932,7 +2245,32 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "달바글로벌: Household & Personal Products 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "mists",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "sun care",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "serums",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "creams",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers mists, sun care, serums, creams, masks, and sunscreens under the d'Alba brand; health functional foods under the Veganery brand name; health beauty devices; and low-irritation beauty solutions",
+    "customers_kr": ""
   },
   "253450": {
     "custom_signal_reason": "스튜디오드래곤 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1조 566억.",
@@ -954,7 +2292,22 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "에스디바이오센서: Medical Instruments & Supplies 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "STANDARD Q",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "which provides rapid diagnostic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers STANDARD Q, which provides rapid diagnostic products; STANDARD F, a fluorescence immunodiagnostic system for various qualitative and quantitative diagnosis items; STANDARD E, an enzyme immunoassay diagnosis for large-volume tests; and STAND",
+    "customers_kr": ""
   },
   "007690": {
     "custom_signal_reason": "국도화학 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,871억.",
@@ -965,7 +2318,22 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "국도화학: 화학 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "epoxy",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "polyol resins",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers epoxy resins; hardeners and accelerators; and composite materials comprising infusion, hand lay-ups, filament winding, pultrusion, prepreg, and resin transfer moldings, as well as rigid, semi-rigid, flexible, and elastomer non-foam polyuret",
+    "customers_kr": ""
   },
   "024850": {
     "custom_signal_reason": "HLB이노베이션 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 7,271억.",
@@ -976,7 +2344,32 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "HLB이노베이션: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "various lead frames",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as plastic dual in-line package",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "plastic leaded chip carrier",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "small outline integrated circuit",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers various lead frames, such as plastic dual in-line package, plastic leaded chip carrier, small outline integrated circuit, quad flat pack, transistor outline, and other products; lead frame used in smart power modules or intelligent power mo",
+    "customers_kr": ""
   },
   "031440": {
     "custom_signal_reason": "신세계푸드 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 2,025억.",
@@ -987,7 +2380,27 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "신세계푸드: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "food",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "beverage",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "food m",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 engages in researching, developing, and producing home meal replacements, bakery products, and fresh foods; bakery business under BO&MIE, BOULANGERIE, and Bakery brand names; and operating of franchise businesses, such as the western casual food s",
+    "customers_kr": ""
   },
   "035600": {
     "custom_signal_reason": "KG이니시스 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,163억.",
@@ -998,7 +2411,27 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "KG이니시스: Software - Infrastructure. 주요 사업 — electronic payment services",
+    "segments_kr": [
+      {
+        "name": "electronic payment services in Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Asia",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers electronic payment solutions, including mobile, rental, local currency, and global payment; VAN services, such as online and offline, SI franchise, merchant and card company data relay, table order, and settlement",
+    "customers_kr": ""
   },
   "051500": {
     "custom_signal_reason": "CJ프레시웨이 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,419억.",
@@ -1009,7 +2442,22 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "CJ프레시웨이: Food Distribution 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "consulting service for menu development",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "as well as trains staff on new recipes",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 provides consulting service for menu development, as well as trains staff on new recipes",
+    "customers_kr": ""
   },
   "052400": {
     "custom_signal_reason": "코나아이 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 8,053억.",
@@ -1020,7 +2468,17 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "코나아이: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "platforms for the financial technology ma",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers digital identification products, such as IC chips for the financial, telecommunications, and public sectors; smart cards; MONA, a USIM-based budget phone service for the contactless market; and authentication services",
+    "customers_kr": "for businesses"
   },
   "294570": {
     "custom_signal_reason": "쿠콘 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 3,017억.",
@@ -1031,7 +2489,27 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "쿠콘: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "personal data",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "corporate data",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "global APIs for data",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers personal data, corporate data, and global APIs for data services; and easy payment and e-banking APIs for payment services",
+    "customers_kr": ""
   },
   "331920": {
     "custom_signal_reason": "셀레믹스 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 1,224억.",
@@ -1042,7 +2520,32 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "셀레믹스: 의료기기 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "celemics analysis",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "whole exome sequencing",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "customized NGS panels",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "sequencing",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers whole exome sequencing panels; NGS target enrichment panels; customized and ready-to-use enrichment panels; and modular accessories, including library preparation kits, double standard Cdna synthesis, hybridization enhancer, celan-up and st",
+    "customers_kr": ""
   },
   "393890": {
     "custom_signal_reason": "더블유씨피 2026년 1분기 IR 개최 공시. 1Q 실적 발표 및 Q&A. 시총 6,836억.",
@@ -1053,7 +2556,27 @@
       "신규 사업 계획 공개",
       "배당·주주환원 업데이트",
       "질의응답 핵심 내용"
-    ]
+    ],
+    "bm_kr": "더블유씨피: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "battery parts",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "materials for automobiles",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "energy storage",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers bare film, and ceramic coated separators",
+    "customers_kr": ""
   },
   "047810": {
     "custom_signal_reason": "한국항공우주 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 16조 4,733억.",
@@ -1064,7 +2587,27 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "한국항공우주: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "fixed",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "rotary wing aircrafts",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "airframe products in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "manufactures and sells fixed and rotary wing aircrafts, and airframe products in 한국",
+    "customers_kr": ""
   },
   "007660": {
     "custom_signal_reason": "이수페타시스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 11조 334억.",
@@ -1075,7 +2618,27 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "이수페타시스: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "network equipment",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including router/switch",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "backplane",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers network equipment, including router/switch and backplane; server/storage PCB; supercomputer high-performance computing PCB; aerospace PCB; and IC testers, including probe card, load board, and burn-in board",
+    "customers_kr": ""
   },
   "014680": {
     "custom_signal_reason": "한솔케미칼 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 3조 2,348억.",
@@ -1086,7 +2649,32 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "한솔케미칼: 화학. 주요 사업 — and sells various chemicals primarily",
+    "segments_kr": [
+      {
+        "name": "a range of fine chemicals",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including hydrogen peroxide",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "sodium hydrosulfite",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "benzoyl peroxide",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers a range of fine chemicals, including hydrogen peroxide, sodium hydrosulfite, benzoyl peroxide, HITEX SB latex, HANBL NB latex, HanSphere, flocculant, organic coagulant, retention agent, and fixing agents, as well as semiconductors comprisin",
+    "customers_kr": ""
   },
   "031980": {
     "custom_signal_reason": "피에스케이홀딩스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 6,910억.",
@@ -1097,7 +2685,11 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "피에스케이홀딩스 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "282330": {
     "custom_signal_reason": "BGF리테일 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 2,815억.",
@@ -1108,7 +2700,17 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "BGF리테일: Grocery Stores 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Grocery Stores",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사's stores retail various products, such as quick meals, instant cooking, processed meals, food ingredients, beverages, dairy products, alcohol, confectionery, ice cream, breads, desserts, snacks, tobacco, household and personal goods, hobbies and l",
+    "customers_kr": ""
   },
   "319660": {
     "custom_signal_reason": "피에스케이 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 5,751억.",
@@ -1119,7 +2721,32 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "피에스케이: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "dry strip",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "selective material removal",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "bevel etch",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "integrated process equipment",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers dry strip, selective material removal, bevel etch, integrated process equipment, dry cleaning, new hard mask strip, etch back, power device etch, and wafer edge clean products",
+    "customers_kr": ""
   },
   "403870": {
     "custom_signal_reason": "HPSP 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 4조 3,290억.",
@@ -1130,7 +2757,22 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "HPSP: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "GENI-SYS",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "a high-pressure hydrogen annealing equipm",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers GENI-SYS, a high-pressure hydrogen annealing equipment; and GENI and GENI-SE",
+    "customers_kr": ""
   },
   "140860": {
     "custom_signal_reason": "파크시스템스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 2조 223억.",
@@ -1141,7 +2783,27 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "파크시스템스: Scientific & Technical Instruments 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "AFM for research",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "surface analysis",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "in-line metrology",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides AFM for research and surface analysis, and in-line metrology; photomask repair; optical profilometry; and nano infrared spectroscopy services",
+    "customers_kr": ""
   },
   "084110": {
     "custom_signal_reason": "휴온스글로벌 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 7,988억.",
@@ -1152,7 +2814,11 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "휴온스글로벌 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "215200": {
     "custom_signal_reason": "메가스터디교육 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 4,908억.",
@@ -1163,7 +2829,22 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "메가스터디교육: Education & Training Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "online",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "offline educational services primarily in",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It engages in the provision of online education academy, education information, entrance examination consulting, offline school direct management, education-related database, publishing services, etc",
+    "customers_kr": ""
   },
   "243070": {
     "custom_signal_reason": "휴온스 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 3,163억.",
@@ -1174,7 +2855,32 @@
       "배당성향 상향 여부",
       "실행 이행 분기별 모니터링",
       "PBR 개선 속도"
-    ]
+    ],
+    "bm_kr": "휴온스: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "oral solid form drugs",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including circulatory",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "metabolic",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "antipyretic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers oral solid form drugs, including circulatory system, metabolic, antipyretic, analgesic, anti-inflammatory, musculoskeletal system, digestive system, antihistamine, respiratory system, anti-coagulant, antiviral, central nervous system, antib",
+    "customers_kr": ""
   },
   "383310": {
     "custom_signal_reason": "에코프로에이치엔 기업가치제고계획 공시. 주주환원·ROE·배당 강화 계획 포함. 시총 6,691억.",
@@ -1196,7 +2902,22 @@
       "자회사 상장 계획 여부",
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
-    ]
+    ],
+    "bm_kr": "셀트리온: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "biosimilars",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including Remsima for rheumatoid arthriti",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers biosimilars, including Remsima for rheumatoid arthritis and inflammatory bowel disease; Truxima for non-hodgkin's lymphoma and chronic lymphocytic leukemia; Herzuma for metastatic breast and gastric cancer; Remsima SC and Yuflyma for rheuma",
+    "customers_kr": ""
   },
   "003090": {
     "custom_signal_reason": "대웅 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 1조 3,111억.",
@@ -1207,7 +2928,17 @@
       "자회사 상장 계획 여부",
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
-    ]
+    ],
+    "bm_kr": "대웅: Drug Manufacturers - Specialty & Generic. 주요 사업 — and sale of pharmaceuticals",
+    "segments_kr": [
+      {
+        "name": "Drug Manufacturers - Specialty & Generic",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It is also involved in the real estate rental business; provision of lifestyle-related disease prevention research, business management, public affairs, and facility management services; and processing and sale of food products",
+    "customers_kr": ""
   },
   "069620": {
     "custom_signal_reason": "대웅제약 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 1조 7,183억.",
@@ -1218,7 +2949,32 @@
       "자회사 상장 계획 여부",
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
-    ]
+    ],
+    "bm_kr": "대웅제약: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "products in therapeutic areas",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as central nervous",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "endocrinology",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "musculoskeletal",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "develops, manufactures and commercializes pharmaceutical products in 한국 and 해외",
+    "customers_kr": ""
   },
   "096760": {
     "custom_signal_reason": "JW홀딩스 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 3,164억.",
@@ -1229,7 +2985,32 @@
       "자회사 상장 계획 여부",
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
-    ]
+    ],
+    "bm_kr": "JW홀딩스: Drug Manufacturers - Specialty & Generic 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "amino acid",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "gastrointestinal agents",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "wound care",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "eye care",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers amino acid solutions, gastrointestinal agents, wound care, eye care, liver disease treatment, cold medicine, API, oral and topical analgesic, and other miscellaneous pharmaceutical products",
+    "customers_kr": ""
   },
   "123010": {
     "custom_signal_reason": "알엔티엑스 자회사 주요경영사항 공시. 신약 허가·투자 결정 등 주요 이슈. 시총 504억.",
@@ -1240,7 +3021,32 @@
       "자회사 상장 계획 여부",
       "2분기 자회사 실적 반영 여부",
       "지주 할인율 변화"
-    ]
+    ],
+    "bm_kr": "알엔티엑스: 반도체 장비·소재. 주요 사업 — image sensor packaging and testing solutions",
+    "segments_kr": [
+      {
+        "name": "image sensor packaging",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "testing solutions in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Taiwan",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "China",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It operates in three segments: Image Sensor, Automobile Parts, and Mobile Phone Parts",
+    "customers_kr": ""
   },
   "062040": {
     "custom_signal_reason": "산일전기 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 6조 9,345억.",
@@ -1251,7 +3057,32 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "산일전기: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "transformers",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "reactors for power grid",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "renewable energy",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "industrial transformer markets in Kor",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers power, distribution, pad-mounted, oil-filled, cast-resin, pole-mounted, and dry-type transformers, as well as high and low voltage soft starters",
+    "customers_kr": ""
   },
   "005960": {
     "custom_signal_reason": "동부건설 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 2,189억.",
@@ -1262,7 +3093,22 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "동부건설: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "건설",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "엔지니어링",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 undertakes various civil works, such as roads, bridges, tunnels, port facilities, expressway, railway, subway, water treatment, sewage, airport, leisure facility, and other related services; architecture works, including building of medical facili",
+    "customers_kr": ""
   },
   "282880": {
     "custom_signal_reason": "코윈테크 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 1,906억.",
@@ -1273,7 +3119,27 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "코윈테크: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "bucket",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "pallet",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "roll type automation warehouse",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers bucket, pallet and roll type automation warehouse products; building and unit racks; single and double reach types; material logistic equipment, including conveyor, automatic shuttle, lifter automation warehouse, de-stacker/magazine, and en",
+    "customers_kr": ""
   },
   "332570": {
     "custom_signal_reason": "PS일렉트로닉스 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 3,810억.",
@@ -1284,7 +3150,32 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "PS일렉트로닉스: Communication Equipment 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "products for mobile",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "automotive",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "IoT industries",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including multimode",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers products for mobile, automotive, and IoT industries, including multimode and multiband, LTE band multimode and multiband, and LTE band linear power amplifier modules; and front end modules, multiband RF front-end module, and integrated RF f",
+    "customers_kr": ""
   },
   "381620": {
     "custom_signal_reason": "제닉스로보틱스 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 1,331억.",
@@ -1295,7 +3186,22 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "제닉스로보틱스: 반도체 장비·소재. 주요 사업 — automated material handling systems",
+    "segments_kr": [
+      {
+        "name": "반도체 장비",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "소재",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers solutions in the business areas of AGV/AMR, LCD/OLED logistics, semiconductor logistics, pharmaceutical logistics, material, and secondary battery logistics",
+    "customers_kr": ""
   },
   "382900": {
     "custom_signal_reason": "범한퓨얼셀 단일판매·공급계약 체결 공시. 계약 규모 및 고객사 확인. 시총 3,101억.",
@@ -1306,7 +3212,11 @@
       "납품 시작 일정 및 매출 인식 시점",
       "신규 고객사 확장 가능성",
       "동종업계 수주 경쟁 현황"
-    ]
+    ],
+    "bm_kr": "범한퓨얼셀 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "124500": {
     "custom_signal_reason": "아이티센글로벌 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 1조 2,554억.",
@@ -1317,7 +3227,32 @@
       "자금 사용 목적 확인",
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
-    ]
+    ],
+    "bm_kr": "아이티센글로벌: Information Technology Services 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "IT services for the public",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "financial",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "education",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "enterprise sectors",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers rental; wholesale and retail of gold and other precious metals; and Cloud, AI, IT Consulting, and Implementation",
+    "customers_kr": ""
   },
   "140410": {
     "custom_signal_reason": "메지온 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 2조 8,386억.",
@@ -1328,7 +3263,11 @@
       "자금 사용 목적 확인",
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
-    ]
+    ],
+    "bm_kr": "메지온 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "091580": {
     "custom_signal_reason": "상신이디피 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 3,545억.",
@@ -1339,7 +3278,22 @@
       "자금 사용 목적 확인",
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
-    ]
+    ],
+    "bm_kr": "상신이디피: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "전기장비",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "부품",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "engages in the manufacture and sale of secondary batteries in 한국, China, Malaysia, Hungary, and 해외",
+    "customers_kr": ""
   },
   "474170": {
     "custom_signal_reason": "루미르 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 2,888억.",
@@ -1350,7 +3304,27 @@
       "자금 사용 목적 확인",
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
-    ]
+    ],
+    "bm_kr": "루미르: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "search",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "purchase",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "analysis",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It develops small synthetic aperture radar (SAR) satellite system; CAS500-5 C-band SAR satellite system; small SAR payload; Ka-band transmitter and phased array antenna; space internet communication device for lunar exploration; image data handling u",
+    "customers_kr": ""
   },
   "418250": {
     "custom_signal_reason": "시큐레터 전환사채(CB) 발행 결정 공시. 전환가격·규모·조건 확인 필요. 시총 476억.",
@@ -1361,7 +3335,17 @@
       "자금 사용 목적 확인",
       "전환 청구 시작일 및 오버행 리스크",
       "재무 건전성(부채비율) 변화"
-    ]
+    ],
+    "bm_kr": "시큐레터: Software - Infrastructure 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Software - Infrastructure",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers SecuLetter Email (SLE), an email security solution; SecuLetter File Security, a malware protection solution",
+    "customers_kr": ""
   },
   "365340": {
     "custom_signal_reason": "성일하이텍 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 1조 88억.",
@@ -1372,7 +3356,22 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "성일하이텍: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "전기장비",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "부품",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 enages in the lithium secondary battery recycling business",
+    "customers_kr": ""
   },
   "187660": {
     "custom_signal_reason": "페니트리움바이오 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 6,218억.",
@@ -1383,7 +3382,32 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "페니트리움바이오: Medical Care Facilities. 주요 사업 — clinical-related professional services for customer requirements",
+    "segments_kr": [
+      {
+        "name": "clinical development",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as medical writing",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "clinical operation",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "late phase study",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers clinical development services, such as medical writing, clinical operation, late phase study, data management, biostatistics, and regulatory affairs",
+    "customers_kr": ""
   },
   "221800": {
     "custom_signal_reason": "지구홀딩스 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 2,962억.",
@@ -1394,7 +3418,17 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "지구홀딩스: Diagnostics & Research 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Diagnostics & Research",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 also offers specimen testing services; digital healthcare services related to testing and health examinations; and bio-technology platforms",
+    "customers_kr": ""
   },
   "403550": {
     "custom_signal_reason": "쏘카 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 4,522억.",
@@ -1405,7 +3439,17 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "쏘카: Software - Application 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Software - Application",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It provides car sharing services",
+    "customers_kr": ""
   },
   "476040": {
     "custom_signal_reason": "오가노이드사이언스 유상증자결정 공시. 조달 목적 및 발행가 확인 필요. 시총 1,495억.",
@@ -1427,7 +3471,27 @@
       "기존 주주 배정 vs 일반공모 구분",
       "납입 완료 후 주가 회복 시점",
       "유증 후 재무구조 개선 여부"
-    ]
+    ],
+    "bm_kr": "인스코비: 통신 서비스 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "power meter modems",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "data concentrators",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "power meter",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers power meter modems, data concentrators, and power meter solutions; and provides budget phone communication services",
+    "customers_kr": ""
   },
   "108230": {
     "custom_signal_reason": "톱텍 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 1,745억.",
@@ -1438,7 +3502,11 @@
       "고객사 재계약 가능성",
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
-    ]
+    ],
+    "bm_kr": "톱텍 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "334970": {
     "custom_signal_reason": "프레스티지바이오로직스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 1,851억.",
@@ -1449,7 +3517,11 @@
       "고객사 재계약 가능성",
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
-    ]
+    ],
+    "bm_kr": "프레스티지바이오로직스 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "083790": {
     "custom_signal_reason": "CG인바이츠 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 967억.",
@@ -1460,7 +3532,11 @@
       "고객사 재계약 가능성",
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
-    ]
+    ],
+    "bm_kr": "CG인바이츠 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "254120": {
     "custom_signal_reason": "자비스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 456억.",
@@ -1471,7 +3547,22 @@
       "고객사 재계약 가능성",
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
-    ]
+    ],
+    "bm_kr": "자비스: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "X-ray scanners",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "automation machines in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers X scan equipment for semiconductor, battery, SMT/ PCB, and diecasting sector; and Fscan equipment for food and pharm sector, as well as X-ray, machine vision, and factory automation equipment",
+    "customers_kr": ""
   },
   "412540": {
     "custom_signal_reason": "제일엠앤에스 단일판매·공급계약 해지 공시. 매출 영향 규모 확인 필요. 시총 811억.",
@@ -1482,7 +3573,27 @@
       "고객사 재계약 가능성",
       "2026년 연간 매출 목표 수정 여부",
       "주가 낙폭 대비 저가 매수 타이밍"
-    ]
+    ],
+    "bm_kr": "제일엠앤에스: 전기장비·부품. 주요 사업 — and sells secondary battery mixing equipment and systems",
+    "segments_kr": [
+      {
+        "name": "secondary battery mixing equipment",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "systems in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 offers planetary disperser, vertical planetary, and multi shaft mixers; ribbon, double cone, high speed, and container mixers, as well as V-mixer and kneader products; air mixing, hot air, and steam sterilizers; fluid bed and fluid bed granulator,",
+    "customers_kr": ""
   },
   "086520": {
     "custom_signal_reason": "에코프로 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 20조 8,688억.",
@@ -1504,7 +3615,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "더존비즈온: Software - Application 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "services in South Korea",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "Its products and services include accounting programs; ERP; cloud; groupware; information security; electronic tax invoices; electronic banking; mobile solutions; electronic fax; and education services",
+    "customers_kr": ""
   },
   "098460": {
     "custom_signal_reason": "고영 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 2조 7,634억.",
@@ -1515,7 +3636,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "고영: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "반도체 장비",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "소재",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사's products portfolio comprises solder paste, automated optical, semiconductor, dispensing process, and final optical inspection equipment; smart factory solutions comprising KSMART solution, a 3D measurement-based process control system; KPO print",
+    "customers_kr": ""
   },
   "237690": {
     "custom_signal_reason": "에스티팜 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 3조 1,787억.",
@@ -1526,7 +3662,11 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "에스티팜 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "011810": {
     "custom_signal_reason": "STX 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 1,095억.",
@@ -1548,7 +3688,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "두올: 자동차 부품. 주요 사업 — and sells automobile interior materials",
+    "segments_kr": [
+      {
+        "name": "car fabrics",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "seats",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "airbags",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers car fabrics, seats, and airbags",
+    "customers_kr": ""
   },
   "066590": {
     "custom_signal_reason": "스모트로닉 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 1,068억.",
@@ -1559,7 +3719,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "스모트로닉: 자동차 부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "automobile components in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers electrical vehicles products, such as micro E/V, micro EV pickup truck and motor, inverter, PDU, differential case, and rotor shaft",
+    "customers_kr": ""
   },
   "088280": {
     "custom_signal_reason": "쏘닉스 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 1,241억.",
@@ -1570,7 +3745,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "쏘닉스: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "반도체 설계",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "제조",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers RF filters; SAW filters and duplexers; and RF components, such as dielectric products",
+    "customers_kr": ""
   },
   "093320": {
     "custom_signal_reason": "케이아이엔엑스 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 5,246억.",
@@ -1581,7 +3771,11 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "케이아이엔엑스 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "163730": {
     "custom_signal_reason": "핑거 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 1,891억.",
@@ -1603,7 +3797,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "에이플러스에셋: Insurance - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "life",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "non-life insurance",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 offers coverage analysis services; and comparative sales services of good insurance",
+    "customers_kr": ""
   },
   "285490": {
     "custom_signal_reason": "노바텍 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 2,464억.",
@@ -1614,7 +3823,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "노바텍: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "magnet",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "shield magnet",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "magnet plate for various IT devices",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers magnet, shield magnet, and magnet plate for various IT devices",
+    "customers_kr": ""
   },
   "289080": {
     "custom_signal_reason": "SV인베스트먼트 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식) | 전환청구권행사). 시총 2,213억.",
@@ -1636,7 +3865,32 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "오로스테크놀로지: 반도체 장비·소재 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "wafer overlay metrology",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "wafer inspection",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "package overlay metrology",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "package inspection",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers wafer overlay metrology, wafer inspection, package overlay metrology, and package inspection products",
+    "customers_kr": ""
   },
   "424870": {
     "custom_signal_reason": "이뮨온시아 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 5,198억.",
@@ -1647,7 +3901,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "이뮨온시아: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "바이오테크",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It develops IMC-001, a human monoclonal antibody of the IgG1 type that targets PD-L1 an immunotherapy for cancer, which is in Phase II clinical trial for the treatment of NK/T cell lymphoma and solid cancer patients with high tumor mutation burden; a",
+    "customers_kr": ""
   },
   "023960": {
     "custom_signal_reason": "에쓰씨엔지니어링 2026년 4월 30일 공시(주식등의대량보유상황보고서(일반)). 시총 510억.",
@@ -1658,7 +3922,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "에쓰씨엔지니어링: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "건설",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "엔지니어링",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 engages in the manufacturing, selling, importing, and exporting of biological products and medical devices using cell culture",
+    "customers_kr": ""
   },
   "277410": {
     "custom_signal_reason": "인산가 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 433억.",
@@ -1669,7 +3948,32 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "인산가: 식품 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "bamboo salt",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "bamboo salt paste types",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "essence types",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "pills",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers bamboo salt, bamboo salt paste types, essence types, pills, healthy food, native products, household items, and books under the Insan brand",
+    "customers_kr": ""
   },
   "351870": {
     "custom_signal_reason": "차이커뮤니케이션 2026년 4월 30일 공시(주식등의대량보유상황보고서(약식)). 시총 464억.",
@@ -1680,7 +3984,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "차이커뮤니케이션: Advertising Agencies 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "various advertising",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including ATL",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers various advertising solutions and services, including ATL, AI, application, BTL, brand film, banner advertising, creativity, contents, campaigns, consulting, DA, digital journey, design, e CRM, event, feed contents, goods, growth hacking",
+    "customers_kr": ""
   },
   "402340": {
     "custom_signal_reason": "SK스퀘어 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 110조 9,770억.",
@@ -1691,7 +4010,22 @@
       "배당 기준일 및 지급일 확인",
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
-    ]
+    ],
+    "bm_kr": "SK스퀘어: 반도체 설계·제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "반도체 설계",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "제조",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "설립 2021 and is 본사 Icheon-si, 한국.",
+    "customers_kr": ""
   },
   "033920": {
     "custom_signal_reason": "무학 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 2,542억.",
@@ -1702,7 +4036,27 @@
       "배당 기준일 및 지급일 확인",
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
-    ]
+    ],
+    "bm_kr": "무학: Beverages - Wineries & Distilleries 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "diluted shochu",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "fruit liquors",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "liqueurs",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers diluted shochu products, fruit liquors, and liqueurs",
+    "customers_kr": ""
   },
   "204610": {
     "custom_signal_reason": "티쓰리 현금·현물배당 결정 공시. 배당금액 및 기준일 확인. 시총 1,947억.",
@@ -1713,7 +4067,32 @@
       "배당 기준일 및 지급일 확인",
       "전년 대비 배당 증가율",
       "자사주 소각 병행 여부"
-    ]
+    ],
+    "bm_kr": "티쓰리: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "games for PCs",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "mobiles",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "consoles in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "설립 2000 and is based in Seoul, 한국.",
+    "customers_kr": ""
   },
   "005380": {
     "custom_signal_reason": "현대자동차 풍문·보도 해명 공시. 내용 확인 및 시장 반응 모니터링. 시총 108조 7,264억.",
@@ -1735,7 +4114,11 @@
       "시장 신뢰 회복 여부",
       "관련 추가 공시 여부",
       "주가 반응 안정화 시점"
-    ]
+    ],
+    "bm_kr": "파인테크닉스 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "044990": {
     "custom_signal_reason": "에이치엔에스하이텍 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,260억.",
@@ -1746,7 +4129,11 @@
       "우발채무·소송 현황",
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
-    ]
+    ],
+    "bm_kr": "에이치엔에스하이텍 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "126730": {
     "custom_signal_reason": "코칩 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,802억.",
@@ -1757,7 +4144,17 @@
       "우발채무·소송 현황",
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
-    ]
+    ],
+    "bm_kr": "코칩: 전기장비·부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "renewable energy-related",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 offers new and renewable energy-related products; and electronic components related to electricity, and electronic communication equipment",
+    "customers_kr": ""
   },
   "396470": {
     "custom_signal_reason": "워트 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 1,275억.",
@@ -1768,7 +4165,22 @@
       "우발채무·소송 현황",
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
-    ]
+    ],
+    "bm_kr": "워트: 전자부품 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "temperature",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "humidity control equipment for the semico",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 offers semiconductor-related equipment repair services",
+    "customers_kr": ""
   },
   "063440": {
     "custom_signal_reason": "SM Life Design 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 666억.",
@@ -1779,7 +4191,11 @@
       "우발채무·소송 현황",
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
-    ]
+    ],
+    "bm_kr": "SM Life Design — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "299900": {
     "custom_signal_reason": "위지윅스튜디오 분기보고서(2026.03) 제출. 사업·재무 상세 확인. 시총 706억.",
@@ -1790,7 +4206,32 @@
       "우발채무·소송 현황",
       "신규 수주·계약 공개 항목",
       "대주주 현황 변경 여부"
-    ]
+    ],
+    "bm_kr": "위지윅스튜디오: 엔터테인먼트 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "content business",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "such as movies",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "dramas",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "entertainment programs",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 provides content business, such as movies, dramas, and entertainment programs; exhibition and event agency business; and VFX and new media business, including CG/VFX and VR, AR, etc",
+    "customers_kr": ""
   },
   "024840": {
     "custom_signal_reason": "KBI메탈 전환청구권 행사 공시. 전환주식수 및 희석 영향 확인. 시총 1,780억.",
@@ -1812,7 +4253,22 @@
       "전환가격 vs 현재 주가 비교",
       "기관 매도 압력 여부",
       "잔여 전환 물량 일정"
-    ]
+    ],
+    "bm_kr": "아스트: 항공우주·방산 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "항공우주",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "방산",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "manufactures, sells, and assembles aircraft parts and related tools in Korea, the United States, and 해외",
+    "customers_kr": ""
   },
   "066410": {
     "custom_signal_reason": "버킷스튜디오 최대주주변경 공시. 경영권 변동 내용 확인. 시총 1,596억.",
@@ -1823,7 +4279,11 @@
       "추가 지분 취득 가능성",
       "경영진 교체 여부",
       "실적 개선 시그널"
-    ]
+    ],
+    "bm_kr": "버킷스튜디오 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "001060": {
     "custom_signal_reason": "JW중외제약 영업정지 공시. 의약품 판매업무정지 처분. 시총 7,265억.",
@@ -1834,7 +4294,27 @@
       "2Q26 매출 영향 규모 확인",
       "CEO·컴플라이언스 개선 계획",
       "주가 낙폭 과대 여부 판단"
-    ]
+    ],
+    "bm_kr": "JW중외제약: Drug Manufacturers - Specialty & Generic. 주요 사업 — and sells medicines and medical supplies",
+    "segments_kr": [
+      {
+        "name": "medicines",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "medical supplies in Japan",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers products in the areas of cancer, immunological disease, cardiovascular system and metabolic diseases, regenerative medicine, eye diseases , and pancreatic cancer",
+    "customers_kr": ""
   },
   "263750": {
     "custom_signal_reason": "펄어비스 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 3조 7,842억.",
@@ -1845,7 +4325,17 @@
       "시너지 효과 구체성",
       "투자 회수 시점 예상",
       "추가 투자 가능성"
-    ]
+    ],
+    "bm_kr": "펄어비스: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "게임",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It is involved  in game publishing; the provision of server, line and operation services; investment and management consulting services; and operating services",
+    "customers_kr": ""
   },
   "035080": {
     "custom_signal_reason": "그래디언트 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 1,384억.",
@@ -1856,7 +4346,22 @@
       "시너지 효과 구체성",
       "투자 회수 시점 예상",
       "추가 투자 가능성"
-    ]
+    ],
+    "bm_kr": "그래디언트: Internet Retail 업종. Holding Business; Industrial B2B E-Commerce Business; Bio Healthcare Business; / Other Business 사업 부문 영위. 매출·이익 구성은 하단 부문별 차트 참조.",
+    "segments_kr": [
+      {
+        "name": "Holding Business; Industrial B2B E-Commerce Business; Bio Healthcare Business;",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "Other Business",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It operates through Holding Business; Industrial B2B E-Commerce Business; Bio Healthcare Business; and Other Business segments",
+    "customers_kr": "to hospitals"
   },
   "054920": {
     "custom_signal_reason": "한컴위드 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 1,936억.",
@@ -1867,7 +4372,11 @@
       "시너지 효과 구체성",
       "투자 회수 시점 예상",
       "추가 투자 가능성"
-    ]
+    ],
+    "bm_kr": "한컴위드 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "118990": {
     "custom_signal_reason": "모트렉스 타법인 출자 공시. 투자 목적 및 규모 확인. 시총 2,216억.",
@@ -1878,7 +4387,32 @@
       "시너지 효과 구체성",
       "투자 회수 시점 예상",
       "추가 투자 가능성"
-    ]
+    ],
+    "bm_kr": "모트렉스: 자동차 부품. 주요 사업 — vehicle infotainment products",
+    "segments_kr": [
+      {
+        "name": "in vehicle infotainment",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including audio video",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "audio video navigation",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "audio video navigation telematic prod",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers in vehicle infotainment products, including audio video, audio video navigation, and audio video navigation telematic products; rear seat entertainment products, such as video, music, VOD, etc.; and digital cluster system",
+    "customers_kr": ""
   },
   "066790": {
     "custom_signal_reason": "씨씨에스 소송·경영권분쟁 공시. 분쟁 내용 및 영향 분석. 시총 973억.",
@@ -1900,7 +4434,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "크래프톤: 게임 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "게임",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers PC, mobile, console, and other games",
+    "customers_kr": ""
   },
   "115180": {
     "custom_signal_reason": "큐리언트 2026년 4월 30일 공시(주식매수선택권행사). 시총 1조 4,027억.",
@@ -1911,7 +4455,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "큐리언트: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "바이오테크",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사's pipeline products include Q301, a topical 5LO inhibitor, which is in Phase II clinical trial for the treatment of atopic dermatitis; and Telacebec (Q203), Cyt bc1 Inhibitor, that is in Phase II to treat Mycobacterial Infections, such as tubercul",
+    "customers_kr": ""
   },
   "035890": {
     "custom_signal_reason": "서희건설 2026년 4월 30일 공시(기타시장안내              (기업심사위원회 심의·의결 결과 및 상장유지 결정 안내). 시총 3,730억.",
@@ -1922,7 +4476,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "서희건설: 건설·엔지니어링 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "건설",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "엔지니어링",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 primarily undertakes housing, implementation, redevelopment/reconstruction, officetel, public apartment, civil engineering, and environment projects, as well as other private contracts",
+    "customers_kr": ""
   },
   "039840": {
     "custom_signal_reason": "디오 2026년 4월 30일 공시(주요사항보고서(자기주식처분결정)). 시총 2,316억.",
@@ -1933,7 +4502,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "디오: Medical Instruments & Supplies. 주요 사업 — and sells dental implants",
+    "segments_kr": [
+      {
+        "name": "dental implants in South Korea",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "internationally",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers UFII implant internal submerged and no-submerged systems, FTN implant external systems, protem implants, and UV active implant systems",
+    "customers_kr": ""
   },
   "044450": {
     "custom_signal_reason": "KSS해운 2026년 4월 30일 공시(신규시설투자등 | 단일판매ㆍ공급계약체결). 시총 2,962억.",
@@ -1944,7 +4528,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "KSS해운: 해운 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "해운",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사's gas cargoes include anhydrous ammonia, butadiene, butane, butane 1, C4 raffinate, ethylene, propane, propylene, vinyl chloride monomer, and others",
+    "customers_kr": ""
   },
   "102120": {
     "custom_signal_reason": "어보브반도체 2026년 4월 30일 공시(주요사항보고서(자기주식처분결정)). 시총 2,477억.",
@@ -1955,7 +4549,11 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "어보브반도체 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "121800": {
     "custom_signal_reason": "비덴트 2026년 4월 30일 공시(기타시장안내              (개선계획 이행내역서 제출)). 시총 2,563억.",
@@ -1966,7 +4564,11 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "비덴트 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "149980": {
     "custom_signal_reason": "하이로닉 2026년 4월 30일 공시(기타시장안내              (상장적격성 실질심사 대상 제외 결정)). 시총 1,079억.",
@@ -1977,7 +4579,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "하이로닉: 의료기기 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "and sale of medical",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "surgical equipment",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "other orthopedic appliances in South",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers its products for the MFU and RF, laser, plasma, and cryotherapy",
+    "customers_kr": ""
   },
   "261780": {
     "custom_signal_reason": "차백신연구소 2026년 4월 30일 공시(상호변경안내 | 최대주주변경). 시총 1,103억.",
@@ -1988,7 +4610,32 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "차백신연구소: 바이오테크 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "influenza vaccine",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "recombinant MBL",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "TB vaccine",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "cancer vaccine",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "Its product pipeline includes HBV vaccine that is in Phase IIb planning for the prevention of hepatitis B; Adjuvanted HBV vaccine that is in Phase I/IIa for the treatment of chronic hepatitis B; and VZV Vaccine, which is in pre-clinical planning stag",
+    "customers_kr": ""
   },
   "293940": {
     "custom_signal_reason": "신한알파리츠 2026년 4월 30일 공시(기타경영사항(자율공시)). 시총 7,317억.",
@@ -1999,7 +4646,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "신한알파리츠: REIT - Office 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "REIT - Office",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "is a real estate investment trust company",
+    "customers_kr": ""
   },
   "298000": {
     "custom_signal_reason": "효성화학 2026년 4월 30일 공시(기타시장안내              (개선기간 종료 및 향후 절차 안내)). 시총 1,475억.",
@@ -2010,7 +4667,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "효성화학: 화학. 주요 사업 — various chemical products",
+    "segments_kr": [
+      {
+        "name": "PP Random Copolymer",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "PP-B for pipes",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "as well as PP for conduit pipe",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers PP Random Copolymer and PP-B for pipes, as well as PP for conduit pipe; polypropylene for transparent containers, corrugated sheets, heat resistant appliances, and caps; TWIM PP and high-impact BCP; PP for retort and protective films; TER-P",
+    "customers_kr": ""
   },
   "404990": {
     "custom_signal_reason": "신한서부티엔디리츠 2026년 4월 30일 공시(기타경영사항(자율공시)). 시총 2,680억.",
@@ -2021,7 +4698,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "신한서부티엔디리츠: REIT - Diversified 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "REIT - Diversified",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "is a diversified REIT firm and is 본사 Seoul, 한국.",
+    "customers_kr": ""
   },
   "950130": {
     "custom_signal_reason": "엑세스바이오 2026년 4월 30일 공시([기재정정]주식소각결정). 시총 1,288억.",
@@ -2032,7 +4719,32 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "엑세스바이오: Diagnostics & Research 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "of in vitro rapid diagnostic tests",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "immunochemical diagnostics",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "biosensors",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "molecular diagnostic products worldwi",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 provides Covid-19 detection kits, which are tests for assessing the current or past presence of SARS-CoV-2.; rapid diagnostic tests, suitable for preliminary diagnosis or emergency medical screening in medical facilities with limited resources; an",
+    "customers_kr": ""
   },
   "950170": {
     "custom_signal_reason": "JTC 2026년 4월 30일 공시(주요사항보고서(자기주식취득결정)). 시총 2,124억.",
@@ -2043,7 +4755,22 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "JTC: 백화점·유통 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "백화점",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "유통",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It is involved in the retail sale of food, cosmetics, daily necessities, and other souvenirs",
+    "customers_kr": ""
   },
   "067170": {
     "custom_signal_reason": "오텍 2026년 4월 30일 공시(신주인수권행사). 시총 640억.",
@@ -2054,7 +4781,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "오텍: 완성차 제조 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "medical vehicles",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "including ambulance/EMS",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "mobile hospital",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "동사 offers medical vehicles, including ambulance/EMS and mobile hospital; wheelchair accessible car/van and large/public transport vehicles for welfare application; life and leisure vehicles, such as camping vans, office vans, and tourists' trolleys; ",
+    "customers_kr": ""
   },
   "094940": {
     "custom_signal_reason": "푸른기술 2026년 4월 30일 공시(상호변경안내). 시총 876억.",
@@ -2065,7 +4812,11 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "푸른기술 — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   },
   "455180": {
     "custom_signal_reason": "케이지에이 2026년 4월 30일 공시(주요사항보고서(유형자산양도결정)). 시총 424억.",
@@ -2076,7 +4827,17 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "케이지에이: Specialty Industrial Machinery 분야 상장사. 사업 세부 내용은 DART 사업보고서 참조.",
+    "segments_kr": [
+      {
+        "name": "Specialty Industrial Machinery",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "또한 engages in manufacturing equipment for secondary battery electrodes and duct automation systems",
+    "customers_kr": ""
   },
   "900300": {
     "custom_signal_reason": "오가닉티코스메틱 2026년 4월 30일 공시(사업보고서 (2025.12)). 시총 547억.",
@@ -2087,7 +4848,27 @@
       "추가 공시 여부 모니터링",
       "주가 반응 확인",
       "관련 업황 연동 모니터링"
-    ]
+    ],
+    "bm_kr": "오가닉티코스메틱: Household & Personal Products. 주요 사업 — and sale of baby and child toiletries and care products",
+    "segments_kr": [
+      {
+        "name": "and sale of baby",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "child toiletries",
+        "pct": "-",
+        "note": ""
+      },
+      {
+        "name": "care products in China",
+        "pct": "-",
+        "note": ""
+      }
+    ],
+    "strength_kr": "It offers Infants' cleansers, body wash, toothpaste, wet wipes, and baby clothes detergent; infant and child lip balm, essence cream, and mask products; baby lotion; and mosquito repellent spray",
+    "customers_kr": ""
   },
   "": {
     "custom_signal_reason": "메쥬 2026 1Q 매출 39억, 영업익 10억, 순이익 10억. 5분기 연속 적자에서 첫 흑자전환. 상장주관사(NH투자증권·미래에셋) 신주인수권 각 5만주 행사 완료. 행사가 10,000원(공모가), 6월 9일 상장 예정.",
@@ -2098,6 +4879,10 @@
       "핵심 제품 신규 계약 및 글로벌 수출 현황",
       "연간 흑자 공식 달성 전망",
       "추가 기술특례 R&D 파이프라인 공개 여부"
-    ]
+    ],
+    "bm_kr": " — 상장사",
+    "segments_kr": [],
+    "strength_kr": "",
+    "customers_kr": ""
   }
 }
