@@ -156,7 +156,12 @@ body{
 
 <!-- 즐겨찾기 탭 -->
 <div class="tab-panel" id="tab-favs">
-  <div class="fav-toolbar">
+  <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;">
+  <strong>🔍 디버그</strong>
+  <button onclick="showDebug()" style="margin-left:10px;background:#f59e0b;color:#fff;border:none;padding:4px 10px;border-radius:5px;cursor:pointer;font-size:12px;">localStorage 확인</button>
+  <pre id="debug-out" style="margin-top:8px;font-size:10px;white-space:pre-wrap;word-break:break-all;display:none;max-height:200px;overflow:auto;background:#fff;padding:8px;border-radius:4px;"></pre>
+</div>
+<div class="fav-toolbar">
     <div class="fav-count"><span id="fav-total">0</span>개 즐겨찾기</div>
     <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
   </div>
@@ -320,6 +325,13 @@ function renderFavs() {
   container.innerHTML = html;
 }
 
+function showDebug() {
+  var favs = localStorage.getItem('awake_favs') || '{}';
+  var meta = localStorage.getItem('awake_fav_meta') || '{}';
+  var out = document.getElementById('debug-out');
+  out.style.display = 'block';
+  out.textContent = 'awake_favs:\n' + JSON.stringify(JSON.parse(favs), null, 2) + '\n\nawake_fav_meta:\n' + JSON.stringify(JSON.parse(meta), null, 2);
+}
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
