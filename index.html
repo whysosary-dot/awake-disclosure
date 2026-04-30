@@ -12,7 +12,6 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0c1445">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>📑 AWAKE 일일 공시 리포트</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
@@ -29,7 +28,7 @@ body{
   padding:40px 48px 36px;display:flex;flex-direction:column
 }
 .header{
-  text-align:center;padding-bottom:24px;margin-bottom:28px;
+  text-align:center;padding-bottom:24px;margin-bottom:0;
   border-bottom:3px solid #0c1445
 }
 .header h1{font-size:28px;font-weight:900;color:#0c1445;letter-spacing:-0.5px}
@@ -42,7 +41,25 @@ body{
   padding:6px 12px;font-size:11px;color:#1e3a8a;font-weight:600
 }
 .stat b{font-family:Inter;color:#0c1445;font-size:13px}
-#report-list{flex:1}
+
+/* ── 탭 ── */
+.tabs{
+  display:flex;gap:0;margin:24px 0 0 0;
+  border-bottom:2px solid #e2e8f0;
+}
+.tab-btn{
+  background:none;border:none;cursor:pointer;
+  padding:10px 22px;font-size:14px;font-weight:700;color:#64748b;
+  border-bottom:3px solid transparent;margin-bottom:-2px;
+  transition:color .15s,border-color .15s;
+  font-family:'Noto Sans KR',sans-serif;
+}
+.tab-btn:hover{color:#0c1445}
+.tab-btn.active{color:#0c1445;border-bottom-color:#0c1445}
+.tab-panel{display:none;padding-top:20px}
+.tab-panel.active{display:block}
+
+/* ── 리포트 목록 ── */
 .item{
   display:flex;align-items:center;justify-content:space-between;
   background:#f6f8fa;border:1px solid #e2e8f0;border-radius:8px;
@@ -50,29 +67,67 @@ body{
   text-decoration:none;color:inherit;
   transition:background .2s,border-color .2s,box-shadow .2s
 }
-.item:hover{
-  background:#f8fafc;border-color:#3b82f6;
-  box-shadow:0 2px 8px rgba(59,130,246,0.10)
-}
+.item:hover{background:#f8fafc;border-color:#3b82f6;box-shadow:0 2px 8px rgba(59,130,246,0.10)}
 .item.new{border-left:3px solid #dc2626}
 .item-date{font-size:15px;font-weight:700;color:#0c1445}
 .item-sub{font-size:11px;color:#64748b;margin-top:3px;line-height:1.5}
-.badge-new{
-  background:#dc2626;color:#fff;font-size:9px;font-weight:800;
-  padding:2px 8px;border-radius:4px;letter-spacing:.5px
-}
+.badge-new{background:#dc2626;color:#fff;font-size:9px;font-weight:800;padding:2px 8px;border-radius:4px;letter-spacing:.5px}
 .badge-link{color:#1e3a8a;font-size:12px;font-weight:700}
-.empty{
-  text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px
+.empty{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px}
+
+/* ── 즐겨찾기 탭 ── */
+.fav-toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:16px;flex-wrap:wrap;gap:8px;
 }
-.footer{
-  text-align:center;margin-top:24px;font-size:10px;color:#94a3b8;line-height:1.6
+.fav-count{font-size:13px;color:#64748b}
+.fav-clear-btn{
+  background:none;border:1px solid #fca5a5;color:#ef4444;
+  font-size:12px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;
+  font-family:'Noto Sans KR',sans-serif;
 }
+.fav-clear-btn:hover{background:#fef2f2}
+.fav-card{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:#fffbeb;border:1px solid #fde68a;border-radius:10px;
+  padding:14px 18px;margin-bottom:10px;
+}
+.fav-card:hover{background:#fef9c3;border-color:#f59e0b;box-shadow:0 2px 8px rgba(245,158,11,.12)}
+.fav-info{}
+.fav-name{font-size:16px;font-weight:800;color:#0c1445}
+.fav-meta{font-size:12px;color:#78716c;margin-top:3px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.fav-sig{
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;
+  background:#dcfce7;color:#166534;
+}
+.fav-sig.down{background:#fee2e2;color:#991b1b;}
+.fav-sig.neutral{background:#f1f5f9;color:#475569;}
+.fav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.fav-link{
+  background:#0c1445;color:#fff;font-size:12px;font-weight:700;
+  padding:7px 14px;border-radius:7px;text-decoration:none;
+  transition:background .15s;white-space:nowrap;
+}
+.fav-link:hover{background:#1e3a8a}
+.fav-remove{
+  background:none;border:1.5px solid #fca5a5;color:#ef4444;
+  font-size:16px;padding:5px 8px;border-radius:7px;cursor:pointer;
+  line-height:1;
+}
+.fav-remove:hover{background:#fee2e2}
+.fav-empty{
+  text-align:center;padding:48px 20px;color:#94a3b8;font-size:14px;line-height:1.8;
+}
+.fav-empty .big{font-size:40px;margin-bottom:12px}
+
+.footer{text-align:center;margin-top:24px;font-size:10px;color:#94a3b8;line-height:1.6}
 .footer a{color:#3b82f6;text-decoration:none}
 @media(max-width:640px){
   .wrap{padding:24px 20px}
   .header h1{font-size:22px}
   .item{padding:12px 14px}
+  .tab-btn{padding:10px 14px;font-size:13px}
+  .fav-card{padding:12px 14px}
 }
 </style>
 </head>
@@ -88,7 +143,25 @@ body{
   </div>
 </div>
 
-<div id="report-list"></div>
+<!-- 탭 -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('reports',this)">📋 리포트 목록</button>
+  <button class="tab-btn" id="fav-tab-btn" onclick="switchTab('favs',this)">⭐ 즐겨찾기 <span id="fav-tab-count" style="font-size:11px;background:#f59e0b;color:#fff;padding:1px 6px;border-radius:10px;margin-left:4px;"></span></button>
+</div>
+
+<!-- 리포트 목록 탭 -->
+<div class="tab-panel active" id="tab-reports">
+  <div id="report-list"></div>
+</div>
+
+<!-- 즐겨찾기 탭 -->
+<div class="tab-panel" id="tab-favs">
+  <div class="fav-toolbar">
+    <div class="fav-count"><span id="fav-total">0</span>개 즐겨찾기</div>
+    <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
+  </div>
+  <div id="fav-list"></div>
+</div>
 
 <div class="footer">
   ⚠️ 자동 생성 리포트 — 투자 권유 아님. 매매 책임은 본인.<br>
@@ -98,7 +171,7 @@ body{
 </div>
 
 <script>
-// 리포트 목록 — 새 리포트 추가 시 맨 앞에 객체 push
+// ── 리포트 목록 ──────────────────────────────────────────────────────────
 const reports = [
   {
     d: "2026-04-30",
@@ -121,8 +194,7 @@ const reports = [
 ];
 
 const list = document.getElementById('report-list');
-const countEl = document.getElementById('stat-count');
-countEl.textContent = reports.length;
+document.getElementById('stat-count').textContent = reports.length;
 
 if (reports.length === 0) {
   list.innerHTML = '<div class="empty">발행된 리포트가 없습니다. 평일 오후 8시 이후에 다시 확인하세요.</div>';
@@ -144,6 +216,121 @@ if (reports.length === 0) {
     list.appendChild(a);
   });
 }
+
+// ── 탭 전환 ──────────────────────────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  if (id === 'favs') renderFavs();
+}
+
+// ── localStorage 헬퍼 ────────────────────────────────────────────────────
+function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
+function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
+
+// ── 배지 카운트 업데이트 ─────────────────────────────────────────────────
+function updateFavCount() {
+  var f = getFavs();
+  var cnt = Object.keys(f).length;
+  var el = document.getElementById('fav-tab-count');
+  if (el) el.textContent = cnt > 0 ? cnt : '';
+  var tot = document.getElementById('fav-total');
+  if (tot) tot.textContent = cnt;
+}
+
+// ── 즐겨찾기 탭 렌더링 ───────────────────────────────────────────────────
+function renderFavs() {
+  var f = getFavs();
+  var m = getFavMeta();
+  var container = document.getElementById('fav-list');
+  var codes = Object.keys(f);
+  updateFavCount();
+
+  if (codes.length === 0) {
+    container.innerHTML = '<div class="fav-empty"><div class="big">⭐</div>즐겨찾기한 종목이 없습니다.<br>각 리포트에서 회사명 옆 ☆ 버튼을 눌러 추가하세요.</div>';
+    return;
+  }
+
+  // 날짜 최신순 정렬
+  codes.sort(function(a, b) {
+    var da = (m[a] && m[a].date) || '';
+    var db = (m[b] && m[b].date) || '';
+    return db.localeCompare(da);
+  });
+
+  // 날짜별 그룹핑
+  var byDate = {};
+  codes.forEach(function(code) {
+    var meta = m[code] || {};
+    var date = meta.date || '날짜 미상';
+    if (!byDate[date]) byDate[date] = [];
+    byDate[date].push({code, meta});
+  });
+
+  var html = '';
+  var sortedDates = Object.keys(byDate).sort(function(a,b){return b.localeCompare(a);});
+
+  sortedDates.forEach(function(date) {
+    var dateLabel = date !== '날짜 미상'
+      ? date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$1년 $2월 $3일')
+      : '날짜 미상';
+    html += '<div style="font-size:12px;font-weight:700;color:#94a3b8;margin:16px 0 8px 2px;letter-spacing:.3px;">📅 ' + dateLabel + '</div>';
+
+    byDate[date].forEach(function(item) {
+      var code = item.code;
+      var meta = item.meta;
+      var name = meta.name || code;
+      var anchor = meta.anchor || '';
+      var sig = meta.signal || '';
+      var reportUrl = date !== '날짜 미상'
+        ? 'reports/AWAKE_' + date + '.html' + (anchor ? '#' + anchor : '')
+        : '#';
+      var sigLabel = sig==='up'?'매수▲':(sig==='down'?'매도▼':'중립');
+      var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
+
+      html += '<div class="fav-card">' +
+        '<div class="fav-info">' +
+          '<div class="fav-name">⭐ ' + escHtml(name) + '</div>' +
+          '<div class="fav-meta">' +
+            '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
+            '<span class="' + sigCls + '">' + sigLabel + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="fav-actions">' +
+          '<a class="fav-link" href="' + reportUrl + '">리포트 보기 →</a>' +
+          '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
+        '</div>' +
+      '</div>';
+    });
+  });
+
+  container.innerHTML = html;
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function removeFav(code) {
+  var f = getFavs(); delete f[code]; saveFavs(f);
+  var m = getFavMeta(); delete m[code]; saveFavMeta(m);
+  updateFavCount();
+  renderFavs();
+}
+
+function clearAllFavsIndex() {
+  if (!confirm('즐겨찾기를 모두 초기화할까요?')) return;
+  saveFavs({}); saveFavMeta({});
+  updateFavCount();
+  renderFavs();
+}
+
+// 초기 카운트 표시
+updateFavCount();
 </script>
 </body>
 </html>

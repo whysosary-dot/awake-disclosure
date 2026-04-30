@@ -1497,7 +1497,7 @@ for d in DISCLOSURES:
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
-<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" data-signal="{d["signal_kind"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1516,25 +1516,35 @@ function idxFilter(btn, group, val) {
 }
 function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
+function storeMeta(btn, code) {
+  var m = getFavMeta();
+  m[code] = { name: btn.dataset.name||code, date: btn.dataset.date||'', anchor: btn.dataset.anchor||'', signal: btn.dataset.signal||'' };
+  saveFavMeta(m);
+}
+function removeMeta(code) {
+  var m = getFavMeta(); delete m[code]; saveFavMeta(m);
+}
 function toggleFavFromIdx(btn, code) {
   var f = getFavs();
-  if (f[code]) { delete f[code]; btn.textContent='☆'; btn.classList.remove('fav-on'); }
-  else { f[code]=1; btn.textContent='⭐'; btn.classList.add('fav-on'); }
+  if (f[code]) { delete f[code]; btn.textContent='☆'; btn.classList.remove('fav-on'); removeMeta(code); }
+  else { f[code]=1; btn.textContent='⭐'; btn.classList.add('fav-on'); storeMeta(btn, code); }
   saveFavs(f);
-  // 기업 페이지 별도 업데이트
   var sp = document.getElementById('fav-btn-'+code);
   if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
   applyIdxFilter();
 }
 function toggleFavFromPage(code) {
   var f = getFavs();
-  if (f[code]) { delete f[code]; } else { f[code]=1; }
+  var btn = document.getElementById('fav-btn-'+code);
+  if (f[code]) { delete f[code]; removeMeta(code); }
+  else { f[code]=1; if(btn) storeMeta(btn, code); }
   saveFavs(f);
-  var sp = document.getElementById('fav-btn-'+code);
-  if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
-  // 인덱스 행 별도 업데이트
+  if(btn) { btn.textContent = f[code]?'⭐':'☆'; btn.classList.toggle('fav-on', !!f[code]); }
   document.querySelectorAll('.fav-star-idx[data-code="'+code+'"]').forEach(function(b){
     b.textContent = f[code]?'⭐':'☆'; b.classList.toggle('fav-on', !!f[code]);
+    if(f[code]) storeMeta(b, code);
   });
   applyIdxFilter();
 }
@@ -1545,7 +1555,7 @@ function idxToggleFav(btn) {
 }
 function clearAllFav() {
   if(!confirm('즐겨찾기를 모두 초기화할까요?')) return;
-  saveFavs({});
+  saveFavs({}); saveFavMeta({});
   document.querySelectorAll('.fav-star-idx,.fav-star-page').forEach(function(b){
     b.textContent='☆'; b.classList.remove('fav-on');
   });
@@ -1698,7 +1708,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-anchor="stock-{html.escape(code)}-{first['id']}" data-signal="{chosen['signal_kind']}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
