@@ -1317,6 +1317,17 @@ html, body {{ margin:0; padding:0; font-family:'Noto Sans KR','Apple SD Gothic N
 .index-table td {{ padding:8px 6px; border-bottom:1px solid var(--c-line); white-space:nowrap; vertical-align:middle; }}
 .index-table td.disc {{ white-space:normal; max-width:300px; }}
 .index-table tr:hover {{ background:#f1f5f9; }}
+.fav-star-idx,.fav-star-page {{
+  background:none; border:none; cursor:pointer; font-size:18px;
+  padding:2px 4px; border-radius:6px; transition:transform .15s;
+  line-height:1; color:#94a3b8;
+}}
+.fav-star-idx:hover,.fav-star-page:hover {{ transform:scale(1.3); color:#f59e0b; }}
+.fav-star-idx.fav-on,.fav-star-page.fav-on {{ color:#f59e0b; }}
+.fav-star-page {{
+  font-size:22px; padding:4px 6px; background:rgba(245,158,11,.08);
+  border:1.5px solid rgba(245,158,11,.25); border-radius:8px;
+}}
 .idx-anchor {{ color:var(--c-dark); text-decoration:none; }}
 .idx-btn {{ background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; padding:5px 12px; font-size:13px; font-weight:600; cursor:pointer; color:var(--c-dark); transition:all 0.15s; }}
 .idx-btn:hover {{ background:#e2e8f0; }}
@@ -1462,9 +1473,12 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="sort" onclick="idxSort('chg_asc')">등락률↑</button>
   <button class="idx-btn" data-group="sort" onclick="idxSort('signal')">시그널순</button>
   <button class="idx-btn" data-group="sort" onclick="idxSort('cat')">공시유형순</button>
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);margin-left:10px;">즐겨찾기</span>
+  <button class="idx-btn" data-group="fav" id="fav-filter-btn" onclick="idxToggleFav(this)">⭐ 즐겨찾기만</button>
+  <button class="idx-btn" style="font-size:11px;color:#ef4444;" onclick="clearAllFav()">초기화</button>
 </div>
 <table class="index-table" id="idx-table"><thead>
-<tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
+<tr><th style="width:32px;text-align:center;">⭐</th><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
 
 for d in DISCLOSURES:
     sig_class = {"up":"sig-buy","down":"sig-sell","neutral":"sig-neutral"}.get(d["signal_kind"],"sig-neutral")
@@ -1482,7 +1496,8 @@ for d in DISCLOSURES:
     elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
-    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}">
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1492,14 +1507,62 @@ for d in DISCLOSURES:
 </tr>""")
 parts_html.append("""</tbody></table>
 <script>
-var idxState = { sig: 'all', cat: 'all', sort: 'time' };
+var idxState = { sig: 'all', cat: 'all', sort: 'time', fav: false };
 function idxFilter(btn, group, val) {
   idxState[group] = val;
-  // active 버튼 업데이트 (같은 그룹만)
   document.querySelectorAll('.idx-btn[data-group="'+group+'"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   applyIdxFilter();
 }
+function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
+function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
+function toggleFavFromIdx(btn, code) {
+  var f = getFavs();
+  if (f[code]) { delete f[code]; btn.textContent='☆'; btn.classList.remove('fav-on'); }
+  else { f[code]=1; btn.textContent='⭐'; btn.classList.add('fav-on'); }
+  saveFavs(f);
+  // 기업 페이지 별도 업데이트
+  var sp = document.getElementById('fav-btn-'+code);
+  if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
+  applyIdxFilter();
+}
+function toggleFavFromPage(code) {
+  var f = getFavs();
+  if (f[code]) { delete f[code]; } else { f[code]=1; }
+  saveFavs(f);
+  var sp = document.getElementById('fav-btn-'+code);
+  if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
+  // 인덱스 행 별도 업데이트
+  document.querySelectorAll('.fav-star-idx[data-code="'+code+'"]').forEach(function(b){
+    b.textContent = f[code]?'⭐':'☆'; b.classList.toggle('fav-on', !!f[code]);
+  });
+  applyIdxFilter();
+}
+function idxToggleFav(btn) {
+  idxState.fav = !idxState.fav;
+  btn.classList.toggle('active', idxState.fav);
+  applyIdxFilter();
+}
+function clearAllFav() {
+  if(!confirm('즐겨찾기를 모두 초기화할까요?')) return;
+  saveFavs({});
+  document.querySelectorAll('.fav-star-idx,.fav-star-page').forEach(function(b){
+    b.textContent='☆'; b.classList.remove('fav-on');
+  });
+  idxState.fav=false;
+  var fb=document.getElementById('fav-filter-btn'); if(fb) fb.classList.remove('active');
+  applyIdxFilter();
+}
+function initFavStars() {
+  var f = getFavs();
+  document.querySelectorAll('.fav-star-idx').forEach(function(b){
+    var c=b.dataset.code; if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+  });
+  document.querySelectorAll('.fav-star-page').forEach(function(b){
+    var c=b.dataset.code; if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+  });
+}
+window.addEventListener('load', initFavStars);
 function idxSort(mode) {
   idxState.sort = mode;
   document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => b.classList.remove('active'));
@@ -1522,11 +1585,13 @@ function applyIdxFilter() {
   var rows = document.querySelectorAll('#idx-tbody tr');
   var sigF = idxState.sig, catF = idxState.cat;
   var visible = 0;
+  var favs = getFavs();
   rows.forEach(function(r) {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
-    r.style.display = (sigOk && catOk) ? '' : 'none';
-    if(sigOk && catOk) visible++;
+    var favOk = !idxState.fav || !!favs[r.dataset.code];
+    r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
+    if(sigOk && catOk && favOk) visible++;
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
@@ -1631,7 +1696,10 @@ for code, recs in companies:
 <div class="page-body">
 <div class="stock-meta">
   <div class="co-block">
-    <div class="co-name">{html.escape(company)}</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="co-name">{html.escape(company)}</div>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+    </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
       <span class="co-sector">{html.escape(industry)}</span>
