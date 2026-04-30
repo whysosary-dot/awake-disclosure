@@ -205,1694 +205,1708 @@ new Chart(ctx, {
 </div>
 <div class="page-body">
 <h2 style="font-size:30px; font-weight:900; color:var(--c-darkest); margin:6px 0 4px 0;">📋 오늘의 공시 인덱스 (240건)</h2>
-<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">2026-04-30 · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동</div>
-<div id="idx-controls" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
-  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);">시그널:</span>
-  <button class="idx-btn active" onclick="idxFilter(this,'all')">전체</button>
-  <button class="idx-btn" onclick="idxFilter(this,'up')">매수▲</button>
-  <button class="idx-btn" onclick="idxFilter(this,'down')">매도▼</button>
-  <button class="idx-btn" onclick="idxFilter(this,'neutral')">중립</button>
-  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);margin-left:8px;">정렬:</span>
-  <button class="idx-btn" onclick="idxSort('time')">시간순</button>
-  <button class="idx-btn" onclick="idxSort('chg_desc')">등락률↓</button>
-  <button class="idx-btn" onclick="idxSort('chg_asc')">등락률↑</button>
-  <button class="idx-btn" onclick="idxSort('signal')">시그널순</button>
+<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">2026-04-30 · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동 · <span id="idx-count-lbl">240건 표시</span></div>
+<div id="idx-controls" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">시그널</span>
+  <button class="idx-btn active" data-group="sig" onclick="idxFilter(this,'sig','all')">전체</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','up')">매수▲</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','down')">매도▼</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','neutral')">중립</button>
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);margin-left:6px;">공시유형</span>
+  <button class="idx-btn active" data-group="cat" onclick="idxFilter(this,'cat','all')">전체</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','earnings')">잠정실적</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ir')">IR/밸류업</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','contract')">공급계약</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','block')">대량보유</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','cb')">CB/사채</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','rights')">유상증자</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
+  <button class="idx-btn active" data-group="sort" onclick="idxSort('time')">시간순</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('chg_desc')">등락률↓</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('chg_asc')">등락률↑</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('signal')">시그널순</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('cat')">공시유형순</button>
 </div>
 <table class="index-table" id="idx-table"><thead>
-<tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody"><tr data-signal="down" data-chg="-1.3216" data-time="07:00" data-sigord="1">
+<tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody"><tr data-signal="down" data-chg="-1.3216" data-time="07:00" data-sigord="1" data-cat="rights">
 <td><strong>07:00</strong></td>
 <td><a class="idx-anchor" href="#stock-476040-139190"><strong>오가노이드사이언스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A476040</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.32%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.0213" data-time="07:51" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.0213" data-time="07:51" data-sigord="2" data-cat="earnings">
 <td><strong>07:51</strong></td>
 <td><a class="idx-anchor" href="#stock-039490-139191"><strong>키움증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A039490</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.02%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.0213" data-time="07:51" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.0213" data-time="07:51" data-sigord="2" data-cat="ir">
 <td><strong>07:51</strong></td>
 <td><a class="idx-anchor" href="#stock-039490-139192"><strong>키움증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A039490</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.02%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.0909" data-time="08:03" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.0909" data-time="08:03" data-sigord="2" data-cat="earnings">
 <td><strong>08:03</strong></td>
 <td><a class="idx-anchor" href="#stock-035420-139193"><strong>NAVER</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035420</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.09%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="-4.0909" data-time="08:03" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-4.0909" data-time="08:03" data-sigord="1" data-cat="earnings">
 <td><strong>08:03</strong></td>
 <td><a class="idx-anchor" href="#stock-035420-139194"><strong>NAVER</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035420</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.09%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.7214" data-time="08:24" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.7214" data-time="08:24" data-sigord="2" data-cat="block">
 <td><strong>08:24</strong></td>
 <td><a class="idx-anchor" href="#stock-163730-139196"><strong>핑거</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A163730</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.72%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="down" data-chg="-2.9863" data-time="08:41" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.9863" data-time="08:41" data-sigord="1" data-cat="earnings">
 <td><strong>08:41</strong></td>
 <td><a class="idx-anchor" href="#stock-293490-139197"><strong>카카오게임즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A293490</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.99%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.4336" data-time="08:46" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.4336" data-time="08:46" data-sigord="2" data-cat="earnings">
 <td><strong>08:46</strong></td>
 <td><a class="idx-anchor" href="#stock-005930-139198"><strong>삼성전자</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005930</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.43%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="up" data-chg="-2.4336" data-time="08:53" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-2.4336" data-time="08:53" data-sigord="0" data-cat="dividend">
 <td><strong>08:53</strong></td>
 <td><a class="idx-anchor" href="#stock-005930-139199"><strong>삼성전자</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005930</td>
 <td class="disc">현금ㆍ현물배당결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.43%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="-3.9316" data-time="08:58" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-3.9316" data-time="08:58" data-sigord="1" data-cat="earnings">
 <td><strong>08:58</strong></td>
 <td><a class="idx-anchor" href="#stock-100840-139200"><strong>SNT에너지</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A100840</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.93%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="-6.0403" data-time="09:03" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-6.0403" data-time="09:03" data-sigord="1" data-cat="earnings">
 <td><strong>09:03</strong></td>
 <td><a class="idx-anchor" href="#stock-064960-139201"><strong>SNT모티브</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A064960</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.04%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="2.7491" data-time="09:03" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.7491" data-time="09:03" data-sigord="2" data-cat="earnings">
 <td><strong>09:03</strong></td>
 <td><a class="idx-anchor" href="#stock-003570-139202"><strong>SNT다이내믹스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A003570</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.75%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="4.2289" data-time="09:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="4.2289" data-time="09:04" data-sigord="2" data-cat="other">
 <td><strong>09:04</strong></td>
 <td><a class="idx-anchor" href="#stock-126730-139203"><strong>코칩</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A126730</td>
 <td class="disc">분기보고서 (2026.03)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +4.23%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.8169" data-time="09:10" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.8169" data-time="09:10" data-sigord="2" data-cat="earnings">
 <td><strong>09:10</strong></td>
 <td><a class="idx-anchor" href="#stock-036530-139204"><strong>SNT홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A036530</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.82%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="2.1810" data-time="09:10" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.1810" data-time="09:10" data-sigord="2" data-cat="other">
 <td><strong>09:10</strong></td>
 <td><a class="idx-anchor" href="#stock-404990-139205"><strong>신한서부티엔디리츠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A404990</td>
 <td class="disc">기타경영사항(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.18%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.5487" data-time="09:13" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.5487" data-time="09:13" data-sigord="2" data-cat="earnings">
 <td><strong>09:13</strong></td>
 <td><a class="idx-anchor" href="#stock-064400-139206"><strong>LG씨엔에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A064400</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.55%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="0.5706" data-time="09:18" data-sigord="0">
+</tr><tr data-signal="up" data-chg="0.5706" data-time="09:18" data-sigord="0" data-cat="contract">
 <td><strong>09:18</strong></td>
 <td><a class="idx-anchor" href="#stock-382900-139207"><strong>범한퓨얼셀</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A382900</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.57%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="3.6630" data-time="09:22" data-sigord="0">
+</tr><tr data-signal="up" data-chg="3.6630" data-time="09:22" data-sigord="0" data-cat="contract">
 <td><strong>09:22</strong></td>
 <td><a class="idx-anchor" href="#stock-282880-139208"><strong>코윈테크</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A282880</td>
 <td class="disc">단일판매ㆍ공급계약체결(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +3.66%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.5487" data-time="09:23" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.5487" data-time="09:23" data-sigord="2" data-cat="ir">
 <td><strong>09:23</strong></td>
 <td><a class="idx-anchor" href="#stock-064400-139209"><strong>LG씨엔에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A064400</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.55%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="-0.2113" data-time="09:24" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-0.2113" data-time="09:24" data-sigord="1" data-cat="earnings">
 <td><strong>09:24</strong></td>
 <td><a class="idx-anchor" href="#stock-012450-139210"><strong>한화에어로스페이스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A012450</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.21%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="down" data-chg="-8.7530" data-time="09:34" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-8.7530" data-time="09:34" data-sigord="1" data-cat="earnings">
 <td><strong>09:34</strong></td>
 <td><a class="idx-anchor" href="#stock-006360-139211"><strong>GS건설</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A006360</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -8.75%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="-2.7451" data-time="09:35" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.7451" data-time="09:35" data-sigord="1" data-cat="earnings">
 <td><strong>09:35</strong></td>
 <td><a class="idx-anchor" href="#stock-103140-139212"><strong>풍산</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A103140</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.75%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="-1.4161" data-time="09:36" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-1.4161" data-time="09:36" data-sigord="1" data-cat="earnings">
 <td><strong>09:36</strong></td>
 <td><a class="idx-anchor" href="#stock-005810-139213"><strong>풍산홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005810</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.42%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="-2.7451" data-time="09:44" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.7451" data-time="09:44" data-sigord="1" data-cat="earnings">
 <td><strong>09:44</strong></td>
 <td><a class="idx-anchor" href="#stock-103140-139214"><strong>풍산</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A103140</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.75%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.4161" data-time="09:45" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.4161" data-time="09:45" data-sigord="2" data-cat="earnings">
 <td><strong>09:45</strong></td>
 <td><a class="idx-anchor" href="#stock-005810-139215"><strong>풍산홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005810</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.42%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-8.6458" data-time="09:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-8.6458" data-time="09:57" data-sigord="2" data-cat="cb">
 <td><strong>09:57</strong></td>
 <td><a class="idx-anchor" href="#stock-140410-139216"><strong>메지온</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A140410</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -8.65%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="down" data-chg="-5.9454" data-time="09:58" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-5.9454" data-time="09:58" data-sigord="1" data-cat="earnings">
 <td><strong>09:58</strong></td>
 <td><a class="idx-anchor" href="#stock-317400-139217"><strong>자이에스앤디</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A317400</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.95%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.4717" data-time="10:07" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.4717" data-time="10:07" data-sigord="2" data-cat="earnings">
 <td><strong>10:07</strong></td>
 <td><a class="idx-anchor" href="#stock-214370-139218"><strong>케어젠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A214370</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.47%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="10:16" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="10:16" data-sigord="2" data-cat="ir">
 <td><strong>10:16</strong></td>
 <td><a class="idx-anchor" href="#stock-024850-139219"><strong>HLB이노베이션</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A024850</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.0436" data-time="10:19" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.0436" data-time="10:19" data-sigord="2" data-cat="block">
 <td><strong>10:19</strong></td>
 <td><a class="idx-anchor" href="#stock-093320-139220"><strong>케이아이엔엑스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A093320</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.04%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="up" data-chg="8.4132" data-time="10:25" data-sigord="0">
+</tr><tr data-signal="up" data-chg="8.4132" data-time="10:25" data-sigord="0" data-cat="contract">
 <td><strong>10:25</strong></td>
 <td><a class="idx-anchor" href="#stock-381620-139221"><strong>제닉스로보틱스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A381620</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +8.41%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.3084" data-time="10:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.3084" data-time="10:32" data-sigord="2" data-cat="ir">
 <td><strong>10:32</strong></td>
 <td><a class="idx-anchor" href="#stock-032640-139222"><strong>LG유플러스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A032640</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.31%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.8204" data-time="10:37" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.8204" data-time="10:37" data-sigord="2" data-cat="block">
 <td><strong>10:37</strong></td>
 <td><a class="idx-anchor" href="#stock-289080-139223"><strong>SV인베스트먼트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A289080</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.82%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.9890" data-time="10:39" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.9890" data-time="10:39" data-sigord="2" data-cat="earnings">
 <td><strong>10:39</strong></td>
 <td><a class="idx-anchor" href="#stock-022100-139224"><strong>포스코DX</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A022100</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.99%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.2141" data-time="11:05" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.2141" data-time="11:05" data-sigord="2" data-cat="block">
 <td><strong>11:05</strong></td>
 <td><a class="idx-anchor" href="#stock-285490-139225"><strong>노바텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A285490</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.21%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.4722" data-time="11:09" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.4722" data-time="11:09" data-sigord="2" data-cat="ir">
 <td><strong>11:09</strong></td>
 <td><a class="idx-anchor" href="#stock-393890-139226"><strong>더블유씨피</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A393890</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.47%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.6787" data-time="11:23" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.6787" data-time="11:23" data-sigord="2" data-cat="other">
 <td><strong>11:23</strong></td>
 <td><a class="idx-anchor" href="#stock-299900-139227"><strong>위지윅스튜디오</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A299900</td>
 <td class="disc">분기보고서 (2026.03)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.68%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.6046" data-time="11:28" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.6046" data-time="11:28" data-sigord="2" data-cat="earnings">
 <td><strong>11:28</strong></td>
 <td><a class="idx-anchor" href="#stock-009150-139228"><strong>삼성전기</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A009150</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.60%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.5700" data-time="11:31" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.5700" data-time="11:31" data-sigord="2" data-cat="other">
 <td><strong>11:31</strong></td>
 <td><a class="idx-anchor" href="#stock-044990-139229"><strong>에이치엔에스하이텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A044990</td>
 <td class="disc">분기보고서 (2026.03)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.57%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-3.3898" data-time="11:44" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-3.3898" data-time="11:44" data-sigord="0" data-cat="ir">
 <td><strong>11:44</strong></td>
 <td><a class="idx-anchor" href="#stock-014680-139230"><strong>한솔케미칼</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A014680</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.39%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.2411" data-time="12:01" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.2411" data-time="12:01" data-sigord="2" data-cat="ir">
 <td><strong>12:01</strong></td>
 <td><a class="idx-anchor" href="#stock-483650-139231"><strong>달바글로벌</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A483650</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.24%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.6648" data-time="12:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.6648" data-time="12:04" data-sigord="2" data-cat="other">
 <td><strong>12:04</strong></td>
 <td><a class="idx-anchor" href="#stock-094940-139232"><strong>푸른기술</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A094940</td>
 <td class="disc">상호변경안내</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.66%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.3339" data-time="12:49" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.3339" data-time="12:49" data-sigord="2" data-cat="ir">
 <td><strong>12:49</strong></td>
 <td><a class="idx-anchor" href="#stock-052400-139233"><strong>코나아이</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A052400</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.33%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="20.3620" data-time="12:50" data-sigord="0">
+</tr><tr data-signal="up" data-chg="20.3620" data-time="12:50" data-sigord="0" data-cat="contract">
 <td><strong>12:50</strong></td>
 <td><a class="idx-anchor" href="#stock-062040-139234"><strong>산일전기</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A062040</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +20.36%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="6.6489" data-time="12:56" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="6.6489" data-time="12:56" data-sigord="2" data-cat="earnings">
 <td><strong>12:56</strong></td>
 <td><a class="idx-anchor" href="#stock-195870-139235"><strong>해성디에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A195870</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +6.65%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="2.8269" data-time="12:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.8269" data-time="12:57" data-sigord="2" data-cat="earnings">
 <td><strong>12:57</strong></td>
 <td><a class="idx-anchor" href="#stock-047050-139236"><strong>포스코인터내셔널</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A047050</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.83%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.4483" data-time="13:02" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.4483" data-time="13:02" data-sigord="2" data-cat="earnings">
 <td><strong>13:02</strong></td>
 <td><a class="idx-anchor" href="#stock-003670-139237"><strong>포스코퓨처엠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A003670</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.45%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.4483" data-time="13:03" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.4483" data-time="13:03" data-sigord="2" data-cat="earnings">
 <td><strong>13:03</strong></td>
 <td><a class="idx-anchor" href="#stock-003670-139238"><strong>포스코퓨처엠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A003670</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.45%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.3397" data-time="13:07" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.3397" data-time="13:07" data-sigord="2" data-cat="other">
 <td><strong>13:07</strong></td>
 <td><a class="idx-anchor" href="#stock-063440-139239"><strong>SM Life Design</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A063440</td>
 <td class="disc">분기보고서 (2026.03)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.34%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-1.7157" data-time="13:23" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-1.7157" data-time="13:23" data-sigord="0" data-cat="other">
 <td><strong>13:23</strong></td>
 <td><a class="idx-anchor" href="#stock-068270-139240"><strong>셀트리온</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A068270</td>
 <td class="disc">투자판단관련주요경영사항              (CTP6 SC(허쥬마 피하주사 제형) 유럽 제형 추가 신청)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.72%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="13:28" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="13:28" data-sigord="2" data-cat="earnings">
 <td><strong>13:28</strong></td>
 <td><a class="idx-anchor" href="#stock--139241"><strong>메쥬</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#666">-</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.5767" data-time="13:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.5767" data-time="13:32" data-sigord="2" data-cat="earnings">
 <td><strong>13:32</strong></td>
 <td><a class="idx-anchor" href="#stock-051910-139242"><strong>LG화학</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A051910</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.58%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.8095" data-time="13:34" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.8095" data-time="13:34" data-sigord="2" data-cat="earnings">
 <td><strong>13:34</strong></td>
 <td><a class="idx-anchor" href="#stock-002390-139243"><strong>한독</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A002390</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.81%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.5643" data-time="13:34" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.5643" data-time="13:34" data-sigord="2" data-cat="block">
 <td><strong>13:34</strong></td>
 <td><a class="idx-anchor" href="#stock-322310-139244"><strong>오로스테크놀로지</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A322310</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.56%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="down" data-chg="-6.8812" data-time="13:36" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-6.8812" data-time="13:36" data-sigord="1" data-cat="earnings">
 <td><strong>13:36</strong></td>
 <td><a class="idx-anchor" href="#stock-058430-139245"><strong>포스코스틸리온</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A058430</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.88%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.8703" data-time="13:36" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.8703" data-time="13:36" data-sigord="2" data-cat="earnings">
 <td><strong>13:36</strong></td>
 <td><a class="idx-anchor" href="#stock-018880-139246"><strong>한온시스템</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A018880</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.87%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="up" data-chg="-4.9303" data-time="13:39" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-4.9303" data-time="13:39" data-sigord="0" data-cat="ir">
 <td><strong>13:39</strong></td>
 <td><a class="idx-anchor" href="#stock-319660-139247"><strong>피에스케이</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A319660</td>
 <td class="disc">기업가치제고계획(자율공시)              (2025년 이행현황)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.93%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="1.9737" data-time="13:39" data-sigord="1">
+</tr><tr data-signal="down" data-chg="1.9737" data-time="13:39" data-sigord="1" data-cat="rights">
 <td><strong>13:39</strong></td>
 <td><a class="idx-anchor" href="#stock-006490-139248"><strong>인스코비</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A006490</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.97%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="down" data-chg="-6.8812" data-time="13:40" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-6.8812" data-time="13:40" data-sigord="1" data-cat="earnings">
 <td><strong>13:40</strong></td>
 <td><a class="idx-anchor" href="#stock-058430-139249"><strong>포스코스틸리온</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A058430</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.88%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.2436" data-time="13:44" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.2436" data-time="13:44" data-sigord="2" data-cat="ir">
 <td><strong>13:44</strong></td>
 <td><a class="idx-anchor" href="#stock-078930-139250"><strong>GS</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A078930</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.24%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.2436" data-time="13:46" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.2436" data-time="13:46" data-sigord="2" data-cat="ir">
 <td><strong>13:46</strong></td>
 <td><a class="idx-anchor" href="#stock-078930-139251"><strong>GS</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A078930</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.24%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="-1.7167" data-time="13:48" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-1.7167" data-time="13:48" data-sigord="1" data-cat="earnings">
 <td><strong>13:48</strong></td>
 <td><a class="idx-anchor" href="#stock-000100-139252"><strong>유한양행</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000100</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.72%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="up" data-chg="-4.6779" data-time="13:53" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-4.6779" data-time="13:53" data-sigord="0" data-cat="ir">
 <td><strong>13:53</strong></td>
 <td><a class="idx-anchor" href="#stock-031980-139253"><strong>피에스케이홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A031980</td>
 <td class="disc">기업가치제고계획(자율공시)              ((2025년 이행현황))</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.68%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.8892" data-time="13:54" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.8892" data-time="13:54" data-sigord="2" data-cat="other">
 <td><strong>13:54</strong></td>
 <td><a class="idx-anchor" href="#stock-455180-139254"><strong>케이지에이</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A455180</td>
 <td class="disc">주요사항보고서(유형자산양도결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.89%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.5587" data-time="13:56" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.5587" data-time="13:56" data-sigord="0" data-cat="dividend">
 <td><strong>13:56</strong></td>
 <td><a class="idx-anchor" href="#stock-033920-139255"><strong>무학</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A033920</td>
 <td class="disc">현금ㆍ현물배당결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.56%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.4040" data-time="14:00" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.4040" data-time="14:00" data-sigord="2" data-cat="earnings">
 <td><strong>14:00</strong></td>
 <td><a class="idx-anchor" href="#stock-194370-139256"><strong>제이에스코퍼레이션</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A194370</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.40%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.5230" data-time="14:08" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.5230" data-time="14:08" data-sigord="2" data-cat="ir">
 <td><strong>14:08</strong></td>
 <td><a class="idx-anchor" href="#stock-017670-139257"><strong>SK텔레콤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A017670</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.52%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.6893" data-time="14:14" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.6893" data-time="14:14" data-sigord="2" data-cat="earnings">
 <td><strong>14:14</strong></td>
 <td><a class="idx-anchor" href="#stock-138930-139258"><strong>BNK금융지주</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A138930</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.4925" data-time="14:15" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.4925" data-time="14:15" data-sigord="2" data-cat="earnings">
 <td><strong>14:15</strong></td>
 <td><a class="idx-anchor" href="#stock-005490-139259"><strong>POSCO홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005490</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.49%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="-0.8584" data-time="14:15" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-0.8584" data-time="14:15" data-sigord="1" data-cat="earnings">
 <td><strong>14:15</strong></td>
 <td><a class="idx-anchor" href="#stock-286940-139260"><strong>롯데이노베이트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A286940</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.86%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.2062" data-time="14:15" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.2062" data-time="14:15" data-sigord="2" data-cat="block">
 <td><strong>14:15</strong></td>
 <td><a class="idx-anchor" href="#stock-004970-139261"><strong>신라교역</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A004970</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.21%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.4925" data-time="14:15" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.4925" data-time="14:15" data-sigord="2" data-cat="other">
 <td><strong>14:15</strong></td>
 <td><a class="idx-anchor" href="#stock-005490-139262"><strong>POSCO홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005490</td>
 <td class="disc">수시공시의무관련사항(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.49%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.9691" data-time="14:16" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.9691" data-time="14:16" data-sigord="2" data-cat="ir">
 <td><strong>14:16</strong></td>
 <td><a class="idx-anchor" href="#stock-253450-139263"><strong>스튜디오드래곤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A253450</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.97%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.8584" data-time="14:17" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.8584" data-time="14:17" data-sigord="2" data-cat="ir">
 <td><strong>14:17</strong></td>
 <td><a class="idx-anchor" href="#stock-286940-139264"><strong>롯데이노베이트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A286940</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.86%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:17" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:17" data-sigord="0" data-cat="dividend">
 <td><strong>14:17</strong></td>
 <td><a class="idx-anchor" href="#stock-138930-139265"><strong>BNK금융지주</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A138930</td>
 <td class="disc">현금ㆍ현물배당결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.3777" data-time="14:18" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.3777" data-time="14:18" data-sigord="2" data-cat="block">
 <td><strong>14:18</strong></td>
 <td><a class="idx-anchor" href="#stock-086520-139266"><strong>에코프로</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A086520</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.38%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.6507" data-time="14:20" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.6507" data-time="14:20" data-sigord="2" data-cat="earnings">
 <td><strong>14:20</strong></td>
 <td><a class="idx-anchor" href="#stock-066970-139267"><strong>엘앤에프</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066970</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.65%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.1269" data-time="14:28" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.1269" data-time="14:28" data-sigord="2" data-cat="other">
 <td><strong>14:28</strong></td>
 <td><a class="idx-anchor" href="#stock-396470-139268"><strong>워트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A396470</td>
 <td class="disc">분기보고서 (2026.03)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.13%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.3906" data-time="14:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.3906" data-time="14:32" data-sigord="2" data-cat="ir">
 <td><strong>14:32</strong></td>
 <td><a class="idx-anchor" href="#stock-006040-139269"><strong>동원산업</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A006040</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.39%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.3110" data-time="14:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.3110" data-time="14:32" data-sigord="2" data-cat="other">
 <td><strong>14:32</strong></td>
 <td><a class="idx-anchor" href="#stock-044450-139270"><strong>KSS해운</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A044450</td>
 <td class="disc">신규시설투자등</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.31%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.3426" data-time="14:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.3426" data-time="14:32" data-sigord="2" data-cat="ir">
 <td><strong>14:32</strong></td>
 <td><a class="idx-anchor" href="#stock-020150-139271"><strong>롯데에너지머티리얼즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A020150</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.34%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.8156" data-time="14:35" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.8156" data-time="14:35" data-sigord="2" data-cat="earnings">
 <td><strong>14:35</strong></td>
 <td><a class="idx-anchor" href="#stock-009520-139272"><strong>포스코엠텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A009520</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.82%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="14:35" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="14:35" data-sigord="2" data-cat="other">
 <td><strong>14:35</strong></td>
 <td><a class="idx-anchor" href="#stock-066410-139273"><strong>버킷스튜디오</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066410</td>
 <td class="disc">기타경영사항(자율공시)              ((주)버킷스튜디오 최대주주 변경 재추진)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:38" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:38" data-sigord="0" data-cat="buyback">
 <td><strong>14:38</strong></td>
 <td><a class="idx-anchor" href="#stock-138930-139274"><strong>BNK금융지주</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A138930</td>
 <td class="disc">주요사항보고서(자기주식취득신탁계약체결결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="30.0000" data-time="14:41" data-sigord="1">
+</tr><tr data-signal="down" data-chg="30.0000" data-time="14:41" data-sigord="1" data-cat="rights">
 <td><strong>14:41</strong></td>
 <td><a class="idx-anchor" href="#stock-403550-139275"><strong>쏘카</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A403550</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +30.00%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="0.8383" data-time="14:42" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.8383" data-time="14:42" data-sigord="2" data-cat="ir">
 <td><strong>14:42</strong></td>
 <td><a class="idx-anchor" href="#stock-137310-139276"><strong>에스디바이오센서</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A137310</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.84%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="14:43" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="14:43" data-sigord="2" data-cat="ir">
 <td><strong>14:43</strong></td>
 <td><a class="idx-anchor" href="#stock-035600-139277"><strong>KG이니시스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035600</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="2.2272" data-time="14:44" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.2272" data-time="14:44" data-sigord="2" data-cat="earnings">
 <td><strong>14:44</strong></td>
 <td><a class="idx-anchor" href="#stock-052260-139278"><strong>현대바이오랜드</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A052260</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.23%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.8092" data-time="14:48" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.8092" data-time="14:48" data-sigord="2" data-cat="ir">
 <td><strong>14:48</strong></td>
 <td><a class="idx-anchor" href="#stock-294570-139279"><strong>쿠콘</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A294570</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.81%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:48" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.6893" data-time="14:48" data-sigord="0" data-cat="buyback">
 <td><strong>14:48</strong></td>
 <td><a class="idx-anchor" href="#stock-138930-139280"><strong>BNK금융지주</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A138930</td>
 <td class="disc">주식소각결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.3426" data-time="14:49" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.3426" data-time="14:49" data-sigord="2" data-cat="ir">
 <td><strong>14:49</strong></td>
 <td><a class="idx-anchor" href="#stock-020150-139281"><strong>롯데에너지머티리얼즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A020150</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.34%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1" data-cat="other">
 <td><strong>14:52</strong></td>
 <td><a class="idx-anchor" href="#stock-066790-139282"><strong>씨씨에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066790</td>
 <td class="disc">소송등의제기ㆍ신청(경영권분쟁소송)              (이사회결의효력정지 등 가처분)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1" data-cat="other">
 <td><strong>14:52</strong></td>
 <td><a class="idx-anchor" href="#stock-066790-139283"><strong>씨씨에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066790</td>
 <td class="disc">소송등의제기ㆍ신청(경영권분쟁소송)              (주주총회 결의 효력정지 등 가처분)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1" data-cat="other">
 <td><strong>14:52</strong></td>
 <td><a class="idx-anchor" href="#stock-066790-139284"><strong>씨씨에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066790</td>
 <td class="disc">소송등의제기ㆍ신청(경영권분쟁소송)              (이사지위확인 가처분)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1" data-cat="other">
 <td><strong>14:52</strong></td>
 <td><a class="idx-anchor" href="#stock-066790-139285"><strong>씨씨에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066790</td>
 <td class="disc">소송등의제기ㆍ신청(경영권분쟁소송)              (대표이사 직무집행정지 가처분)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="14:52" data-sigord="1" data-cat="other">
 <td><strong>14:52</strong></td>
 <td><a class="idx-anchor" href="#stock-066790-139286"><strong>씨씨에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066790</td>
 <td class="disc">소송등의제기ㆍ신청(경영권분쟁소송)              (대표이사 직무집행정지 가처분)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="up" data-chg="-4.5045" data-time="14:55" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-4.5045" data-time="14:55" data-sigord="0" data-cat="buyback">
 <td><strong>14:55</strong></td>
 <td><a class="idx-anchor" href="#stock-259960-139287"><strong>크래프톤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A259960</td>
 <td class="disc">주요사항보고서(자기주식취득결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="14:56" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="14:56" data-sigord="2" data-cat="buyback">
 <td><strong>14:56</strong></td>
 <td><a class="idx-anchor" href="#stock-259960-139288"><strong>크래프톤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A259960</td>
 <td class="disc">주요사항보고서(자기주식처분결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.2073" data-time="14:56" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.2073" data-time="14:56" data-sigord="0" data-cat="contract">
 <td><strong>14:56</strong></td>
 <td><a class="idx-anchor" href="#stock-005960-139289"><strong>동부건설</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005960</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.21%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="14:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="14:57" data-sigord="2" data-cat="earnings">
 <td><strong>14:57</strong></td>
 <td><a class="idx-anchor" href="#stock-259960-139290"><strong>크래프톤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A259960</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.6471" data-time="15:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.6471" data-time="15:04" data-sigord="2" data-cat="ir">
 <td><strong>15:04</strong></td>
 <td><a class="idx-anchor" href="#stock-000370-139291"><strong>한화손해보험</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000370</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.65%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2951" data-time="15:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2951" data-time="15:04" data-sigord="2" data-cat="ir">
 <td><strong>15:04</strong></td>
 <td><a class="idx-anchor" href="#stock-139480-139292"><strong>이마트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A139480</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.30%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="15:05" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.5045" data-time="15:05" data-sigord="2" data-cat="ir">
 <td><strong>15:05</strong></td>
 <td><a class="idx-anchor" href="#stock-259960-139293"><strong>크래프톤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A259960</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.1290" data-time="15:06" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.1290" data-time="15:06" data-sigord="2" data-cat="ir">
 <td><strong>15:06</strong></td>
 <td><a class="idx-anchor" href="#stock-002350-139294"><strong>넥센타이어</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A002350</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.13%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-4.5045" data-time="15:17" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-4.5045" data-time="15:17" data-sigord="0" data-cat="ir">
 <td><strong>15:17</strong></td>
 <td><a class="idx-anchor" href="#stock-259960-139295"><strong>크래프톤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A259960</td>
 <td class="disc">기업가치제고계획(자율공시)              (2026년)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.1802" data-time="15:17" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.1802" data-time="15:17" data-sigord="2" data-cat="ir">
 <td><strong>15:17</strong></td>
 <td><a class="idx-anchor" href="#stock-028670-139296"><strong>팬오션</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A028670</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.18%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.3540" data-time="15:18" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.3540" data-time="15:18" data-sigord="2" data-cat="block">
 <td><strong>15:18</strong></td>
 <td><a class="idx-anchor" href="#stock-277410-139297"><strong>인산가</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A277410</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.35%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.0772" data-time="15:18" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.0772" data-time="15:18" data-sigord="2" data-cat="earnings">
 <td><strong>15:18</strong></td>
 <td><a class="idx-anchor" href="#stock-375500-139298"><strong>DL이앤씨</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A375500</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.08%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="up" data-chg="-3.6986" data-time="15:19" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-3.6986" data-time="15:19" data-sigord="0" data-cat="dividend">
 <td><strong>15:19</strong></td>
 <td><a class="idx-anchor" href="#stock-204610-139299"><strong>티쓰리</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A204610</td>
 <td class="disc">현금ㆍ현물배당결정              (분기배당)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.70%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.1802" data-time="15:20" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.1802" data-time="15:20" data-sigord="2" data-cat="ir">
 <td><strong>15:20</strong></td>
 <td><a class="idx-anchor" href="#stock-028670-139300"><strong>팬오션</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A028670</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.18%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="15:20" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="15:20" data-sigord="2" data-cat="earnings">
 <td><strong>15:20</strong></td>
 <td><a class="idx-anchor" href="#stock-279570-139301"><strong>케이뱅크</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A279570</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.96%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="up" data-chg="-2.4691" data-time="15:21" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-2.4691" data-time="15:21" data-sigord="0" data-cat="ir">
 <td><strong>15:21</strong></td>
 <td><a class="idx-anchor" href="#stock-215200-139302"><strong>메가스터디교육</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A215200</td>
 <td class="disc">기업가치제고계획(자율공시)              (2025년 이행현황)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.47%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:22" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:22" data-sigord="0" data-cat="contract">
 <td><strong>15:22</strong></td>
 <td><a class="idx-anchor" href="#stock-044450-139303"><strong>KSS해운</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A044450</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.31%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.8848" data-time="15:23" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.8848" data-time="15:23" data-sigord="2" data-cat="ir">
 <td><strong>15:23</strong></td>
 <td><a class="idx-anchor" href="#stock-005440-139304"><strong>현대지에프홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005440</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.88%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.1176" data-time="15:24" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.1176" data-time="15:24" data-sigord="2" data-cat="earnings">
 <td><strong>15:24</strong></td>
 <td><a class="idx-anchor" href="#stock-232680-139305"><strong>라온로보틱스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A232680</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.12%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.0891" data-time="15:25" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.0891" data-time="15:25" data-sigord="2" data-cat="stock_option">
 <td><strong>15:25</strong></td>
 <td><a class="idx-anchor" href="#stock-115180-139306"><strong>큐리언트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A115180</td>
 <td class="disc">주식매수선택권행사</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.09%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="15:25" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="15:25" data-sigord="2" data-cat="other">
 <td><strong>15:25</strong></td>
 <td><a class="idx-anchor" href="#stock-149980-139307"><strong>하이로닉</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A149980</td>
 <td class="disc">기타시장안내              (상장적격성 실질심사 대상 제외 결정)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.2836" data-time="15:26" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.2836" data-time="15:26" data-sigord="2" data-cat="ir">
 <td><strong>15:26</strong></td>
 <td><a class="idx-anchor" href="#stock-006800-139308"><strong>미래에셋증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A006800</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.28%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:26" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:26" data-sigord="0" data-cat="contract">
 <td><strong>15:26</strong></td>
 <td><a class="idx-anchor" href="#stock-044450-139309"><strong>KSS해운</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A044450</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.31%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="up" data-chg="-2.0086" data-time="15:28" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-2.0086" data-time="15:28" data-sigord="0" data-cat="buyback">
 <td><strong>15:28</strong></td>
 <td><a class="idx-anchor" href="#stock-950130-139310"><strong>엑세스바이오</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A950130</td>
 <td class="disc">[기재정정]주식소각결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.01%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="1.2945" data-time="15:29" data-sigord="1">
+</tr><tr data-signal="down" data-chg="1.2945" data-time="15:29" data-sigord="1" data-cat="earnings">
 <td><strong>15:29</strong></td>
 <td><a class="idx-anchor" href="#stock-108320-139311"><strong>LX세미콘</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A108320</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.29%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:29" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.3110" data-time="15:29" data-sigord="0" data-cat="contract">
 <td><strong>15:29</strong></td>
 <td><a class="idx-anchor" href="#stock-044450-139312"><strong>KSS해운</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A044450</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.31%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.6897" data-time="15:31" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.6897" data-time="15:31" data-sigord="2" data-cat="ir">
 <td><strong>15:31</strong></td>
 <td><a class="idx-anchor" href="#stock-051500-139313"><strong>CJ프레시웨이</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A051500</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-1.3084" data-time="15:35" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-1.3084" data-time="15:35" data-sigord="0" data-cat="buyback">
 <td><strong>15:35</strong></td>
 <td><a class="idx-anchor" href="#stock-032640-139314"><strong>LG유플러스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A032640</td>
 <td class="disc">주식소각결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.31%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.1040" data-time="15:36" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.1040" data-time="15:36" data-sigord="2" data-cat="ir">
 <td><strong>15:36</strong></td>
 <td><a class="idx-anchor" href="#stock-016360-139315"><strong>삼성증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A016360</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.10%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="-1.9697" data-time="15:36" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-1.9697" data-time="15:36" data-sigord="1" data-cat="earnings">
 <td><strong>15:36</strong></td>
 <td><a class="idx-anchor" href="#stock-010140-139316"><strong>삼성중공업</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A010140</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.97%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="up" data-chg="-4.0602" data-time="15:37" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-4.0602" data-time="15:37" data-sigord="0" data-cat="ir">
 <td><strong>15:37</strong></td>
 <td><a class="idx-anchor" href="#stock-383310-139317"><strong>에코프로에이치엔</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A383310</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.06%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="-2.8286" data-time="15:38" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.8286" data-time="15:38" data-sigord="1" data-cat="earnings">
 <td><strong>15:38</strong></td>
 <td><a class="idx-anchor" href="#stock-067160-139318"><strong>SOOP</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A067160</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.83%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.0355" data-time="15:38" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.0355" data-time="15:38" data-sigord="2" data-cat="earnings">
 <td><strong>15:38</strong></td>
 <td><a class="idx-anchor" href="#stock-383220-139319"><strong>F&amp;F</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A383220</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.04%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="-0.5774" data-time="15:39" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-0.5774" data-time="15:39" data-sigord="1" data-cat="earnings">
 <td><strong>15:39</strong></td>
 <td><a class="idx-anchor" href="#stock-012750-139320"><strong>에스원</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A012750</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.58%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.0953" data-time="15:40" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.0953" data-time="15:40" data-sigord="2" data-cat="other">
 <td><strong>15:40</strong></td>
 <td><a class="idx-anchor" href="#stock-118990-139321"><strong>모트렉스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A118990</td>
 <td class="disc">타법인주식및출자증권취득결정(종속회사의주요경영사항)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.10%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="20.3620" data-time="15:40" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="20.3620" data-time="15:40" data-sigord="2" data-cat="earnings">
 <td><strong>15:40</strong></td>
 <td><a class="idx-anchor" href="#stock-062040-139322"><strong>산일전기</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A062040</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +20.36%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="-7.3554" data-time="15:40" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-7.3554" data-time="15:40" data-sigord="1" data-cat="rights">
 <td><strong>15:40</strong></td>
 <td><a class="idx-anchor" href="#stock-187660-139323"><strong>페니트리움바이오</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A187660</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -7.36%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="20.3620" data-time="15:40" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="20.3620" data-time="15:40" data-sigord="2" data-cat="earnings">
 <td><strong>15:40</strong></td>
 <td><a class="idx-anchor" href="#stock-062040-139324"><strong>산일전기</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A062040</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +20.36%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="3.8663" data-time="15:42" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="3.8663" data-time="15:42" data-sigord="2" data-cat="ir">
 <td><strong>15:42</strong></td>
 <td><a class="idx-anchor" href="#stock-000990-139325"><strong>DB하이텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000990</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +3.87%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="2.9452" data-time="15:43" data-sigord="0">
+</tr><tr data-signal="up" data-chg="2.9452" data-time="15:43" data-sigord="0" data-cat="ir">
 <td><strong>15:43</strong></td>
 <td><a class="idx-anchor" href="#stock-007660-139326"><strong>이수페타시스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A007660</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.95%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="-1.0355" data-time="15:44" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-1.0355" data-time="15:44" data-sigord="0" data-cat="ir">
 <td><strong>15:44</strong></td>
 <td><a class="idx-anchor" href="#stock-383220-139327"><strong>F&amp;F</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A383220</td>
 <td class="disc">기업가치제고계획(자율공시)              ((2025년 이행현황 및 2026년 기업가치제고계획))</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.04%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="0.1230" data-time="15:48" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.1230" data-time="15:48" data-sigord="2" data-cat="ir">
 <td><strong>15:48</strong></td>
 <td><a class="idx-anchor" href="#stock-004170-139328"><strong>신세계</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A004170</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.12%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.4960" data-time="15:50" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.4960" data-time="15:50" data-sigord="2" data-cat="other">
 <td><strong>15:50</strong></td>
 <td><a class="idx-anchor" href="#stock-035080-139329"><strong>그래디언트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035080</td>
 <td class="disc">타법인주식및출자증권처분결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.50%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.1327" data-time="15:51" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.1327" data-time="15:51" data-sigord="2" data-cat="ir">
 <td><strong>15:51</strong></td>
 <td><a class="idx-anchor" href="#stock-192080-139330"><strong>더블유게임즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A192080</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.13%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.1230" data-time="15:51" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.1230" data-time="15:51" data-sigord="2" data-cat="ir">
 <td><strong>15:51</strong></td>
 <td><a class="idx-anchor" href="#stock-004170-139331"><strong>신세계</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A004170</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.12%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="3.8663" data-time="15:53" data-sigord="0">
+</tr><tr data-signal="up" data-chg="3.8663" data-time="15:53" data-sigord="0" data-cat="ir">
 <td><strong>15:53</strong></td>
 <td><a class="idx-anchor" href="#stock-000990-139332"><strong>DB하이텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000990</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +3.87%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-7.4224" data-time="15:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-7.4224" data-time="15:57" data-sigord="2" data-cat="other">
 <td><strong>15:57</strong></td>
 <td><a class="idx-anchor" href="#stock-054920-139333"><strong>한컴위드</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A054920</td>
 <td class="disc">타법인주식및출자증권취득결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -7.42%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="15:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="15:57" data-sigord="2" data-cat="earnings">
 <td><strong>15:57</strong></td>
 <td><a class="idx-anchor" href="#stock-128940-139334"><strong>한미약품</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A128940</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.76%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.8690" data-time="15:57" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.8690" data-time="15:57" data-sigord="0" data-cat="other">
 <td><strong>15:57</strong></td>
 <td><a class="idx-anchor" href="#stock-069620-139335"><strong>대웅제약</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A069620</td>
 <td class="disc">투자판단관련주요경영사항              (펙수클루정(Fexuclue)의 적응증 추가 국내 품목허가 승인(헬리코박터파일로리 제균을 위한 항</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.87%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.7497" data-time="15:58" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.7497" data-time="15:58" data-sigord="2" data-cat="ir">
 <td><strong>15:58</strong></td>
 <td><a class="idx-anchor" href="#stock-007690-139336"><strong>국도화학</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A007690</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.75%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="15:59" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="15:59" data-sigord="2" data-cat="earnings">
 <td><strong>15:59</strong></td>
 <td><a class="idx-anchor" href="#stock-035250-139337"><strong>강원랜드</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035250</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="up" data-chg="-0.6608" data-time="16:01" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.6608" data-time="16:01" data-sigord="0" data-cat="other">
 <td><strong>16:01</strong></td>
 <td><a class="idx-anchor" href="#stock-003090-139338"><strong>대웅</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A003090</td>
 <td class="disc">투자판단관련주요경영사항(자회사의 주요경영사항)              (펙수클루정(Fexuclue)의 적응증 추가 국내 품목허가 승인(헬리코박터</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.66%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.6254" data-time="16:01" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.6254" data-time="16:01" data-sigord="2" data-cat="ir">
 <td><strong>16:01</strong></td>
 <td><a class="idx-anchor" href="#stock-034020-139339"><strong>두산에너빌리티</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A034020</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.63%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:02" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:02" data-sigord="2" data-cat="cb">
 <td><strong>16:02</strong></td>
 <td><a class="idx-anchor" href="#stock-418250-139340"><strong>시큐레터</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A418250</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:02" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:02" data-sigord="2" data-cat="earnings">
 <td><strong>16:02</strong></td>
 <td><a class="idx-anchor" href="#stock-037950-139341"><strong>엘컴텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A037950</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.6738" data-time="16:03" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.6738" data-time="16:03" data-sigord="2" data-cat="cb">
 <td><strong>16:03</strong></td>
 <td><a class="idx-anchor" href="#stock-091580-139342"><strong>상신이디피</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A091580</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.67%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.1965" data-time="16:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.1965" data-time="16:04" data-sigord="2" data-cat="earnings">
 <td><strong>16:04</strong></td>
 <td><a class="idx-anchor" href="#stock-051900-139343"><strong>LG생활건강</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A051900</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.20%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.1965" data-time="16:05" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.1965" data-time="16:05" data-sigord="0" data-cat="buyback">
 <td><strong>16:05</strong></td>
 <td><a class="idx-anchor" href="#stock-051900-139344"><strong>LG생활건강</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A051900</td>
 <td class="disc">주식소각결정</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.20%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:09" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:09" data-sigord="2" data-cat="earnings">
 <td><strong>16:09</strong></td>
 <td><a class="idx-anchor" href="#stock-066130-139345"><strong>하츠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066130</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.7895" data-time="16:09" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.7895" data-time="16:09" data-sigord="2" data-cat="earnings">
 <td><strong>16:09</strong></td>
 <td><a class="idx-anchor" href="#stock-008930-139346"><strong>한미사이언스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A008930</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.79%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.7194" data-time="16:10" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.7194" data-time="16:10" data-sigord="2" data-cat="earnings">
 <td><strong>16:10</strong></td>
 <td><a class="idx-anchor" href="#stock-091700-139347"><strong>파트론</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A091700</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.72%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="6.1765" data-time="16:13" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="6.1765" data-time="16:13" data-sigord="2" data-cat="earnings">
 <td><strong>16:13</strong></td>
 <td><a class="idx-anchor" href="#stock-108670-139348"><strong>LX하우시스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A108670</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +6.18%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.9010" data-time="16:17" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.9010" data-time="16:17" data-sigord="2" data-cat="ir">
 <td><strong>16:17</strong></td>
 <td><a class="idx-anchor" href="#stock-000210-139349"><strong>DL</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000210</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.90%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.3860" data-time="16:17" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.3860" data-time="16:17" data-sigord="2" data-cat="other">
 <td><strong>16:17</strong></td>
 <td><a class="idx-anchor" href="#stock-106240-139350"><strong>파인테크닉스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A106240</td>
 <td class="disc">풍문또는보도에대한해명(미확정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.39%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.4964" data-time="16:19" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.4964" data-time="16:19" data-sigord="2" data-cat="other">
 <td><strong>16:19</strong></td>
 <td><a class="idx-anchor" href="#stock-005380-139351"><strong>현대자동차</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A005380</td>
 <td class="disc">풍문또는보도에대한해명(미확정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.50%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.6876" data-time="16:19" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.6876" data-time="16:19" data-sigord="2" data-cat="ir">
 <td><strong>16:19</strong></td>
 <td><a class="idx-anchor" href="#stock-000120-139352"><strong>CJ대한통운</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000120</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.69%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-3.2505" data-time="16:19" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-3.2505" data-time="16:19" data-sigord="0" data-cat="ir">
 <td><strong>16:19</strong></td>
 <td><a class="idx-anchor" href="#stock-000270-139353"><strong>기아</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A000270</td>
 <td class="disc">기업가치제고계획(자율공시)              (이행현황)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.25%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="-0.6053" data-time="16:21" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.6053" data-time="16:21" data-sigord="0" data-cat="buyback">
 <td><strong>16:21</strong></td>
 <td><a class="idx-anchor" href="#stock-950170-139354"><strong>JTC</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A950170</td>
 <td class="disc">주요사항보고서(자기주식취득결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.61%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.9924" data-time="16:23" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.9924" data-time="16:23" data-sigord="2" data-cat="ir">
 <td><strong>16:23</strong></td>
 <td><a class="idx-anchor" href="#stock-145020-139355"><strong>휴젤</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A145020</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.99%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.3914" data-time="16:23" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.3914" data-time="16:23" data-sigord="2" data-cat="earnings">
 <td><strong>16:23</strong></td>
 <td><a class="idx-anchor" href="#stock-064550-139356"><strong>바이오니아</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A064550</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.39%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="16:25" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="16:25" data-sigord="2" data-cat="ir">
 <td><strong>16:25</strong></td>
 <td><a class="idx-anchor" href="#stock-128940-139357"><strong>한미약품</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A128940</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.76%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="-2.7219" data-time="16:25" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.7219" data-time="16:25" data-sigord="1" data-cat="rights">
 <td><strong>16:25</strong></td>
 <td><a class="idx-anchor" href="#stock-365340-139358"><strong>성일하이텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A365340</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.72%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="16:27" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.7619" data-time="16:27" data-sigord="2" data-cat="ir">
 <td><strong>16:27</strong></td>
 <td><a class="idx-anchor" href="#stock-128940-139359"><strong>한미약품</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A128940</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.76%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.9470" data-time="16:29" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.9470" data-time="16:29" data-sigord="2" data-cat="ir">
 <td><strong>16:29</strong></td>
 <td><a class="idx-anchor" href="#stock-031440-139360"><strong>신세계푸드</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A031440</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.95%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.0076" data-time="16:30" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.0076" data-time="16:30" data-sigord="2" data-cat="other">
 <td><strong>16:30</strong></td>
 <td><a class="idx-anchor" href="#stock-067390-139361"><strong>아스트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A067390</td>
 <td class="disc">전환청구권행사              (제9회차)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.01%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2302" data-time="16:31" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2302" data-time="16:31" data-sigord="2" data-cat="earnings">
 <td><strong>16:31</strong></td>
 <td><a class="idx-anchor" href="#stock-014820-139362"><strong>동원시스템즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A014820</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.23%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.6707" data-time="16:31" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.6707" data-time="16:31" data-sigord="2" data-cat="block">
 <td><strong>16:31</strong></td>
 <td><a class="idx-anchor" href="#stock-237690-139363"><strong>에스티팜</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A237690</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.67%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="up" data-chg="-1.4981" data-time="16:32" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-1.4981" data-time="16:32" data-sigord="0" data-cat="ir">
 <td><strong>16:32</strong></td>
 <td><a class="idx-anchor" href="#stock-403870-139364"><strong>HPSP</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A403870</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.50%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-13.8340" data-time="16:33" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-13.8340" data-time="16:33" data-sigord="2" data-cat="other">
 <td><strong>16:33</strong></td>
 <td><a class="idx-anchor" href="#stock-900300-139365"><strong>오가닉티코스메틱</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A900300</td>
 <td class="disc">사업보고서 (2025.12)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -13.83%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.3861" data-time="16:35" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.3861" data-time="16:35" data-sigord="2" data-cat="block">
 <td><strong>16:35</strong></td>
 <td><a class="idx-anchor" href="#stock-016740-139366"><strong>두올</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A016740</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.39%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2528" data-time="16:38" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2528" data-time="16:38" data-sigord="2" data-cat="block">
 <td><strong>16:38</strong></td>
 <td><a class="idx-anchor" href="#stock-023960-139367"><strong>에쓰씨엔지니어링</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A023960</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.25%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="up" data-chg="-3.9574" data-time="16:38" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-3.9574" data-time="16:38" data-sigord="0" data-cat="ir">
 <td><strong>16:38</strong></td>
 <td><a class="idx-anchor" href="#stock-084110-139368"><strong>휴온스글로벌</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A084110</td>
 <td class="disc">기업가치제고계획(자율공시)              (2026년 (주)휴온스글로벌 기업가치 제고 계획)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.96%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.0989" data-time="16:38" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.0989" data-time="16:38" data-sigord="2" data-cat="block">
 <td><strong>16:38</strong></td>
 <td><a class="idx-anchor" href="#stock-002620-139369"><strong>제일파마홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A002620</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.10%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.5586" data-time="16:41" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.5586" data-time="16:41" data-sigord="2" data-cat="ir">
 <td><strong>16:41</strong></td>
 <td><a class="idx-anchor" href="#stock-010130-139370"><strong>고려아연</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A010130</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.56%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="1.6236" data-time="16:42" data-sigord="0">
+</tr><tr data-signal="up" data-chg="1.6236" data-time="16:42" data-sigord="0" data-cat="ir">
 <td><strong>16:42</strong></td>
 <td><a class="idx-anchor" href="#stock-047810-139371"><strong>한국항공우주</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A047810</td>
 <td class="disc">기업가치제고계획(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.62%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="0.3861" data-time="16:42" data-sigord="0">
+</tr><tr data-signal="up" data-chg="0.3861" data-time="16:42" data-sigord="0" data-cat="other">
 <td><strong>16:42</strong></td>
 <td><a class="idx-anchor" href="#stock-016740-139372"><strong>두올</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A016740</td>
 <td class="disc">투자판단관련주요경영사항</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.39%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2302" data-time="16:43" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2302" data-time="16:43" data-sigord="2" data-cat="earnings">
 <td><strong>16:43</strong></td>
 <td><a class="idx-anchor" href="#stock-014820-139373"><strong>동원시스템즈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A014820</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.23%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.8204" data-time="16:45" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.8204" data-time="16:45" data-sigord="2" data-cat="other">
 <td><strong>16:45</strong></td>
 <td><a class="idx-anchor" href="#stock-289080-139374"><strong>SV인베스트먼트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A289080</td>
 <td class="disc">전환청구권행사</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.82%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.0772" data-time="16:46" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.0772" data-time="16:46" data-sigord="2" data-cat="ir">
 <td><strong>16:46</strong></td>
 <td><a class="idx-anchor" href="#stock-375500-139375"><strong>DL이앤씨</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A375500</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.08%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="-0.7519" data-time="16:48" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-0.7519" data-time="16:48" data-sigord="0" data-cat="ir">
 <td><strong>16:48</strong></td>
 <td><a class="idx-anchor" href="#stock-282330-139376"><strong>BGF리테일</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A282330</td>
 <td class="disc">기업가치제고계획(자율공시)              (2026년 이행현황)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.75%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="up" data-chg="-1.1236" data-time="16:51" data-sigord="0">
+</tr><tr data-signal="up" data-chg="-1.1236" data-time="16:51" data-sigord="0" data-cat="ir">
 <td><strong>16:51</strong></td>
 <td><a class="idx-anchor" href="#stock-243070-139377"><strong>휴온스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A243070</td>
 <td class="disc">기업가치제고계획(자율공시)              (2026년 (주)휴온스 기업가치 제고 계획)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.12%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.5767" data-time="16:52" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.5767" data-time="16:52" data-sigord="2" data-cat="ir">
 <td><strong>16:52</strong></td>
 <td><a class="idx-anchor" href="#stock-051910-139378"><strong>LG화학</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A051910</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.58%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="up" data-chg="0.6969" data-time="16:52" data-sigord="0">
+</tr><tr data-signal="up" data-chg="0.6969" data-time="16:52" data-sigord="0" data-cat="ir">
 <td><strong>16:52</strong></td>
 <td><a class="idx-anchor" href="#stock-140860-139379"><strong>파크시스템스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A140860</td>
 <td class="disc">기업가치제고계획예고</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.70%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.0524" data-time="16:53" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.0524" data-time="16:53" data-sigord="2" data-cat="block">
 <td><strong>16:53</strong></td>
 <td><a class="idx-anchor" href="#stock-098460-139380"><strong>고영</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A098460</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.05%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.3889" data-time="16:56" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.3889" data-time="16:56" data-sigord="2" data-cat="earnings">
 <td><strong>16:56</strong></td>
 <td><a class="idx-anchor" href="#stock-003850-139381"><strong>보령</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A003850</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.39%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.5493" data-time="16:57" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.5493" data-time="16:57" data-sigord="2" data-cat="block">
 <td><strong>16:57</strong></td>
 <td><a class="idx-anchor" href="#stock-424870-139382"><strong>이뮨온시아</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A424870</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.55%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="up" data-chg="1.3253" data-time="16:59" data-sigord="0">
+</tr><tr data-signal="up" data-chg="1.3253" data-time="16:59" data-sigord="0" data-cat="dividend">
 <td><strong>16:59</strong></td>
 <td><a class="idx-anchor" href="#stock-402340-139383"><strong>SK스퀘어</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A402340</td>
 <td class="disc">현금ㆍ현물배당결정</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.33%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="down" data-chg="-2.7541" data-time="16:59" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-2.7541" data-time="16:59" data-sigord="1" data-cat="contract">
 <td><strong>16:59</strong></td>
 <td><a class="idx-anchor" href="#stock-254120-139384"><strong>자비스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A254120</td>
 <td class="disc">단일판매ㆍ공급계약해지</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.75%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:01" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:01" data-sigord="2" data-cat="other">
 <td><strong>17:01</strong></td>
 <td><a class="idx-anchor" href="#stock-035890-139385"><strong>서희건설</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A035890</td>
 <td class="disc">기타시장안내              (기업심사위원회 심의·의결 결과 및 상장유지 결정 안내)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.3150" data-time="17:01" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.3150" data-time="17:01" data-sigord="2" data-cat="buyback">
 <td><strong>17:01</strong></td>
 <td><a class="idx-anchor" href="#stock-039840-139386"><strong>디오</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A039840</td>
 <td class="disc">주요사항보고서(자기주식처분결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.32%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.8343" data-time="17:01" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.8343" data-time="17:01" data-sigord="2" data-cat="block">
 <td><strong>17:01</strong></td>
 <td><a class="idx-anchor" href="#stock-351870-139387"><strong>차이커뮤니케이션</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A351870</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.83%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="29.9363" data-time="17:03" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="29.9363" data-time="17:03" data-sigord="2" data-cat="other">
 <td><strong>17:03</strong></td>
 <td><a class="idx-anchor" href="#stock-024840-139388"><strong>KBI메탈</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A024840</td>
 <td class="disc">전환청구권행사</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +29.94%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="2.5424" data-time="17:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.5424" data-time="17:04" data-sigord="2" data-cat="other">
 <td><strong>17:04</strong></td>
 <td><a class="idx-anchor" href="#stock-293940-139389"><strong>신한알파리츠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A293940</td>
 <td class="disc">기타경영사항(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.54%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.1585" data-time="17:04" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.1585" data-time="17:04" data-sigord="2" data-cat="cb">
 <td><strong>17:04</strong></td>
 <td><a class="idx-anchor" href="#stock-474170-139390"><strong>루미르</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A474170</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.16%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="0.1855" data-time="17:05" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.1855" data-time="17:05" data-sigord="2" data-cat="block">
 <td><strong>17:05</strong></td>
 <td><a class="idx-anchor" href="#stock-244920-139391"><strong>에이플러스에셋</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A244920</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.19%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.1585" data-time="17:05" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.1585" data-time="17:05" data-sigord="2" data-cat="cb">
 <td><strong>17:05</strong></td>
 <td><a class="idx-anchor" href="#stock-474170-139392"><strong>루미르</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A474170</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.16%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.3831" data-time="17:06" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.3831" data-time="17:06" data-sigord="2" data-cat="earnings">
 <td><strong>17:06</strong></td>
 <td><a class="idx-anchor" href="#stock-136540-139393"><strong>윈스테크넷</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A136540</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.38%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.3831" data-time="17:06" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.3831" data-time="17:06" data-sigord="2" data-cat="earnings">
 <td><strong>17:06</strong></td>
 <td><a class="idx-anchor" href="#stock-136540-139394"><strong>윈스테크넷</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A136540</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.38%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:06" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:06" data-sigord="2" data-cat="other">
 <td><strong>17:06</strong></td>
 <td><a class="idx-anchor" href="#stock--139395"><strong>덕양에너젠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A</td>
 <td class="disc">기타경영사항(자율공시)              (상장주관사의 신주인수권행사)</td>
 <td><span style="color:#666">-</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:10" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:10" data-sigord="2" data-cat="block">
 <td><strong>17:10</strong></td>
 <td><a class="idx-anchor" href="#stock-012510-139396"><strong>더존비즈온</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A012510</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.7032" data-time="17:12" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.7032" data-time="17:12" data-sigord="2" data-cat="earnings">
 <td><strong>17:12</strong></td>
 <td><a class="idx-anchor" href="#stock-033270-139397"><strong>유나이티드</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A033270</td>
 <td class="disc">영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.70%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2179" data-time="17:12" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2179" data-time="17:12" data-sigord="2" data-cat="block">
 <td><strong>17:12</strong></td>
 <td><a class="idx-anchor" href="#stock-001270-139398"><strong>부국증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A001270</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.22%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.3125" data-time="17:13" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-6.3125" data-time="17:13" data-sigord="2" data-cat="ir">
 <td><strong>17:13</strong></td>
 <td><a class="idx-anchor" href="#stock-331920-139399"><strong>셀레믹스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A331920</td>
 <td class="disc">기업설명회(IR)개최</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.31%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="17:13" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="17:13" data-sigord="1" data-cat="contract">
 <td><strong>17:13</strong></td>
 <td><a class="idx-anchor" href="#stock-412540-139400"><strong>제일엠앤에스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A412540</td>
 <td class="disc">단일판매ㆍ공급계약해지</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="0.5776" data-time="17:14" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.5776" data-time="17:14" data-sigord="2" data-cat="buyback">
 <td><strong>17:14</strong></td>
 <td><a class="idx-anchor" href="#stock-102120-139401"><strong>어보브반도체</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A102120</td>
 <td class="disc">주요사항보고서(자기주식처분결정)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.58%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="1.3253" data-time="17:18" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="1.3253" data-time="17:18" data-sigord="2" data-cat="buyback">
 <td><strong>17:18</strong></td>
 <td><a class="idx-anchor" href="#stock-402340-139402"><strong>SK스퀘어</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A402340</td>
 <td class="disc">주요사항보고서(자기주식처분결정)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.33%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.9578" data-time="17:18" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.9578" data-time="17:18" data-sigord="2" data-cat="earnings">
 <td><strong>17:18</strong></td>
 <td><a class="idx-anchor" href="#stock-307950-139403"><strong>현대오토에버</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A307950</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.96%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.9578" data-time="17:20" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-4.9578" data-time="17:20" data-sigord="2" data-cat="ir">
 <td><strong>17:20</strong></td>
 <td><a class="idx-anchor" href="#stock-307950-139404"><strong>현대오토에버</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A307950</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -4.96%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:21" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:21" data-sigord="2" data-cat="other">
 <td><strong>17:21</strong></td>
 <td><a class="idx-anchor" href="#stock-298000-139405"><strong>효성화학</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A298000</td>
 <td class="disc">기타시장안내              (개선기간 종료 및 향후 절차 안내)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:22" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:22" data-sigord="2" data-cat="other">
 <td><strong>17:22</strong></td>
 <td><a class="idx-anchor" href="#stock-121800-139406"><strong>비덴트</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A121800</td>
 <td class="disc">기타시장안내              (개선계획 이행내역서 제출)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.3404" data-time="17:26" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.3404" data-time="17:26" data-sigord="2" data-cat="ir">
 <td><strong>17:26</strong></td>
 <td><a class="idx-anchor" href="#stock-294870-139407"><strong>IPARK현대산업개발</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A294870</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.34%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="17:26" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="17:26" data-sigord="2" data-cat="ir">
 <td><strong>17:26</strong></td>
 <td><a class="idx-anchor" href="#stock-279570-139408"><strong>케이뱅크</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A279570</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.96%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="17:26" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-0.9554" data-time="17:26" data-sigord="2" data-cat="ir">
 <td><strong>17:26</strong></td>
 <td><a class="idx-anchor" href="#stock-279570-139409"><strong>케이뱅크</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A279570</td>
 <td class="disc">기업설명회(IR)개최(안내공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.96%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.8037" data-time="17:27" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.8037" data-time="17:27" data-sigord="2" data-cat="other">
 <td><strong>17:27</strong></td>
 <td><a class="idx-anchor" href="#stock-001060-139410"><strong>JW중외제약</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A001060</td>
 <td class="disc">주요사항보고서(영업정지)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.80%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="down" data-chg="-0.8333" data-time="17:27" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-0.8333" data-time="17:27" data-sigord="1" data-cat="contract">
 <td><strong>17:27</strong></td>
 <td><a class="idx-anchor" href="#stock-334970-139411"><strong>프레스티지바이오로직스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A334970</td>
 <td class="disc">단일판매ㆍ공급계약해지</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.83%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.2787" data-time="17:28" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.2787" data-time="17:28" data-sigord="2" data-cat="other">
 <td><strong>17:28</strong></td>
 <td><a class="idx-anchor" href="#stock-067170-139412"><strong>오텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A067170</td>
 <td class="disc">신주인수권행사</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.28%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.2831" data-time="17:29" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-2.2831" data-time="17:29" data-sigord="2" data-cat="other">
 <td><strong>17:29</strong></td>
 <td><a class="idx-anchor" href="#stock-096760-139413"><strong>JW홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A096760</td>
 <td class="disc">주요사항보고서(영업정지)(자회사의 주요경영사항)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -2.28%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.3597" data-time="17:31" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.3597" data-time="17:31" data-sigord="2" data-cat="earnings">
 <td><strong>17:31</strong></td>
 <td><a class="idx-anchor" href="#stock-236200-139414"><strong>슈프리마</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A236200</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.36%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-3.1774" data-time="17:32" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-3.1774" data-time="17:32" data-sigord="2" data-cat="earnings">
 <td><strong>17:32</strong></td>
 <td><a class="idx-anchor" href="#stock-001500-139415"><strong>현대차증권</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A001500</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.18%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="1.1080" data-time="17:33" data-sigord="1">
+</tr><tr data-signal="down" data-chg="1.1080" data-time="17:33" data-sigord="1" data-cat="rights">
 <td><strong>17:33</strong></td>
 <td><a class="idx-anchor" href="#stock-221800-139416"><strong>지구홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A221800</td>
 <td class="disc">주요사항보고서(유상증자결정)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.11%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="2.7333" data-time="17:34" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="2.7333" data-time="17:34" data-sigord="2" data-cat="other">
 <td><strong>17:34</strong></td>
 <td><a class="idx-anchor" href="#stock-123010-139417"><strong>알엔티엑스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A123010</td>
 <td class="disc">투자판단관련주요경영사항              (경영지배인 선임)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.73%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.6694" data-time="17:36" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.6694" data-time="17:36" data-sigord="2" data-cat="other">
 <td><strong>17:36</strong></td>
 <td><a class="idx-anchor" href="#stock-263750-139418"><strong>펄어비스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A263750</td>
 <td class="disc">타법인주식및출자증권처분결정(종속회사의주요경영사항)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.67%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="1.1080" data-time="17:37" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="1.1080" data-time="17:37" data-sigord="2" data-cat="other">
 <td><strong>17:37</strong></td>
 <td><a class="idx-anchor" href="#stock-221800-139419"><strong>지구홀딩스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A221800</td>
 <td class="disc">타법인주식및출자증권취득결정(자율공시)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.11%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="down" data-chg="0.0000" data-time="17:38" data-sigord="1">
+</tr><tr data-signal="down" data-chg="0.0000" data-time="17:38" data-sigord="1" data-cat="earnings">
 <td><strong>17:38</strong></td>
 <td><a class="idx-anchor" href="#stock-215000-139420"><strong>골프존</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A215000</td>
 <td class="disc">연결재무제표기준영업(잠정)실적(공정공시)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="0.3861" data-time="17:45" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.3861" data-time="17:45" data-sigord="2" data-cat="block">
 <td><strong>17:45</strong></td>
 <td><a class="idx-anchor" href="#stock-016740-139421"><strong>두올</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A016740</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.39%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="down" data-chg="-1.0228" data-time="17:48" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-1.0228" data-time="17:48" data-sigord="1" data-cat="contract">
 <td><strong>17:48</strong></td>
 <td><a class="idx-anchor" href="#stock-083790-139422"><strong>CG인바이츠</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A083790</td>
 <td class="disc">단일판매ㆍ공급계약해지</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.02%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="-5.1546" data-time="17:48" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-5.1546" data-time="17:48" data-sigord="2" data-cat="block">
 <td><strong>17:48</strong></td>
 <td><a class="idx-anchor" href="#stock-066590-139423"><strong>스모트로닉</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A066590</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.15%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:48" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:48" data-sigord="2" data-cat="block">
 <td><strong>17:48</strong></td>
 <td><a class="idx-anchor" href="#stock-011810-139424"><strong>STX</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A011810</td>
 <td class="disc">주식등의대량보유상황보고서(일반)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:51" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:51" data-sigord="2" data-cat="block">
 <td><strong>17:51</strong></td>
 <td><a class="idx-anchor" href="#stock-088280-139425"><strong>쏘닉스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A088280</td>
 <td class="disc">주식등의대량보유상황보고서(약식)</td>
 <td><span style="color:#6b7280;font-weight:700">■ +0.00%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.2774" data-time="17:52" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="-1.2774" data-time="17:52" data-sigord="2" data-cat="cb">
 <td><strong>17:52</strong></td>
 <td><a class="idx-anchor" href="#stock-124500-139426"><strong>아이티센글로벌</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A124500</td>
 <td class="disc">주요사항보고서(전환사채권발행결정)</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.28%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="up" data-chg="0.4988" data-time="18:02" data-sigord="0">
+</tr><tr data-signal="up" data-chg="0.4988" data-time="18:02" data-sigord="0" data-cat="contract">
 <td><strong>18:02</strong></td>
 <td><a class="idx-anchor" href="#stock-332570-139427"><strong>PS일렉트로닉스</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A332570</td>
 <td class="disc">단일판매ㆍ공급계약체결</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.50%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="down" data-chg="-1.5021" data-time="18:23" data-sigord="1">
+</tr><tr data-signal="down" data-chg="-1.5021" data-time="18:23" data-sigord="1" data-cat="contract">
 <td><strong>18:23</strong></td>
 <td><a class="idx-anchor" href="#stock-108230-139428"><strong>톱텍</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A108230</td>
 <td class="disc">단일판매ㆍ공급계약해지</td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.50%</span></td>
 <td><span class="sig-sell">매도⚠</span></td>
-</tr><tr data-signal="neutral" data-chg="5.2632" data-time="19:00" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="5.2632" data-time="19:00" data-sigord="2" data-cat="other">
 <td><strong>19:00</strong></td>
 <td><a class="idx-anchor" href="#stock-261780-139435"><strong>차백신연구소</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A261780</td>
 <td class="disc">상호변경안내</td>
 <td><span style="color:#dc2626;font-weight:700">▲ +5.26%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="5.2632" data-time="19:44" data-sigord="2">
+</tr><tr data-signal="neutral" data-chg="5.2632" data-time="19:44" data-sigord="2" data-cat="other">
 <td><strong>19:44</strong></td>
 <td><a class="idx-anchor" href="#stock-261780-139437"><strong>차백신연구소</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A261780</td>
@@ -1901,30 +1915,44 @@ new Chart(ctx, {
 <td><span class="sig-neutral">중립</span></td>
 </tr></tbody></table>
 <script>
-var idxSortState = 'time';
-function idxFilter(btn, sig) {
-  document.querySelectorAll('.idx-btn').forEach(b => { if(['전체','매수▲','매도▼','중립'].some(t=>b.textContent.includes(t.replace('▲','').replace('▼',''))||b.textContent===t)) b.classList.remove('active'); });
+var idxState = { sig: 'all', cat: 'all', sort: 'time' };
+function idxFilter(btn, group, val) {
+  idxState[group] = val;
+  // active 버튼 업데이트 (같은 그룹만)
+  document.querySelectorAll('.idx-btn[data-group="'+group+'"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  var rows = document.querySelectorAll('#idx-tbody tr');
-  rows.forEach(function(r) {
-    r.style.display = (sig === 'all' || r.dataset.signal === sig) ? '' : 'none';
-  });
+  applyIdxFilter();
 }
 function idxSort(mode) {
-  idxSortState = mode;
+  idxState.sort = mode;
+  document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => {
+    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+mode+"'")) b.classList.add('active');
+  });
   var tbody = document.getElementById('idx-tbody');
   var rows = Array.from(tbody.querySelectorAll('tr'));
-  rows.sort(function(a, b) {
-    if (mode === 'chg_desc') return parseFloat(b.dataset.chg||0) - parseFloat(a.dataset.chg||0);
-    if (mode === 'chg_asc')  return parseFloat(a.dataset.chg||0) - parseFloat(b.dataset.chg||0);
-    if (mode === 'signal')   return (a.dataset.sigord||'2').localeCompare(b.dataset.sigord||'2');
-    return (a.dataset.time||'').localeCompare(b.dataset.time||''); // time
+  rows.sort(function(a,b) {
+    if (mode==='chg_desc') return parseFloat(b.dataset.chg||0)-parseFloat(a.dataset.chg||0);
+    if (mode==='chg_asc')  return parseFloat(a.dataset.chg||0)-parseFloat(b.dataset.chg||0);
+    if (mode==='signal')   return (a.dataset.sigord||'2').localeCompare(b.dataset.sigord||'2');
+    if (mode==='cat')      return (a.dataset.cat||'').localeCompare(b.dataset.cat||'');
+    return (a.dataset.time||'').localeCompare(b.dataset.time||'');
   });
   rows.forEach(r => tbody.appendChild(r));
-  document.querySelectorAll('.idx-btn').forEach(b => {
-    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+mode+"'")) b.classList.add('active');
-    else if(['시간순','등락률↓','등락률↑','시그널순'].includes(b.textContent)) b.classList.remove('active');
+  applyIdxFilter();
+}
+function applyIdxFilter() {
+  var rows = document.querySelectorAll('#idx-tbody tr');
+  var sigF = idxState.sig, catF = idxState.cat;
+  var visible = 0;
+  rows.forEach(function(r) {
+    var sigOk = sigF==='all' || r.dataset.signal===sigF;
+    var catOk = catF==='all' || r.dataset.cat===catF;
+    r.style.display = (sigOk && catOk) ? '' : 'none';
+    if(sigOk && catOk) visible++;
   });
+  var lbl = document.getElementById('idx-count-lbl');
+  if(lbl) lbl.textContent = visible + '건 표시';
 }
 </script><h3 style="font-size:18px; margin-top:24px; color:var(--c-darkest);">📈 시간외 대량매매 (6건)</h3>
 <ul style="font-size:13px; line-height:1.7; columns:2;"><li><strong>KB금융</strong> · 292억 (장중(상대))</li><li><strong>삼성생명</strong> · 3,309억 (장중(상대))</li><li><strong>삼성전자</strong> · 2,875억 (장중(상대))</li><li><strong>SK스퀘어</strong> · 293억 (장종료후(상대))</li><li><strong>SK하이닉스</strong> · 1,148억 (장종료후(상대))</li><li><strong>삼성전자</strong> · 542억 (장종료후(상대))</li></ul>

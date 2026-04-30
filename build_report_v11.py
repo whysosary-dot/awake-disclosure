@@ -1336,18 +1336,32 @@ parts_html.append(f"""<div class="page">
 </div>
 <div class="page-body">
 <h2 style="font-size:30px; font-weight:900; color:var(--c-darkest); margin:6px 0 4px 0;">📋 오늘의 공시 인덱스 ({len(DISCLOSURES)}건)</h2>
-<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">{TODAY} · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동</div>
-<div id="idx-controls" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
-  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);">시그널:</span>
-  <button class="idx-btn active" onclick="idxFilter(this,'all')">전체</button>
-  <button class="idx-btn" onclick="idxFilter(this,'up')">매수▲</button>
-  <button class="idx-btn" onclick="idxFilter(this,'down')">매도▼</button>
-  <button class="idx-btn" onclick="idxFilter(this,'neutral')">중립</button>
-  <span style="font-size:13px;font-weight:700;color:var(--c-darkest);margin-left:8px;">정렬:</span>
-  <button class="idx-btn" onclick="idxSort('time')">시간순</button>
-  <button class="idx-btn" onclick="idxSort('chg_desc')">등락률↓</button>
-  <button class="idx-btn" onclick="idxSort('chg_asc')">등락률↑</button>
-  <button class="idx-btn" onclick="idxSort('signal')">시그널순</button>
+<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">{TODAY} · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동 · <span id="idx-count-lbl">{len(DISCLOSURES)}건 표시</span></div>
+<div id="idx-controls" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">시그널</span>
+  <button class="idx-btn active" data-group="sig" onclick="idxFilter(this,'sig','all')">전체</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','up')">매수▲</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','down')">매도▼</button>
+  <button class="idx-btn" data-group="sig" onclick="idxFilter(this,'sig','neutral')">중립</button>
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);margin-left:6px;">공시유형</span>
+  <button class="idx-btn active" data-group="cat" onclick="idxFilter(this,'cat','all')">전체</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','earnings')">잠정실적</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ir')">IR/밸류업</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','contract')">공급계약</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','block')">대량보유</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','cb')">CB/사채</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','rights')">유상증자</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
+  <button class="idx-btn active" data-group="sort" onclick="idxSort('time')">시간순</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('chg_desc')">등락률↓</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('chg_asc')">등락률↑</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('signal')">시그널순</button>
+  <button class="idx-btn" data-group="sort" onclick="idxSort('cat')">공시유형순</button>
 </div>
 <table class="index-table" id="idx-table"><thead>
 <tr><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
@@ -1356,7 +1370,19 @@ for d in DISCLOSURES:
     sig_class = {"up":"sig-buy","down":"sig-sell","neutral":"sig-neutral"}.get(d["signal_kind"],"sig-neutral")
     _chg_val = d.get("chg_pct") or 0
     _sig_ord = {"up":"0","down":"1","neutral":"2"}.get(d["signal_kind"],"2")
-    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}">
+    _rep = d.get("report","")
+    if "단일판매" in _rep or "공급계약" in _rep: _cat = "contract"
+    elif "잠정실적" in _rep or "영업실적" in _rep or "실적" in _rep: _cat = "earnings"
+    elif "IR" in _rep or "기업설명회" in _rep or "기업가치제고" in _rep or "밸류업" in _rep: _cat = "ir"
+    elif "대량보유" in _rep or "5%" in _rep: _cat = "block"
+    elif "유상증자" in _rep: _cat = "rights"
+    elif "전환사채" in _rep or "사채" in _rep or "CB" in _rep: _cat = "cb"
+    elif "자기주식" in _rep or "주식소각" in _rep: _cat = "buyback"
+    elif "합병" in _rep or "분할" in _rep or "M&A" in _rep: _cat = "ma"
+    elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
+    elif "배당" in _rep: _cat = "dividend"
+    else: _cat = "other"
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}">
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1366,30 +1392,44 @@ for d in DISCLOSURES:
 </tr>""")
 parts_html.append("""</tbody></table>
 <script>
-var idxSortState = 'time';
-function idxFilter(btn, sig) {
-  document.querySelectorAll('.idx-btn').forEach(b => { if(['전체','매수▲','매도▼','중립'].some(t=>b.textContent.includes(t.replace('▲','').replace('▼',''))||b.textContent===t)) b.classList.remove('active'); });
+var idxState = { sig: 'all', cat: 'all', sort: 'time' };
+function idxFilter(btn, group, val) {
+  idxState[group] = val;
+  // active 버튼 업데이트 (같은 그룹만)
+  document.querySelectorAll('.idx-btn[data-group="'+group+'"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  var rows = document.querySelectorAll('#idx-tbody tr');
-  rows.forEach(function(r) {
-    r.style.display = (sig === 'all' || r.dataset.signal === sig) ? '' : 'none';
-  });
+  applyIdxFilter();
 }
 function idxSort(mode) {
-  idxSortState = mode;
+  idxState.sort = mode;
+  document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => {
+    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+mode+"'")) b.classList.add('active');
+  });
   var tbody = document.getElementById('idx-tbody');
   var rows = Array.from(tbody.querySelectorAll('tr'));
-  rows.sort(function(a, b) {
-    if (mode === 'chg_desc') return parseFloat(b.dataset.chg||0) - parseFloat(a.dataset.chg||0);
-    if (mode === 'chg_asc')  return parseFloat(a.dataset.chg||0) - parseFloat(b.dataset.chg||0);
-    if (mode === 'signal')   return (a.dataset.sigord||'2').localeCompare(b.dataset.sigord||'2');
-    return (a.dataset.time||'').localeCompare(b.dataset.time||''); // time
+  rows.sort(function(a,b) {
+    if (mode==='chg_desc') return parseFloat(b.dataset.chg||0)-parseFloat(a.dataset.chg||0);
+    if (mode==='chg_asc')  return parseFloat(a.dataset.chg||0)-parseFloat(b.dataset.chg||0);
+    if (mode==='signal')   return (a.dataset.sigord||'2').localeCompare(b.dataset.sigord||'2');
+    if (mode==='cat')      return (a.dataset.cat||'').localeCompare(b.dataset.cat||'');
+    return (a.dataset.time||'').localeCompare(b.dataset.time||'');
   });
   rows.forEach(r => tbody.appendChild(r));
-  document.querySelectorAll('.idx-btn').forEach(b => {
-    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+mode+"'")) b.classList.add('active');
-    else if(['시간순','등락률↓','등락률↑','시그널순'].includes(b.textContent)) b.classList.remove('active');
+  applyIdxFilter();
+}
+function applyIdxFilter() {
+  var rows = document.querySelectorAll('#idx-tbody tr');
+  var sigF = idxState.sig, catF = idxState.cat;
+  var visible = 0;
+  rows.forEach(function(r) {
+    var sigOk = sigF==='all' || r.dataset.signal===sigF;
+    var catOk = catF==='all' || r.dataset.cat===catF;
+    r.style.display = (sigOk && catOk) ? '' : 'none';
+    if(sigOk && catOk) visible++;
   });
+  var lbl = document.getElementById('idx-count-lbl');
+  if(lbl) lbl.textContent = visible + '건 표시';
 }
 </script>""")
 
