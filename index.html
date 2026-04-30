@@ -293,6 +293,7 @@ function renderFavs() {
       var name = (meta.name && meta.name !== code) ? meta.name : (CODE_NAME[code] || code);
       var anchor = meta.anchor || '';
       var sig = meta.signal || '';
+      var report = meta.report || '';
       var reportUrl = date !== '날짜 미상'
         ? 'reports/AWAKE_' + date + '.html' + (anchor ? '#' + anchor : '')
         : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html';  // 구버전: 최신 리포트로 이동
@@ -305,6 +306,7 @@ function renderFavs() {
           '<div class="fav-meta">' +
             '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
             '<span class="' + sigCls + '">' + sigLabel + '</span>' +
+            (report ? '<span style="font-size:11px;color:#64748b;background:#f1f5f9;padding:2px 7px;border-radius:10px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(report) + '</span>' : '') +
           '</div>' +
         '</div>' +
         '<div class="fav-actions">' +

@@ -1491,6 +1491,7 @@ for d in DISCLOSURES:
     _chg_val = d.get("chg_pct") or 0
     _sig_ord = {"up":"0","down":"1","neutral":"2"}.get(d["signal_kind"],"2")
     _rep = d.get("report","")
+    _rep50 = _rep[:50]
     if "단일판매" in _rep or "공급계약" in _rep: _cat = "contract"
     elif "잠정실적" in _rep or "영업실적" in _rep or "실적" in _rep: _cat = "earnings"
     elif "IR" in _rep or "기업설명회" in _rep or "기업가치제고" in _rep or "밸류업" in _rep: _cat = "ir"
@@ -1503,7 +1504,7 @@ for d in DISCLOSURES:
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
-<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-anchor="stock-{html.escape(d["code"])}-{_code_first_id[d["code"]]}" data-signal="{d["signal_kind"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-anchor="stock-{html.escape(d["code"])}-{_code_first_id[d["code"]]}" data-signal="{d["signal_kind"]}" data-report="{html.escape(_rep50)}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{_code_first_id[d["code"]]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1526,7 +1527,7 @@ function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 function storeMeta(btn, code) {
   var m = getFavMeta();
-  m[code] = { name: btn.dataset.name||code, date: btn.dataset.date||'', anchor: btn.dataset.anchor||'', signal: btn.dataset.signal||'' };
+  m[code] = { name: btn.dataset.name||code, date: btn.dataset.date||'', anchor: btn.dataset.anchor||'', signal: btn.dataset.signal||'', report: btn.dataset.report||'' };
   saveFavMeta(m);
 }
 function removeMeta(code) {
@@ -1714,7 +1715,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-anchor="stock-{html.escape(code)}-{first['id']}" data-signal="{chosen['signal_kind']}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-anchor="stock-{html.escape(code)}-{first['id']}" data-signal="{chosen['signal_kind']}" data-report="{html.escape(chosen.get('report','')[:50])}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
