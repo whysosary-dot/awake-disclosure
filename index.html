@@ -214,7 +214,7 @@ if (reports.length === 0) {
   reports.forEach(r => {
     const a = document.createElement('a');
     a.className = 'item' + (r.n ? ' new' : '');
-    a.href = `reports/AWAKE_${r.d}.html`;
+    a.href = `reports/AWAKE_${r.d}.html?v=${r.d.replace(/-/g,'')}`;
     a.innerHTML = `
       <div>
         <div class="item-date">${r.label}</div>
@@ -300,8 +300,8 @@ function renderFavs() {
       var sig = meta.signal || '';
       var report = meta.report || '';
       var reportUrl = date !== '날짜 미상'
-        ? 'reports/AWAKE_' + date + '.html' + (anchor ? '#' + anchor : '')
-        : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html';  // 구버전: 최신 리포트로 이동
+        ? 'reports/AWAKE_' + date + '.html?v=' + date.replace(/-/g,'') + (anchor ? '#' + anchor : '')
+        : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html?v=' + LATEST_REPORT_DATE.replace(/-/g,'');  // 구버전: 최신 리포트로 이동
       var sigLabel = sig==='up'?'매수▲':(sig==='down'?'매도▼':'중립');
       var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
 
