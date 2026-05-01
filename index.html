@@ -302,7 +302,7 @@ function renderFavs() {
 
       html += '<div class="fav-card">' +
         '<div class="fav-info">' +
-          '<div class="fav-name">⭐ ' + escHtml(name) + '</div>' +
+          '<a class="fav-name" href="' + reportUrl + '" style="text-decoration:none;color:inherit;cursor:pointer;">⭐ ' + escHtml(name) + '</a>' +
           '<div class="fav-meta">' +
             '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
             '<span class="' + sigCls + '">' + sigLabel + '</span>' +
