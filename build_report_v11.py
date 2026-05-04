@@ -1528,8 +1528,23 @@ function toggleFavFromIdx(btn, code) {
 }
 function toggleFavFromPage(code) {
   var f = getFavs();
-  if (f[code]) { delete f[code]; } else { f[code]=1; }
+  var m = getFavMeta();
+  if (f[code]) {
+    delete f[code];
+    delete m[code];
+  } else {
+    f[code] = 1;
+    var btn = document.getElementById('fav-btn-'+code);
+    m[code] = {
+      name: btn ? btn.dataset.name : code,
+      date: btn ? btn.dataset.date : '',
+      signal: btn ? btn.dataset.signal : 'neutral',
+      report: btn ? btn.dataset.report : '',
+      anchor: 'stock-'+code+'-'+(btn ? btn.dataset.code : code)
+    };
+  }
   saveFavs(f);
+  saveFavMeta(m);
   var sp = document.getElementById('fav-btn-'+code);
   if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
   // 인덱스 행 별도 업데이트
@@ -1698,7 +1713,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-signal="{chosen['signal_kind']}" data-report="{html.escape(first['report'])}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
