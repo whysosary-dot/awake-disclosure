@@ -858,6 +858,8 @@ function idxFilter(btn, group, val) {
 }
 function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs();
   if (f[code]) { delete f[code]; btn.textContent='☆'; btn.classList.remove('fav-on'); }
@@ -882,7 +884,7 @@ function toggleFavFromPage(code) {
       date: btn ? btn.dataset.date : '',
       signal: btn ? btn.dataset.signal : 'neutral',
       report: btn ? btn.dataset.report : '',
-      anchor: 'stock-'+code+'-'+(btn ? btn.dataset.code : code)
+      anchor: 'stock-'+code+'-'+(btn ? btn.dataset.firstid : '')
     };
   }
   saveFavs(f);
@@ -966,7 +968,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">퓨쳐켐</div>
-      <button id="fav-btn-220100" class="fav-star-page" data-code="220100" data-name="퓨쳐켐" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항              (프로스타뷰주사액([18F]플로라스타민) 식품의약품안전처 신약 허가)" onclick="toggleFavFromPage('220100')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-220100" class="fav-star-page" data-code="220100" data-name="퓨쳐켐" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항              (프로스타뷰주사액([18F]플로라스타민) 식품의약품안전처 신약 허가)" data-firstid="139460" onclick="toggleFavFromPage('220100')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A220100</div>
     <div>
@@ -1078,7 +1080,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에프앤가이드</div>
-      <button id="fav-btn-064850" class="fav-star-page" data-code="064850" data-name="에프앤가이드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('064850')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-064850" class="fav-star-page" data-code="064850" data-name="에프앤가이드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139462" onclick="toggleFavFromPage('064850')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A064850</div>
     <div>
@@ -1176,7 +1178,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">롯데손해보험</div>
-      <button id="fav-btn-000400" class="fav-star-page" data-code="000400" data-name="롯데손해보험" data-date="2026-05-04" data-signal="neutral" data-report="기타경영사항(자율공시)" onclick="toggleFavFromPage('000400')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-000400" class="fav-star-page" data-code="000400" data-name="롯데손해보험" data-date="2026-05-04" data-signal="neutral" data-report="기타경영사항(자율공시)" data-firstid="139463" onclick="toggleFavFromPage('000400')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A000400</div>
     <div>
@@ -1270,7 +1272,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">비에이치</div>
-      <button id="fav-btn-090460" class="fav-star-page" data-code="090460" data-name="비에이치" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('090460')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-090460" class="fav-star-page" data-code="090460" data-name="비에이치" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139464" onclick="toggleFavFromPage('090460')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A090460</div>
     <div>
@@ -1365,7 +1367,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">AP위성</div>
-      <button id="fav-btn-211270" class="fav-star-page" data-code="211270" data-name="AP위성" data-date="2026-05-04" data-signal="up" data-report="단일판매ㆍ공급계약체결" onclick="toggleFavFromPage('211270')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-211270" class="fav-star-page" data-code="211270" data-name="AP위성" data-date="2026-05-04" data-signal="up" data-report="단일판매ㆍ공급계약체결" data-firstid="139465" onclick="toggleFavFromPage('211270')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A211270</div>
     <div>
@@ -1460,7 +1462,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에스케이바이오팜</div>
-      <button id="fav-btn-326030" class="fav-star-page" data-code="326030" data-name="에스케이바이오팜" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('326030')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-326030" class="fav-star-page" data-code="326030" data-name="에스케이바이오팜" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139466" onclick="toggleFavFromPage('326030')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A326030</div>
     <div>
@@ -1553,7 +1555,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">한화오션</div>
-      <button id="fav-btn-042660" class="fav-star-page" data-code="042660" data-name="한화오션" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" onclick="toggleFavFromPage('042660')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-042660" class="fav-star-page" data-code="042660" data-name="한화오션" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" data-firstid="139467" onclick="toggleFavFromPage('042660')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A042660</div>
     <div>
@@ -1648,7 +1650,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">동남합성</div>
-      <button id="fav-btn-023450" class="fav-star-page" data-code="023450" data-name="동남합성" data-date="2026-05-04" data-signal="up" data-report="주요사항보고서(자기주식취득결정)" onclick="toggleFavFromPage('023450')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-023450" class="fav-star-page" data-code="023450" data-name="동남합성" data-date="2026-05-04" data-signal="up" data-report="주요사항보고서(자기주식취득결정)" data-firstid="139468" onclick="toggleFavFromPage('023450')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A023450</div>
     <div>
@@ -1781,7 +1783,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">삼성중공업</div>
-      <button id="fav-btn-010140" class="fav-star-page" data-code="010140" data-name="삼성중공업" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" onclick="toggleFavFromPage('010140')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-010140" class="fav-star-page" data-code="010140" data-name="삼성중공업" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" data-firstid="139469" onclick="toggleFavFromPage('010140')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A010140</div>
     <div>
@@ -1876,7 +1878,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">태광산업</div>
-      <button id="fav-btn-003240" class="fav-star-page" data-code="003240" data-name="태광산업" data-date="2026-05-04" data-signal="neutral" data-report="풍문또는보도에대한해명(미확정)" onclick="toggleFavFromPage('003240')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-003240" class="fav-star-page" data-code="003240" data-name="태광산업" data-date="2026-05-04" data-signal="neutral" data-report="풍문또는보도에대한해명(미확정)" data-firstid="139470" onclick="toggleFavFromPage('003240')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A003240</div>
     <div>
@@ -1975,7 +1977,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">HD현대중공업</div>
-      <button id="fav-btn-329180" class="fav-star-page" data-code="329180" data-name="HD현대중공업" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" onclick="toggleFavFromPage('329180')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-329180" class="fav-star-page" data-code="329180" data-name="HD현대중공업" data-date="2026-05-04" data-signal="neutral" data-report="단일판매ㆍ공급계약체결" data-firstid="139471" onclick="toggleFavFromPage('329180')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A329180</div>
     <div>
@@ -2074,7 +2076,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">비엠티</div>
-      <button id="fav-btn-086670" class="fav-star-page" data-code="086670" data-name="비엠티" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최" onclick="toggleFavFromPage('086670')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-086670" class="fav-star-page" data-code="086670" data-name="비엠티" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최" data-firstid="139472" onclick="toggleFavFromPage('086670')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A086670</div>
     <div>
@@ -2231,7 +2233,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">호텔신라</div>
-      <button id="fav-btn-008770" class="fav-star-page" data-code="008770" data-name="호텔신라" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('008770')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-008770" class="fav-star-page" data-code="008770" data-name="호텔신라" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139473" onclick="toggleFavFromPage('008770')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A008770</div>
     <div>
@@ -2329,7 +2331,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">지누스</div>
-      <button id="fav-btn-013890" class="fav-star-page" data-code="013890" data-name="지누스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('013890')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-013890" class="fav-star-page" data-code="013890" data-name="지누스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139475" onclick="toggleFavFromPage('013890')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A013890</div>
     <div>
@@ -2426,7 +2428,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">코스리거글로벌</div>
-      <button id="fav-btn-043710" class="fav-star-page" data-code="043710" data-name="코스리거글로벌" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('043710')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-043710" class="fav-star-page" data-code="043710" data-name="코스리거글로벌" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139477" onclick="toggleFavFromPage('043710')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A043710</div>
     <div>
@@ -2521,7 +2523,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">더즌</div>
-      <button id="fav-btn-462860" class="fav-star-page" data-code="462860" data-name="더즌" data-date="2026-05-04" data-signal="up" data-report="주식소각결정" onclick="toggleFavFromPage('462860')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-462860" class="fav-star-page" data-code="462860" data-name="더즌" data-date="2026-05-04" data-signal="up" data-report="주식소각결정" data-firstid="139478" onclick="toggleFavFromPage('462860')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A462860</div>
     <div>
@@ -2615,7 +2617,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">롯데칠성음료</div>
-      <button id="fav-btn-005300" class="fav-star-page" data-code="005300" data-name="롯데칠성음료" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('005300')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-005300" class="fav-star-page" data-code="005300" data-name="롯데칠성음료" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139479" onclick="toggleFavFromPage('005300')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A005300</div>
     <div>
@@ -2710,7 +2712,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">GS건설</div>
-      <button id="fav-btn-006360" class="fav-star-page" data-code="006360" data-name="GS건설" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항" onclick="toggleFavFromPage('006360')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-006360" class="fav-star-page" data-code="006360" data-name="GS건설" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항" data-firstid="139480" onclick="toggleFavFromPage('006360')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A006360</div>
     <div>
@@ -2807,7 +2809,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">삼성화재해상보험</div>
-      <button id="fav-btn-000810" class="fav-star-page" data-code="000810" data-name="삼성화재해상보험" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('000810')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-000810" class="fav-star-page" data-code="000810" data-name="삼성화재해상보험" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139481" onclick="toggleFavFromPage('000810')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A000810</div>
     <div>
@@ -2900,7 +2902,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">롯데웰푸드</div>
-      <button id="fav-btn-280360" class="fav-star-page" data-code="280360" data-name="롯데웰푸드" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('280360')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-280360" class="fav-star-page" data-code="280360" data-name="롯데웰푸드" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139482" onclick="toggleFavFromPage('280360')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A280360</div>
     <div>
@@ -2993,7 +2995,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">케이티</div>
-      <button id="fav-btn-030200" class="fav-star-page" data-code="030200" data-name="케이티" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('030200')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-030200" class="fav-star-page" data-code="030200" data-name="케이티" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139483" onclick="toggleFavFromPage('030200')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A030200</div>
     <div>
@@ -3090,7 +3092,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">화인베스틸</div>
-      <button id="fav-btn-133820" class="fav-star-page" data-code="133820" data-name="화인베스틸" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('133820')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-133820" class="fav-star-page" data-code="133820" data-name="화인베스틸" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" data-firstid="139484" onclick="toggleFavFromPage('133820')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A133820</div>
     <div>
@@ -3185,7 +3187,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">유니퀘스트</div>
-      <button id="fav-btn-077500" class="fav-star-page" data-code="077500" data-name="유니퀘스트" data-date="2026-05-04" data-signal="up" data-report="단일판매ㆍ공급계약체결" onclick="toggleFavFromPage('077500')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-077500" class="fav-star-page" data-code="077500" data-name="유니퀘스트" data-date="2026-05-04" data-signal="up" data-report="단일판매ㆍ공급계약체결" data-firstid="139485" onclick="toggleFavFromPage('077500')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A077500</div>
     <div>
@@ -3280,7 +3282,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">현대해상</div>
-      <button id="fav-btn-001450" class="fav-star-page" data-code="001450" data-name="현대해상" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('001450')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-001450" class="fav-star-page" data-code="001450" data-name="현대해상" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139486" onclick="toggleFavFromPage('001450')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A001450</div>
     <div>
@@ -3373,7 +3375,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">현대홈쇼핑</div>
-      <button id="fav-btn-057050" class="fav-star-page" data-code="057050" data-name="현대홈쇼핑" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('057050')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-057050" class="fav-star-page" data-code="057050" data-name="현대홈쇼핑" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139487" onclick="toggleFavFromPage('057050')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A057050</div>
     <div>
@@ -3466,7 +3468,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">티씨케이</div>
-      <button id="fav-btn-064760" class="fav-star-page" data-code="064760" data-name="티씨케이" data-date="2026-05-04" data-signal="up" data-report="기업가치제고계획(자율공시)              (2025년 이행현황)" onclick="toggleFavFromPage('064760')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-064760" class="fav-star-page" data-code="064760" data-name="티씨케이" data-date="2026-05-04" data-signal="up" data-report="기업가치제고계획(자율공시)              (2025년 이행현황)" data-firstid="139488" onclick="toggleFavFromPage('064760')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A064760</div>
     <div>
@@ -3608,7 +3610,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">팬오션</div>
-      <button id="fav-btn-028670" class="fav-star-page" data-code="028670" data-name="팬오션" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('028670')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-028670" class="fav-star-page" data-code="028670" data-name="팬오션" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139489" onclick="toggleFavFromPage('028670')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A028670</div>
     <div>
@@ -3741,7 +3743,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에스엠</div>
-      <button id="fav-btn-041510" class="fav-star-page" data-code="041510" data-name="에스엠" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('041510')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-041510" class="fav-star-page" data-code="041510" data-name="에스엠" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139491" onclick="toggleFavFromPage('041510')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A041510</div>
     <div>
@@ -3899,7 +3901,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에스티아이</div>
-      <button id="fav-btn-039440" class="fav-star-page" data-code="039440" data-name="에스티아이" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('039440')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-039440" class="fav-star-page" data-code="039440" data-name="에스티아이" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139492" onclick="toggleFavFromPage('039440')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A039440</div>
     <div>
@@ -3997,7 +3999,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">KBI메탈</div>
-      <button id="fav-btn-024840" class="fav-star-page" data-code="024840" data-name="KBI메탈" data-date="2026-05-04" data-signal="neutral" data-report="전환청구권행사" onclick="toggleFavFromPage('024840')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-024840" class="fav-star-page" data-code="024840" data-name="KBI메탈" data-date="2026-05-04" data-signal="neutral" data-report="전환청구권행사" data-firstid="139493" onclick="toggleFavFromPage('024840')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A024840</div>
     <div>
@@ -4088,7 +4090,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">한스바이오메드</div>
-      <button id="fav-btn-042520" class="fav-star-page" data-code="042520" data-name="한스바이오메드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('042520')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-042520" class="fav-star-page" data-code="042520" data-name="한스바이오메드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139494" onclick="toggleFavFromPage('042520')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A042520</div>
     <div>
@@ -4186,7 +4188,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">대성산업</div>
-      <button id="fav-btn-128820" class="fav-star-page" data-code="128820" data-name="대성산업" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('128820')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-128820" class="fav-star-page" data-code="128820" data-name="대성산업" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139495" onclick="toggleFavFromPage('128820')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A128820</div>
     <div>
@@ -4280,7 +4282,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">헬릭스미스</div>
-      <button id="fav-btn-084990" class="fav-star-page" data-code="084990" data-name="헬릭스미스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('084990')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-084990" class="fav-star-page" data-code="084990" data-name="헬릭스미스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139496" onclick="toggleFavFromPage('084990')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A084990</div>
     <div>
@@ -4402,7 +4404,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">삼성증권</div>
-      <button id="fav-btn-016360" class="fav-star-page" data-code="016360" data-name="삼성증권" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('016360')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-016360" class="fav-star-page" data-code="016360" data-name="삼성증권" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139497" onclick="toggleFavFromPage('016360')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A016360</div>
     <div>
@@ -4527,7 +4529,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에이엘티</div>
-      <button id="fav-btn-172670" class="fav-star-page" data-code="172670" data-name="에이엘티" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('172670')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-172670" class="fav-star-page" data-code="172670" data-name="에이엘티" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139499" onclick="toggleFavFromPage('172670')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A172670</div>
     <div>
@@ -4618,7 +4620,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">카카오뱅크</div>
-      <button id="fav-btn-323410" class="fav-star-page" data-code="323410" data-name="카카오뱅크" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('323410')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-323410" class="fav-star-page" data-code="323410" data-name="카카오뱅크" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139500" onclick="toggleFavFromPage('323410')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A323410</div>
     <div>
@@ -4711,7 +4713,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">씨에스윈드</div>
-      <button id="fav-btn-112610" class="fav-star-page" data-code="112610" data-name="씨에스윈드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('112610')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-112610" class="fav-star-page" data-code="112610" data-name="씨에스윈드" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139501" onclick="toggleFavFromPage('112610')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A112610</div>
     <div>
@@ -4808,7 +4810,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">동신건설</div>
-      <button id="fav-btn-025950" class="fav-star-page" data-code="025950" data-name="동신건설" data-date="2026-05-04" data-signal="up" data-report="기업가치제고계획(자율공시)              (2026년 동신건설(주) 기업가치 제고 계획)" onclick="toggleFavFromPage('025950')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-025950" class="fav-star-page" data-code="025950" data-name="동신건설" data-date="2026-05-04" data-signal="up" data-report="기업가치제고계획(자율공시)              (2026년 동신건설(주) 기업가치 제고 계획)" data-firstid="139502" onclick="toggleFavFromPage('025950')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A025950</div>
     <div>
@@ -4906,7 +4908,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">에이프릴바이오</div>
-      <button id="fav-btn-397030" class="fav-star-page" data-code="397030" data-name="에이프릴바이오" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항              (유한양행, SAFA 기반 융합단백질 기술라이선스 및 공동연구개발 계약 조기 종료)" onclick="toggleFavFromPage('397030')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-397030" class="fav-star-page" data-code="397030" data-name="에이프릴바이오" data-date="2026-05-04" data-signal="up" data-report="투자판단관련주요경영사항              (유한양행, SAFA 기반 융합단백질 기술라이선스 및 공동연구개발 계약 조기 종료)" data-firstid="139504" onclick="toggleFavFromPage('397030')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A397030</div>
     <div>
@@ -4995,7 +4997,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">키이스트</div>
-      <button id="fav-btn-054780" class="fav-star-page" data-code="054780" data-name="키이스트" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('054780')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-054780" class="fav-star-page" data-code="054780" data-name="키이스트" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" data-firstid="139505" onclick="toggleFavFromPage('054780')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A054780</div>
     <div>
@@ -5090,7 +5092,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">DB하이텍</div>
-      <button id="fav-btn-000990" class="fav-star-page" data-code="000990" data-name="DB하이텍" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('000990')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-000990" class="fav-star-page" data-code="000990" data-name="DB하이텍" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139506" onclick="toggleFavFromPage('000990')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A000990</div>
     <div>
@@ -5199,7 +5201,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">동진쎄미켐</div>
-      <button id="fav-btn-005290" class="fav-star-page" data-code="005290" data-name="동진쎄미켐" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('005290')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-005290" class="fav-star-page" data-code="005290" data-name="동진쎄미켐" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139507" onclick="toggleFavFromPage('005290')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A005290</div>
     <div>
@@ -5300,7 +5302,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">엠케이전자</div>
-      <button id="fav-btn-033160" class="fav-star-page" data-code="033160" data-name="엠케이전자" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('033160')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-033160" class="fav-star-page" data-code="033160" data-name="엠케이전자" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139508" onclick="toggleFavFromPage('033160')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A033160</div>
     <div>
@@ -5401,7 +5403,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">리노공업</div>
-      <button id="fav-btn-058470" class="fav-star-page" data-code="058470" data-name="리노공업" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('058470')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-058470" class="fav-star-page" data-code="058470" data-name="리노공업" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139509" onclick="toggleFavFromPage('058470')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A058470</div>
     <div>
@@ -5499,7 +5501,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">인텍플러스</div>
-      <button id="fav-btn-064290" class="fav-star-page" data-code="064290" data-name="인텍플러스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('064290')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-064290" class="fav-star-page" data-code="064290" data-name="인텍플러스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139510" onclick="toggleFavFromPage('064290')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A064290</div>
     <div>
@@ -5593,7 +5595,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">네오티스</div>
-      <button id="fav-btn-085910" class="fav-star-page" data-code="085910" data-name="네오티스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('085910')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-085910" class="fav-star-page" data-code="085910" data-name="네오티스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139511" onclick="toggleFavFromPage('085910')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A085910</div>
     <div>
@@ -5691,7 +5693,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">이리츠코크렙</div>
-      <button id="fav-btn-088260" class="fav-star-page" data-code="088260" data-name="이리츠코크렙" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('088260')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-088260" class="fav-star-page" data-code="088260" data-name="이리츠코크렙" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139512" onclick="toggleFavFromPage('088260')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A088260</div>
     <div>
@@ -5782,7 +5784,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">맵스리얼티</div>
-      <button id="fav-btn-094800" class="fav-star-page" data-code="094800" data-name="맵스리얼티" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('094800')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-094800" class="fav-star-page" data-code="094800" data-name="맵스리얼티" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139513" onclick="toggleFavFromPage('094800')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A094800</div>
     <div>
@@ -5873,7 +5875,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">제닉</div>
-      <button id="fav-btn-123330" class="fav-star-page" data-code="123330" data-name="제닉" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('123330')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-123330" class="fav-star-page" data-code="123330" data-name="제닉" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139514" onclick="toggleFavFromPage('123330')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A123330</div>
     <div>
@@ -5976,7 +5978,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">피에스케이</div>
-      <button id="fav-btn-319660" class="fav-star-page" data-code="319660" data-name="피에스케이" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('319660')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-319660" class="fav-star-page" data-code="319660" data-name="피에스케이" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139515" onclick="toggleFavFromPage('319660')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A319660</div>
     <div>
@@ -6071,7 +6073,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">뉴로메카</div>
-      <button id="fav-btn-348340" class="fav-star-page" data-code="348340" data-name="뉴로메카" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('348340')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-348340" class="fav-star-page" data-code="348340" data-name="뉴로메카" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139516" onclick="toggleFavFromPage('348340')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A348340</div>
     <div>
@@ -6169,7 +6171,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">KB발해인프라</div>
-      <button id="fav-btn-415640" class="fav-star-page" data-code="415640" data-name="KB발해인프라" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('415640')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-415640" class="fav-star-page" data-code="415640" data-name="KB발해인프라" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139517" onclick="toggleFavFromPage('415640')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A415640</div>
     <div>
@@ -6260,7 +6262,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">엠플러스</div>
-      <button id="fav-btn-259630" class="fav-star-page" data-code="259630" data-name="엠플러스" data-date="2026-05-04" data-signal="down" data-report="단일판매ㆍ공급계약해지" onclick="toggleFavFromPage('259630')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-259630" class="fav-star-page" data-code="259630" data-name="엠플러스" data-date="2026-05-04" data-signal="down" data-report="단일판매ㆍ공급계약해지" data-firstid="139518" onclick="toggleFavFromPage('259630')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A259630</div>
     <div>
@@ -6352,7 +6354,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">뷰웍스</div>
-      <button id="fav-btn-100120" class="fav-star-page" data-code="100120" data-name="뷰웍스" data-date="2026-05-04" data-signal="down" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('100120')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-100120" class="fav-star-page" data-code="100120" data-name="뷰웍스" data-date="2026-05-04" data-signal="down" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139519" onclick="toggleFavFromPage('100120')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A100120</div>
     <div>
@@ -6447,7 +6449,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">삼성에스디에스</div>
-      <button id="fav-btn-018260" class="fav-star-page" data-code="018260" data-name="삼성에스디에스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('018260')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-018260" class="fav-star-page" data-code="018260" data-name="삼성에스디에스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139520" onclick="toggleFavFromPage('018260')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A018260</div>
     <div>
@@ -6541,7 +6543,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">아바코</div>
-      <button id="fav-btn-083930" class="fav-star-page" data-code="083930" data-name="아바코" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('083930')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-083930" class="fav-star-page" data-code="083930" data-name="아바코" data-date="2026-05-04" data-signal="neutral" data-report="영업(잠정)실적(공정공시)" data-firstid="139521" onclick="toggleFavFromPage('083930')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A083930</div>
     <div>
@@ -6636,7 +6638,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">한화에어로스페이스</div>
-      <button id="fav-btn-012450" class="fav-star-page" data-code="012450" data-name="한화에어로스페이스" data-date="2026-05-04" data-signal="neutral" data-report="타법인주식및출자증권취득결정" onclick="toggleFavFromPage('012450')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-012450" class="fav-star-page" data-code="012450" data-name="한화에어로스페이스" data-date="2026-05-04" data-signal="neutral" data-report="타법인주식및출자증권취득결정" data-firstid="139522" onclick="toggleFavFromPage('012450')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A012450</div>
     <div>
@@ -6733,7 +6735,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">한국항공우주</div>
-      <button id="fav-btn-047810" class="fav-star-page" data-code="047810" data-name="한국항공우주" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('047810')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-047810" class="fav-star-page" data-code="047810" data-name="한국항공우주" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139523" onclick="toggleFavFromPage('047810')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A047810</div>
     <div>
@@ -6827,7 +6829,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">셀트리온</div>
-      <button id="fav-btn-068270" class="fav-star-page" data-code="068270" data-name="셀트리온" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('068270')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-068270" class="fav-star-page" data-code="068270" data-name="셀트리온" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139524" onclick="toggleFavFromPage('068270')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A068270</div>
     <div>
@@ -6921,7 +6923,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">삼성전자</div>
-      <button id="fav-btn-005930" class="fav-star-page" data-code="005930" data-name="삼성전자" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('005930')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-005930" class="fav-star-page" data-code="005930" data-name="삼성전자" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139525" onclick="toggleFavFromPage('005930')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A005930</div>
     <div>
@@ -7023,7 +7025,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">유일에너테크</div>
-      <button id="fav-btn-340930" class="fav-star-page" data-code="340930" data-name="유일에너테크" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (상장폐지 관련 이의신청서 접수 및 개선기간 부여)" onclick="toggleFavFromPage('340930')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-340930" class="fav-star-page" data-code="340930" data-name="유일에너테크" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (상장폐지 관련 이의신청서 접수 및 개선기간 부여)" data-firstid="139526" onclick="toggleFavFromPage('340930')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A340930</div>
     <div>
@@ -7136,7 +7138,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">SM C&amp;C</div>
-      <button id="fav-btn-048550" class="fav-star-page" data-code="048550" data-name="SM C&amp;C" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" onclick="toggleFavFromPage('048550')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-048550" class="fav-star-page" data-code="048550" data-name="SM C&amp;C" data-date="2026-05-04" data-signal="neutral" data-report="연결재무제표기준영업(잠정)실적(공정공시)" data-firstid="139527" onclick="toggleFavFromPage('048550')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A048550</div>
     <div>
@@ -7231,7 +7233,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">BNK금융지주</div>
-      <button id="fav-btn-138930" class="fav-star-page" data-code="138930" data-name="BNK금융지주" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" onclick="toggleFavFromPage('138930')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-138930" class="fav-star-page" data-code="138930" data-name="BNK금융지주" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최(안내공시)" data-firstid="139528" onclick="toggleFavFromPage('138930')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A138930</div>
     <div>
@@ -7324,7 +7326,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">위메이드맥스</div>
-      <button id="fav-btn-101730" class="fav-star-page" data-code="101730" data-name="위메이드맥스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" onclick="toggleFavFromPage('101730')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-101730" class="fav-star-page" data-code="101730" data-name="위메이드맥스" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(일반)" data-firstid="139529" onclick="toggleFavFromPage('101730')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A101730</div>
     <div>
@@ -7418,7 +7420,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">채비</div>
-      <button id="fav-btn-0011T0" class="fav-star-page" data-code="0011T0" data-name="채비" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" onclick="toggleFavFromPage('0011T0')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-0011T0" class="fav-star-page" data-code="0011T0" data-name="채비" data-date="2026-05-04" data-signal="neutral" data-report="주식등의대량보유상황보고서(약식)" data-firstid="139530" onclick="toggleFavFromPage('0011T0')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A0011T0</div>
     <div>
@@ -7505,7 +7507,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">현대에버다임</div>
-      <button id="fav-btn-041440" class="fav-star-page" data-code="041440" data-name="현대에버다임" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최" onclick="toggleFavFromPage('041440')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-041440" class="fav-star-page" data-code="041440" data-name="현대에버다임" data-date="2026-05-04" data-signal="neutral" data-report="기업설명회(IR)개최" data-firstid="139531" onclick="toggleFavFromPage('041440')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A041440</div>
     <div>
@@ -7598,7 +7600,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">제이알글로벌리츠</div>
-      <button id="fav-btn-348950" class="fav-star-page" data-code="348950" data-name="제이알글로벌리츠" data-date="2026-05-04" data-signal="neutral" data-report="기타경영사항(자율공시)(종속회사의주요경영사항)" onclick="toggleFavFromPage('348950')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-348950" class="fav-star-page" data-code="348950" data-name="제이알글로벌리츠" data-date="2026-05-04" data-signal="neutral" data-report="기타경영사항(자율공시)(종속회사의주요경영사항)" data-firstid="139532" onclick="toggleFavFromPage('348950')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A348950</div>
     <div>
@@ -7699,7 +7701,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">제일엠앤에스</div>
-      <button id="fav-btn-412540" class="fav-star-page" data-code="412540" data-name="제일엠앤에스" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (개선계획 이행내역서 제출에 따른 안내)" onclick="toggleFavFromPage('412540')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-412540" class="fav-star-page" data-code="412540" data-name="제일엠앤에스" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (개선계획 이행내역서 제출에 따른 안내)" data-firstid="139533" onclick="toggleFavFromPage('412540')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A412540</div>
     <div>
@@ -7781,7 +7783,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">이오플로우</div>
-      <button id="fav-btn-294090" class="fav-star-page" data-code="294090" data-name="이오플로우" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (개선계획 이행내역서 제출에 따른 안내)" onclick="toggleFavFromPage('294090')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-294090" class="fav-star-page" data-code="294090" data-name="이오플로우" data-date="2026-05-04" data-signal="neutral" data-report="기타시장안내              (개선계획 이행내역서 제출에 따른 안내)" data-firstid="139534" onclick="toggleFavFromPage('294090')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A294090</div>
     <div>
@@ -7863,7 +7865,7 @@ function applyIdxFilter() {
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">하나기술</div>
-      <button id="fav-btn-299030" class="fav-star-page" data-code="299030" data-name="하나기술" data-date="2026-05-04" data-signal="down" data-report="단일판매ㆍ공급계약해지" onclick="toggleFavFromPage('299030')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-299030" class="fav-star-page" data-code="299030" data-name="하나기술" data-date="2026-05-04" data-signal="down" data-report="단일판매ㆍ공급계약해지" data-firstid="139535" onclick="toggleFavFromPage('299030')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A299030</div>
     <div>
