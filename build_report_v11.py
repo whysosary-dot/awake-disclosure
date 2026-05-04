@@ -1762,7 +1762,7 @@ for code, recs in companies:
     parts_html.append(f"""<h3 class="section-title">📌 오늘의 공시 ({len(recs)}건)</h3>""")
 
     for rec in recs:
-        parts_html.append(f"""<div class="disc-card">
+        parts_html.append(f"""<div class="disc-card" id="stock-{html.escape(code)}-{rec['id']}">
   <div class="disc-head">
     <div class="disc-meta">
       <div class="disc-time">{html.escape(rec["time"])} · 접수 {html.escape(rec["rcpNo"] or "-")}</div>
