@@ -862,9 +862,25 @@ function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs();
-  if (f[code]) { delete f[code]; btn.textContent='☆'; btn.classList.remove('fav-on'); }
-  else { f[code]=1; btn.textContent='⭐'; btn.classList.add('fav-on'); }
+  var m = getFavMeta();
+  if (f[code]) {
+    delete f[code];
+    delete m[code];
+    btn.textContent='☆'; btn.classList.remove('fav-on');
+  } else {
+    f[code]=1; btn.textContent='⭐'; btn.classList.add('fav-on');
+    var pb = document.getElementById('fav-btn-'+code);
+    var firstDisc = document.querySelector('.disc-card[id^="stock-'+code+'-"]');
+    m[code] = {
+      name: pb ? pb.dataset.name : code,
+      date: pb ? pb.dataset.date : '',
+      signal: pb ? pb.dataset.signal : 'neutral',
+      report: pb ? pb.dataset.report : '',
+      anchor: firstDisc ? firstDisc.id : ('stock-'+code)
+    };
+  }
   saveFavs(f);
+  saveFavMeta(m);
   // 기업 페이지 별도 업데이트
   var sp = document.getElementById('fav-btn-'+code);
   if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
