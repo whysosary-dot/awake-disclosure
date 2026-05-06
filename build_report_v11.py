@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-04"
-TODAY_DISP = "2026년 5월 4일 (월)"
+TODAY = "2026-05-06"
+TODAY_DISP = "2026년 5월 6일 (수)"
 
-with open("/sessions/funny-wizardly-keller/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/funny-wizardly-keller/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/funny-wizardly-keller/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/funny-wizardly-keller/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/funny-wizardly-keller/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/awesome-blissful-fermi/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/funny-wizardly-keller/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/awesome-blissful-fermi/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/funny-wizardly-keller/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/awesome-blissful-fermi/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1528,23 +1528,8 @@ function toggleFavFromIdx(btn, code) {
 }
 function toggleFavFromPage(code) {
   var f = getFavs();
-  var m = getFavMeta();
-  if (f[code]) {
-    delete f[code];
-    delete m[code];
-  } else {
-    f[code] = 1;
-    var btn = document.getElementById('fav-btn-'+code);
-    m[code] = {
-      name: btn ? btn.dataset.name : code,
-      date: btn ? btn.dataset.date : '',
-      signal: btn ? btn.dataset.signal : 'neutral',
-      report: btn ? btn.dataset.report : '',
-      anchor: 'stock-'+code+'-'+(btn ? btn.dataset.code : code)
-    };
-  }
+  if (f[code]) { delete f[code]; } else { f[code]=1; }
   saveFavs(f);
-  saveFavMeta(m);
   var sp = document.getElementById('fav-btn-'+code);
   if(sp) { sp.textContent = f[code]?'⭐':'☆'; sp.classList.toggle('fav-on', !!f[code]); }
   // 인덱스 행 별도 업데이트
@@ -1713,7 +1698,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-signal="{chosen['signal_kind']}" data-report="{html.escape(first['report'])}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
@@ -1777,7 +1762,7 @@ for code, recs in companies:
     parts_html.append(f"""<h3 class="section-title">📌 오늘의 공시 ({len(recs)}건)</h3>""")
 
     for rec in recs:
-        parts_html.append(f"""<div class="disc-card" id="stock-{html.escape(code)}-{rec['id']}">
+        parts_html.append(f"""<div class="disc-card">
   <div class="disc-head">
     <div class="disc-meta">
       <div class="disc-time">{html.escape(rec["time"])} · 접수 {html.escape(rec["rcpNo"] or "-")}</div>
@@ -1820,7 +1805,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/funny-wizardly-keller/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
