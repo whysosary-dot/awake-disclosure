@@ -1501,7 +1501,7 @@ for d in DISCLOSURES:
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
-<td class="disc">{html.escape(d["report"][:80])}</td>
+<td class="disc"><a class="idx-anchor" href="#stock-{html.escape(d['code'])}-{d['id']}">{html.escape(d["report"][:80])}</a></td>
 <td>{chg_pill(d["chg_pct"])}</td>
 <td><span class="{sig_class}">{html.escape(short_signal(d["signal"]))}</span></td>
 </tr>""")
