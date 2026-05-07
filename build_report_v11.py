@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-06"
-TODAY_DISP = "2026년 5월 6일 (수)"
+TODAY = "2026-05-07"
+TODAY_DISP = "2026년 5월 7일 (목)"
 
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/dazzling-compassionate-hamilton/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/dazzling-compassionate-hamilton/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/dazzling-compassionate-hamilton/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/dazzling-compassionate-hamilton/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/awesome-blissful-fermi/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/dazzling-compassionate-hamilton/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/awesome-blissful-fermi/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/dazzling-compassionate-hamilton/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/awesome-blissful-fermi/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/dazzling-compassionate-hamilton/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1631,7 +1631,7 @@ parts_html.append(f"""</ul>
 <h3 style="font-size:18px; margin-top:18px; color:var(--c-darkest);">⚠️ 단기과열/투자경고 ({len(WARNINGS)}건)</h3>
 <ul style="font-size:13px; line-height:1.7; columns:2;">""")
 for w in WARNINGS:
-    parts_html.append(f'<li><strong>{html.escape(w["company"])}</strong> · {html.escape(w["warning_type"])}</li>')
+    parts_html.append(f'<li><strong>{html.escape(w["company"])}</strong> · {html.escape(w.get("warning_type", w.get("category","투자경고")))}</li>')
 parts_html.append("</ul></div></div>")
 
 # === PER-COMPANY PAGES ===
@@ -1830,7 +1830,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/dazzling-compassionate-hamilton/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
