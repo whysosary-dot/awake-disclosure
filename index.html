@@ -158,6 +158,7 @@ body{
 <div class="tab-panel" id="tab-favs">
   <div class="fav-toolbar">
     <div class="fav-count"><span id="fav-total">0</span>개 즐겨찾기</div>
+    <input id="fav-search" type="text" placeholder="🔍 기업명 검색..." oninput="renderFavs()" style="padding:6px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;width:180px;transition:border .2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e2e8f0'"/>
     <div style="display:flex;gap:6px;align-items:center;">
       <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
       <button id="gh-settings-btn" title="GitHub PAT 설정" onclick="openPatModal()" style="padding:5px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;cursor:pointer;font-size:14px;">⚙️</button>
@@ -290,6 +291,16 @@ function renderFavs() {
     return;
   }
 
+  // 검색 필터
+  var q = (document.getElementById('fav-search') ? document.getElementById('fav-search').value : '').trim().toLowerCase();
+  if (q) {
+    codes = codes.filter(function(code) {
+      var name = (m[code] && m[code].name) ? m[code].name.toLowerCase() : '';
+      var nameFromMap = (CODE_NAME[code] || '').toLowerCase();
+      return name.includes(q) || nameFromMap.includes(q) || code.toLowerCase().includes(q);
+    });
+  }
+
   // 날짜 최신순 정렬
   codes.sort(function(a, b) {
     var da = (m[a] && m[a].date) || '';
@@ -307,6 +318,12 @@ function renderFavs() {
   });
 
   var html = '';
+
+  if (codes.length === 0 && q) {
+    container.innerHTML = '<div class="fav-empty"><div class="big">🔍</div>"' + escHtml(q) + '" 검색 결과가 없습니다.</div>';
+    return;
+  }
+
   var sortedDates = Object.keys(byDate).sort(function(a,b){return b.localeCompare(a);});
 
   sortedDates.forEach(function(date) {
