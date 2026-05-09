@@ -158,7 +158,11 @@ body{
 <div class="tab-panel" id="tab-favs">
   <div class="fav-toolbar">
     <div class="fav-count"><span id="fav-total">0</span>개 즐겨찾기</div>
-    <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
+    <div style="display:flex;gap:6px;align-items:center;">
+      <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
+      <button id="gh-settings-btn" title="GitHub PAT 설정" onclick="openPatModal()" style="padding:5px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;cursor:pointer;font-size:14px;">⚙️</button>
+      <button id="gh-commit-btn" onclick="ghCommitFavs()" title="즐겨찾기를 GitHub에 저장 (모든 기기 동기화)" style="padding:5px 12px;border:none;border-radius:8px;background:#3b82f6;color:#fff;cursor:pointer;font-size:13px;font-weight:600;">☁️ 커밋 &amp; 푸시</button>
+    </div>
   </div>
   <div id="fav-list"></div>
 </div>
@@ -364,6 +368,112 @@ function clearAllFavsIndex() {
 
 // 초기 카운트 표시
 updateFavCount();
+
+// ── GitHub 동기화 ──────────────────────────────────────────────────────────
+const GH_AWAKE = { OWNER:'whysosary-dot', REPO:'awake-disclosure', PATH:'awake_favs.json', BRANCH:'main' };
+const LS_PAT_KEY = 'awake_gh_pat';
+
+function getPatFromLS(){ return localStorage.getItem(LS_PAT_KEY)||''; }
+function savePatToLS(p){ localStorage.setItem(LS_PAT_KEY, p); }
+
+function toast(msg, ok=true){
+  const t=document.getElementById('gh-toast');
+  t.textContent=msg;
+  t.style.background=ok?'#22c55e':'#ef4444';
+  t.style.display='block';
+  t.style.opacity='1';
+  clearTimeout(t._tid);
+  t._tid=setTimeout(()=>{ t.style.opacity='0'; setTimeout(()=>t.style.display='none',400); },3000);
+}
+
+async function ghApiGet(path){
+  const pat=getPatFromLS();
+  if(!pat) return null;
+  const url=`https://api.github.com/repos/${GH_AWAKE.OWNER}/${GH_AWAKE.REPO}/contents/${path}?ref=${GH_AWAKE.BRANCH}`;
+  const r=await fetch(url,{headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json'}});
+  if(r.status===404) return null;
+  if(!r.ok) throw new Error('GH GET '+r.status);
+  return r.json();
+}
+
+async function ghApiPut(path, contentB64, sha, message){
+  const pat=getPatFromLS();
+  if(!pat) throw new Error('PAT 없음');
+  const url=`https://api.github.com/repos/${GH_AWAKE.OWNER}/${GH_AWAKE.REPO}/contents/${path}`;
+  const body={message, content:contentB64, branch:GH_AWAKE.BRANCH};
+  if(sha) body.sha=sha;
+  const r=await fetch(url,{method:'PUT',headers:{'Authorization':'token '+pat,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok){ const e=await r.json(); throw new Error(e.message||'GH PUT '+r.status); }
+  return r.json();
+}
+
+async function ghCommitFavs(){
+  const pat=getPatFromLS();
+  if(!pat){ openPatModal(); return; }
+  const btn=document.getElementById('gh-commit-btn');
+  btn.disabled=true; btn.textContent='⏳ 저장 중...';
+  try {
+    const favs=getFavs(), meta=getFavMeta();
+    const payload=JSON.stringify({favs, meta}, null, 2);
+    const b64=btoa(unescape(encodeURIComponent(payload)));
+    const existing=await ghApiGet(GH_AWAKE.PATH);
+    const sha=existing?existing.sha:undefined;
+    await ghApiPut(GH_AWAKE.PATH, b64, sha, '즐겨찾기 동기화 (index.html)');
+    toast('✅ GitHub에 저장됐어요!');
+  } catch(e){
+    toast('❌ '+e.message, false);
+  } finally {
+    btn.disabled=false; btn.textContent='☁️ 커밋 & 푸시';
+  }
+}
+
+async function loadFavsFromGitHub(){
+  const pat=getPatFromLS();
+  if(!pat) return;
+  try {
+    const file=await ghApiGet(GH_AWAKE.PATH);
+    if(!file) return;
+    const data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
+    if(data.favs) saveFavs(data.favs);
+    if(data.meta) saveFavMeta(data.meta);
+    updateFavCount();
+    renderFavs();
+  } catch(e){ console.warn('GH load fail:', e); }
+}
+
+function openPatModal(){
+  document.getElementById('pat-modal-overlay').style.display='flex';
+  document.getElementById('pat-input').value=getPatFromLS();
+}
+function closePatModal(){ document.getElementById('pat-modal-overlay').style.display='none'; }
+function savePatAndClose(){
+  const v=document.getElementById('pat-input').value.trim();
+  if(!v){ toast('PAT를 입력하세요', false); return; }
+  savePatToLS(v);
+  closePatModal();
+  toast('✅ PAT 저장됨');
+  loadFavsFromGitHub();
+}
+
+window.addEventListener('load', loadFavsFromGitHub);
+
 </script>
+
+<!-- Toast -->
+<div id="gh-toast" style="display:none;position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:10px;color:#fff;font-size:14px;font-weight:600;z-index:9999;opacity:1;transition:opacity .4s;box-shadow:0 4px 16px rgba(0,0,0,.2)"></div>
+
+<!-- PAT 설정 모달 -->
+<div id="pat-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;padding:28px 32px;width:420px;max-width:90vw;box-shadow:0 8px 32px rgba(0,0,0,.2);">
+    <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">🔑 GitHub PAT 설정</h3>
+    <p style="margin:0 0 16px;font-size:13px;color:#64748b;">즐겨찾기를 GitHub에 저장하려면 Personal Access Token이 필요해요.<br>repo 권한 포함 토큰을 입력하세요.</p>
+    <input id="pat-input" type="password" placeholder="ghp_xxxxxxxxxxxx" style="width:100%;box-sizing:border-box;padding:10px 14px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;margin-bottom:16px;" />
+    <div style="display:flex;gap:8px;justify-content:flex-end;">
+      <button onclick="closePatModal()" style="padding:8px 18px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;cursor:pointer;font-size:14px;">취소</button>
+      <button onclick="savePatAndClose()" style="padding:8px 18px;border:none;border-radius:8px;background:#3b82f6;color:#fff;cursor:pointer;font-size:14px;font-weight:600;">저장</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
