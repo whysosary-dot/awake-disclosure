@@ -447,6 +447,23 @@ async function ghCommitFavs(){
 
 
 
+// 자동 로드 — 페이지 열릴 때 GitHub 데이터 있으면 덮어쓰기
+async function loadFavsFromGitHub(){
+  var pat=getPatFromLS();
+  if(!pat) return;
+  try {
+    var file=await ghApiGet(GH_AWAKE.PATH);
+    if(!file) return;
+    var data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
+    if(!data.favs || Object.keys(data.favs).length===0) return;
+    saveFavs(data.favs);
+    if(data.meta) saveFavMeta(data.meta);
+    updateFavCount(); renderFavs();
+  } catch(e){ console.warn('GH load fail:', e); }
+}
+
+window.addEventListener('load', loadFavsFromGitHub);
+
 function openPatModal(){
   document.getElementById('pat-modal-overlay').style.display='flex';
   document.getElementById('pat-input').value=getPatFromLS();
