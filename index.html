@@ -429,6 +429,7 @@ async function ghApiPut(path, contentB64, sha, message){
 }
 
 async function ghCommitFavs(){
+  if(!confirm('즐겨찾기를 GitHub에 저장할까요?\n모든 기기의 데이터가 현재 기기 기준으로 덮어씌워집니다.')) return;
   var pat=getPatFromLS();
   if(!pat){ openPatModal(); return; }
   var btn=document.getElementById('gh-commit-btn');
