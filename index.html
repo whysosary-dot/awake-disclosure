@@ -445,7 +445,7 @@ async function ghCommitFavs(){
   }
 }
 
-// 자동 로드 — 로컬 데이터 우선, GitHub에만 있는 항목을 추가(병합)
+// 자동 로드 — GitHub에 데이터 있으면 덮어쓰기, 없으면 로컬 유지
 async function loadFavsFromGitHub(){
   var pat=getPatFromLS();
   if(!pat) return;
@@ -454,20 +454,9 @@ async function loadFavsFromGitHub(){
     if(!file) return;
     var data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
     if(!data.favs || Object.keys(data.favs).length===0) return;
-    // 병합: 로컬에 없는 항목만 추가 (로컬 데이터 절대 덮어쓰지 않음)
-    var localFavs=getFavs(), localMeta=getFavMeta();
-    var added=0;
-    Object.keys(data.favs).forEach(function(code){
-      if(!localFavs[code]){
-        localFavs[code]=data.favs[code];
-        if(data.meta && data.meta[code]) localMeta[code]=data.meta[code];
-        added++;
-      }
-    });
-    if(added>0){
-      saveFavs(localFavs); saveFavMeta(localMeta);
-      updateFavCount(); renderFavs();
-    }
+    saveFavs(data.favs);
+    if(data.meta) saveFavMeta(data.meta);
+    updateFavCount(); renderFavs();
   } catch(e){ console.warn('GH load fail:', e); }
 }
 
