@@ -347,7 +347,7 @@ function renderFavs() {
 
       html += '<div class="fav-card">' +
         '<div class="fav-info">' +
-          '<a class="fav-name" href="' + reportUrl + '" style="text-decoration:none;color:inherit;cursor:pointer;">⭐ ' + escHtml(name) + '</a>' +
+          '<a class="fav-name" href="' + reportUrl + '" style="text-decoration:none;color:inherit;cursor:pointer;">⭐ ' + highlightText(name, q) + '</a>' +
           '<div class="fav-meta">' +
             '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
             '<span class="' + sigCls + '">' + sigLabel + '</span>' +
@@ -367,6 +367,14 @@ function renderFavs() {
 
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function highlightText(s, q) {
+  if (!q) return escHtml(s);
+  var escaped = escHtml(s);
+  var escapedQ = q.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+  return escaped.replace(new RegExp('(' + escapedQ + ')', 'gi'),
+    '<mark style="background:#fde047;color:#0c1445;border-radius:3px;padding:0 2px;">$1</mark>');
 }
 
 function removeFav(code) {
