@@ -162,7 +162,6 @@ body{
       <input id="fav-search" type="text" placeholder="🔍 기업명 검색..." oninput="renderFavs()" style="padding:6px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;width:160px;transition:border .2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e2e8f0'"/>
       <button class="fav-clear-btn" onclick="clearAllFavsIndex()">🗑 전체 초기화</button>
       <button id="gh-settings-btn" title="GitHub PAT 설정" onclick="openPatModal()" style="padding:5px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;cursor:pointer;font-size:14px;">⚙️</button>
-      <button onclick="loadFavsFromGitHub(true)" title="GitHub에서 즐겨찾기 불러오기" style="padding:5px 10px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;cursor:pointer;font-size:13px;">📥 불러오기</button>
       <button id="gh-commit-btn" onclick="ghCommitFavs()" title="즐겨찾기를 GitHub에 저장 (모든 기기 동기화)" style="padding:5px 12px;border:none;border-radius:8px;background:#3b82f6;color:#fff;cursor:pointer;font-size:13px;font-weight:600;">☁️ 커밋 &amp; 푸시</button>
     </div>
   </div>
@@ -446,27 +445,33 @@ async function ghCommitFavs(){
   }
 }
 
-// 수동 불러오기 (confirm=true이면 덮어쓰기 전 확인)
-async function loadFavsFromGitHub(confirm){
+// 자동 로드 — 로컬 데이터 우선, GitHub에만 있는 항목을 추가(병합)
+async function loadFavsFromGitHub(){
   var pat=getPatFromLS();
-  if(!pat){ openPatModal(); return; }
+  if(!pat) return;
   try {
     var file=await ghApiGet(GH_AWAKE.PATH);
-    if(!file){ toast('저장된 즐겨찾기가 없습니다', false); return; }
+    if(!file) return;
     var data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
-    if(!data.favs || Object.keys(data.favs).length===0){ toast('GitHub에 저장된 즐겨찾기가 없어요', false); return; }
-    var localCount=Object.keys(getFavs()).length;
-    var ghCount=Object.keys(data.favs).length;
-    if(confirm && localCount>0){
-      if(!window.confirm('현재 기기의 즐겨찾기('+localCount+'개)를 GitHub 데이터('+ghCount+'개)로 덮어쓸까요?')) return;
+    if(!data.favs || Object.keys(data.favs).length===0) return;
+    // 병합: 로컬에 없는 항목만 추가 (로컬 데이터 절대 덮어쓰지 않음)
+    var localFavs=getFavs(), localMeta=getFavMeta();
+    var added=0;
+    Object.keys(data.favs).forEach(function(code){
+      if(!localFavs[code]){
+        localFavs[code]=data.favs[code];
+        if(data.meta && data.meta[code]) localMeta[code]=data.meta[code];
+        added++;
+      }
+    });
+    if(added>0){
+      saveFavs(localFavs); saveFavMeta(localMeta);
+      updateFavCount(); renderFavs();
     }
-    if(data.favs) saveFavs(data.favs);
-    if(data.meta) saveFavMeta(data.meta);
-    updateFavCount();
-    renderFavs();
-    toast('✅ '+ghCount+'개 즐겨찾기를 불러왔어요!');
-  } catch(e){ toast('❌ '+e.message, false); }
+  } catch(e){ console.warn('GH load fail:', e); }
 }
+
+window.addEventListener('load', loadFavsFromGitHub);
 
 function openPatModal(){
   document.getElementById('pat-modal-overlay').style.display='flex';
