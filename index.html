@@ -372,6 +372,7 @@ function escHtml(s) {
 function removeFav(code) {
   var f = getFavs(); delete f[code]; saveFavs(f);
   var m = getFavMeta(); delete m[code]; saveFavMeta(m);
+  localStorage.setItem(LS_TS_KEY, Date.now());
   updateFavCount();
   renderFavs();
 }
@@ -379,6 +380,7 @@ function removeFav(code) {
 function clearAllFavsIndex() {
   if (!confirm('즐겨찾기를 모두 초기화할까요?')) return;
   saveFavs({}); saveFavMeta({});
+  localStorage.setItem(LS_TS_KEY, Date.now());
   updateFavCount();
   renderFavs();
 }
@@ -389,6 +391,7 @@ updateFavCount();
 // ── GitHub 동기화 ──────────────────────────────────────────────────────────
 const GH_AWAKE = { OWNER:'whysosary-dot', REPO:'awake-disclosure', PATH:'awake_favs.json', BRANCH:'main' };
 const LS_PAT_KEY = 'awake_gh_pat';
+const LS_TS_KEY = 'awake_fav_ts'; // 로컬 마지막 수정 시각(ms)
 
 function getPatFromLS(){ return localStorage.getItem(LS_PAT_KEY)||''; }
 function savePatToLS(p){ localStorage.setItem(LS_PAT_KEY, p); }
@@ -432,11 +435,13 @@ async function ghCommitFavs(){
   btn.disabled=true; btn.textContent='⏳ 저장 중...';
   try {
     var favs=getFavs(), meta=getFavMeta();
-    var payload=JSON.stringify({favs:favs, meta:meta}, null, 2);
+    var now=Date.now();
+    var payload=JSON.stringify({favs:favs, meta:meta, updatedAt:now}, null, 2);
     var b64=btoa(unescape(encodeURIComponent(payload)));
     var existing=await ghApiGet(GH_AWAKE.PATH);
     var sha=existing?existing.sha:undefined;
     await ghApiPut(GH_AWAKE.PATH, b64, sha, '즐겨찾기 동기화');
+    localStorage.setItem(LS_TS_KEY, now); // 푸시 성공 → 로컬 TS = GitHub TS
     toast('✅ GitHub에 저장됐어요!');
   } catch(e){
     toast('❌ '+e.message, false);
@@ -445,7 +450,7 @@ async function ghCommitFavs(){
   }
 }
 
-// 자동 로드 — GitHub에 데이터 있으면 덮어쓰기, 없으면 로컬 유지
+// 자동 로드 — GitHub updatedAt > 로컬 수정 시각일 때만 덮어쓰기
 async function loadFavsFromGitHub(){
   var pat=getPatFromLS();
   if(!pat) return;
@@ -454,8 +459,12 @@ async function loadFavsFromGitHub(){
     if(!file) return;
     var data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
     if(!data.favs || Object.keys(data.favs).length===0) return;
+    var localTs=parseInt(localStorage.getItem(LS_TS_KEY)||'0', 10);
+    var ghTs=data.updatedAt||0;
+    if(ghTs <= localTs) return; // 로컬이 더 최신 → 덮어쓰지 않음
     saveFavs(data.favs);
     if(data.meta) saveFavMeta(data.meta);
+    localStorage.setItem(LS_TS_KEY, ghTs);
     updateFavCount(); renderFavs();
   } catch(e){ console.warn('GH load fail:', e); }
 }
