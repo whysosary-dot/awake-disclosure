@@ -1392,7 +1392,8 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
-function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
+const REPORT_DATE = '{TODAY}';
+function getFavs() {{ try {{ return JSON.parse(localStorage.getItem('awake_favs')||'{{}}'); }} catch(e){{return {{}};}} }}
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
 function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
@@ -1457,12 +1458,17 @@ function clearAllFav() {
   applyIdxFilter();
 }
 function initFavStars() {
-  var f = getFavs();
+  var f = getFavs(); var m = getFavMeta();
+  // 오늘 날짜 리포트에서 추가한 즐겨찾기만 별 표시
   document.querySelectorAll('.fav-star-idx').forEach(function(b){
-    var c=b.dataset.code; if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+    var c=b.dataset.code;
+    if(f[c] && m[c] && m[c].date === REPORT_DATE){b.textContent='⭐';b.classList.add('fav-on');}
+    else { b.textContent='☆'; b.classList.remove('fav-on'); }
   });
   document.querySelectorAll('.fav-star-page').forEach(function(b){
-    var c=b.dataset.code; if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+    var c=b.dataset.code;
+    if(f[c] && m[c] && m[c].date === REPORT_DATE){b.textContent='⭐';b.classList.add('fav-on');}
+    else { b.textContent='☆'; b.classList.remove('fav-on'); }
   });
 }
 window.addEventListener('load', initFavStars);
@@ -1492,7 +1498,7 @@ function applyIdxFilter() {
   rows.forEach(function(r) {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
-    var favOk = !idxState.fav || !!favs[r.dataset.code];
+    var fm=getFavMeta(); var favOk = !idxState.fav || (!!favs[r.dataset.code] && fm[r.dataset.code] && fm[r.dataset.code].date===REPORT_DATE);
     r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
     if(sigOk && catOk && favOk) visible++;
   });
