@@ -237,6 +237,11 @@ new Chart(ctx, {
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarterly')">분기보고서</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','conversion')">전환권/신주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','governance')">지배구조</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송/판결</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
@@ -258,7 +263,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-365270-140191">투자판단관련주요경영사항              (이중항체 MT103 기술이전 계약 체결)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +5.55%</span></td>
 <td><span class="sig-buy">강매</span></td>
-</tr><tr data-signal="neutral" data-chg="29.9400" data-time="07:50" data-sigord="2" data-cat="other" data-code="032580">
+</tr><tr data-signal="neutral" data-chg="29.9400" data-time="07:50" data-sigord="2" data-cat="quarterly" data-code="032580">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="032580" data-name="피델릭스" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-032580-140192" onclick="toggleFavFromIdx(this,'032580')">☆</button></td>
 <td><strong>07:50</strong></td>
 <td><a class="idx-anchor" href="#stock-032580-140192"><strong>피델릭스</strong></a></td>
@@ -266,7 +271,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-032580-140192">분기보고서 (2026.03)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +29.94%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="10.2100" data-time="08:36" data-sigord="2" data-cat="other" data-code="482630">
+</tr><tr data-signal="neutral" data-chg="10.2100" data-time="08:36" data-sigord="2" data-cat="quarterly" data-code="482630">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="482630" data-name="삼양엔씨켐" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-482630-140194" onclick="toggleFavFromIdx(this,'482630')">☆</button></td>
 <td><strong>08:36</strong></td>
 <td><a class="idx-anchor" href="#stock-482630-140194"><strong>삼양엔씨켐</strong></a></td>
@@ -282,7 +287,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-023530-140195">연결재무제표기준영업(잠정)실적(공정공시)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +5.00%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="08:55" data-sigord="2" data-cat="other" data-code="476060">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="08:55" data-sigord="2" data-cat="quarterly" data-code="476060">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="476060" data-name="온코닉테라퓨틱스" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-476060-140196" onclick="toggleFavFromIdx(this,'476060')">☆</button></td>
 <td><strong>08:55</strong></td>
 <td><a class="idx-anchor" href="#stock-476060-140196"><strong>온코닉테라퓨틱스</strong></a></td>
@@ -306,7 +311,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-020150-140198">연결재무제표기준영업(잠정)실적(공정공시)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +5.60%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.6300" data-time="09:05" data-sigord="2" data-cat="other" data-code="064850">
+</tr><tr data-signal="neutral" data-chg="-1.6300" data-time="09:05" data-sigord="2" data-cat="quarterly" data-code="064850">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="064850" data-name="에프앤가이드" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-064850-140199" onclick="toggleFavFromIdx(this,'064850')">☆</button></td>
 <td><strong>09:05</strong></td>
 <td><a class="idx-anchor" href="#stock-064850-140199"><strong>에프앤가이드</strong></a></td>
@@ -314,7 +319,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-064850-140199">분기보고서 (2026.03)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.63%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="6.0400" data-time="09:07" data-sigord="2" data-cat="other" data-code="049630">
+</tr><tr data-signal="neutral" data-chg="6.0400" data-time="09:07" data-sigord="2" data-cat="quarterly" data-code="049630">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="049630" data-name="재영솔루텍" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-049630-140200" onclick="toggleFavFromIdx(this,'049630')">☆</button></td>
 <td><strong>09:07</strong></td>
 <td><a class="idx-anchor" href="#stock-049630-140200"><strong>재영솔루텍</strong></a></td>
@@ -330,7 +335,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-393890-140201">연결재무제표기준영업(잠정)실적(공정공시)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -5.12%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="20.8500" data-time="09:11" data-sigord="2" data-cat="other" data-code="311320">
+</tr><tr data-signal="neutral" data-chg="20.8500" data-time="09:11" data-sigord="2" data-cat="quarterly" data-code="311320">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="311320" data-name="지오엘리먼트" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-311320-140202" onclick="toggleFavFromIdx(this,'311320')">☆</button></td>
 <td><strong>09:11</strong></td>
 <td><a class="idx-anchor" href="#stock-311320-140202"><strong>지오엘리먼트</strong></a></td>
@@ -490,7 +495,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-112610-140221">기업설명회(IR)개최(안내공시)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.65%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-2.2500" data-time="11:49" data-sigord="2" data-cat="other" data-code="006880">
+</tr><tr data-signal="neutral" data-chg="-2.2500" data-time="11:49" data-sigord="2" data-cat="quarterly" data-code="006880">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="006880" data-name="신송홀딩스" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-006880-140222" onclick="toggleFavFromIdx(this,'006880')">☆</button></td>
 <td><strong>11:49</strong></td>
 <td><a class="idx-anchor" href="#stock-006880-140222"><strong>신송홀딩스</strong></a></td>
@@ -538,7 +543,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-010780-140227">단일판매ㆍ공급계약체결</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.21%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="9.0100" data-time="12:50" data-sigord="2" data-cat="other" data-code="368770">
+</tr><tr data-signal="neutral" data-chg="9.0100" data-time="12:50" data-sigord="2" data-cat="quarterly" data-code="368770">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="368770" data-name="파이버프로" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-368770-140228" onclick="toggleFavFromIdx(this,'368770')">☆</button></td>
 <td><strong>12:50</strong></td>
 <td><a class="idx-anchor" href="#stock-368770-140228"><strong>파이버프로</strong></a></td>
@@ -546,7 +551,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-368770-140228">분기보고서 (2026.03)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +9.01%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="11.0700" data-time="13:10" data-sigord="2" data-cat="other" data-code="083450">
+</tr><tr data-signal="neutral" data-chg="11.0700" data-time="13:10" data-sigord="2" data-cat="quarterly" data-code="083450">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="083450" data-name="GST" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-083450-140229" onclick="toggleFavFromIdx(this,'083450')">☆</button></td>
 <td><strong>13:10</strong></td>
 <td><a class="idx-anchor" href="#stock-083450-140229"><strong>GST</strong></a></td>
@@ -594,7 +599,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-378340-140234">기업설명회(IR)개최</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.71%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.4800" data-time="14:03" data-sigord="2" data-cat="other" data-code="432470">
+</tr><tr data-signal="neutral" data-chg="-4.4800" data-time="14:03" data-sigord="2" data-cat="quarterly" data-code="432470">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="432470" data-name="케이엔에스" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-432470-140235" onclick="toggleFavFromIdx(this,'432470')">☆</button></td>
 <td><strong>14:03</strong></td>
 <td><a class="idx-anchor" href="#stock-432470-140235"><strong>케이엔에스</strong></a></td>
@@ -626,7 +631,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-074600-140238">연결재무제표기준영업(잠정)실적(공정공시)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -9.42%</span></td>
 <td><span class="sig-sell">매도</span></td>
-</tr><tr data-signal="neutral" data-chg="2.3500" data-time="14:10" data-sigord="2" data-cat="other" data-code="330730">
+</tr><tr data-signal="neutral" data-chg="2.3500" data-time="14:10" data-sigord="2" data-cat="quarterly" data-code="330730">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="330730" data-name="스톤브릿지벤처스" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-330730-140239" onclick="toggleFavFromIdx(this,'330730')">☆</button></td>
 <td><strong>14:10</strong></td>
 <td><a class="idx-anchor" href="#stock-330730-140239"><strong>스톤브릿지벤처스</strong></a></td>
@@ -634,7 +639,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-330730-140239">분기보고서 (2026.03)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +2.35%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="7.8300" data-time="14:11" data-sigord="2" data-cat="other" data-code="094170">
+</tr><tr data-signal="neutral" data-chg="7.8300" data-time="14:11" data-sigord="2" data-cat="quarterly" data-code="094170">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="094170" data-name="동운아나텍" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-094170-140240" onclick="toggleFavFromIdx(this,'094170')">☆</button></td>
 <td><strong>14:11</strong></td>
 <td><a class="idx-anchor" href="#stock-094170-140240"><strong>동운아나텍</strong></a></td>
@@ -706,7 +711,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-297570-140248">주식등의대량보유상황보고서(약식)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +5.98%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-4.5900" data-time="15:10" data-sigord="2" data-cat="other" data-code="246690">
+</tr><tr data-signal="neutral" data-chg="-4.5900" data-time="15:10" data-sigord="2" data-cat="conversion" data-code="246690">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="246690" data-name="TS인베스트먼트" data-date="2026-05-11" data-signal="neutral" data-report="전환청구권행사" data-anchor="stock-246690-140249" onclick="toggleFavFromIdx(this,'246690')">☆</button></td>
 <td><strong>15:10</strong></td>
 <td><a class="idx-anchor" href="#stock-246690-140249"><strong>TS인베스트먼트</strong></a></td>
@@ -722,7 +727,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-101170-140250">주식등의대량보유상황보고서(일반)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +7.42%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="11.1700" data-time="15:16" data-sigord="2" data-cat="other" data-code="159010">
+</tr><tr data-signal="neutral" data-chg="11.1700" data-time="15:16" data-sigord="2" data-cat="quarterly" data-code="159010">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="159010" data-name="아스플로" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-159010-140251" onclick="toggleFavFromIdx(this,'159010')">☆</button></td>
 <td><strong>15:16</strong></td>
 <td><a class="idx-anchor" href="#stock-159010-140251"><strong>아스플로</strong></a></td>
@@ -802,7 +807,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-009160-140260">투자판단관련주요경영사항</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +4.21%</span></td>
 <td><span class="sig-neutral">중매</span></td>
-</tr><tr data-signal="neutral" data-chg="0.7500" data-time="15:50" data-sigord="2" data-cat="other" data-code="950140">
+</tr><tr data-signal="neutral" data-chg="0.7500" data-time="15:50" data-sigord="2" data-cat="quarterly" data-code="950140">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="950140" data-name="잉글우드랩" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-950140-140261" onclick="toggleFavFromIdx(this,'950140')">☆</button></td>
 <td><strong>15:50</strong></td>
 <td><a class="idx-anchor" href="#stock-950140-140261"><strong>잉글우드랩</strong></a></td>
@@ -978,7 +983,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-005670-140282">주식등의대량보유상황보고서(일반)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.86%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-8.0300" data-time="16:16" data-sigord="2" data-cat="other" data-code="100220">
+</tr><tr data-signal="neutral" data-chg="-8.0300" data-time="16:16" data-sigord="2" data-cat="quarterly" data-code="100220">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="100220" data-name="비상교육" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-100220-140283" onclick="toggleFavFromIdx(this,'100220')">☆</button></td>
 <td><strong>16:16</strong></td>
 <td><a class="idx-anchor" href="#stock-100220-140283"><strong>비상교육</strong></a></td>
@@ -1002,7 +1007,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-226590-140285">주식등의대량보유상황보고서(약식)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.78%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:21" data-sigord="2" data-cat="other" data-code="015590">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="16:21" data-sigord="2" data-cat="governance" data-code="015590">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="015590" data-name="DKME" data-date="2026-05-11" data-signal="neutral" data-report="최대주주변경" data-anchor="stock-015590-140286" onclick="toggleFavFromIdx(this,'015590')">☆</button></td>
 <td><strong>16:21</strong></td>
 <td><a class="idx-anchor" href="#stock-015590-140286"><strong>DKME</strong></a></td>
@@ -1058,7 +1063,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-060980-140292">현금ㆍ현물배당결정</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +1.60%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="13.5100" data-time="16:33" data-sigord="2" data-cat="other" data-code="067170">
+</tr><tr data-signal="neutral" data-chg="13.5100" data-time="16:33" data-sigord="2" data-cat="conversion" data-code="067170">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="067170" data-name="오텍" data-date="2026-05-11" data-signal="neutral" data-report="신주인수권행사              (제13회차)" data-anchor="stock-067170-140293" onclick="toggleFavFromIdx(this,'067170')">☆</button></td>
 <td><strong>16:33</strong></td>
 <td><a class="idx-anchor" href="#stock-067170-140293"><strong>오텍</strong></a></td>
@@ -1082,7 +1087,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-070300-140295">주식등의대량보유상황보고서(약식)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.55%</span></td>
 <td><span class="sig-neutral">중확인</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.8400" data-time="16:37" data-sigord="2" data-cat="other" data-code="009190">
+</tr><tr data-signal="neutral" data-chg="-6.8400" data-time="16:37" data-sigord="2" data-cat="quarterly" data-code="009190">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="009190" data-name="대양금속" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-009190-140296" onclick="toggleFavFromIdx(this,'009190')">☆</button></td>
 <td><strong>16:37</strong></td>
 <td><a class="idx-anchor" href="#stock-009190-140296"><strong>대양금속</strong></a></td>
@@ -1098,7 +1103,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-082210-140297">주요사항보고서(전환사채권발행결정)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -3.48%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="neutral" data-chg="5.1000" data-time="16:41" data-sigord="2" data-cat="other" data-code="272110">
+</tr><tr data-signal="neutral" data-chg="5.1000" data-time="16:41" data-sigord="2" data-cat="quarterly" data-code="272110">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="272110" data-name="케이엔제이" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-272110-140298" onclick="toggleFavFromIdx(this,'272110')">☆</button></td>
 <td><strong>16:41</strong></td>
 <td><a class="idx-anchor" href="#stock-272110-140298"><strong>케이엔제이</strong></a></td>
@@ -1170,7 +1175,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-097950-140306">현금ㆍ현물배당결정</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.53%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="1.6200" data-time="17:07" data-sigord="2" data-cat="other" data-code="091440">
+</tr><tr data-signal="neutral" data-chg="1.6200" data-time="17:07" data-sigord="2" data-cat="conversion" data-code="091440">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="091440" data-name="한울소재과학" data-date="2026-05-11" data-signal="neutral" data-report="신주인수권행사              (제1회차)" data-anchor="stock-091440-140307" onclick="toggleFavFromIdx(this,'091440')">☆</button></td>
 <td><strong>17:07</strong></td>
 <td><a class="idx-anchor" href="#stock-091440-140307"><strong>한울소재과학</strong></a></td>
@@ -1186,7 +1191,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-298040-140308">투자판단관련주요경영사항</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.48%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="-6.5500" data-time="17:13" data-sigord="2" data-cat="other" data-code="070300">
+</tr><tr data-signal="neutral" data-chg="-6.5500" data-time="17:13" data-sigord="2" data-cat="conversion" data-code="070300">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="070300" data-name="엑스큐어" data-date="2026-05-11" data-signal="neutral" data-report="전환청구권행사" data-anchor="stock-070300-140309" onclick="toggleFavFromIdx(this,'070300')">☆</button></td>
 <td><strong>17:13</strong></td>
 <td><a class="idx-anchor" href="#stock-070300-140309"><strong>엑스큐어</strong></a></td>
@@ -1194,7 +1199,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-070300-140309">전환청구권행사</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -6.55%</span></td>
 <td><span class="sig-neutral">중매도</span></td>
-</tr><tr data-signal="down" data-chg="6.2600" data-time="17:15" data-sigord="1" data-cat="other" data-code="010140">
+</tr><tr data-signal="down" data-chg="6.2600" data-time="17:15" data-sigord="1" data-cat="lawsuit" data-code="010140">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="010140" data-name="삼성중공업" data-date="2026-05-11" data-signal="down" data-report="소송등의판결ㆍ결정(일정금액이상의청구)" data-anchor="stock-010140-140310" onclick="toggleFavFromIdx(this,'010140')">☆</button></td>
 <td><strong>17:15</strong></td>
 <td><a class="idx-anchor" href="#stock-010140-140310"><strong>삼성중공업</strong></a></td>
@@ -1210,7 +1215,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-004800-140311">투자판단관련주요경영사항(자회사의 주요경영사항)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -1.14%</span></td>
 <td><span class="sig-buy">매수</span></td>
-</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:19" data-sigord="2" data-cat="other" data-code="065650">
+</tr><tr data-signal="neutral" data-chg="0.0000" data-time="17:19" data-sigord="2" data-cat="quarterly" data-code="065650">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="065650" data-name="하이퍼코퍼레이션" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-065650-140312" onclick="toggleFavFromIdx(this,'065650')">☆</button></td>
 <td><strong>17:19</strong></td>
 <td><a class="idx-anchor" href="#stock-065650-140312"><strong>하이퍼코퍼레이션</strong></a></td>
@@ -1314,7 +1319,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-294870-140324">기업설명회(IR)개최(안내공시)</a></td>
 <td><span style="color:#2563eb;font-weight:700">▼ -0.86%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="0.8600" data-time="17:50" data-sigord="2" data-cat="other" data-code="376270">
+</tr><tr data-signal="neutral" data-chg="0.8600" data-time="17:50" data-sigord="2" data-cat="quarterly" data-code="376270">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="376270" data-name="HEM파마" data-date="2026-05-11" data-signal="neutral" data-report="분기보고서 (2026.03)" data-anchor="stock-376270-140325" onclick="toggleFavFromIdx(this,'376270')">☆</button></td>
 <td><strong>17:50</strong></td>
 <td><a class="idx-anchor" href="#stock-376270-140325"><strong>HEM파마</strong></a></td>
@@ -1322,7 +1327,7 @@ new Chart(ctx, {
 <td class="disc"><a class="idx-anchor" href="#stock-376270-140325">분기보고서 (2026.03)</a></td>
 <td><span style="color:#dc2626;font-weight:700">▲ +0.86%</span></td>
 <td><span class="sig-neutral">중립</span></td>
-</tr><tr data-signal="neutral" data-chg="-1.7800" data-time="17:52" data-sigord="2" data-cat="other" data-code="257720">
+</tr><tr data-signal="neutral" data-chg="-1.7800" data-time="17:52" data-sigord="2" data-cat="conversion" data-code="257720">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="257720" data-name="실리콘투" data-date="2026-05-11" data-signal="neutral" data-report="[기재정정]전환주식의전환청구권행사" data-anchor="stock-257720-140326" onclick="toggleFavFromIdx(this,'257720')">☆</button></td>
 <td><strong>17:52</strong></td>
 <td><a class="idx-anchor" href="#stock-257720-140326"><strong>실리콘투</strong></a></td>
