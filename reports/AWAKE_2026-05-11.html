@@ -1392,8 +1392,8 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
-const REPORT_DATE = '{TODAY}';
-function getFavs() {{ try {{ return JSON.parse(localStorage.getItem('awake_favs')||'{{}}'); }} catch(e){{return {{}};}} }}
+const REPORT_DATE = '2026-05-11';
+function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
 function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
