@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-08"
+TODAY = "2026-05-06"
 TODAY_DISP = "2026년 5월 6일 (수)"
 
-with open("/sessions/relaxed-laughing-tesla/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/relaxed-laughing-tesla/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/relaxed-laughing-tesla/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/relaxed-laughing-tesla/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/awesome-blissful-fermi/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/relaxed-laughing-tesla/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/awesome-blissful-fermi/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/relaxed-laughing-tesla/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/awesome-blissful-fermi/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/relaxed-laughing-tesla/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/awesome-blissful-fermi/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1465,11 +1465,6 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarterly')">분기보고서</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','convert')">전환권/신주</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','governance')">지배구조</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송/판결</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
@@ -1481,9 +1476,6 @@ parts_html.append(f"""<div class="page">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);margin-left:10px;">즐겨찾기</span>
   <button class="idx-btn" data-group="fav" id="fav-filter-btn" onclick="idxToggleFav(this)">⭐ 즐겨찾기만</button>
   <button class="idx-btn" style="font-size:11px;color:#ef4444;" onclick="clearAllFav()">초기화</button>
-  <span style="margin-left:8px;"></span>
-  <button id="gh-settings-btn" title="GitHub PAT 설정" onclick="openPatModal()" style="background:none;border:1px solid #d1d5db;border-radius:6px;padding:5px 8px;cursor:pointer;font-size:14px;color:#6b7280;line-height:1;">⚙️</button>
-  <button id="gh-commit-btn" onclick="ghCommitFavs()" title="즐겨찾기를 GitHub에 저장 (기기 간 동기화)" style="display:flex;align-items:center;gap:5px;background:#2563eb;color:#fff;border:none;padding:6px 13px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap;">☁️ 커밋 &amp; 푸시</button>
 </div>
 <table class="index-table" id="idx-table"><thead>
 <tr><th style="width:32px;text-align:center;">⭐</th><th>시각</th><th>종목</th><th>코드</th><th>공시</th><th style="cursor:pointer;" onclick="idxSort(idxSortState==='chg_desc'?'chg_asc':'chg_desc')">등락률 ⇅</th><th>시그널</th></tr></thead><tbody id="idx-tbody">""")
@@ -1501,10 +1493,6 @@ for d in DISCLOSURES:
     elif "전환사채" in _rep or "사채" in _rep or "CB" in _rep: _cat = "cb"
     elif "자기주식" in _rep or "주식소각" in _rep: _cat = "buyback"
     elif "합병" in _rep or "분할" in _rep or "M&A" in _rep: _cat = "ma"
-    elif "분기보고서" in _rep or "사업보고서" in _rep or "반기보고서" in _rep: _cat = "quarterly"
-    elif "전환청구권" in _rep or "신주인수권" in _rep or "교환청구권" in _rep: _cat = "convert"
-    elif "횡령" in _rep or "배임" in _rep or "풍문" in _rep or "조회공시" in _rep or "최대주주" in _rep or "임원" in _rep or "주식병합" in _rep: _cat = "governance"
-    elif "소송" in _rep or "판결" in _rep or "결정" in _rep: _cat = "lawsuit"
     elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
@@ -1599,6 +1587,7 @@ function initFavStars() {
     var c=b.dataset.code; if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
   });
 }
+window.addEventListener('load', initFavStars);
 function idxSort(mode) {
   idxState.sort = mode;
   document.querySelectorAll('.idx-btn[data-group="sort"]').forEach(b => b.classList.remove('active'));
@@ -1632,121 +1621,7 @@ function applyIdxFilter() {
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
 }
-
-/* ============================================================
-   GitHub 즐겨찾기 동기화
-   ============================================================ */
-const GH_AWAKE = { OWNER:'whysosary-dot', REPO:'awake-disclosure', PATH:'awake_favs.json', BRANCH:'main' };
-const LS_PAT_KEY = 'awake_gh_pat';
-
-function toast(msg, type, ms) {
-  var t = document.getElementById('awake-toast');
-  if (!t) { t = document.createElement('div'); t.id='awake-toast'; t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;z-index:9999;transition:opacity .3s;color:#fff;pointer-events:none;'; document.body.appendChild(t); }
-  t.textContent = msg;
-  t.style.background = type==='err' ? '#ef4444' : '#16a34a';
-  t.style.opacity = '1';
-  clearTimeout(t._t);
-  t._t = setTimeout(function(){ t.style.opacity='0'; }, ms||2500);
-}
-
-function openPatModal() {
-  var m = document.getElementById('awake-pat-modal');
-  var inp = document.getElementById('awake-pat-inp');
-  var saved = localStorage.getItem(LS_PAT_KEY)||'';
-  inp.value = saved ? '••••••••••••••••' : '';
-  inp._filled = !!saved;
-  document.getElementById('awake-pat-status').style.display = saved?'block':'none';
-  m.style.display = 'flex';
-  if(!saved) inp.focus();
-}
-function closePatModal() { document.getElementById('awake-pat-modal').style.display='none'; }
-
-async function ghApiGet(pat, path) {
-  var r = await fetch('https://api.github.com/repos/'+GH_AWAKE.OWNER+'/'+GH_AWAKE.REPO+'/contents/'+path+'?ref='+GH_AWAKE.BRANCH, {
-    headers:{Authorization:'token '+pat, Accept:'application/vnd.github+json', 'User-Agent':'awake-browser'}
-  });
-  if (!r.ok) { if(r.status===404) return null; throw new Error('GET '+path+': '+r.status); }
-  return r.json();
-}
-async function ghApiPut(pat, path, contentStr, sha, message) {
-  var bytes = new TextEncoder().encode(contentStr);
-  var bin=''; bytes.forEach(function(b){bin+=String.fromCharCode(b);});
-  var b64 = btoa(bin);
-  var body = {message:message, content:b64, branch:GH_AWAKE.BRANCH};
-  if(sha) body.sha = sha;
-  var r = await fetch('https://api.github.com/repos/'+GH_AWAKE.OWNER+'/'+GH_AWAKE.REPO+'/contents/'+path, {
-    method:'PUT',
-    headers:{Authorization:'token '+pat, Accept:'application/vnd.github+json', 'Content-Type':'application/json', 'User-Agent':'awake-browser'},
-    body: JSON.stringify(body)
-  });
-  if(!r.ok){var e=await r.json().catch(function(){return {};});throw new Error('PUT '+path+': '+r.status+' '+(e.message||''));}
-  return r.json();
-}
-
-async function ghCommitFavs() {
-  var pat = localStorage.getItem(LS_PAT_KEY)||'';
-  if(!pat){openPatModal();return;}
-  if(!confirm('즐겨찾기를 GitHub에 저장해 모든 기기에서 동기화할까요?')) return;
-  var btn = document.getElementById('gh-commit-btn');
-  btn.disabled=true; btn.textContent='저장 중...';
-  try {
-    var favs = getFavs();
-    var meta = getFavMeta();
-    var today = new Date().toISOString().slice(0,10);
-    var data = {updated:today, favs:favs, meta:meta};
-    var existing = await ghApiGet(pat, GH_AWAKE.PATH);
-    await ghApiPut(pat, GH_AWAKE.PATH, JSON.stringify(data,null,2), existing?existing.sha:null, 'sync: 즐겨찾기 동기화 '+today);
-    toast('✅ GitHub 동기화 완료! 다른 기기에서 새로고침하면 반영됩니다.','ok',4000);
-  } catch(e) {
-    if(e.message.includes('401')||e.message.includes('403')) toast('❌ 토큰 오류 — ⚙️에서 토큰 확인','err',5000);
-    else toast('❌ 커밋 실패: '+e.message,'err',5000);
-  } finally {
-    btn.disabled=false; btn.textContent='☁️ 커밋 & 푸시';
-  }
-}
-
-async function loadFavsFromGitHub() {
-  try {
-    var r = await fetch('https://raw.githubusercontent.com/'+GH_AWAKE.OWNER+'/'+GH_AWAKE.REPO+'/'+GH_AWAKE.BRANCH+'/'+GH_AWAKE.PATH+'?t='+Date.now());
-    if(!r.ok) return;
-    var data = await r.json();
-    if(!data||!data.favs) return;
-    var localFavs = getFavs();
-    var ghFavs = data.favs||{};
-    var merged = Object.assign({},localFavs,ghFavs);
-    saveFavs(merged);
-    if(data.meta) { var localMeta=getFavMeta(); saveFavMeta(Object.assign({},localMeta,data.meta)); }
-    initFavStars();
-    applyIdxFilter();
-  } catch(e) { /* 오프라인이거나 파일 없으면 무시 */ }
-}
-window.addEventListener('load', function(){ initFavStars(); loadFavsFromGitHub(); });
-</script>
-
-<!-- PAT 설정 모달 -->
-<div id="awake-pat-modal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(15,23,42,.5);align-items:center;justify-content:center;padding:16px;" onclick="if(event.target===this)closePatModal()">
-  <div style="background:#fff;border-radius:12px;padding:24px;max-width:460px;width:100%;display:flex;flex-direction:column;gap:14px;box-shadow:0 20px 60px rgba(15,23,42,.25);">
-    <div style="display:flex;align-items:center;justify-content:space-between;">
-      <strong style="font-size:16px;">🔑 GitHub 토큰 설정</strong>
-      <button onclick="closePatModal()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#6b7280;padding:0 4px;">✕</button>
-    </div>
-    <p style="font-size:13px;color:#6b7280;line-height:1.7;margin:0;">
-      GitHub PAT를 입력하면 브라우저에서 직접 즐겨찾기를 커밋해 맥북·아이패드 등 모든 기기에서 동기화됩니다.<br>
-      토큰은 <strong>이 기기의 localStorage에만</strong> 저장됩니다.<br><br>
-      <a href="https://github.com/settings/tokens/new" target="_blank" style="color:#2563eb;">→ GitHub에서 PAT 발급</a>
-      (권한: <code>repo</code> 체크)
-    </p>
-    <input id="awake-pat-inp" type="password" placeholder="ghp_xxxxxxxxxxxxxxxx" autocomplete="off"
-      style="width:100%;padding:10px 12px;border:1.5px solid #d1d5db;border-radius:8px;font-size:14px;font-family:monospace;box-sizing:border-box;"
-      onfocus="if(this._filled){this.value='';this._filled=false;}"
-    />
-    <div style="display:flex;gap:8px;">
-      <button onclick="(function(){var inp=document.getElementById('awake-pat-inp');var v=inp.value.trim();if(!v||inp._filled)return;localStorage.setItem(LS_PAT_KEY,v);document.getElementById('awake-pat-status').style.display='block';toast('토큰 저장 완료','ok');inp._filled=true;inp.value='••••••••••••••••';})()" style="flex:1;background:#2563eb;color:#fff;border:none;padding:10px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px;">저장</button>
-      <button onclick="localStorage.removeItem(LS_PAT_KEY);document.getElementById('awake-pat-status').style.display='none';document.getElementById('awake-pat-inp').value='';document.getElementById('awake-pat-inp')._filled=false;toast('토큰 삭제됨','ok');" style="background:none;border:1.5px solid #ef4444;color:#ef4444;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:13px;">삭제</button>
-    </div>
-    <div id="awake-pat-status" style="font-size:13px;color:#16a34a;display:none;">✓ 토큰이 저장되어 있습니다</div>
-  </div>
-</div>""")
+</script>""")
 
 parts_html.append(f"""<h3 style="font-size:18px; margin-top:24px; color:var(--c-darkest);">📈 시간외 대량매매 ({len(BIG_TRADES)}건)</h3>
 <ul style="font-size:13px; line-height:1.7; columns:2;">""")
@@ -1955,7 +1830,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/relaxed-laughing-tesla/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
