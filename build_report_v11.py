@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-06"
-TODAY_DISP = "2026년 5월 6일 (수)"
+TODAY = "2026-05-12"
+TODAY_DISP = "2026년 5월 12일 (화)"
 
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/vigilant-epic-gauss/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/vigilant-epic-gauss/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/vigilant-epic-gauss/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/vigilant-epic-gauss/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/awesome-blissful-fermi/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/vigilant-epic-gauss/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/awesome-blissful-fermi/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/vigilant-epic-gauss/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/awesome-blissful-fermi/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/vigilant-epic-gauss/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1465,6 +1465,11 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarter')">분기보고서</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','convert')">전환권·신주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','govern')">지배구조</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송·판결</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
@@ -1493,7 +1498,10 @@ for d in DISCLOSURES:
     elif "전환사채" in _rep or "사채" in _rep or "CB" in _rep: _cat = "cb"
     elif "자기주식" in _rep or "주식소각" in _rep: _cat = "buyback"
     elif "합병" in _rep or "분할" in _rep or "M&A" in _rep: _cat = "ma"
-    elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
+    elif "분기보고서" in _rep or "반기보고서" in _rep or "사업보고서" in _rep: _cat = "quarter"
+    elif "전환권" in _rep or "신주인수권" in _rep or "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "convert"
+    elif "지배구조" in _rep or "경영권" in _rep or "임원" in _rep or "대표이사" in _rep: _cat = "govern"
+    elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "lawsuit"
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
@@ -1830,7 +1838,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/vigilant-epic-gauss/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
