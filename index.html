@@ -187,6 +187,7 @@ const LATEST_REPORT_DATE = "2026-05-14";
 const reports = [
   {
     d: "2026-05-14",
+    v: "202605141445",
     label: "2026년 5월 14일 (목)",
     sub: "v11 ★ 전종목 새WebSearch분석 — 488개 DART 공시 · 445종목 · 매수25/매도6/중립414 · Top: 금융잠정실적·LNG조선수주·ADC임상·K뷰티",
     n: true
@@ -280,7 +281,7 @@ if (reports.length === 0) {
   reports.forEach(r => {
     const a = document.createElement('a');
     a.className = 'item' + (r.n ? ' new' : '');
-    a.href = `reports/AWAKE_${r.d}.html?v=${r.d.replace(/-/g,'') + (r.d === '2026-05-14' ? 'b' : '')}`;
+    a.href = `reports/AWAKE_${r.d}.html?v=${r.v || r.d.replace(/-/g,'')}`;
     a.innerHTML = `
       <div>
         <div class="item-date">${r.label}</div>
@@ -382,7 +383,7 @@ function renderFavs() {
       var sig = meta.signal || '';
       var report = meta.report || '';
       var reportUrl = date !== '날짜 미상'
-        ? 'reports/AWAKE_' + date + '.html?v=' + date.replace(/-/g,'') + (date === '2026-05-14' ? 'b' : '') + (anchor ? '#' + anchor : '')
+        ? 'reports/AWAKE_' + date + '.html?v=' + ((reports.find(function(r){return r.d===date;})||{}).v || date.replace(/-/g,'')) + (anchor ? '#' + anchor : '')
         : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html?v=' + LATEST_REPORT_DATE.replace(/-/g,'');  // 구버전: 최신 리포트로 이동
       var sigLabel = sig==='up'?'매수▲':(sig==='down'?'매도▼':'중립');
       var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
