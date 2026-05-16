@@ -1393,10 +1393,12 @@ function idxFilter(btn, group, val) {
   applyIdxFilter();
 }
 const REPORT_DATE = '2026-05-11';
-function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
-function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
-function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
-function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
+var FAV_KEY = 'awake_favs_' + REPORT_DATE;
+var FAV_META_KEY = 'awake_fav_meta_' + REPORT_DATE;
+function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)||'{}'); } catch(e){return {};} }
+function saveFavs(f) { try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem(FAV_META_KEY)||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem(FAV_META_KEY, JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs(); var m = getFavMeta();
   if (f[code]) {
@@ -1458,17 +1460,16 @@ function clearAllFav() {
   applyIdxFilter();
 }
 function initFavStars() {
-  var f = getFavs(); var m = getFavMeta();
-  // 오늘 날짜 리포트에서 추가한 즐겨찾기만 별 표시
+  var f = getFavs();
   document.querySelectorAll('.fav-star-idx').forEach(function(b){
     var c=b.dataset.code;
-    if(f[c] && m[c] && m[c].date === REPORT_DATE){b.textContent='⭐';b.classList.add('fav-on');}
-    else { b.textContent='☆'; b.classList.remove('fav-on'); }
+    if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+    else{b.textContent='☆';b.classList.remove('fav-on');}
   });
   document.querySelectorAll('.fav-star-page').forEach(function(b){
     var c=b.dataset.code;
-    if(f[c] && m[c] && m[c].date === REPORT_DATE){b.textContent='⭐';b.classList.add('fav-on');}
-    else { b.textContent='☆'; b.classList.remove('fav-on'); }
+    if(f[c]){b.textContent='⭐';b.classList.add('fav-on');}
+    else{b.textContent='☆';b.classList.remove('fav-on');}
   });
 }
 window.addEventListener('load', initFavStars);
@@ -1498,7 +1499,7 @@ function applyIdxFilter() {
   rows.forEach(function(r) {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
-    var fm=getFavMeta(); var favOk = !idxState.fav || (!!favs[r.dataset.code] && fm[r.dataset.code] && fm[r.dataset.code].date===REPORT_DATE);
+    var favOk = !idxState.fav || !!favs[r.dataset.code];
     r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
     if(sigOk && catOk && favOk) visible++;
   });
