@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-12"
-TODAY_DISP = "2026년 5월 12일 (화)"
+TODAY = "2026-05-15"
+TODAY_DISP = "2026년 5월 15일 (금)"
 
-with open("/sessions/vigilant-epic-gauss/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/vigilant-epic-gauss/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/vigilant-epic-gauss/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/vigilant-epic-gauss/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/vigilant-epic-gauss/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/zen-gracious-cori/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/vigilant-epic-gauss/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/zen-gracious-cori/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/vigilant-epic-gauss/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/zen-gracious-cori/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1838,7 +1838,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/vigilant-epic-gauss/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/zen-gracious-cori/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
