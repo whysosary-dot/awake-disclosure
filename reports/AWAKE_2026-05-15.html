@@ -240,6 +240,11 @@ new Chart(ctx, {
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송·판결</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
 </div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">🔍 검색</span>
+  <input id="company-search" type="text" placeholder="기업명 검색..." oninput="applyIdxFilter()" style="padding:4px 10px;border:1px solid var(--c-border);border-radius:6px;font-size:13px;background:var(--c-bg);color:var(--c-text);width:180px;outline:none;" />
+  <button onclick="document.getElementById('company-search').value='';applyIdxFilter()" style="font-size:11px;padding:3px 8px;border:1px solid var(--c-border);border-radius:5px;background:transparent;color:var(--c-mute);cursor:pointer;">✕ 초기화</button>
+</div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
   <button class="idx-btn active" data-group="sort" onclick="idxSort('time')">시간순</button>
@@ -13709,10 +13714,11 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
-function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
-function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
-function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
-function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
+var FAV_KEY='awake_favs_2026-05-15';var FAV_META_KEY='awake_fav_meta_2026-05-15';
+function getFavs(){try{return JSON.parse(localStorage.getItem(FAV_KEY)||'{}');}catch(e){return {};}}
+function saveFavs(f) { try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem(FAV_META_KEY)||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem(FAV_META_KEY, JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs(); var m = getFavMeta();
   if (f[code]) {
@@ -13810,8 +13816,9 @@ function applyIdxFilter() {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
     var favOk = !idxState.fav || !!favs[r.dataset.code];
-    r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
-    if(sigOk && catOk && favOk) visible++;
+    var searchEl=document.getElementById('company-search');var q=searchEl?searchEl.value.trim():'';var nameTd=r.querySelector('td:nth-child(3) a strong');var searchOk=!q||(nameTd&&nameTd.textContent.indexOf(q)!==-1);
+    r.style.display=(sigOk&&catOk&&favOk&&searchOk) ? '' : 'none';
+    if(sigOk&&catOk&&favOk&&searchOk) visible++;
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
