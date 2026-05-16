@@ -186,30 +186,11 @@ const LATEST_REPORT_DATE = "2026-05-11";
 // ── 리포트 목록 ──────────────────────────────────────────────────────────
 const reports = [
   {
-    d: "2026-05-11",
-    label: "2026년 5월 11일 (월)",
-    sub: "v11 ★ 전종목 새WebSearch분석 — 141개 DART 공시 · 129종목 · 매수11/매도10/중립108 · Top: 로봇AI·바이오·철강",
-    n: true
-  },
-  {
-    d: "2026-05-11",
-    label: "2026년 5월 11일 (월)",
-    sub: "v11 ★ 전종목 새WebSearch분석 — 141개 DART 공시 · 129종목 · 매수11/매도10/중립108 · Top: 로봇AI·바이오·철강",
-    n: false
-  },
-  {
-    d: "2026-05-15",
-    v: "202605161147",
-    label: "2026년 5월 15일 (금)",
-    sub: "97개 종목 · v11 전종목 WebSearch 분석",
-    n: false
-  },
-  {
     d: "2026-05-15",
     v: "202605151133",
     label: "2026년 5월 15일 (금)",
     sub: "분기보고서 시즌 · 1586종목 · 알테오젠 아이젠피주 허가 · 하나금융 두나무 1조 투자",
-    n: false
+    n: true
   },
   {
     d: "2026-05-14",
@@ -297,6 +278,7 @@ const reports = [
     n: false
   }
 ];
+
 
 const list = document.getElementById('report-list');
 document.getElementById('stat-count').textContent = reports.length;
