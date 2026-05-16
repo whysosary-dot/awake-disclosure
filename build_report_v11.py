@@ -1466,6 +1466,11 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
 </div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">🔍 검색</span>
+  <input id="company-search" type="text" placeholder="기업명 검색..." oninput="applyIdxFilter()" style="padding:4px 10px;border:1px solid var(--c-border);border-radius:6px;font-size:13px;background:var(--c-bg);color:var(--c-text);width:180px;outline:none;" />
+  <button onclick="document.getElementById('company-search').value='';applyIdxFilter()" style="font-size:11px;padding:3px 8px;border:1px solid var(--c-border);border-radius:5px;background:transparent;color:var(--c-mute);cursor:pointer;">✕ 초기화</button>
+</div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
   <button class="idx-btn active" data-group="sort" onclick="idxSort('time')">시간순</button>
@@ -1496,7 +1501,7 @@ for d in DISCLOSURES:
     elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
-    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}" data-company="{html.escape(d["company"])}">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
@@ -1617,8 +1622,11 @@ function applyIdxFilter() {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
     var favOk = !idxState.fav || !!favs[r.dataset.code];
-    r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
-    if(sigOk && catOk && favOk) visible++;
+    var searchEl = document.getElementById('company-search');
+    var q = searchEl ? searchEl.value.trim() : '';
+    var searchOk = !q || (r.dataset.company||"").indexOf(q) !== -1;
+    r.style.display = (sigOk && catOk && favOk && searchOk) ? '' : 'none';
+    if(sigOk && catOk && favOk && searchOk) visible++;
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
