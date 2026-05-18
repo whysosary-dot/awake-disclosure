@@ -973,28 +973,45 @@ new Chart(ctx, {
 <script>
 var idxState = { sig: 'all', cat: 'all', sort: 'time', fav: false };
 
-// ── 뒤로가기 시 필터·정렬 상태 복원 ─────────────────────────────────────
-function saveIdxStateToHistory() {
-  try { history.replaceState({ idxState: JSON.parse(JSON.stringify(idxState)), scrollY: window.scrollY }, '', location.href); } catch(e) {}
+// ── 뒤로가기 시 필터·정렬 상태 복원 (sessionStorage + back_forward 감지) ──
+var IDX_SS_KEY = 'awake_idx_state_2026-05-18';
+function saveIdxState() {
+  try {
+    sessionStorage.setItem(IDX_SS_KEY, JSON.stringify({ s: JSON.parse(JSON.stringify(idxState)), y: window.scrollY, ts: Date.now() }));
+  } catch(e) {}
 }
-window.addEventListener('popstate', function(e) {
-  if (!e.state || !e.state.idxState) return;
-  var s = e.state.idxState;
-  Object.assign(idxState, s);
-  ['sig','cat','sort'].forEach(function(g) {
-    document.querySelectorAll('.idx-btn[data-group="'+g+'"]').forEach(function(b) {
-      b.classList.remove('active');
-      if ((b.getAttribute('onclick')||'').indexOf("'"+s[g]+"'") !== -1) b.classList.add('active');
+function restoreIdxState() {
+  try {
+    var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]);
+    var isBF = nav ? nav.type === 'back_forward' : (performance.navigation && performance.navigation.type === 2);
+    if (!isBF) return;
+    var raw = sessionStorage.getItem(IDX_SS_KEY);
+    if (!raw) return;
+    var d = JSON.parse(raw);
+    if (Date.now() - d.ts > 600000) return; // 10분 초과 무시
+    var s = d.s;
+    Object.assign(idxState, s);
+    // 버튼 active 복원
+    ['sig','cat','sort'].forEach(function(g) {
+      document.querySelectorAll('.idx-btn[data-group="'+g+'"]').forEach(function(b) {
+        b.classList.remove('active');
+        if ((b.getAttribute('onclick')||'').indexOf("'"+s[g]+"'") !== -1) b.classList.add('active');
+      });
     });
-  });
-  var fb = document.getElementById('fav-filter-btn');
-  if (fb) fb.classList.toggle('active', !!s.fav);
-  applyIdxFilter();
-  if (e.state.scrollY !== undefined) setTimeout(function(){ window.scrollTo(0, e.state.scrollY); }, 50);
-});
+    var fb = document.getElementById('fav-filter-btn');
+    if (fb) fb.classList.toggle('active', !!s.fav);
+    // 정렬 복원 (DOM 행 재배치)
+    if (s.sort && s.sort !== 'time') idxSort(s.sort);
+    applyIdxFilter();
+    // 스크롤 복원
+    setTimeout(function(){ window.scrollTo(0, d.y || 0); }, 80);
+  } catch(e) {}
+}
+// 기업 클릭 직전 상태 저장
 document.addEventListener('click', function(e) {
-  if (e.target.closest('.idx-anchor')) saveIdxStateToHistory();
-});
+  if (e.target.closest('.idx-anchor')) saveIdxState();
+}, true);
+window.addEventListener('load', restoreIdxState);
 
 function idxFilter(btn, group, val) {
   idxState[group] = val;
@@ -1114,7 +1131,7 @@ function applyIdxFilter() {
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
-  saveIdxStateToHistory();
+  saveIdxState();
 }
 </script><h3 style="font-size:18px; margin-top:24px; color:var(--c-darkest);">📈 시간외 대량매매 (0건)</h3>
 <ul style="font-size:13px; line-height:1.7; columns:2;"></ul>
