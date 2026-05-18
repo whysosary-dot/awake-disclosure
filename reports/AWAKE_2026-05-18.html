@@ -978,6 +978,7 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
+var REPORT_DATE = '2026-05-18';  // 빌드 시 하드코딩 — 날짜별 즐겨찾기 격리용
 var FAV_KEY = 'awake_favs_' + REPORT_DATE;
 var FAV_META_KEY = 'awake_fav_meta_' + REPORT_DATE;
 function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)||'{}'); } catch(e){return {};} }
