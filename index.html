@@ -321,9 +321,30 @@ function switchTab(id, btn) {
 }
 
 // ── localStorage 헬퍼 ────────────────────────────────────────────────────
-function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
+// ── 즐겨찾기 헬퍼 — 날짜별 키(awake_favs_YYYY-MM-DD) + 레거시 키 통합 읽기 ──
+function getFavs() {
+  var merged = {};
+  try { Object.assign(merged, JSON.parse(localStorage.getItem('awake_favs')||'{}')); } catch(e){}
+  for (var i = 0; i < localStorage.length; i++) {
+    var k = localStorage.key(i);
+    if (k && k.startsWith('awake_favs_') && !k.startsWith('awake_favs_meta')) {
+      try { Object.assign(merged, JSON.parse(localStorage.getItem(k)||'{}')); } catch(e){}
+    }
+  }
+  return merged;
+}
+function getFavMeta() {
+  var merged = {};
+  try { Object.assign(merged, JSON.parse(localStorage.getItem('awake_fav_meta')||'{}')); } catch(e){}
+  for (var i = 0; i < localStorage.length; i++) {
+    var k = localStorage.key(i);
+    if (k && k.startsWith('awake_fav_meta_')) {
+      try { Object.assign(merged, JSON.parse(localStorage.getItem(k)||'{}')); } catch(e){}
+    }
+  }
+  return merged;
+}
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
-function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 
 // ── 배지 카운트 업데이트 ─────────────────────────────────────────────────
@@ -439,8 +460,20 @@ function openFavReport(e, url) {
 }
 
 function removeFav(code) {
+  // 레거시 키에서 삭제
   var f = getFavs(); delete f[code]; saveFavs(f);
   var m = getFavMeta(); delete m[code]; saveFavMeta(m);
+  // 날짜별 키에서도 삭제
+  var keys = [];
+  for (var i = 0; i < localStorage.length; i++) { keys.push(localStorage.key(i)); }
+  keys.forEach(function(k) {
+    if (k && k.startsWith('awake_favs_') && !k.startsWith('awake_favs_meta')) {
+      try { var o=JSON.parse(localStorage.getItem(k)||'{}'); delete o[code]; localStorage.setItem(k,JSON.stringify(o)); } catch(e){}
+    }
+    if (k && k.startsWith('awake_fav_meta_')) {
+      try { var o=JSON.parse(localStorage.getItem(k)||'{}'); delete o[code]; localStorage.setItem(k,JSON.stringify(o)); } catch(e){}
+    }
+  });
   localStorage.setItem(LS_TS_KEY, Date.now());
   updateFavCount();
   renderFavs();
@@ -448,7 +481,17 @@ function removeFav(code) {
 
 function clearAllFavsIndex() {
   if (!confirm('즐겨찾기를 모두 초기화할까요?')) return;
-  saveFavs({}); saveFavMeta({});
+  // 레거시 키 초기화
+  localStorage.removeItem('awake_favs');
+  localStorage.removeItem('awake_fav_meta');
+  // 날짜별 키 전부 삭제
+  var keys = [];
+  for (var i = 0; i < localStorage.length; i++) { keys.push(localStorage.key(i)); }
+  keys.forEach(function(k) {
+    if (k && (k.startsWith('awake_favs_') || k.startsWith('awake_fav_meta_'))) {
+      localStorage.removeItem(k);
+    }
+  });
   localStorage.setItem(LS_TS_KEY, Date.now());
   updateFavCount();
   renderFavs();
