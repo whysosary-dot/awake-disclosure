@@ -199,7 +199,7 @@ const LATEST_REPORT_DATE = '2026-05-21';
 const reports = [
   {
     d: "2026-05-21",
-    v: "202605211506",
+    v: "202605211519",
     label: "2026년 5월 21일 (목)",
     sub: "v11 ★ 전종목 새WebSearch분석 — 82개 공시 · 77종목 · 매수11/매도5/중립66 · Top: 기타·바이오·지주/복합·금융",
     n: true
@@ -598,9 +598,9 @@ async function ghCommitFavs(){
   var btn=document.getElementById('gh-commit-btn');
   btn.disabled=true; btn.textContent='⏳ 저장 중...';
   try {
-    var favs=getFavs(), meta=getFavMeta();
+    var favs=getFavs(), meta=getFavMeta(), memos=getMemos();
     var now=Date.now();
-    var payload=JSON.stringify({favs:favs, meta:meta, updatedAt:now}, null, 2);
+    var payload=JSON.stringify({favs:favs, meta:meta, memos:memos, updatedAt:now}, null, 2);
     var b64=btoa(unescape(encodeURIComponent(payload)));
     var existing=await ghApiGet(GH_AWAKE.PATH);
     var sha=existing?existing.sha:undefined;
@@ -635,6 +635,7 @@ async function loadFavsFromGitHub(){
     if(ghTs<=localTs) return; // 로컬이 최신 → 유지
     saveFavs(data.favs);
     if(data.meta) saveFavMeta(data.meta);
+    if(data.memos) saveMemos(data.memos);
     localStorage.setItem(LS_TS_KEY, ghTs);
     updateFavCount(); renderFavs();
   } catch(e){ console.warn('GH load fail:', e); }
