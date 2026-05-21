@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-06"
-TODAY_DISP = "2026년 5월 6일 (수)"
+TODAY = "2026-05-15"
+TODAY_DISP = "2026년 5월 15일 (금)"
 
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/awesome-blissful-fermi/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/zen-gracious-cori/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/awesome-blissful-fermi/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/zen-gracious-cori/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/awesome-blissful-fermi/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/zen-gracious-cori/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/awesome-blissful-fermi/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/zen-gracious-cori/mnt/outputs/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1465,11 +1465,11 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
-</div>
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">🔍 검색</span>
-  <input id="company-search" type="text" placeholder="기업명 검색..." oninput="applyIdxFilter()" style="padding:4px 10px;border:1px solid var(--c-border);border-radius:6px;font-size:13px;background:var(--c-bg);color:var(--c-text);width:180px;outline:none;" />
-  <button onclick="document.getElementById('company-search').value='';applyIdxFilter()" style="font-size:11px;padding:3px 8px;border:1px solid var(--c-border);border-radius:5px;background:transparent;color:var(--c-mute);cursor:pointer;">✕ 초기화</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarter')">분기보고서</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','convert')">전환권·신주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','govern')">지배구조</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송·판결</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
@@ -1498,10 +1498,13 @@ for d in DISCLOSURES:
     elif "전환사채" in _rep or "사채" in _rep or "CB" in _rep: _cat = "cb"
     elif "자기주식" in _rep or "주식소각" in _rep: _cat = "buyback"
     elif "합병" in _rep or "분할" in _rep or "M&A" in _rep: _cat = "ma"
-    elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
+    elif "분기보고서" in _rep or "반기보고서" in _rep or "사업보고서" in _rep: _cat = "quarter"
+    elif "전환권" in _rep or "신주인수권" in _rep or "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "convert"
+    elif "지배구조" in _rep or "경영권" in _rep or "임원" in _rep or "대표이사" in _rep: _cat = "govern"
+    elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "lawsuit"
     elif "배당" in _rep: _cat = "dividend"
     else: _cat = "other"
-    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}" data-company="{html.escape(d["company"])}">
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
@@ -1519,12 +1522,10 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
-var FAV_KEY = 'awake_favs_' + REPORT_DATE;
-var FAV_META_KEY = 'awake_fav_meta_' + REPORT_DATE;
-function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)||'{}'); } catch(e){return {};} }
-function saveFavs(f) { try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch(e){} }
-function getFavMeta() { try { return JSON.parse(localStorage.getItem(FAV_META_KEY)||'{}'); } catch(e){return {};} }
-function saveFavMeta(m) { try { localStorage.setItem(FAV_META_KEY, JSON.stringify(m)); } catch(e){} }
+function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
+function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs(); var m = getFavMeta();
   if (f[code]) {
@@ -1622,11 +1623,8 @@ function applyIdxFilter() {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
     var favOk = !idxState.fav || !!favs[r.dataset.code];
-    var searchEl = document.getElementById('company-search');
-    var q = searchEl ? searchEl.value.trim() : '';
-    var searchOk = !q || (r.dataset.company||"").indexOf(q) !== -1;
-    r.style.display = (sigOk && catOk && favOk && searchOk) ? '' : 'none';
-    if(sigOk && catOk && favOk && searchOk) visible++;
+    r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
+    if(sigOk && catOk && favOk) visible++;
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
@@ -1830,7 +1828,7 @@ for code, recs in companies:
 <h3 class="section-title">🔗 외부 링크</h3>
 <div class="ext-links">
   <a class="ext-link" href="https://search.naver.com/search.naver?where=news&query={name_enc}&sort=1" target="_blank">📰 네이버 뉴스</a>
-  <a class="ext-link" href="https://m.stock.naver.com/domestic/stock/{code}/overview" target="_blank">📈 네이버 금융</a>
+  <a class="ext-link" href="https://m.stock.naver.com/domestic/stock/{code}/total" target="_blank">📈 네이버 금융</a>
   <a class="ext-link" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm={name_enc}" target="_blank">🏛 DART 공시</a>
   <a class="ext-link" href="https://www.google.com/search?q={name_enc}+{code}&tbm=nws" target="_blank">🌐 Google 뉴스</a>
 </div>
@@ -1840,7 +1838,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/zen-gracious-cori/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
