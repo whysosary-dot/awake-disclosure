@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-05-15"
-TODAY_DISP = "2026년 5월 15일 (금)"
+TODAY = "2026-05-21"
+TODAY_DISP = "2026년 5월 21일 (목)"
 
-with open("/sessions/zen-gracious-cori/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/tmp/awake-fresh-new/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/zen-gracious-cori/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/tmp/awake-fresh-new/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/zen-gracious-cori/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/tmp/awake-fresh-new/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/zen-gracious-cori/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/tmp/awake-fresh-new/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/zen-gracious-cori/mnt/outputs/enriched_overrides.json"
+override_path = "/tmp/awake-fresh-new/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/zen-gracious-cori/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/tmp/awake-fresh-new/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/zen-gracious-cori/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/tmp/awake-fresh-new/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1465,11 +1465,16 @@ parts_html.append(f"""<div class="page">
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','buyback')">자사주</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','dividend')">배당</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','ma')">합병/분할</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarter')">분기보고서</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','convert')">전환권·신주</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','govern')">지배구조</button>
-  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','lawsuit')">소송·판결</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','quarterly')">분기보고서</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','conversion')">전환권/신주</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','governance')">지배구조</button>
+  <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','litigation')">소송/판결</button>
   <button class="idx-btn" data-group="cat" onclick="idxFilter(this,'cat','other')">기타</button>
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+  <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">🔍 검색</span>
+  <input id="company-search" type="text" placeholder="기업명 검색..." oninput="applyIdxFilter()" style="padding:4px 10px;border:1px solid var(--c-border);border-radius:6px;font-size:13px;background:var(--c-bg);color:var(--c-text);width:180px;outline:none;" />
+  <button onclick="document.getElementById('company-search').value='';applyIdxFilter()" style="font-size:11px;padding:3px 8px;border:1px solid var(--c-border);border-radius:5px;background:transparent;color:var(--c-mute);cursor:pointer;">✕ 초기화</button>
 </div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">정렬</span>
@@ -1498,13 +1503,14 @@ for d in DISCLOSURES:
     elif "전환사채" in _rep or "사채" in _rep or "CB" in _rep: _cat = "cb"
     elif "자기주식" in _rep or "주식소각" in _rep: _cat = "buyback"
     elif "합병" in _rep or "분할" in _rep or "M&A" in _rep: _cat = "ma"
-    elif "분기보고서" in _rep or "반기보고서" in _rep or "사업보고서" in _rep: _cat = "quarter"
-    elif "전환권" in _rep or "신주인수권" in _rep or "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "convert"
-    elif "지배구조" in _rep or "경영권" in _rep or "임원" in _rep or "대표이사" in _rep: _cat = "govern"
-    elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "lawsuit"
+    elif "스톡옵션" in _rep or "주식매수선택권" in _rep: _cat = "stock_option"
     elif "배당" in _rep: _cat = "dividend"
+    elif "분기보고서" in _rep or "사업보고서" in _rep or "반기보고서" in _rep: _cat = "quarterly"
+    elif "신주인수권" in _rep or "전환권" in _rep or "신주" in _rep: _cat = "conversion"
+    elif "지배구조" in _rep or "이사회" in _rep or "감사" in _rep or "경영권" in _rep: _cat = "governance"
+    elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "litigation"
     else: _cat = "other"
-    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}">
+    parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}" data-company="{html.escape(d["company"])}">
 <td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
@@ -1516,16 +1522,60 @@ for d in DISCLOSURES:
 parts_html.append("""</tbody></table>
 <script>
 var idxState = { sig: 'all', cat: 'all', sort: 'time', fav: false };
+
+// ── 뒤로가기 시 필터·정렬 상태 복원 (sessionStorage + back_forward 감지) ──
+var IDX_SS_KEY = 'awake_idx_state_{TODAY}';
+function saveIdxState() {
+  try {
+    sessionStorage.setItem(IDX_SS_KEY, JSON.stringify({ s: JSON.parse(JSON.stringify(idxState)), y: window.scrollY, ts: Date.now() }));
+  } catch(e) {}
+}
+function restoreIdxState() {
+  try {
+    var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]);
+    var isBF = nav ? nav.type === 'back_forward' : (performance.navigation && performance.navigation.type === 2);
+    if (!isBF) return;
+    var raw = sessionStorage.getItem(IDX_SS_KEY);
+    if (!raw) return;
+    var d = JSON.parse(raw);
+    if (Date.now() - d.ts > 600000) return; // 10분 초과 무시
+    var s = d.s;
+    Object.assign(idxState, s);
+    // 버튼 active 복원
+    ['sig','cat','sort'].forEach(function(g) {
+      document.querySelectorAll('.idx-btn[data-group="'+g+'"]').forEach(function(b) {
+        b.classList.remove('active');
+        if ((b.getAttribute('onclick')||'').indexOf("'"+s[g]+"'") !== -1) b.classList.add('active');
+      });
+    });
+    var fb = document.getElementById('fav-filter-btn');
+    if (fb) fb.classList.toggle('active', !!s.fav);
+    // 정렬 복원 (DOM 행 재배치)
+    if (s.sort && s.sort !== 'time') idxSort(s.sort);
+    applyIdxFilter();
+    // 스크롤 복원
+    setTimeout(function(){ window.scrollTo(0, d.y || 0); }, 80);
+  } catch(e) {}
+}
+// 기업 클릭 직전 상태 저장
+document.addEventListener('click', function(e) {
+  if (e.target.closest('.idx-anchor')) saveIdxState();
+}, true);
+window.addEventListener('load', restoreIdxState);
+
 function idxFilter(btn, group, val) {
   idxState[group] = val;
   document.querySelectorAll('.idx-btn[data-group="'+group+'"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   applyIdxFilter();
 }
-function getFavs() { try { return JSON.parse(localStorage.getItem('awake_favs')||'{}'); } catch(e){return {};} }
-function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
-function getFavMeta() { try { return JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); } catch(e){return {};} }
-function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
+var REPORT_DATE = '{TODAY}';  // 빌드 시 하드코딩 — 날짜별 즐겨찾기 격리용
+var FAV_KEY = 'awake_favs_' + REPORT_DATE;
+var FAV_META_KEY = 'awake_fav_meta_' + REPORT_DATE;
+function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)||'{}'); } catch(e){return {};} }
+function saveFavs(f) { try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch(e){} }
+function getFavMeta() { try { return JSON.parse(localStorage.getItem(FAV_META_KEY)||'{}'); } catch(e){return {};} }
+function saveFavMeta(m) { try { localStorage.setItem(FAV_META_KEY, JSON.stringify(m)); } catch(e){} }
 function toggleFavFromIdx(btn, code) {
   var f = getFavs(); var m = getFavMeta();
   if (f[code]) {
@@ -1623,11 +1673,15 @@ function applyIdxFilter() {
     var sigOk = sigF==='all' || r.dataset.signal===sigF;
     var catOk = catF==='all' || r.dataset.cat===catF;
     var favOk = !idxState.fav || !!favs[r.dataset.code];
-    r.style.display = (sigOk && catOk && favOk) ? '' : 'none';
-    if(sigOk && catOk && favOk) visible++;
+    var searchEl = document.getElementById('company-search');
+    var q = searchEl ? searchEl.value.trim() : '';
+    var searchOk = !q || (r.dataset.company||"").indexOf(q) !== -1;
+    r.style.display = (sigOk && catOk && favOk && searchOk) ? '' : 'none';
+    if(sigOk && catOk && favOk && searchOk) visible++;
   });
   var lbl = document.getElementById('idx-count-lbl');
   if(lbl) lbl.textContent = visible + '건 표시';
+  saveIdxState();
 }
 </script>""")
 
@@ -1838,7 +1892,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/zen-gracious-cori/mnt/outputs/AWAKE_v11.html"
+out_path = "/tmp/awake-fresh-new/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
@@ -1859,3 +1913,29 @@ if missing_curation:
     print("  → enriched_overrides.json에 즉시 추가 필요 (사용자 명시 정책)")
 else:
     print(f"\n✅ 큐레이션 정책 준수 — 전 {len(by_company)}개 종목 한글 큐레이션 적용됨")
+
+# ★ 탭 15개 완전성 검증 (SKILL.md 영구 정책 — 누락 시 빌드 중단)
+REQUIRED_TABS = [
+    ("잠정실적",   "잠정실적"),
+    ("IR/밸류업",  "IR/밸류업"),
+    ("공급계약",   "공급계약"),
+    ("대량보유",   "대량보유"),
+    ("CB/사채",    "CB/사채"),
+    ("유상증자",   "유상증자"),
+    ("자사주",     "자사주"),
+    ("배당",       "배당"),
+    ("합병/분할",  "합병/분할"),
+    ("분기보고서", "분기보고서"),
+    ("전환권/신주","전환권/신주"),
+    ("지배구조",   "지배구조"),
+    ("소송/판결",  "소송/판결"),
+    ("기타",       ">기타</button>"),
+]
+missing_tabs = [name for name, kw in REQUIRED_TABS if kw not in html_out]
+if missing_tabs:
+    raise RuntimeError(
+        f"\n❌ 공시유형 탭 누락 — 빌드 중단!\n"
+        f"   누락된 탭: {missing_tabs}\n"
+        f"   build_report_v11.py HTML 탭 버튼 섹션을 확인하세요."
+    )
+print(f"✅ 공시유형 탭 14개 전체 확인됨 (전체 포함 15개)")
