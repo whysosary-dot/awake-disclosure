@@ -128,13 +128,13 @@ body{
 }
 .fav-memo:focus{border-color:#3b82f6;background:#fff;}
 .fav-memo::placeholder{color:#cbd5e1;}
-.memo-hdr{display:none;align-items:center;gap:5px;margin-top:8px;cursor:pointer;user-select:none;line-height:1}
+.memo-hdr{display:flex;align-items:center;gap:5px;margin-top:8px;cursor:pointer;user-select:none;line-height:1}
 .memo-hdr:hover .memo-tri{color:#3b82f6}
 .memo-tri{font-size:9px;color:#94a3b8;transition:transform .18s;display:inline-block}
 .memo-tri.open{transform:rotate(90deg)}
 .memo-linecnt{font-size:11px;color:#94a3b8;background:#f1f5f9;border-radius:8px;padding:1px 7px;font-family:Inter,sans-serif}
 .memo-preview{font-size:12px;color:#374151;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.fav-memo.memo-collapsed{max-height:0 !important;padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;border-width:0 !important;opacity:0;pointer-events:none}
+.fav-memo.memo-collapsed{display:none}
 
 .fav-card{flex-direction:column !important;}
 .fav-card-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;}
@@ -496,7 +496,7 @@ function renderFavs() {
           var hasMulti = lc > 1;
           var firstLine = memoVal ? memoVal.split('\n')[0] : '';
           return (
-            (hasMulti ? '<div class="memo-hdr" id="mh-'+code+'" onclick="toggleMemo(\'' + code + '\')">' +
+            (hasMulti ? '<div class="memo-hdr" id="mh-'+code+'" style="display:flex" onclick="toggleMemo(\'' + code + '\')">' +
               '<span class="memo-tri" id="mtr-'+code+'">&#9658;</span>' +
               '<span class="memo-linecnt" id="mc-'+code+'">' + lc + '줄</span>' +
               '<span class="memo-preview">' + escHtml(firstLine) + '</span>' +
@@ -520,18 +520,20 @@ function getMemos(){ try{ return JSON.parse(localStorage.getItem(LS_MEMO_KEY)||'
 function saveMemos(m){ try{ localStorage.setItem(LS_MEMO_KEY, JSON.stringify(m)); }catch(e){} }
 
 function toggleMemo(code) {
-  var hdr = document.getElementById('mh-' + code);
   var ta  = document.getElementById('mt-' + code);
   var tri = document.getElementById('mtr-' + code);
   if (!ta) return;
   var isCollapsed = ta.classList.contains('memo-collapsed');
   if (isCollapsed) {
     ta.classList.remove('memo-collapsed');
+    ta.style.display = '';
     ta.style.height = 'auto';
     ta.style.height = ta.scrollHeight + 'px';
+    ta.focus();
     if (tri) tri.classList.add('open');
   } else {
     ta.classList.add('memo-collapsed');
+    ta.style.display = 'none';
     ta.style.height = '';
     if (tri) tri.classList.remove('open');
   }
@@ -557,6 +559,7 @@ function updateMemoHeader(code, val) {
   } else {
     if (hdr) hdr.style.display = 'none';
     ta.classList.remove('memo-collapsed');
+    ta.style.display = '';
     ta.style.height = 'auto';
     ta.style.height = ta.scrollHeight + 'px';
   }
