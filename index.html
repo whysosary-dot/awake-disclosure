@@ -128,12 +128,7 @@ body{
 }
 .fav-memo:focus{border-color:#3b82f6;background:#fff;}
 .fav-memo::placeholder{color:#cbd5e1;}
-.memo-toggle-bar{display:none;align-items:center;gap:5px;margin-top:3px;cursor:pointer;user-select:none;padding:2px 4px;border-radius:6px}
-.memo-toggle-bar:hover{background:#f1f5f9}
-.memo-tri{font-size:9px;color:#94a3b8;transition:transform .18s;display:inline-block}
-.memo-tri.open{transform:rotate(90deg)}
-.memo-linecnt{font-size:11px;color:#94a3b8;background:#f1f5f9;border-radius:8px;padding:1px 7px;font-family:Inter,sans-serif}
-.fav-memo.memo-collapsed{max-height:32px;overflow:hidden;resize:none}
+
 
 .fav-card{flex-direction:column !important;}
 .fav-card-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;}
@@ -490,24 +485,17 @@ function renderFavs() {
             '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
           '</div>' +
         '</div>' +
-        (function(){
-          var lc = memoVal ? memoVal.split('\n').length : 0;
-          var hasMulti = lc > 1;
-          return (
-            '<textarea class="fav-memo' + (hasMulti ? ' memo-collapsed' : '') + '" id="mt-'+code+'" rows="1" placeholder="✏️ 메모 (자동저장)" ' +
-              'oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\';saveMemo(\'' + code + '\',this.value)" ' +
-              'onchange="saveMemo(\'' + code + '\',this.value)">' + escHtml(memoVal) + '</textarea>' +
-            (hasMulti ? '<div class="memo-toggle-bar" id="mh-'+code+'" style="display:flex" onclick="toggleMemo(\'' + code + '\')">' +
-              '<span class="memo-tri" id="mtr-'+code+'">&#9658;</span>' +
-              '<span class="memo-linecnt" id="mc-'+code+'">' + lc + '줄</span>' +
-            '</div>' : '')
-          );
-        })() +
+        '<textarea class="fav-memo" id="mt-'+code+'" rows="1" placeholder="✏️ 메모 (자동저장)" ' +
+          'oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\';saveMemo(\'' + code + '\',this.value)" ' +
+          'onchange="saveMemo(\'' + code + '\',this.value)">' + escHtml(memoVal) + '</textarea>' +
       '</div>';
     });
   });
 
   container.innerHTML = html;
+  container.querySelectorAll('.fav-memo').forEach(function(ta){
+    if(ta.value){ ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px'; }
+  });
 }
 
 
@@ -516,59 +504,11 @@ var LS_MEMO_KEY = 'awake_fav_memos';
 function getMemos(){ try{ return JSON.parse(localStorage.getItem(LS_MEMO_KEY)||'{}'); }catch(e){ return {}; } }
 function saveMemos(m){ try{ localStorage.setItem(LS_MEMO_KEY, JSON.stringify(m)); }catch(e){} }
 
-function toggleMemo(code) {
-  var ta  = document.getElementById('mt-' + code);
-  var tri = document.getElementById('mtr-' + code);
-  if (!ta) return;
-  var isCollapsed = ta.classList.contains('memo-collapsed');
-  if (isCollapsed) {
-    ta.classList.remove('memo-collapsed');
-    ta.style.maxHeight = '';
-    ta.style.overflow = '';
-    ta.style.resize = '';
-    ta.style.height = 'auto';
-    ta.style.height = ta.scrollHeight + 'px';
-    if (tri) tri.classList.add('open');
-  } else {
-    ta.classList.add('memo-collapsed');
-    ta.style.maxHeight = '32px';
-    ta.style.overflow = 'hidden';
-    ta.style.resize = 'none';
-    if (tri) tri.classList.remove('open');
-  }
-}
-
-function updateMemoHeader(code, val) {
-  var hdr  = document.getElementById('mh-' + code);
-  var cnt  = document.getElementById('mc-' + code);
-  var tri  = document.getElementById('mtr-' + code);
-  var ta   = document.getElementById('mt-' + code);
-  var prev = hdr ? hdr.querySelector('.memo-preview') : null;
-  if (!ta) return;
-  var lines = val ? val.split('\n').length : 0;
-  var hasMulti = lines > 1;
-  if (hasMulti) {
-    if (!hdr) return; // 이미 존재하면 업데이트만
-    hdr.style.display = 'flex';
-    if (cnt) cnt.textContent = lines + '줄';
-    if (prev) prev.textContent = val.split('\n')[0];
-    // 현재 접힌 상태 유지 또는 접기
-    ta.classList.add('memo-collapsed');
-    if (tri) tri.classList.remove('open');
-  } else {
-    if (hdr) hdr.style.display = 'none';
-    ta.classList.remove('memo-collapsed');
-    ta.style.display = '';
-    ta.style.height = 'auto';
-    ta.style.height = ta.scrollHeight + 'px';
-  }
-}
 function saveMemo(code, val){
   var m = getMemos();
   if(val.trim()) m[code] = val;
   else delete m[code];
   saveMemos(m);
-  updateMemoHeader(code, val);
 }
 
 function escHtml(s) {
