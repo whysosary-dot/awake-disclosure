@@ -205,7 +205,7 @@ const LATEST_REPORT_DATE = '2026-05-22';
 const reports = [
   {
     d: "2026-05-26",
-    v: "202605261138a",
+    v: "202605261412c",
     label: "2026년 5월 26일 (화)",
     sub: "97건 공시 · 88종목 · 매수22/매도6/중립69",
     n: true
@@ -489,7 +489,9 @@ function renderFavs() {
             '</div>' +
           '</div>' +
           '<div class="fav-actions">' +
-            '<a class="fav-link" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">리포트 보기 →</a>' +
+            '<a class="fav-ext-btn" href="https://m.stock.naver.com/domestic/stock/' + code + '/total" target="_blank" rel="noopener">📈 네이버</a>' +
+            '<a class="fav-ext-btn" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name) + '" target="_blank" rel="noopener">📋 공시</a>' +
+            '<a class="fav-link" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">리포트 →</a>' +
             '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
           '</div>' +
         '</div>' +
