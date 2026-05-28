@@ -90,61 +90,74 @@ body{
   font-family:'Noto Sans KR',sans-serif;
 }
 .fav-clear-btn:hover{background:#fef2f2}
-.fav-card{flex-direction:column !important;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
+.fav-card{
+  display:flex;flex-direction:column;
   background:#fffbeb;border:1px solid #fde68a;border-radius:10px;
-  padding:14px 18px;margin-bottom:10px;
+  padding:14px 18px;margin-bottom:10px;gap:8px;
 }
-.fav-card:hover{background:#fef9c3;border-color:#f59e0b;box-shadow:0 2px 8px rgba(245,158,11,.12)}
-.fav-info{}
-.fav-name{font-size:16px;font-weight:800;color:#0c1445}
-.fav-meta{font-size:12px;color:#78716c;margin-top:3px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
-.fav-sig{
-  font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;
-  background:#dcfce7;color:#166534;
-}
+.fav-card:hover{background:#fef9c3;border-color:#f59e0b}
+.fav-card-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;gap:10px;flex-wrap:wrap;}
+.fav-info{flex:1;min-width:0;}
+.fav-name{font-size:16px;font-weight:800;color:#0c1445;text-decoration:none;display:inline-block;}
+.fav-name:hover{color:#1e3a8a;}
+.fav-price{font-size:13px;margin-top:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.fav-price-close{font-family:Inter,sans-serif;font-weight:700;color:#0c1445;}
+.fav-price-chg{font-family:Inter,sans-serif;font-size:12px;font-weight:700;padding:2px 7px;border-radius:6px;}
+.fav-price-chg.up{background:#fee2e2;color:#b91c1c;}
+.fav-price-chg.down{background:#dbeafe;color:#1d4ed8;}
+.fav-price-chg.flat{background:#f1f5f9;color:#475569;}
+.fav-price-none{font-size:11px;color:#cbd5e1;font-style:italic;}
+.fav-meta{font-size:12px;color:#78716c;margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.fav-code{font-family:Inter,sans-serif;font-size:11px;color:#a8a29e;}
+.fav-sig{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;background:#dcfce7;color:#166534;}
 .fav-sig.down{background:#fee2e2;color:#991b1b;}
 .fav-sig.neutral{background:#f1f5f9;color:#475569;}
-.fav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.fav-report-pill{font-size:11px;color:#64748b;background:#f1f5f9;padding:2px 7px;border-radius:10px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.fav-actions{display:flex;gap:6px;align-items:center;flex-shrink:0;flex-wrap:wrap;}
 .fav-link{
   background:#0c1445;color:#fff;font-size:12px;font-weight:700;
-  padding:7px 14px;border-radius:7px;text-decoration:none;
-  transition:background .15s;white-space:nowrap;
+  padding:7px 12px;border-radius:7px;text-decoration:none;
+  transition:background .15s;white-space:nowrap;line-height:1;
+  display:inline-flex;align-items:center;gap:4px;
 }
 .fav-link:hover{background:#1e3a8a}
+.fav-link.naver{background:#03c75a;}
+.fav-link.naver:hover{background:#02a849;}
+.fav-link.dart{background:#475569;}
+.fav-link.dart:hover{background:#334155;}
 .fav-remove{
   background:none;border:1.5px solid #fca5a5;color:#ef4444;
-  font-size:16px;padding:5px 8px;border-radius:7px;cursor:pointer;
+  font-size:16px;padding:5px 9px;border-radius:7px;cursor:pointer;
   line-height:1;
 }
 .fav-remove:hover{background:#fee2e2}
 .fav-memo{
-  width:100%;margin-top:8px;padding:6px 10px;
+  width:100%;padding:6px 10px;
   border:1px solid #e2e8f0;border-radius:8px;
   font-size:12px;font-family:'Noto Sans KR',sans-serif;
   color:#374151;background:#fafafa;resize:none;
   outline:none;transition:border .2s,background .2s;
-  box-sizing:border-box;line-height:1.5;min-height:32px;
+  box-sizing:border-box;line-height:1.5;min-height:34px;
 }
 .fav-memo:focus{border-color:#3b82f6;background:#fff;}
 .fav-memo::placeholder{color:#cbd5e1;}
-
-
-.fav-card{flex-direction:column !important;}
-.fav-card-top{display:flex;justify-content:space-between;align-items:flex-start;width:100%;}
 .fav-empty{
   text-align:center;padding:48px 20px;color:#94a3b8;font-size:14px;line-height:1.8;
 }
 .fav-empty .big{font-size:40px;margin-bottom:12px}
+.date-section-label{font-size:12px;font-weight:700;color:#94a3b8;margin:16px 0 8px 2px;letter-spacing:.3px}
 
 .footer{text-align:center;margin-top:24px;font-size:10px;color:#94a3b8;line-height:1.6}
 .footer a{color:#3b82f6;text-decoration:none}
 @media(max-width:640px){
+  body{padding:16px 12px}
   .wrap{padding:24px 20px}
-  .header h1{font-size:22px}
+  .header h1{font-size:20px}
   .item{padding:12px 14px}
   .tab-btn{padding:10px 14px;font-size:13px}
   .fav-card{padding:12px 14px}
+  .fav-link{padding:6px 10px;font-size:11px;}
+  .fav-remove{padding:4px 7px;font-size:14px;}
 }
 </style>
 <!-- deploy:202605261308 -->
@@ -199,7 +212,29 @@ body{
 const CODE_NAME = {"476040":"오가노이드사이언스","039490":"키움증권","035420":"NAVER","163730":"핑거","293490":"카카오게임즈","005930":"삼성전자","100840":"SNT에너지","064960":"SNT모티브","003570":"SNT다이내믹스","126730":"코칩","036530":"SNT홀딩스","404990":"신한서부티엔디리츠","064400":"LG씨엔에스","382900":"범한퓨얼셀","282880":"코윈테크","012450":"한화에어로스페이스","006360":"GS건설","103140":"풍산","005810":"풍산홀딩스","140410":"메지온","317400":"자이에스앤디","214370":"케어젠","024850":"HLB이노베이션","093320":"케이아이엔엑스","381620":"제닉스로보틱스","032640":"LG유플러스","289080":"SV인베스트먼트","022100":"포스코DX","285490":"노바텍","393890":"더블유씨피","299900":"위지윅스튜디오","009150":"삼성전기","044990":"에이치엔에스하이텍","014680":"한솔케미칼","483650":"달바글로벌","094940":"푸른기술","052400":"코나아이","062040":"산일전기","195870":"해성디에스","047050":"포스코인터내셔널","003670":"포스코퓨처엠","063440":"SM Life Design","068270":"셀트리온","051910":"LG화학","002390":"한독","322310":"오로스테크놀로지","058430":"포스코스틸리온","018880":"한온시스템","319660":"피에스케이","006490":"인스코비","078930":"GS","000100":"유한양행","031980":"피에스케이홀딩스","455180":"케이지에이","033920":"무학","194370":"제이에스코퍼레이션","017670":"SK텔레콤","138930":"BNK금융지주","005490":"POSCO홀딩스","286940":"롯데이노베이트","004970":"신라교역","253450":"스튜디오드래곤","086520":"에코프로","066970":"엘앤에프","396470":"워트","006040":"동원산업","044450":"KSS해운","020150":"롯데에너지머티리얼즈","009520":"포스코엠텍","066410":"버킷스튜디오","403550":"쏘카","137310":"에스디바이오센서","035600":"KG이니시스","052260":"현대바이오랜드","294570":"쿠콘","066790":"씨씨에스","259960":"크래프톤","005960":"동부건설","000370":"한화손해보험","139480":"이마트","002350":"넥센타이어","028670":"팬오션","277410":"인산가","375500":"DL이앤씨","204610":"티쓰리","279570":"케이뱅크","215200":"메가스터디교육","005440":"현대지에프홀딩스","232680":"라온로보틱스","115180":"큐리언트","149980":"하이로닉","006800":"미래에셋증권","950130":"엑세스바이오","108320":"LX세미콘","051500":"CJ프레시웨이","016360":"삼성증권","010140":"삼성중공업","383310":"에코프로에이치엔","067160":"SOOP","383220":"F&F","012750":"에스원","118990":"모트렉스","187660":"페니트리움바이오","000990":"DB하이텍","007660":"이수페타시스","004170":"신세계","035080":"그래디언트","192080":"더블유게임즈","054920":"한컴위드","128940":"한미약품","069620":"대웅제약","007690":"국도화학","035250":"강원랜드","003090":"대웅","034020":"두산에너빌리티","418250":"시큐레터","037950":"엘컴텍","091580":"상신이디피","051900":"LG생활건강","066130":"하츠","008930":"한미사이언스","091700":"파트론","108670":"LX하우시스","000210":"DL","106240":"파인테크닉스","005380":"현대자동차","000120":"CJ대한통운","000270":"기아","950170":"JTC","145020":"휴젤","064550":"바이오니아","365340":"성일하이텍","031440":"신세계푸드","067390":"아스트","014820":"동원시스템즈","237690":"에스티팜","403870":"HPSP","900300":"오가닉티코스메틱","016740":"두올","023960":"에쓰씨엔지니어링","084110":"휴온스글로벌","002620":"제일파마홀딩스","010130":"고려아연","047810":"한국항공우주","282330":"BGF리테일","243070":"휴온스","140860":"파크시스템스","098460":"고영","003850":"보령","424870":"이뮨온시아","402340":"SK스퀘어","254120":"자비스","035890":"서희건설","039840":"디오","351870":"차이커뮤니케이션","024840":"KBI메탈","293940":"신한알파리츠","474170":"루미르","244920":"에이플러스에셋","136540":"윈스테크넷","012510":"더존비즈온","033270":"유나이티드","001270":"부국증권","331920":"셀레믹스","412540":"제일엠앤에스","102120":"어보브반도체","307950":"현대오토에버","298000":"효성화학","121800":"비덴트","294870":"IPARK현대산업개발","001060":"JW중외제약","334970":"프레스티지바이오로직스","067170":"오텍","096760":"JW홀딩스","236200":"슈프리마","001500":"현대차증권","221800":"지구홀딩스","123010":"알엔티엑스","263750":"펄어비스","215000":"골프존","083790":"CG인바이츠","066590":"스모트로닉","011810":"STX","088280":"쏘닉스","124500":"아이티센글로벌","332570":"PS일렉트로닉스","108230":"톱텍","261780":"차백신연구소"};
 
 // 가장 최근 리포트 날짜 (구버전 즐겨찾기 fallback 링크용)
-const LATEST_REPORT_DATE = '2026-05-22';
+const LATEST_REPORT_DATE = '2026-05-27';
+
+// 과거 리포트의 종가/등락률 fallback (prices_history.json 로드 후 채움)
+var PRICES_HISTORY = {};
+fetch('prices_history.json?t='+Date.now()).then(r=>r.ok?r.json():{}).then(d=>{
+  PRICES_HISTORY = d || {};
+  if (document.getElementById('tab-favs') && document.getElementById('tab-favs').classList.contains('active')) {
+    renderFavs();
+  }
+}).catch(()=>{});
+
+// 종가/등락률 조회 — meta 우선, fallback to PRICES_HISTORY
+function lookupPrice(code, date, meta) {
+  var close = (meta && meta.close) ? Number(meta.close) : 0;
+  var chg = (meta && meta.chg !== undefined && meta.chg !== null && meta.chg !== '') ? Number(meta.chg) : null;
+  if (close > 0 && chg !== null) return { close: close, chg: chg };
+  // fallback to history
+  var h = PRICES_HISTORY[date];
+  if (h && h[code]) {
+    return { close: Number(h[code].close), chg: Number(h[code].chg) };
+  }
+  return { close: close, chg: chg };
+}
 
 // ── 리포트 목록 ──────────────────────────────────────────────────────────
 const reports = [
@@ -469,7 +504,7 @@ function renderFavs() {
     var dateLabel = date !== '날짜 미상'
       ? date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$1년 $2월 $3일')
       : '날짜 미상';
-    html += '<div style="font-size:12px;font-weight:700;color:#94a3b8;margin:16px 0 8px 2px;letter-spacing:.3px;">📅 ' + dateLabel + '</div>';
+    html += '<div class="date-section-label">📅 ' + dateLabel + ' (' + byDate[date].length + ')</div>';
 
     byDate[date].forEach(function(item) {
       var code = item.code;
@@ -480,26 +515,50 @@ function renderFavs() {
       var report = meta.report || '';
       var reportUrl = date !== '날짜 미상'
         ? 'reports/AWAKE_' + date + '.html?v=' + ((reports.find(function(r){return r.d===date;})||{}).v || date.replace(/-/g,'')) + (anchor ? '#' + anchor : '')
-        : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html?v=' + LATEST_REPORT_DATE.replace(/-/g,'');  // 구버전: 최신 리포트로 이동
+        : 'reports/AWAKE_' + LATEST_REPORT_DATE + '.html?v=' + LATEST_REPORT_DATE.replace(/-/g,'');
       var sigLabel = sig==='up'?'매수▲':(sig==='down'?'매도▼':'중립');
       var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
 
+      // ★ 공시 당일 종가/등락률 — meta 우선, prices_history.json fallback
+      var px = lookupPrice(code, date, meta);
+      var priceHtml = '';
+      if (px.close && px.close > 0) {
+        var closeStr = Math.round(px.close).toLocaleString();
+        var chgVal = px.chg;
+        var chgHtml = '';
+        if (chgVal !== null && chgVal !== undefined && !isNaN(chgVal)) {
+          if (chgVal > 0.005) {
+            chgHtml = '<span class="fav-price-chg up">▲ ' + chgVal.toFixed(2) + '%</span>';
+          } else if (chgVal < -0.005) {
+            chgHtml = '<span class="fav-price-chg down">▼ ' + Math.abs(chgVal).toFixed(2) + '%</span>';
+          } else {
+            chgHtml = '<span class="fav-price-chg flat">■ 0.00%</span>';
+          }
+        }
+        priceHtml = '<div class="fav-price"><span class="fav-price-close">' + closeStr + '원</span>' + chgHtml + '</div>';
+      } else {
+        priceHtml = '<div class="fav-price"><span class="fav-price-none">가격 데이터 없음</span></div>';
+      }
+
       var memoVal = (getMemos()[code] || '');
+      var dartHref = 'https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name);
+      var naverHref = 'https://m.stock.naver.com/domestic/stock/' + code + '/total';
+
       html += '<div class="fav-card">' +
         '<div class="fav-card-top">' +
           '<div class="fav-info">' +
-            '<a class="fav-name" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')" style="text-decoration:none;color:inherit;cursor:pointer;">⭐ ' + escHtml(name) + '</a>' +
-            (meta.close && meta.close > 0 ? '<div style="font-size:12px;color:var(--c-mute,#64748b);margin:2px 0 4px;">' + Number(meta.close).toLocaleString() + '원 ' + (meta.chg > 0 ? '<span style="color:#ef4444;">▲' + meta.chg + '%</span>' :  meta.chg < 0 ? '<span style="color:#3b82f6;">▼' + Math.abs(meta.chg) + '%</span>' :  '<span>■0%</span>') + '</div>' : '') +
+            '<a class="fav-name" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">⭐ ' + escHtml(name) + '</a>' +
+            priceHtml +
             '<div class="fav-meta">' +
-              '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
+              '<span class="fav-code">A' + escHtml(code) + '</span>' +
               '<span class="' + sigCls + '">' + sigLabel + '</span>' +
-              (report ? '<span style="font-size:11px;color:#64748b;background:#f1f5f9;padding:2px 7px;border-radius:10px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(report) + '</span>' : '') +
+              (report ? '<span class="fav-report-pill">' + escHtml(report) + '</span>' : '') +
             '</div>' +
           '</div>' +
           '<div class="fav-actions">' +
-            '<a class="fav-ext-btn" href="https://m.stock.naver.com/domestic/stock/' + code + '/total" target="_blank" rel="noopener" title="네이버 금융">📊</a>' +
-            '<a class="fav-ext-btn" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name) + '" target="_blank" rel="noopener" title="DART 공시">🗂</a>' +
             '<a class="fav-link" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">상세 →</a>' +
+            '<a class="fav-link naver" href="' + naverHref + '" target="_blank" rel="noopener" title="네이버 금융">📊</a>' +
+            '<a class="fav-link dart" href="' + dartHref + '" target="_blank" rel="noopener" title="DART 공시">🗂</a>' +
             '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
           '</div>' +
         '</div>' +
