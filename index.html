@@ -420,36 +420,76 @@ function switchTab(id, btn) {
 }
 
 // ── localStorage 헬퍼 ────────────────────────────────────────────────────
-// ── 즐겨찾기 헬퍼 — 날짜별 키(awake_favs_YYYY-MM-DD) + 레거시 키 통합 읽기 ──
-function getFavs() {
-  var merged = {};
-  try { Object.assign(merged, JSON.parse(localStorage.getItem('awake_favs')||'{}')); } catch(e){}
+// ★ 2026-05-28 영구 리팩토링: (date, code) 튜플 기반
+//   - awake_favs_DATE / awake_fav_meta_DATE: 날짜별 키
+//   - awake_favs / awake_fav_meta: 레거시 (date 미상 또는 meta.date에 들어있음)
+//   - 각 (date, code) 쌍이 독립 엔트리 — code 단일 키로 평탄화 금지
+
+// 모든 (date, code) 엔트리 수집 (중복 제거)
+function getAllFavEntries() {
+  var entries = [];
+  var seen = {};
+
+  // 1) 날짜별 키 (awake_favs_DATE) — 우선
   for (var i = 0; i < localStorage.length; i++) {
     var k = localStorage.key(i);
     if (k && k.startsWith('awake_favs_') && !k.startsWith('awake_favs_meta')) {
-      try { Object.assign(merged, JSON.parse(localStorage.getItem(k)||'{}')); } catch(e){}
+      var date = k.slice('awake_favs_'.length);
+      if (!date || date === 'meta') continue;
+      try {
+        var favs = JSON.parse(localStorage.getItem(k)||'{}');
+        var metaObj = JSON.parse(localStorage.getItem('awake_fav_meta_'+date)||'{}');
+        Object.keys(favs).forEach(function(code){
+          if (favs[code]) {
+            var key = date + '|' + code;
+            if (!seen[key]) {
+              seen[key] = true;
+              entries.push({ date: date, code: code, meta: metaObj[code] || {}, source: 'dated' });
+            }
+          }
+        });
+      } catch(e){}
     }
   }
-  return merged;
+
+  // 2) 레거시 키 (awake_favs) — date는 meta.date에서 추출, 없으면 '날짜 미상'
+  try {
+    var legacyFavs = JSON.parse(localStorage.getItem('awake_favs')||'{}');
+    var legacyMeta = JSON.parse(localStorage.getItem('awake_fav_meta')||'{}');
+    Object.keys(legacyFavs).forEach(function(code){
+      if (legacyFavs[code]) {
+        var m = legacyMeta[code] || {};
+        var date = m.date || '날짜 미상';
+        var key = date + '|' + code;
+        if (!seen[key]) {
+          seen[key] = true;
+          entries.push({ date: date, code: code, meta: m, source: 'legacy' });
+        }
+      }
+    });
+  } catch(e){}
+
+  return entries;
+}
+
+// (구) getFavs: 평탄화된 dict (총 unique code 카운트 용도 제한적)
+function getFavs() {
+  var out = {};
+  getAllFavEntries().forEach(function(e){ out[e.code] = 1; });
+  return out;
 }
 function getFavMeta() {
-  var merged = {};
-  try { Object.assign(merged, JSON.parse(localStorage.getItem('awake_fav_meta')||'{}')); } catch(e){}
-  for (var i = 0; i < localStorage.length; i++) {
-    var k = localStorage.key(i);
-    if (k && k.startsWith('awake_fav_meta_')) {
-      try { Object.assign(merged, JSON.parse(localStorage.getItem(k)||'{}')); } catch(e){}
-    }
-  }
-  return merged;
+  var out = {};
+  getAllFavEntries().forEach(function(e){ out[e.code] = e.meta; });
+  return out;
 }
 function saveFavs(f) { try { localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){} }
 function saveFavMeta(m) { try { localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){} }
 
-// ── 배지 카운트 업데이트 ─────────────────────────────────────────────────
+// ── 배지 카운트 업데이트 (★ entries 기준 — code 평탄화 금지) ──
 function updateFavCount() {
-  var f = getFavs();
-  var cnt = Object.keys(f).length;
+  var entries = getAllFavEntries();
+  var cnt = entries.length;
   var el = document.getElementById('fav-tab-count');
   if (el) el.textContent = cnt > 0 ? cnt : '';
   var tot = document.getElementById('fav-total');
@@ -458,51 +498,43 @@ function updateFavCount() {
 
 // ── 즐겨찾기 탭 렌더링 ───────────────────────────────────────────────────
 function renderFavs() {
-  var f = getFavs();
-  var m = getFavMeta();
+  var entries = getAllFavEntries();
   var container = document.getElementById('fav-list');
-  var codes = Object.keys(f);
   updateFavCount();
 
-  if (codes.length === 0) {
+  if (entries.length === 0) {
     container.innerHTML = '<div class="fav-empty"><div class="big">⭐</div>즐겨찾기한 종목이 없습니다.<br>각 리포트에서 회사명 옆 ☆ 버튼을 눌러 추가하세요.</div>';
     return;
   }
 
-  // 검색 필터
+  // 검색 필터 — (date, code) 엔트리 각각 검사
   var q = (document.getElementById('fav-search') ? document.getElementById('fav-search').value : '').trim().toLowerCase();
   if (q) {
-    codes = codes.filter(function(code) {
-      var name = (m[code] && m[code].name) ? m[code].name.toLowerCase() : '';
-      var nameFromMap = (CODE_NAME[code] || '').toLowerCase();
-      return name.includes(q) || nameFromMap.includes(q) || code.toLowerCase().includes(q);
+    entries = entries.filter(function(e) {
+      var name = (e.meta && e.meta.name) ? e.meta.name.toLowerCase() : '';
+      var nameFromMap = (CODE_NAME[e.code] || '').toLowerCase();
+      return name.includes(q) || nameFromMap.includes(q) || e.code.toLowerCase().includes(q);
     });
   }
 
-  // 날짜 최신순 정렬
-  codes.sort(function(a, b) {
-    var da = (m[a] && m[a].date) || '';
-    var db = (m[b] && m[b].date) || '';
-    return db.localeCompare(da);
-  });
-
-  // 날짜별 그룹핑
-  var byDate = {};
-  codes.forEach(function(code) {
-    var meta = m[code] || {};
-    var date = meta.date || '날짜 미상';
-    if (!byDate[date]) byDate[date] = [];
-    byDate[date].push({code, meta});
-  });
-
-  var html = '';
-
-  if (codes.length === 0 && q) {
+  if (entries.length === 0) {
     container.innerHTML = '<div class="fav-empty"><div class="big">🔍</div>"' + escHtml(q) + '" 검색 결과가 없습니다.</div>';
     return;
   }
 
-  var sortedDates = Object.keys(byDate).sort(function(a,b){return b.localeCompare(a);});
+  // 날짜별 그룹핑 — 엔트리의 실제 date 사용 (meta.date 의존 금지)
+  var byDate = {};
+  entries.forEach(function(e) {
+    if (!byDate[e.date]) byDate[e.date] = [];
+    byDate[e.date].push(e);
+  });
+
+  var sortedDates = Object.keys(byDate).sort(function(a,b){
+    if (a === '날짜 미상') return 1;
+    if (b === '날짜 미상') return -1;
+    return b.localeCompare(a);
+  });
+  var html = '';
 
   sortedDates.forEach(function(date) {
     var dateLabel = date !== '날짜 미상'
@@ -513,6 +545,7 @@ function renderFavs() {
     byDate[date].forEach(function(item) {
       var code = item.code;
       var meta = item.meta;
+      var source = item.source;
       var name = (meta.name && meta.name !== code) ? meta.name : (CODE_NAME[code] || code);
       var anchor = meta.anchor || '';
       var sig = meta.signal || '';
@@ -544,9 +577,12 @@ function renderFavs() {
         priceHtml = '<div class="fav-price"><span class="fav-price-none">가격 데이터 없음</span></div>';
       }
 
-      var memoVal = (getMemos()[code] || '');
+      // 메모는 (date, code) 키 우선, fallback to legacy code-only key
+      var memoVal = getMemo(code, date);
       var dartHref = 'https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name);
       var naverHref = 'https://m.stock.naver.com/domestic/stock/' + code + '/total';
+      // 안전한 데이터 속성 (JS 문자열 인젝션 방지)
+      var dataAttrs = 'data-code="'+escHtml(code)+'" data-date="'+escHtml(date)+'" data-source="'+escHtml(source)+'"';
 
       html += '<div class="fav-card">' +
         '<div class="fav-card-top">' +
@@ -563,12 +599,12 @@ function renderFavs() {
             '<a class="fav-link" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">상세 →</a>' +
             '<a class="fav-link naver" href="' + naverHref + '" target="_blank" rel="noopener" title="네이버 금융">📊</a>' +
             '<a class="fav-link dart" href="' + dartHref + '" target="_blank" rel="noopener" title="DART 공시">🗂</a>' +
-            '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
+            '<button class="fav-remove" '+dataAttrs+' onclick="removeFavEntry(this)" title="이 일자 즐겨찾기 해제">☆</button>' +
           '</div>' +
         '</div>' +
-        '<textarea class="fav-memo" id="mt-'+code+'" rows="1" placeholder="✏️ 메모 (자동저장)" ' +
-          'oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\';saveMemo(\'' + code + '\',this.value)" ' +
-          'onchange="saveMemo(\'' + code + '\',this.value)">' + escHtml(memoVal) + '</textarea>' +
+        '<textarea class="fav-memo" '+dataAttrs+' rows="1" placeholder="✏️ 메모 (자동저장)" ' +
+          'oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\';saveMemoEntry(this)" ' +
+          'onchange="saveMemoEntry(this)">' + escHtml(memoVal) + '</textarea>' +
       '</div>';
     });
   });
@@ -581,13 +617,46 @@ function renderFavs() {
 
 
 // ── 메모 헬퍼 ─────────────────────────────────────────────────────────────
+// 레거시: awake_fav_memos = {code: text}
+// 신규 (2026-05-28): awake_fav_memos_v2 = {date: {code: text}} — (date, code) 격리
 var LS_MEMO_KEY = 'awake_fav_memos';
+var LS_MEMO_V2_KEY = 'awake_fav_memos_v2';
+
 function getMemos(){ try{ return JSON.parse(localStorage.getItem(LS_MEMO_KEY)||'{}'); }catch(e){ return {}; } }
 function saveMemos(m){ try{ localStorage.setItem(LS_MEMO_KEY, JSON.stringify(m)); }catch(e){} }
+function getMemosV2(){ try{ return JSON.parse(localStorage.getItem(LS_MEMO_V2_KEY)||'{}'); }catch(e){ return {}; } }
+function saveMemosV2(m){ try{ localStorage.setItem(LS_MEMO_V2_KEY, JSON.stringify(m)); }catch(e){} }
 
+// (date, code)별 메모 조회 — v2 우선, fallback to legacy code-only
+function getMemo(code, date){
+  var v2 = getMemosV2();
+  if (v2[date] && v2[date][code]) return v2[date][code];
+  var legacy = getMemos();
+  return legacy[code] || '';
+}
+
+// (date, code)별 메모 저장
+function saveMemoFor(code, date, val){
+  var v2 = getMemosV2();
+  if (!v2[date]) v2[date] = {};
+  if (val && val.trim()) v2[date][code] = val;
+  else delete v2[date][code];
+  if (Object.keys(v2[date]).length === 0) delete v2[date];
+  saveMemosV2(v2);
+  localStorage.setItem(LS_TS_KEY, Date.now());
+}
+
+// textarea data-attr 기반 wrapper
+function saveMemoEntry(ta){
+  var code = ta.getAttribute('data-code');
+  var date = ta.getAttribute('data-date');
+  saveMemoFor(code, date, ta.value);
+}
+
+// 레거시 saveMemo(code, val) — 후방 호환 (build_report HTML이 호출 시)
 function saveMemo(code, val){
   var m = getMemos();
-  if(val.trim()) m[code] = val;
+  if(val && val.trim()) m[code] = val;
   else delete m[code];
   saveMemos(m);
 }
@@ -607,11 +676,54 @@ function openFavReport(e, url) {
   }
 }
 
+// (date, code) 단위 삭제 — 동일 code가 다른 날짜에 있어도 그 날짜만 해제
+function removeFavEntry(btn) {
+  var code = btn.getAttribute('data-code');
+  var date = btn.getAttribute('data-date');
+  var source = btn.getAttribute('data-source');
+
+  if (source === 'legacy' || date === '날짜 미상') {
+    // 레거시 키에서만 삭제
+    try {
+      var f = JSON.parse(localStorage.getItem('awake_favs')||'{}');
+      delete f[code];
+      localStorage.setItem('awake_favs', JSON.stringify(f));
+    } catch(e){}
+    try {
+      var m = JSON.parse(localStorage.getItem('awake_fav_meta')||'{}');
+      delete m[code];
+      localStorage.setItem('awake_fav_meta', JSON.stringify(m));
+    } catch(e){}
+  } else {
+    // 그 날짜의 키에서만 삭제
+    var fk = 'awake_favs_' + date;
+    var mk = 'awake_fav_meta_' + date;
+    try {
+      var f = JSON.parse(localStorage.getItem(fk)||'{}');
+      delete f[code];
+      if (Object.keys(f).length === 0) localStorage.removeItem(fk);
+      else localStorage.setItem(fk, JSON.stringify(f));
+    } catch(e){}
+    try {
+      var m = JSON.parse(localStorage.getItem(mk)||'{}');
+      delete m[code];
+      if (Object.keys(m).length === 0) localStorage.removeItem(mk);
+      else localStorage.setItem(mk, JSON.stringify(m));
+    } catch(e){}
+  }
+  // v2 메모도 같이 정리
+  var v2 = getMemosV2();
+  if (v2[date]) { delete v2[date][code]; if (Object.keys(v2[date]).length===0) delete v2[date]; saveMemosV2(v2); }
+
+  localStorage.setItem(LS_TS_KEY, Date.now());
+  updateFavCount();
+  renderFavs();
+}
+
+// 레거시 removeFav(code) — 후방 호환 (해당 code의 모든 date 키 일괄 제거)
 function removeFav(code) {
-  // 레거시 키에서 삭제
-  var f = getFavs(); delete f[code]; saveFavs(f);
-  var m = getFavMeta(); delete m[code]; saveFavMeta(m);
-  // 날짜별 키에서도 삭제
+  try { var f = JSON.parse(localStorage.getItem('awake_favs')||'{}'); delete f[code]; localStorage.setItem('awake_favs', JSON.stringify(f)); } catch(e){}
+  try { var m = JSON.parse(localStorage.getItem('awake_fav_meta')||'{}'); delete m[code]; localStorage.setItem('awake_fav_meta', JSON.stringify(m)); } catch(e){}
   var keys = [];
   for (var i = 0; i < localStorage.length; i++) { keys.push(localStorage.key(i)); }
   keys.forEach(function(k) {
@@ -628,10 +740,12 @@ function removeFav(code) {
 }
 
 function clearAllFavsIndex() {
-  if (!confirm('즐겨찾기를 모두 초기화할까요?')) return;
+  if (!confirm('모든 날짜의 즐겨찾기를 초기화할까요?\n메모도 함께 삭제됩니다.')) return;
   // 레거시 키 초기화
   localStorage.removeItem('awake_favs');
   localStorage.removeItem('awake_fav_meta');
+  localStorage.removeItem(LS_MEMO_KEY);
+  localStorage.removeItem(LS_MEMO_V2_KEY);
   // 날짜별 키 전부 삭제
   var keys = [];
   for (var i = 0; i < localStorage.length; i++) { keys.push(localStorage.key(i)); }
@@ -688,6 +802,18 @@ async function ghApiPut(path, contentB64, sha, message){
   return r.json();
 }
 
+// (date, code) 중첩 dict로 변환 — schema 2 페이로드용
+function collectByDate(){
+  var favsByDate = {}, metaByDate = {};
+  getAllFavEntries().forEach(function(e){
+    if (!favsByDate[e.date]) favsByDate[e.date] = {};
+    if (!metaByDate[e.date]) metaByDate[e.date] = {};
+    favsByDate[e.date][e.code] = 1;
+    metaByDate[e.date][e.code] = e.meta;
+  });
+  return { favsByDate: favsByDate, metaByDate: metaByDate };
+}
+
 async function ghCommitFavs(){
   if(!confirm('즐겨찾기를 GitHub에 저장할까요?\n모든 기기의 데이터가 현재 기기 기준으로 덮어씌워집니다.')) return;
   var pat=getPatFromLS();
@@ -695,13 +821,24 @@ async function ghCommitFavs(){
   var btn=document.getElementById('gh-commit-btn');
   btn.disabled=true; btn.textContent='⏳ 저장 중...';
   try {
-    var favs=getFavs(), meta=getFavMeta(), memos=getMemos();
+    var nested = collectByDate();
     var now=Date.now();
-    var payload=JSON.stringify({favs:favs, meta:meta, memos:memos, updatedAt:now}, null, 2);
+    // schema 2: 날짜별 중첩 + 메모도 v2(중첩) + 레거시 평탄(후방 호환)
+    var payload=JSON.stringify({
+      schema: 2,
+      favs_by_date: nested.favsByDate,
+      meta_by_date: nested.metaByDate,
+      memos_v2: getMemosV2(),
+      // 레거시 평탄 (기존 클라이언트 호환)
+      favs: getFavs(),
+      meta: getFavMeta(),
+      memos: getMemos(),
+      updatedAt: now
+    }, null, 2);
     var b64=btoa(unescape(encodeURIComponent(payload)));
     var existing=await ghApiGet(GH_AWAKE.PATH);
     var sha=existing?existing.sha:undefined;
-    await ghApiPut(GH_AWAKE.PATH, b64, sha, '즐겨찾기 동기화');
+    await ghApiPut(GH_AWAKE.PATH, b64, sha, '⭐ 즐겨찾기 동기화 (schema 2: 날짜별)');
     localStorage.setItem(LS_TS_KEY, now);
     toast('✅ GitHub에 저장됐어요!');
   } catch(e){
@@ -719,22 +856,58 @@ async function loadFavsFromGitHub(){
   if(!pat) return;
   try {
     // 로컬에 즐겨찾기 있는데 TS 없으면 지금 시각으로 보호
-    var localFavs=getFavs();
-    if(Object.keys(localFavs).length>0 && !localStorage.getItem(LS_TS_KEY)){
+    var localEntries = getAllFavEntries();
+    if(localEntries.length>0 && !localStorage.getItem(LS_TS_KEY)){
       localStorage.setItem(LS_TS_KEY, Date.now());
     }
     var localTs=parseInt(localStorage.getItem(LS_TS_KEY)||'0',10);
     var file=await ghApiGet(GH_AWAKE.PATH);
     if(!file) return;
     var data=JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g,'')))));
-    if(!data.favs || Object.keys(data.favs).length===0) return;
     var ghTs=data.updatedAt||0;
     if(ghTs<=localTs) return; // 로컬이 최신 → 유지
-    saveFavs(data.favs);
-    if(data.meta) saveFavMeta(data.meta);
-    if(data.memos) saveMemos(data.memos);
+
+    if (data.schema === 2 && data.favs_by_date) {
+      // ★ schema 2: 날짜별 복원 — 기존 awake_favs_* 키 일괄 삭제 후 재구성
+      var keysToClear = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && (k.startsWith('awake_favs_') || k.startsWith('awake_fav_meta_'))) keysToClear.push(k);
+      }
+      keysToClear.forEach(function(k){ localStorage.removeItem(k); });
+      // 레거시도 일단 비움 (schema 2는 모든 데이터를 favs_by_date에 가지고 있음)
+      localStorage.removeItem('awake_favs');
+      localStorage.removeItem('awake_fav_meta');
+
+      Object.keys(data.favs_by_date).forEach(function(date){
+        if (date === '날짜 미상') {
+          // 레거시 키로 저장 (date 미상 fallback)
+          var lf = JSON.parse(localStorage.getItem('awake_favs')||'{}');
+          var lm = JSON.parse(localStorage.getItem('awake_fav_meta')||'{}');
+          Object.assign(lf, data.favs_by_date[date]);
+          if (data.meta_by_date && data.meta_by_date[date]) Object.assign(lm, data.meta_by_date[date]);
+          localStorage.setItem('awake_favs', JSON.stringify(lf));
+          localStorage.setItem('awake_fav_meta', JSON.stringify(lm));
+        } else {
+          localStorage.setItem('awake_favs_'+date, JSON.stringify(data.favs_by_date[date]));
+          if (data.meta_by_date && data.meta_by_date[date]) {
+            localStorage.setItem('awake_fav_meta_'+date, JSON.stringify(data.meta_by_date[date]));
+          }
+        }
+      });
+      if (data.memos_v2) saveMemosV2(data.memos_v2);
+      if (data.memos) saveMemos(data.memos);
+    } else if (data.favs && Object.keys(data.favs).length > 0) {
+      // schema 1 (레거시): 평탄 복원
+      saveFavs(data.favs);
+      if(data.meta) saveFavMeta(data.meta);
+      if(data.memos) saveMemos(data.memos);
+    } else {
+      return;
+    }
     localStorage.setItem(LS_TS_KEY, ghTs);
-    updateFavCount(); renderFavs();
+    updateFavCount();
+    if (document.getElementById('tab-favs') && document.getElementById('tab-favs').classList.contains('active')) renderFavs();
   } catch(e){ console.warn('GH load fail:', e); }
 }
 
