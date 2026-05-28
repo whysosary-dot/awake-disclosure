@@ -212,7 +212,7 @@ const reports = [
   },
   {
     d: "2026-05-26",
-    v: "202605261412c",
+    v: "202605280817d",
     label: "2026년 5월 26일 (화)",
     sub: "97건 공시 · 88종목 · 매수22/매도6/중립69",
     n: true
@@ -485,20 +485,23 @@ function renderFavs() {
       var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
 
       var memoVal = (getMemos()[code] || '');
-      html += '<div class="fav-card">' +
+      html += '<div class="fav-card" id="fc-'+code+'">' +
         '<div class="fav-card-top">' +
           '<div class="fav-info">' +
-            '<a class="fav-name" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')" style="text-decoration:none;color:inherit;cursor:pointer;">⭐ ' + escHtml(name) + '</a>' +
-            '<div class="fav-meta">' +
-              '<span style="font-family:Inter;font-size:11px;color:#a8a29e;">A' + escHtml(code) + '</span>' +
+            '<a class="fav-name" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">' +
+              (favs[code] ? '⭐' : '☆') + ' ' + escHtml(name) +
+            '</a>' +
+            '<div class="fav-price-row">' +
+              '<span class="fav-code">A' + escHtml(code) + '</span>' +
+              '<span id="px-'+code+'" class="fav-price-badge">···</span>' +
               '<span class="' + sigCls + '">' + sigLabel + '</span>' +
-              (report ? '<span style="font-size:11px;color:#64748b;background:#f1f5f9;padding:2px 7px;border-radius:10px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(report) + '</span>' : '') +
+              (report ? '<span class="fav-rtype">' + escHtml(report) + '</span>' : '') +
             '</div>' +
           '</div>' +
           '<div class="fav-actions">' +
-            '<a class="fav-ext-btn" href="https://m.stock.naver.com/domestic/stock/' + code + '/total" target="_blank" rel="noopener">📈 네이버</a>' +
-            '<a class="fav-ext-btn" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name) + '" target="_blank" rel="noopener">📋 공시</a>' +
-            '<a class="fav-link" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">리포트 →</a>' +
+            '<a class="fav-btn-detail" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">상세 →</a>' +
+            '<a class="fav-btn-icon fav-btn-naver" href="https://m.stock.naver.com/domestic/stock/' + code + '/total" target="_blank" rel="noopener" title="네이버 증권">📈</a>' +
+            '<a class="fav-btn-icon fav-btn-dart" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm=' + encodeURIComponent(name) + '" target="_blank" rel="noopener" title="DART 전자공시">📋</a>' +
             '<button class="fav-remove" onclick="removeFav(\'' + code + '\')" title="즐겨찾기 해제">☆</button>' +
           '</div>' +
         '</div>' +
@@ -510,6 +513,10 @@ function renderFavs() {
   });
 
   container.innerHTML = html;
+  // 주가 fetch
+  var pxCodes = Object.keys(getFavs()).filter(function(c){ return /^\d{6}$/.test(c); });
+  fetchFavPrices(pxCodes);
+
   container.querySelectorAll('.fav-memo').forEach(function(ta){
     if(ta.value){ ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px'; }
   });
@@ -533,6 +540,35 @@ function escHtml(s) {
 }
 
 // 즐겨찾기 리포트 열기 — PWA standalone 모드 우회용
+
+// ── 즐겨찾기 실시간 주가 fetch (Naver Finance polling API) ──────────────
+function fetchFavPrices(codes) {
+  if (!codes || !codes.length) return;
+  var query = codes.map(function(c){ return 'SERVICE_ITEM:' + c; }).join('|');
+  var url = 'https://polling.finance.naver.com/api/realtime?query=' + encodeURIComponent(query);
+  fetch(url).then(function(r){ return r.json(); }).then(function(json) {
+    var areas = (json.result && json.result.areas) || [];
+    areas.forEach(function(area) {
+      (area.datas || []).forEach(function(d) {
+        var code = d.itemCode;
+        var el = document.getElementById('px-' + code);
+        if (!el) return;
+        var close = parseInt((d.closePrice||'0').replace(/,/g,''));
+        var ratio = parseFloat(d.fluctuationsRatio || 0);
+        var dir = d.compareToPreviousPrice && d.compareToPreviousPrice.code;
+        var up = (dir === '2' || dir === '1');
+        var dn = (dir === '4' || dir === '5');
+        var sign = up ? '+' : (dn ? '-' : '');
+        var color = up ? '#16a34a' : (dn ? '#dc2626' : '#64748b');
+        var bg   = up ? '#dcfce7' : (dn ? '#fee2e2' : '#f1f5f9');
+        el.textContent = sign + Math.abs(ratio).toFixed(2) + '% ' + close.toLocaleString() + '원';
+        el.style.background = bg;
+        el.style.color = color;
+      });
+    });
+  }).catch(function(){});
+}
+
 function openFavReport(e, url) {
   e.preventDefault();
   e.stopPropagation();
