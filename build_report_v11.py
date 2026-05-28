@@ -1511,7 +1511,7 @@ for d in DISCLOSURES:
     elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "litigation"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}" data-company="{html.escape(d["company"])}">
-<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" data-close="{int(d["price"]["close"]) if d.get("price") and d["price"].get("close") else 0}" data-chg="{round(d["chg_pct"],2) if d.get("chg_pct") is not None else 0}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1588,7 +1588,9 @@ function toggleFavFromIdx(btn, code) {
       date:   btn.dataset.date   || '',
       signal: btn.dataset.signal || '',
       report: btn.dataset.report || '',
-      anchor: btn.dataset.anchor || ''
+      anchor: btn.dataset.anchor || '',
+      close:  btn.dataset.close  || '0',
+      chg:    btn.dataset.chg    || '0'
     };
     btn.textContent='⭐'; btn.classList.add('fav-on');
   }
@@ -1610,7 +1612,9 @@ function toggleFavFromPage(code) {
         date:   btn.dataset.date    || '',
         signal: btn.dataset.signal  || '',
         report: btn.dataset.report  || '',
-        anchor: 'stock-' + code + '-' + (btn.dataset.firstid || '')
+        anchor: 'stock-' + code + '-' + (btn.dataset.firstid || ''),
+        close:  btn.dataset.close   || '0',
+        chg:    btn.dataset.chg     || '0'
       };
     }
   }
@@ -1785,7 +1789,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-signal="{first["signal_kind"]}" data-firstid="{first["id"]}" data-report="{html.escape(first["report"][:60])}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-signal="{first["signal_kind"]}" data-firstid="{first["id"]}" data-report="{html.escape(first["report"][:60])}" data-close="{int(p_data["close"]) if (p_data:=prices.get(code)) and p_data.get("close") else 0}" data-chg="{round(p_data["chg_pct"],2) if (p_data:=prices.get(code)) and p_data.get("chg_pct") is not None else 0}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>

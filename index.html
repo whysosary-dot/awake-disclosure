@@ -212,7 +212,7 @@ const reports = [
   },
   {
     d: "2026-05-26",
-    v: "202605280817d",
+    v: "202605280820e",
     label: "2026년 5월 26일 (화)",
     sub: "97건 공시 · 88종목 · 매수22/매도6/중립69",
     n: true
@@ -493,7 +493,17 @@ function renderFavs() {
             '</a>' +
             '<div class="fav-price-row">' +
               '<span class="fav-code">A' + escHtml(code) + '</span>' +
-              '<span id="px-'+code+'" class="fav-price-badge">···</span>' +
+              (function(){
+          var _c = parseInt((m[code]||{}).close||0);
+          var _g = parseFloat((m[code]||{}).chg||0);
+          var _dt = ((m[code]||{}).date||'');
+          if(!_c) return '<span class="fav-price-badge" style="color:#94a3b8;">-</span>';
+          var _up=_g>0,_dn=_g<0;
+          var _bg=_up?'#dcfce7':(_dn?'#fee2e2':'#f1f5f9');
+          var _col=_up?'#16a34a':(_dn?'#dc2626':'#64748b');
+          var _sign=_up?'+':(_dn?'':' ');
+          return '<span class="fav-price-badge" style="background:'+_bg+';color:'+_col+'" title="'+escHtml(_dt)+' 종가">'+_sign+_g.toFixed(2)+'% '+_c.toLocaleString()+'원</span>';
+        })() +
               '<span class="' + sigCls + '">' + sigLabel + '</span>' +
               (report ? '<span class="fav-rtype">' + escHtml(report) + '</span>' : '') +
             '</div>' +
@@ -513,9 +523,6 @@ function renderFavs() {
   });
 
   container.innerHTML = html;
-  // 주가 fetch
-  var pxCodes = Object.keys(getFavs()).filter(function(c){ return /^\d{6}$/.test(c); });
-  fetchFavPrices(pxCodes);
 
   container.querySelectorAll('.fav-memo').forEach(function(ta){
     if(ta.value){ ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px'; }
@@ -541,33 +548,6 @@ function escHtml(s) {
 
 // 즐겨찾기 리포트 열기 — PWA standalone 모드 우회용
 
-// ── 즐겨찾기 실시간 주가 fetch (Naver Finance polling API) ──────────────
-function fetchFavPrices(codes) {
-  if (!codes || !codes.length) return;
-  var query = codes.map(function(c){ return 'SERVICE_ITEM:' + c; }).join('|');
-  var url = 'https://polling.finance.naver.com/api/realtime?query=' + encodeURIComponent(query);
-  fetch(url).then(function(r){ return r.json(); }).then(function(json) {
-    var areas = (json.result && json.result.areas) || [];
-    areas.forEach(function(area) {
-      (area.datas || []).forEach(function(d) {
-        var code = d.itemCode;
-        var el = document.getElementById('px-' + code);
-        if (!el) return;
-        var close = parseInt((d.closePrice||'0').replace(/,/g,''));
-        var ratio = parseFloat(d.fluctuationsRatio || 0);
-        var dir = d.compareToPreviousPrice && d.compareToPreviousPrice.code;
-        var up = (dir === '2' || dir === '1');
-        var dn = (dir === '4' || dir === '5');
-        var sign = up ? '+' : (dn ? '-' : '');
-        var color = up ? '#16a34a' : (dn ? '#dc2626' : '#64748b');
-        var bg   = up ? '#dcfce7' : (dn ? '#fee2e2' : '#f1f5f9');
-        el.textContent = sign + Math.abs(ratio).toFixed(2) + '% ' + close.toLocaleString() + '원';
-        el.style.background = bg;
-        el.style.color = color;
-      });
-    });
-  }).catch(function(){});
-}
 
 function openFavReport(e, url) {
   e.preventDefault();
