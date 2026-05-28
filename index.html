@@ -212,7 +212,7 @@ const reports = [
   },
   {
     d: "2026-05-26",
-    v: "202605280820e",
+    v: "202605280826f",
     label: "2026년 5월 26일 (화)",
     sub: "97건 공시 · 88종목 · 매수22/매도6/중립69",
     n: true
@@ -489,7 +489,7 @@ function renderFavs() {
         '<div class="fav-card-top">' +
           '<div class="fav-info">' +
             '<a class="fav-name" href="' + reportUrl + '" target="_blank" rel="noopener" onclick="openFavReport(event,\'' + reportUrl + '\')">' +
-              (favs[code] ? '⭐' : '☆') + ' ' + escHtml(name) +
+              (f[code] ? '⭐' : '☆') + ' ' + escHtml(name) +
             '</a>' +
             '<div class="fav-price-row">' +
               '<span class="fav-code">A' + escHtml(code) + '</span>' +
