@@ -107,6 +107,7 @@ body{
 .fav-price-chg.down{background:#dbeafe;color:#1d4ed8;}
 .fav-price-chg.flat{background:#f1f5f9;color:#475569;}
 .fav-price-none{font-size:11px;color:#cbd5e1;font-style:italic;}
+.fav-price-label{font-size:10px;color:#94a3b8;font-weight:500;}
 .fav-meta{font-size:12px;color:#78716c;margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 .fav-code{font-family:Inter,sans-serif;font-size:11px;color:#a8a29e;}
 .fav-sig{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;background:#dcfce7;color:#166534;}
@@ -157,7 +158,7 @@ body{
   .fav-card{padding:12px 14px}
 }
 </style>
-<!-- deploy:202605261308 -->
+<!-- deploy:202605281319 -->
 </head>
 <body>
 <div class="wrap">
@@ -220,28 +221,43 @@ fetch('prices_history.json?t='+Date.now()).then(r=>r.ok?r.json():{}).then(d=>{
   }
 }).catch(()=>{});
 
-// 종가/등락률 조회 — meta 우선, fallback to PRICES_HISTORY
+// 종가/등락률 조회
+// 우선순위 (2026-05-28 변경):
+//   ① PRICES_HISTORY의 가장 최근 날짜 (오늘 또는 직전 거래일) — 사용자가 항상 "현재가" 봄
+//   ② meta.close/chg — 즐겨찾기 클릭 시점 저장된 값 (공시일 가격)
+//   ③ PRICES_HISTORY[disclosure_date][code] — 공시일 fallback
+// 반환: { close, chg, priceDate, isCurrent }
 function lookupPrice(code, date, meta) {
-  var close = (meta && meta.close) ? Number(meta.close) : 0;
-  var chg = (meta && meta.chg !== undefined && meta.chg !== null && meta.chg !== '') ? Number(meta.chg) : null;
-  if (close > 0 && chg !== null) return { close: close, chg: chg };
-  // fallback to history
-  var h = PRICES_HISTORY[date];
-  if (h && h[code]) {
-    return { close: Number(h[code].close), chg: Number(h[code].chg) };
+  // ① 최신 가격 (오늘/최근 거래일) — 즐겨찾기 갱신용 fetch가 매일 prices_history에 오늘 키 추가
+  var dates = Object.keys(PRICES_HISTORY).sort().reverse();
+  for (var i = 0; i < Math.min(3, dates.length); i++) {
+    var d = dates[i];
+    var h = PRICES_HISTORY[d];
+    if (h && h[code]) {
+      return {
+        close: Number(h[code].close),
+        chg: Number(h[code].chg),
+        priceDate: d,
+        isCurrent: (d !== date && d !== '날짜 미상')  // 공시일과 다르면 '현재가' 표시
+      };
+    }
   }
-  return { close: close, chg: chg };
+  // ② meta.close/chg (공시일 클릭 시점)
+  var mClose = (meta && meta.close) ? Number(meta.close) : 0;
+  var mChg = (meta && meta.chg !== undefined && meta.chg !== null && meta.chg !== '') ? Number(meta.chg) : null;
+  if (mClose > 0 && mChg !== null) {
+    return { close: mClose, chg: mChg, priceDate: date, isCurrent: false };
+  }
+  // ③ PRICES_HISTORY[date][code]
+  var h2 = PRICES_HISTORY[date];
+  if (h2 && h2[code]) {
+    return { close: Number(h2[code].close), chg: Number(h2[code].chg), priceDate: date, isCurrent: false };
+  }
+  return { close: 0, chg: null, priceDate: null, isCurrent: false };
 }
 
 // ── 리포트 목록 ──────────────────────────────────────────────────────────
 const reports = [
-  {
-    d: "2026-05-28",
-    v: "202605281119",
-    label: "2026년 5월 28일 (목)",
-    sub: "v11 ★ 전종목 새WebSearch분석 67종목",
-    n: true
-  },
   {
     d: "2026-05-27",
     v: "202605271152",
@@ -556,7 +572,7 @@ function renderFavs() {
       var sigLabel = sig==='up'?'매수▲':(sig==='down'?'매도▼':'중립');
       var sigCls = sig==='down'?'fav-sig down':(sig==='neutral'?'fav-sig neutral':'fav-sig');
 
-      // ★ 공시 당일 종가/등락률 — meta 우선, prices_history.json fallback
+      // ★ 종가/등락률 — 우선순위: 최신 PRICES_HISTORY → meta → 공시일 PRICES_HISTORY
       var px = lookupPrice(code, date, meta);
       var priceHtml = '';
       if (px.close && px.close > 0) {
@@ -572,7 +588,18 @@ function renderFavs() {
             chgHtml = '<span class="fav-price-chg flat">■ 0.00%</span>';
           }
         }
-        priceHtml = '<div class="fav-price"><span class="fav-price-close">' + closeStr + '원</span>' + chgHtml + '</div>';
+        // 출처 라벨 — 최신가면 "오늘 기준", 공시일이면 그 날짜 표시
+        var labelTxt = '';
+        if (px.priceDate) {
+          if (px.isCurrent) {
+            labelTxt = '<span class="fav-price-label">' + escHtml(px.priceDate) + ' 기준</span>';
+          } else if (px.priceDate === date) {
+            labelTxt = '<span class="fav-price-label">공시일 종가</span>';
+          } else {
+            labelTxt = '<span class="fav-price-label">' + escHtml(px.priceDate) + '</span>';
+          }
+        }
+        priceHtml = '<div class="fav-price"><span class="fav-price-close">' + closeStr + '원</span>' + chgHtml + labelTxt + '</div>';
       } else {
         priceHtml = '<div class="fav-price"><span class="fav-price-none">가격 데이터 없음</span></div>';
       }
