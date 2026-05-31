@@ -242,13 +242,6 @@ function lookupPrice(code, date, meta) {
 // ── 리포트 목록 ──────────────────────────────────────────────────────────
 const reports = [
   {
-    d: "2026-05-29",
-    v: "202605311425",
-    label: "2026년 5월 29일 (금)",
-    sub: "공시 113종목 · 매수24 매도7 중립82",
-    n: true
-  },
-  {
     d: "2026-05-28",
     v: "202605281340",
     label: "2026년 5월 28일 (목)",
@@ -644,8 +637,12 @@ function saveMemosV2(m){ try{ localStorage.setItem(LS_MEMO_V2_KEY, JSON.stringif
 function getMemo(code, date){
   var v2 = getMemosV2();
   if (v2[date] && v2[date][code]) return v2[date][code];
-  var legacy = getMemos();
-  return legacy[code] || '';
+  // 레거시 fallback: 날짜 미상일 때만 — 날짜 있는 경우 다른 날짜 메모 오염 방지
+  if (!date || date === '날짜 미상') {
+    var legacy = getMemos();
+    return legacy[code] || '';
+  }
+  return '';
 }
 
 // (date, code)별 메모 저장
