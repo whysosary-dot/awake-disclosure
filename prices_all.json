@@ -1,0 +1,429 @@
+{
+  "000720": {
+    "symbol": "000720.KS",
+    "close": 115100.0,
+    "prev_close": 127800.0,
+    "chg_pct": -9.94,
+    "volume": 963337
+  },
+  "001130": {
+    "symbol": "001130.KS",
+    "close": 10790.0,
+    "prev_close": 11140.0,
+    "chg_pct": -3.14,
+    "volume": 19146
+  },
+  "001270": {
+    "symbol": "001270.KS",
+    "close": 55000.0,
+    "prev_close": 60000.0,
+    "chg_pct": -8.33,
+    "volume": 10722
+  },
+  "001820": {
+    "symbol": "001820.KS",
+    "close": 142000.0,
+    "prev_close": 167000.0,
+    "chg_pct": -14.97,
+    "volume": 740993
+  },
+  "002210": {
+    "symbol": "002210.KS",
+    "close": 973.0,
+    "prev_close": 973.0,
+    "chg_pct": 0.0,
+    "volume": 0
+  },
+  "002630": {
+    "symbol": "002630.KS",
+    "close": 793.0,
+    "prev_close": 881.0,
+    "chg_pct": -9.99,
+    "volume": 210603
+  },
+  "002780": {
+    "symbol": "002780.KS",
+    "close": 789.0,
+    "prev_close": 853.0,
+    "chg_pct": -7.5,
+    "volume": 1532110
+  },
+  "003090": {
+    "symbol": "003090.KS",
+    "close": 16400.0,
+    "prev_close": 16950.0,
+    "chg_pct": -3.24,
+    "volume": 73671
+  },
+  "004800": {
+    "symbol": "004800.KS",
+    "close": 177600.0,
+    "prev_close": 185200.0,
+    "chg_pct": -4.1,
+    "volume": 34452
+  },
+  "005490": {
+    "symbol": "005490.KS",
+    "close": 322000.0,
+    "prev_close": 346500.0,
+    "chg_pct": -7.07,
+    "volume": 568511
+  },
+  "005960": {
+    "symbol": "005960.KS",
+    "close": 5810.0,
+    "prev_close": 6070.0,
+    "chg_pct": -4.28,
+    "volume": 63397
+  },
+  "008060": {
+    "symbol": "008060.KS",
+    "close": 17550.0,
+    "prev_close": 19080.0,
+    "chg_pct": -8.02,
+    "volume": 92864
+  },
+  "009410": {
+    "symbol": "009410.KS",
+    "close": 1581.0,
+    "prev_close": 1670.0,
+    "chg_pct": -5.33,
+    "volume": 454679
+  },
+  "009540": {
+    "symbol": "009540.KS",
+    "close": 364500.0,
+    "prev_close": 397500.0,
+    "chg_pct": -8.3,
+    "volume": 216183
+  },
+  "010130": {
+    "symbol": "010130.KS",
+    "close": 1084000.0,
+    "prev_close": 1147000.0,
+    "chg_pct": -5.49,
+    "volume": 30016
+  },
+  "011230": {
+    "symbol": "011230.KS",
+    "close": 2825.0,
+    "prev_close": 3275.0,
+    "chg_pct": -13.74,
+    "volume": 1735333
+  },
+  "012630": {
+    "symbol": "012630.KS",
+    "close": 19810.0,
+    "prev_close": 20250.0,
+    "chg_pct": -2.17,
+    "volume": 108523
+  },
+  "013580": {
+    "symbol": "013580.KS",
+    "close": 18350.0,
+    "prev_close": 19590.0,
+    "chg_pct": -6.33,
+    "volume": 48019
+  },
+  "015760": {
+    "symbol": "015760.KS",
+    "close": 36250.0,
+    "prev_close": 38000.0,
+    "chg_pct": -4.61,
+    "volume": 2230430
+  },
+  "024880": {
+    "symbol": "024880.KS",
+    "close": 3855.0,
+    "prev_close": 4080.0,
+    "chg_pct": -5.51,
+    "volume": 125469
+  },
+  "025560": {
+    "symbol": "025560.KS",
+    "close": 44100.0,
+    "prev_close": 47450.0,
+    "chg_pct": -7.06,
+    "volume": 288840
+  },
+  "028260": {
+    "symbol": "028260.KS",
+    "close": 455000.0,
+    "prev_close": 520000.0,
+    "chg_pct": -12.5,
+    "volume": 957626
+  },
+  "028300": {
+    "symbol": "028300.KS",
+    "close": 47500.0,
+    "prev_close": 50800.0,
+    "chg_pct": -6.5,
+    "volume": 957135
+  },
+  "035150": {
+    "symbol": "035150.KS",
+    "close": 9650.0,
+    "prev_close": 9920.0,
+    "chg_pct": -2.72,
+    "volume": 47248
+  },
+  "035600": {
+    "symbol": "035600.KS",
+    "close": 9190.0,
+    "prev_close": 9620.0,
+    "chg_pct": -4.47,
+    "volume": 147457
+  },
+  "036620": {
+    "symbol": "036620.KS",
+    "close": 4220.0,
+    "prev_close": 4375.0,
+    "chg_pct": -3.54,
+    "volume": 981628
+  },
+  "042660": {
+    "symbol": "042660.KS",
+    "close": 104500.0,
+    "prev_close": 116500.0,
+    "chg_pct": -10.3,
+    "volume": 2015373
+  },
+  "056080": {
+    "symbol": "056080.KS",
+    "close": 15050.0,
+    "prev_close": 16890.0,
+    "chg_pct": -10.89,
+    "volume": 349422
+  },
+  "066620": {
+    "symbol": "066620.KS",
+    "close": 23350.0,
+    "prev_close": 23200.0,
+    "chg_pct": 0.65,
+    "volume": 15977
+  },
+  "069620": {
+    "symbol": "069620.KS",
+    "close": 112100.0,
+    "prev_close": 114300.0,
+    "chg_pct": -1.92,
+    "volume": 26900
+  },
+  "072130": {
+    "symbol": "072130.KS",
+    "close": 4885.0,
+    "prev_close": 4730.0,
+    "chg_pct": 3.28,
+    "volume": 109979
+  },
+  "078000": {
+    "symbol": "078000.KS",
+    "close": 12870.0,
+    "prev_close": 13550.0,
+    "chg_pct": -5.02,
+    "volume": 21887
+  },
+  "079160": {
+    "symbol": "079160.KS",
+    "close": 4420.0,
+    "prev_close": 4510.0,
+    "chg_pct": -2.0,
+    "volume": 366233
+  },
+  "089970": {
+    "symbol": "089970.KS",
+    "close": 89400.0,
+    "prev_close": 102800.0,
+    "chg_pct": -13.04,
+    "volume": 623177
+  },
+  "091120": {
+    "symbol": "091120.KS",
+    "close": 3940.0,
+    "prev_close": 4075.0,
+    "chg_pct": -3.31,
+    "volume": 140525
+  },
+  "097950": {
+    "symbol": "097950.KS",
+    "close": 185800.0,
+    "prev_close": 187800.0,
+    "chg_pct": -1.06,
+    "volume": 84214
+  },
+  "106190": {
+    "symbol": "106190.KS",
+    "close": 13210.0,
+    "prev_close": 13640.0,
+    "chg_pct": -3.15,
+    "volume": 35119
+  },
+  "122990": {
+    "symbol": "122990.KS",
+    "close": 6700.0,
+    "prev_close": 7140.0,
+    "chg_pct": -6.16,
+    "volume": 102501
+  },
+  "139130": {
+    "symbol": "139130.KS",
+    "close": 16200.0,
+    "prev_close": 16480.0,
+    "chg_pct": -1.7,
+    "volume": 450750
+  },
+  "163730": {
+    "symbol": "163730.KS",
+    "close": 12150.0,
+    "prev_close": 13660.0,
+    "chg_pct": -11.05,
+    "volume": 141463
+  },
+  "168360": {
+    "symbol": "168360.KS",
+    "close": 18490.0,
+    "prev_close": 20750.0,
+    "chg_pct": -10.89,
+    "volume": 146297
+  },
+  "171090": {
+    "symbol": "171090.KS",
+    "close": 58800.0,
+    "prev_close": 66000.0,
+    "chg_pct": -10.91,
+    "volume": 135686
+  },
+  "178780": {
+    "symbol": "178780.KS",
+    "close": 2225.0,
+    "prev_close": 2250.0,
+    "chg_pct": -1.11,
+    "volume": 28141
+  },
+  "192820": {
+    "symbol": "192820.KS",
+    "close": 152500.0,
+    "prev_close": 156000.0,
+    "chg_pct": -2.24,
+    "volume": 112402
+  },
+  "217270": {
+    "symbol": "217270.KS",
+    "close": 2450.0,
+    "prev_close": 2565.0,
+    "chg_pct": -4.48,
+    "volume": 112286
+  },
+  "217590": {
+    "symbol": "217590.KS",
+    "close": 14270.0,
+    "prev_close": 16250.0,
+    "chg_pct": -12.18,
+    "volume": 306586
+  },
+  "282330": {
+    "symbol": "282330.KS",
+    "close": 116800.0,
+    "prev_close": 108000.0,
+    "chg_pct": 8.15,
+    "volume": 110608
+  },
+  "291650": {
+    "symbol": "291650.KS",
+    "close": 750.0,
+    "prev_close": 823.0,
+    "chg_pct": -8.87,
+    "volume": 230317
+  },
+  "294090": {
+    "symbol": "294090.KS",
+    "close": 1490.0,
+    "prev_close": 1490.0,
+    "chg_pct": 0.0,
+    "volume": 0
+  },
+  "298040": {
+    "symbol": "298040.KS",
+    "close": 3616000.0,
+    "prev_close": 3834000.0,
+    "chg_pct": -5.69,
+    "volume": 75142
+  },
+  "302440": {
+    "symbol": "302440.KS",
+    "close": 35150.0,
+    "prev_close": 36900.0,
+    "chg_pct": -4.74,
+    "volume": 138674
+  },
+  "310210": {
+    "symbol": "310210.KS",
+    "close": 185900.0,
+    "prev_close": 200500.0,
+    "chg_pct": -7.28,
+    "volume": 68758
+  },
+  "377300": {
+    "symbol": "377300.KS",
+    "close": 38850.0,
+    "prev_close": 42250.0,
+    "chg_pct": -8.05,
+    "volume": 335163
+  },
+  "384470": {
+    "symbol": "384470.KS",
+    "close": 3030.0,
+    "prev_close": 3130.0,
+    "chg_pct": -3.19,
+    "volume": 81649
+  },
+  "388050": {
+    "symbol": "388050.KS",
+    "close": 7800.0,
+    "prev_close": 8500.0,
+    "chg_pct": -8.24,
+    "volume": 353105
+  },
+  "389260": {
+    "symbol": "389260.KS",
+    "close": 12700.0,
+    "prev_close": 14150.0,
+    "chg_pct": -10.25,
+    "volume": 160185
+  },
+  "394420": {
+    "symbol": "394420.KS",
+    "close": 21400.0,
+    "prev_close": 22250.0,
+    "chg_pct": -3.82,
+    "volume": 336729
+  },
+  "439960": {
+    "symbol": "439960.KS",
+    "close": 18100.0,
+    "prev_close": 20500.0,
+    "chg_pct": -11.71,
+    "volume": 1292486
+  },
+  "459510": {
+    "symbol": "459510.KS",
+    "close": 14340.0,
+    "prev_close": 15980.0,
+    "chg_pct": -10.26,
+    "volume": 91226
+  },
+  "466100": {
+    "symbol": "466100.KS",
+    "close": 30400.0,
+    "prev_close": 33050.0,
+    "chg_pct": -8.02,
+    "volume": 235819
+  },
+  "488900": {
+    "symbol": "488900.KS",
+    "close": 8540.0,
+    "prev_close": 9340.0,
+    "chg_pct": -8.57,
+    "volume": 113440
+  }
+}
