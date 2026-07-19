@@ -1889,11 +1889,42 @@ for code, recs in companies:
   <a class="ext-link" href="https://m.stock.naver.com/domestic/stock/{code}/total" target="_blank">📈 네이버 금융</a>
   <a class="ext-link" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm={name_enc}" target="_blank">🏛 DART 공시</a>
   <a class="ext-link" href="https://www.google.com/search?q={name_enc}+{code}&tbm=nws" target="_blank">🌐 Google 뉴스</a>
+  <a class="ext-link" href="#" onclick="return svSendToFolder(this)" data-name="{html.escape(company)}">📁 Folder 보관</a>
 </div>
 </div></div>""")
     page_idx += 1
 
-parts_html.append("</body></html>")
+parts_html.append("""<script>
+/* Folder 탭(sheet 시스템)으로 이 기업 공시 섹션 보내기 — same-origin localStorage 공유 */
+function svSendToFolder(a) {
+  try {
+    var page = a.closest('.page') || a.closest('.disc-card');
+    var anchor = page ? page.id : '';
+    var name = a.getAttribute('data-name') || '기업';
+    var url = location.origin + location.pathname + (anchor ? '#' + anchor : '');
+    var KEY = 'sv_sheets_meta_v1';
+    var meta;
+    try { meta = JSON.parse(localStorage.getItem(KEY) || '{"folders":[],"sheets":[]}'); } catch(e) { meta = {folders:[],sheets:[]}; }
+    if ((meta.sheets || []).some(function(s){ return s.type === 'web' && s.wurl === url; })) {
+      a.textContent = '✓ 이미 보관됨'; return false;
+    }
+    var min = 1e9;
+    (meta.sheets || []).forEach(function(s){ if (!s.folder) min = Math.min(min, (s.ord == null ? 1e9 : s.ord)); });
+    var dateStr = (location.pathname.match(/AWAKE_([0-9-]+)/) || [,''])[1];
+    meta.sheets.push({
+      id: Math.random().toString(36).slice(2, 10),
+      name: name + ' 공시' + (dateStr ? ' ' + dateStr : ''),
+      folder: null, type: 'web', wurl: url, wembed: url, wpc: true,
+      ord: (min === 1e9 ? 10 : min - 10),
+      dirty: true, updated: Date.now()
+    });
+    localStorage.setItem(KEY, JSON.stringify(meta));
+    a.textContent = '✓ Folder 보관됨';
+    a.style.background = '#e8f4e0';
+  } catch(e) { a.textContent = '보관 실패'; }
+  return false;
+}
+</script></body></html>")
 
 html_out = "".join(parts_html)
 out_path = "/sessions/awesome-blissful-fermi/mnt/outputs/AWAKE_v11.html"
