@@ -8258,32 +8258,77 @@ function applyIdxFilter() {
   <a class="ext-link" href="#" onclick="return svSendToFolder(this)">📁 Folder 보관</a>
 </div>
 </div></div><script>
+/* Folder 탭으로 이 기업 공시 섹션 스크랩 — 폴더 선택 후 섹션만 독립 문서로 저장 */
 function svSendToFolder(a) {
   try {
     var page = a.closest('.page') || a.closest('.disc-card');
-    var anchor = page ? page.id : '';
-    var h = page ? page.querySelector('h1, h2, .stock-name, .co-name') : null;
+    if (!page) { a.textContent = '섹션 인식 실패'; return false; }
+    var h = page.querySelector('h1, h2, .stock-name, .co-name');
     var name = a.getAttribute('data-name') || (h ? h.textContent.trim().split('\n')[0].slice(0, 30) : '기업');
-    var url = location.origin + location.pathname + (anchor ? '#' + anchor : '');
     var KEY = 'sv_sheets_meta_v1';
     var meta;
-    try { meta = JSON.parse(localStorage.getItem(KEY) || '{"folders":[],"sheets":[]}'); } catch(e) { meta = {folders:[],sheets:[]}; }
-    if ((meta.sheets || []).some(function(s){ return s.type === 'web' && s.wurl === url; })) {
-      a.textContent = '✓ 이미 보관됨'; return false;
+    try { meta = JSON.parse(localStorage.getItem(KEY) || '{"folders":[],"sheets":[]}'); } catch(e) { meta = { folders: [], sheets: [] }; }
+
+    var old = document.getElementById('sv-folder-pick'); if (old) old.remove();
+    var ov = document.createElement('div');
+    ov.id = 'sv-folder-pick';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.5);display:flex;align-items:center;justify-content:center;padding:16px;';
+    var box = document.createElement('div');
+    box.style.cssText = 'background:#fff;border-radius:14px;max-width:380px;width:100%;max-height:70vh;display:flex;flex-direction:column;padding:16px;gap:8px;font-family:-apple-system,sans-serif;';
+    box.innerHTML = '<strong style="font-size:15px;">📁 보관할 폴더 선택</strong>';
+    var list = document.createElement('div');
+    list.style.cssText = 'flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:2px;';
+    function pathOf(fid) {
+      var parts = [], cur = meta.folders.find(function(f){ return f.id === fid; });
+      while (cur) { parts.unshift(cur.name); cur = meta.folders.find(function(f){ return f.id === cur.parent; }); }
+      return parts.join(' / ');
     }
-    var min = 1e9;
-    (meta.sheets || []).forEach(function(s){ if (!s.folder) min = Math.min(min, (s.ord == null ? 1e9 : s.ord)); });
-    var dateStr = (location.pathname.match(/AWAKE_([0-9-]+)/) || [,''])[1];
-    meta.sheets.push({
-      id: Math.random().toString(36).slice(2, 10),
-      name: name + ' 공시' + (dateStr ? ' ' + dateStr : ''),
-      folder: null, type: 'web', wurl: url, wembed: url, wpc: true,
-      ord: (min === 1e9 ? 10 : min - 10),
-      dirty: true, updated: Date.now()
+    var opts = [{ id: null, label: '(최상위)' }].concat(
+      meta.folders.map(function(f){ return { id: f.id, label: pathOf(f.id) }; })
+        .sort(function(x, y){ return x.label.localeCompare(y.label, 'ko'); }));
+    opts.forEach(function(o) {
+      var b = document.createElement('button');
+      b.textContent = '📂 ' + o.label;
+      b.style.cssText = 'text-align:left;padding:10px 12px;border:none;background:none;border-radius:8px;font-size:14px;cursor:pointer;';
+      b.onmouseover = function(){ b.style.background = '#eff4ff'; };
+      b.onmouseout = function(){ b.style.background = 'none'; };
+      b.onclick = function(){ doSave(o.id); };
+      list.appendChild(b);
     });
-    localStorage.setItem(KEY, JSON.stringify(meta));
-    a.textContent = '✓ Folder 보관됨';
-    a.style.background = '#e8f4e0';
+    box.appendChild(list);
+    var cancel = document.createElement('button');
+    cancel.textContent = '취소';
+    cancel.style.cssText = 'padding:10px;border:1px solid #e3e7ee;border-radius:8px;background:#fff;font-size:14px;cursor:pointer;';
+    cancel.onclick = function(){ ov.remove(); };
+    box.appendChild(cancel);
+    ov.appendChild(box);
+    ov.addEventListener('click', function(e){ if (e.target === ov) ov.remove(); });
+    document.body.appendChild(ov);
+
+    function doSave(folderId) {
+      ov.remove();
+      try {
+        var styles = Array.prototype.map.call(document.querySelectorAll('style'), function(s){ return s.outerHTML; }).join('');
+        var doc = '<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+                + styles + '</head><body style="background:#fff;margin:0;padding:8px;">' + page.outerHTML + '</body></html>';
+        var anchor = page.id ? ('#' + page.id) : '';
+        var url = location.origin + location.pathname + anchor;
+        var dateStr = (location.pathname.match(/AWAKE_([0-9-]+)/) || [,''])[1];
+        var id = Math.random().toString(36).slice(2, 10);
+        var min = 1e9;
+        (meta.sheets || []).forEach(function(s){ if ((s.folder || null) === folderId) min = Math.min(min, (s.ord == null ? 1e9 : s.ord)); });
+        localStorage.setItem('sv_sheet_data_' + id, JSON.stringify({ type: 'webdoc', html: doc, src: url }));
+        meta.sheets.push({
+          id: id, name: name + ' 공시' + (dateStr ? ' ' + dateStr : ''),
+          folder: folderId, type: 'webdoc', wurl: url,
+          ord: (min === 1e9 ? 10 : min - 10),
+          dirty: true, updated: Date.now()
+        });
+        localStorage.setItem(KEY, JSON.stringify(meta));
+        a.textContent = '✓ Folder 보관됨';
+        a.style.background = '#e8f4e0';
+      } catch(e) { a.textContent = '보관 실패(용량?)'; }
+    }
   } catch(e) { a.textContent = '보관 실패'; }
   return false;
 }
