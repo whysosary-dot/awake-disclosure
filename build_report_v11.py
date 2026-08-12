@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-08-11"
-TODAY_DISP = "2026년 8월 11일 (화)"
+TODAY = "2026-08-12"
+TODAY_DISP = "2026년 8월 12일 (수)"
 
-with open("/sessions/epic-wizardly-knuth/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/practical-intelligent-cray/mnt/outputs/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/sessions/epic-wizardly-knuth/mnt/outputs/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/practical-intelligent-cray/mnt/outputs/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/sessions/epic-wizardly-knuth/mnt/outputs/company_info.json", encoding="utf-8") as f:
+with open("/sessions/practical-intelligent-cray/mnt/outputs/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/sessions/epic-wizardly-knuth/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/practical-intelligent-cray/mnt/outputs/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/sessions/epic-wizardly-knuth/mnt/outputs/enriched_overrides.json"
+override_path = "/sessions/practical-intelligent-cray/mnt/outputs/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/sessions/epic-wizardly-knuth/mnt/outputs/daily_aggregates.json"
+AGG_PATH = "/sessions/practical-intelligent-cray/mnt/outputs/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,11 +33,11 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/sessions/epic-wizardly-knuth/mnt/outputs/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/practical-intelligent-cray/mnt/outputs/daily_analyses_2026-08-12.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
-    print(f'✓ Loaded daily_analyses_{TODAY}.json: {len(DAILY_ANALYSES)} companies')
+    print(f'✓ Loaded daily_analyses_2026-08-12.json: {len(DAILY_ANALYSES)} companies')
 
 # Merge: daily_analyses가 ENRICHED custom_*를 오버라이드 (BM 필드 포함)
 for code, data in DAILY_ANALYSES.items():
@@ -1171,7 +1171,7 @@ for dt in chart_dates:
 # Tipping point insight
 def tipping_insight():
     if len(all_dates) < 2:
-        return f"📊 오늘 ({TODAY}) 누적 데이터 시작. 7일치 누적 후부터 산업 모멘텀 추이가 의미있는 시그널을 제공합니다. 현재 상위 산업은 {', '.join([f'{k}({v})' for k,v in top_inds[:5]])}."
+        return f"📊 오늘 (2026-08-12) 누적 데이터 시작. 7일치 누적 후부터 산업 모멘텀 추이가 의미있는 시그널을 제공합니다. 현재 상위 산업은 {', '.join([f'{k}({v})' for k,v in top_inds[:5]])}."
     # Compare today vs avg of previous days
     prev_avg = defaultdict(float)
     n_prev = len(all_dates) - 1
@@ -1206,7 +1206,7 @@ parts_html.append(f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWAKE 전자공시 일일 리포트 — {TODAY}</title>
+<title>AWAKE 전자공시 일일 리포트 — 2026-08-12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -1447,7 +1447,7 @@ parts_html.append(f"""<div class="page">
 </div>
 <div class="page-body">
 <h2 style="font-size:30px; font-weight:900; color:var(--c-darkest); margin:6px 0 4px 0;">📋 오늘의 공시 인덱스 ({len(DISCLOSURES)}건)</h2>
-<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">{TODAY} · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동 · <span id="idx-count-lbl">{len(DISCLOSURES)}건 표시</span></div>
+<div style="font-size:14px; color:var(--c-mute); margin-bottom:10px;">2026-08-12 · 종가 yfinance · 종목명 클릭 시 상세 페이지로 이동 · <span id="idx-count-lbl">{len(DISCLOSURES)}건 표시</span></div>
 <div id="idx-controls" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px;">
   <span style="font-size:12px;font-weight:700;color:var(--c-darkest);">시그널</span>
   <button class="idx-btn active" data-group="sig" onclick="idxFilter(this,'sig','all')">전체</button>
@@ -1511,7 +1511,7 @@ for d in DISCLOSURES:
     elif "소송" in _rep or "판결" in _rep or "가압류" in _rep or "조정" in _rep: _cat = "litigation"
     else: _cat = "other"
     parts_html.append(f"""<tr data-signal="{d["signal_kind"]}" data-chg="{_chg_val:.4f}" data-time="{html.escape(d["time"][:5])}" data-sigord="{_sig_ord}" data-cat="{_cat}" data-code="{html.escape(d["code"])}" data-company="{html.escape(d["company"])}">
-<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="{TODAY}" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" data-close="{int(d["price"]["close"]) if d.get("price") and d["price"].get("close") else 0}" data-chg="{round(d["chg_pct"],2) if d.get("chg_pct") is not None else 0}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
+<td style="text-align:center;"><button class="fav-star-idx" data-code="{html.escape(d["code"])}" data-name="{html.escape(d["company"])}" data-date="2026-08-12" data-signal="{d["signal_kind"]}" data-report="{html.escape(d["report"][:60])}" data-anchor="stock-{html.escape(d["code"])}-{d["id"]}" data-close="{int(d["price"]["close"]) if d.get("price") and d["price"].get("close") else 0}" data-chg="{round(d["chg_pct"],2) if d.get("chg_pct") is not None else 0}" onclick="toggleFavFromIdx(this,'{html.escape(d["code"])}')">☆</button></td>
 <td><strong>{html.escape(d["time"][:5])}</strong></td>
 <td><a class="idx-anchor" href="#stock-{html.escape(d["code"])}-{d["id"]}"><strong>{html.escape(d["company"])}</strong></a></td>
 <td style="font-family:Inter,sans-serif;font-size:12px;color:var(--c-mute);">A{html.escape(d["code"])}</td>
@@ -1524,7 +1524,7 @@ parts_html.append("""</tbody></table>
 var idxState = { sig: 'all', cat: 'all', sort: 'time', fav: false };
 
 // ── 뒤로가기 시 필터·정렬 상태 복원 (sessionStorage + back_forward 감지) ──
-var IDX_SS_KEY = 'awake_idx_state_{TODAY}';
+var IDX_SS_KEY = 'awake_idx_state_2026-08-12';
 function saveIdxState() {
   try {
     sessionStorage.setItem(IDX_SS_KEY, JSON.stringify({ s: JSON.parse(JSON.stringify(idxState)), y: window.scrollY, ts: Date.now() }));
@@ -1569,7 +1569,7 @@ function idxFilter(btn, group, val) {
   btn.classList.add('active');
   applyIdxFilter();
 }
-var REPORT_DATE = '{TODAY}';  // 빌드 시 하드코딩 — 날짜별 즐겨찾기 격리용
+var REPORT_DATE = '2026-08-12';  // 빌드 시 하드코딩 — 날짜별 즐겨찾기 격리용
 var FAV_KEY = 'awake_favs_' + REPORT_DATE;
 var FAV_META_KEY = 'awake_fav_meta_' + REPORT_DATE;
 function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)||'{}'); } catch(e){return {};} }
@@ -1789,7 +1789,7 @@ for code, recs in companies:
   <div class="co-block">
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="co-name">{html.escape(company)}</div>
-      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="{TODAY}" data-signal="{first["signal_kind"]}" data-firstid="{first["id"]}" data-report="{html.escape(first["report"][:60])}" data-close="{int(p_data["close"]) if (p_data:=prices.get(code)) and p_data.get("close") else 0}" data-chg="{round(p_data["chg_pct"],2) if (p_data:=prices.get(code)) and p_data.get("chg_pct") is not None else 0}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
+      <button id="fav-btn-{html.escape(code)}" class="fav-star-page" data-code="{html.escape(code)}" data-name="{html.escape(company)}" data-date="2026-08-12" data-signal="{first["signal_kind"]}" data-firstid="{first["id"]}" data-report="{html.escape(first["report"][:60])}" data-close="{int(p_data["close"]) if (p_data:=prices.get(code)) and p_data.get("close") else 0}" data-chg="{round(p_data["chg_pct"],2) if (p_data:=prices.get(code)) and p_data.get("chg_pct") is not None else 0}" onclick="toggleFavFromPage('{html.escape(code)}')" title="즐겨찾기">☆</button>
     </div>
     <div class="co-code">A{html.escape(code)}</div>
     <div>
@@ -1896,7 +1896,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/sessions/epic-wizardly-knuth/mnt/outputs/AWAKE_v11.html"
+out_path = "/sessions/practical-intelligent-cray/mnt/outputs/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
