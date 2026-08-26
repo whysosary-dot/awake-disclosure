@@ -4,27 +4,27 @@
 import json, html, urllib.parse, re, os
 from collections import defaultdict, Counter
 
-TODAY = "2026-08-25"
-TODAY_DISP = "2026년 8월 25일 (화)"
+TODAY = "2026-05-06"
+TODAY_DISP = "2026년 5월 6일 (수)"
 
-with open("/tmp/awake-work/parsed_disclosures.json", encoding="utf-8") as f:
+with open("/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/parsed_disclosures.json", encoding="utf-8") as f:
     parsed = json.load(f)
-with open("/tmp/awake-work/prices_all.json", encoding="utf-8") as f:
+with open("/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/prices_all.json", encoding="utf-8") as f:
     prices = json.load(f)
-with open("/tmp/awake-work/company_info.json", encoding="utf-8") as f:
+with open("/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/company_info.json", encoding="utf-8") as f:
     company_info = json.load(f)
-with open("/tmp/awake-work/naver_finance.json", encoding="utf-8") as f:
+with open("/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/naver_finance.json", encoding="utf-8") as f:
     naver = json.load(f)
 
 # 한글 큐레이션된 overrides (WebSearch + 사용자 지식 기반)
 ENRICHED = {}
-override_path = "/tmp/awake-work/enriched_overrides.json"
+override_path = "/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/enriched_overrides.json"
 if os.path.exists(override_path):
     with open(override_path, encoding="utf-8") as f:
         ENRICHED = json.load(f)
 
 # Aggregates (cumulative)
-AGG_PATH = "/tmp/awake-work/daily_aggregates.json"
+AGG_PATH = "/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/daily_aggregates.json"
 agg_data = {"by_date": {}}
 if os.path.exists(AGG_PATH):
     with open(AGG_PATH, encoding="utf-8") as f:
@@ -33,7 +33,7 @@ if os.path.exists(AGG_PATH):
 
 # ★ 매일 새 분석 (daily_analyses_DATE.json) — 최우선 적용
 DAILY_ANALYSES = {}
-daily_path = f"/tmp/awake-work/daily_analyses_{TODAY}.json"
+daily_path = f"/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/daily_analyses_{TODAY}.json"
 if os.path.exists(daily_path):
     with open(daily_path, encoding='utf-8') as f:
         DAILY_ANALYSES = json.load(f)
@@ -1896,7 +1896,7 @@ for code, recs in companies:
 parts_html.append("</body></html>")
 
 html_out = "".join(parts_html)
-out_path = "/tmp/awake-work/AWAKE_v11.html"
+out_path = "/sessions/jolly-youthful-johnson/mnt/AWAKE 전자 공시/AWAKE_v11.html"
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html_out)
 print(f"✓ Wrote {out_path} ({len(html_out):,} chars)")
