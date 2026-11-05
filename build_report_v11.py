@@ -51,6 +51,8 @@ for code, data in DAILY_ANALYSES.items():
         ENRICHED[code]['bm_daily'] = data['bm_kr']
     if data.get('segments_kr'):
         ENRICHED[code]['segments_daily'] = data['segments_kr']
+        if data.get('segments_src'):
+            ENRICHED[code]['segments_src'] = data['segments_src']
     if data.get('strength_kr'):
         ENRICHED[code]['strength_daily'] = data['strength_kr']
     if data.get('customers_kr'):
@@ -1827,7 +1829,9 @@ for code, recs in companies:
             </div>'''
         # Source label
         ov_c = ENRICHED.get(d["code"], {})
-        if ov_c.get("segments_daily"):
+        if ov_c.get("segments_src"):
+            src_label = ov_c["segments_src"]
+        elif ov_c.get("segments_daily"):
             src_label = "WebSearch 분석"
         elif ov_c.get("segments"):
             src_label = "수동 큐레이션"
