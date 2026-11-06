@@ -1891,8 +1891,8 @@ for code, recs in companies:
 
 <h3 class="section-title">🔗 외부 링크</h3>
 <div class="ext-links">
-  <a class="ext-link" href="https://search.naver.com/search.naver?where=news&query={name_enc}&sort=1" target="_blank">📰 네이버 뉴스</a>
   <a class="ext-link" href="https://m.stock.naver.com/domestic/stock/{code}/total" target="_blank">📈 네이버 금융</a>
+  <a class="ext-link" href="https://search.naver.com/search.naver?where=news&query={name_enc}&sort=1" target="_blank">📰 네이버 뉴스</a>
   <a class="ext-link" href="https://dart.fss.or.kr/dsab007/main.do?autoSearch=Y&option=corp&textCrpNm={name_enc}" target="_blank">🏛 DART 공시</a>
   <a class="ext-link" href="https://www.google.com/search?q={name_enc}+{code}&tbm=nws" target="_blank">🌐 Google 뉴스</a>
 </div>
