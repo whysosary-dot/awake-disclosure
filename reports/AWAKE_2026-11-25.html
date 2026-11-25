@@ -913,7 +913,7 @@ new Chart(ctx, {
 var idxState = { sig: 'all', cat: 'all', sort: 'time', fav: false };
 
 // ── 뒤로가기 시 필터·정렬 상태 복원 (sessionStorage + back_forward 감지) ──
-var IDX_SS_KEY = 'awake_idx_state_{TODAY}';
+var IDX_SS_KEY = 'awake_idx_state_2026-11-25';
 function saveIdxState() {
   try {
     sessionStorage.setItem(IDX_SS_KEY, JSON.stringify({ s: JSON.parse(JSON.stringify(idxState)), y: window.scrollY, ts: Date.now() }));
